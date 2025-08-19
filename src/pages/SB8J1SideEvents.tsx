@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Calendar, Clock, MapPin, Users, ChevronDown } from 'lucide-react';
+import { Menu, X, Calendar, Clock, MapPin, Users, ChevronDown, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -36,7 +36,21 @@ const SB8J1SideEvents = () => {
       organizer: "Indigenous Women's Network",
       summary: "Interactive workshop exploring the critical role of Indigenous women as knowledge keepers and environmental stewards in biodiversity conservation.",
       capacity: "50 participants",
-      status: "Open Registration"
+      status: "Open Registration",
+      keynoteSpeakers: [
+        {
+          name: "Dr. María Xólotl Gonzalez",
+          title: "Traditional Knowledge Keeper",
+          affiliation: "Nahua Nation, Mexico",
+          bio: "Leading expert in traditional ecological knowledge and sustainable forest management practices."
+        },
+        {
+          name: "Patricia Gualinga",
+          title: "Indigenous Rights Advocate",
+          affiliation: "Kichwa People, Ecuador", 
+          bio: "Internationally recognized leader in Indigenous women's rights and environmental protection."
+        }
+      ]
     },
     {
       title: "Youth Voices for Intergenerational Equity",
@@ -46,7 +60,21 @@ const SB8J1SideEvents = () => {
       organizer: "Global Indigenous Youth Caucus",
       summary: "Forum for Indigenous youth to share their perspectives on climate action and biodiversity protection for future generations.",
       capacity: "100 participants",
-      status: "Registration Full"
+      status: "Registration Full",
+      keynoteSpeakers: [
+        {
+          name: "Autumn Peltier",
+          title: "Water Protector",
+          affiliation: "Anishinaabe Nation, Canada",
+          bio: "Young water activist advocating for Indigenous water rights and environmental justice."
+        },
+        {
+          name: "Txai Suruí",
+          title: "Climate Activist",
+          affiliation: "Paiter Suruí People, Brazil",
+          bio: "Youth climate leader fighting for Amazon protection and Indigenous land rights."
+        }
+      ]
     },
     {
       title: "Traditional Ecological Knowledge Documentation",
@@ -56,7 +84,15 @@ const SB8J1SideEvents = () => {
       organizer: "Knowledge Holders Alliance",
       summary: "Collaborative session on best practices for documenting and protecting traditional ecological knowledge systems.",
       capacity: "30 participants",
-      status: "Open Registration"
+      status: "Open Registration",
+      keynoteSpeakers: [
+        {
+          name: "Dr. Robin Wall Kimmerer",
+          title: "Botanist & Author",
+          affiliation: "Citizen Potawatomi Nation, USA",
+          bio: "Distinguished scholar integrating Indigenous wisdom with scientific knowledge."
+        }
+      ]
     },
     {
       title: "Community-Based Conservation Success Stories",
@@ -66,7 +102,21 @@ const SB8J1SideEvents = () => {
       organizer: "IPLC Conservation Network",
       summary: "Showcase of successful community-led conservation initiatives from Indigenous Peoples and local communities worldwide.",
       capacity: "200 participants",
-      status: "Open Registration"
+      status: "Open Registration",
+      keynoteSpeakers: [
+        {
+          name: "Hindou Oumarou Ibrahim",
+          title: "Climate Researcher",
+          affiliation: "Mbororo Pastoralist Community, Chad",
+          bio: "Expert in Indigenous knowledge systems for climate adaptation and environmental conservation."
+        },
+        {
+          name: "Dr. Darren Walker",
+          title: "Conservation Biologist",
+          affiliation: "Māori, New Zealand",
+          bio: "Leading researcher in community-based conservation and traditional management systems."
+        }
+      ]
     }
   ];
 
@@ -119,6 +169,29 @@ const SB8J1SideEvents = () => {
             <p className="text-foreground leading-relaxed mb-4">
               {event.summary}
             </p>
+            
+            {/* Keynote Speakers Section */}
+            <div className="border-t border-border pt-4 mb-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Mic className="h-4 w-4 text-primary" />
+                <h4 className="text-sm font-semibold text-foreground">Keynote Speakers</h4>
+              </div>
+              <div className="space-y-3">
+                {event.keynoteSpeakers.map((speaker, speakerIndex) => (
+                  <div key={speakerIndex} className="bg-muted/30 p-3 rounded-lg">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                      <div className="flex-1">
+                        <h5 className="font-medium text-foreground">{speaker.name}</h5>
+                        <p className="text-sm text-primary font-medium">{speaker.title}</p>
+                        <p className="text-xs text-muted-foreground">{speaker.affiliation}</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{speaker.bio}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
             <div className="flex gap-3">
               <Button 
                 size="sm" 
@@ -176,6 +249,26 @@ const SB8J1SideEvents = () => {
             <p className="text-sm text-foreground leading-relaxed mb-4 flex-1 line-clamp-3">
               {event.summary}
             </p>
+            
+            {/* Keynote Speakers - Compact Version */}
+            <div className="border-t border-border pt-3 mb-4">
+              <div className="flex items-center gap-1 mb-2">
+                <Mic className="h-3 w-3 text-primary" />
+                <span className="text-xs font-medium text-foreground">Keynote Speakers</span>
+              </div>
+              <div className="space-y-2">
+                {event.keynoteSpeakers.slice(0, 2).map((speaker, speakerIndex) => (
+                  <div key={speakerIndex} className="text-xs">
+                    <p className="font-medium text-foreground line-clamp-1">{speaker.name}</p>
+                    <p className="text-muted-foreground line-clamp-1">{speaker.title}</p>
+                  </div>
+                ))}
+                {event.keynoteSpeakers.length > 2 && (
+                  <p className="text-xs text-primary">+{event.keynoteSpeakers.length - 2} more speakers</p>
+                )}
+              </div>
+            </div>
+            
             <div className="flex flex-col gap-2 mt-auto">
               <Button 
                 size="sm" 
@@ -236,6 +329,24 @@ const SB8J1SideEvents = () => {
           <p className="text-sm text-foreground leading-relaxed mb-4 line-clamp-2">
             {event.summary}
           </p>
+          
+          {/* Keynote Speakers - List Version */}
+          <div className="border-t border-border pt-4 mb-4">
+            <div className="flex items-center gap-2 mb-3">
+              <Mic className="h-4 w-4 text-primary" />
+              <h4 className="text-sm font-semibold text-foreground">Keynote Speakers</h4>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {event.keynoteSpeakers.map((speaker, speakerIndex) => (
+                <div key={speakerIndex} className="bg-muted/30 p-3 rounded-md">
+                  <h5 className="text-sm font-medium text-foreground">{speaker.name}</h5>
+                  <p className="text-xs text-primary font-medium">{speaker.title}</p>
+                  <p className="text-xs text-muted-foreground">{speaker.affiliation}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
           <div className="flex gap-3">
             <Button 
               size="sm" 
@@ -397,7 +508,7 @@ const SB8J1SideEvents = () => {
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-2">Side Events & Workshops</h2>
-              <p className="text-muted-foreground">Join community-led sessions and collaborative workshops</p>
+              <p className="text-muted-foreground">Join community-led sessions and collaborative workshops featuring renowned keynote speakers</p>
             </div>
             <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
