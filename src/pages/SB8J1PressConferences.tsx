@@ -251,7 +251,7 @@ const SB8J1PressConferences = () => {
             transition: 'opacity 0.3s ease-in-out'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div className="relative z-10 flex flex-col justify-between min-h-[50vh] sm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[35vh] xl:min-h-[30vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
@@ -377,29 +377,13 @@ const SB8J1PressConferences = () => {
             <div>
               <h2 className="text-3xl font-bold text-foreground mb-4">Press Conferences</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Scheduled press conferences and media briefings during SB8J-1, featuring Indigenous leaders, experts, and key stakeholders.
+                Scheduled press conferences and media briefings during SB8J-1 meeting in Panama City.
               </p>
             </div>
             <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
 
           {renderContent()}
-
-          <div className="mt-16 bg-card p-8 rounded-lg border border-border/50">
-            <h3 className="text-xl font-bold text-foreground mb-4">Media Accreditation</h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Journalists and media professionals must be accredited to attend press conferences. 
-              Please register in advance and bring valid press credentials.
-            </p>
-            <div className="flex gap-4">
-              <Button className="bg-secondary text-white hover:bg-secondary-hover">
-                Apply for Accreditation
-              </Button>
-              <Button variant="outline">
-                Contact Media Relations
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

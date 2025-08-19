@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Camera, Calendar, Tag } from 'lucide-react';
@@ -95,7 +94,7 @@ const SB8J1Gallery = () => {
             transition: 'opacity 0.3s ease-in-out'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div className="relative z-10 flex flex-col justify-between min-h-[50vh] sm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[35vh] xl:min-h-[30vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
