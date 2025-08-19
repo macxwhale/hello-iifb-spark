@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Play, Calendar, Clock, ChevronDown } from 'lucide-react';
+import { Menu, X, Play, Calendar, Clock, User, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,12 +11,22 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
+import ViewToggle, { ViewType } from '@/components/ViewToggle';
 
 const SB8J1Videos = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentView, setCurrentView] = useState<ViewType>(() => {
+    const saved = localStorage.getItem('sb8j1-videos-view');
+    return (saved as ViewType) || 'cards';
+  });
   const { imageUrl, isLoading } = usePexelsImage('sb8j-videos');
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleViewChange = (view: ViewType) => {
+    setCurrentView(view);
+    localStorage.setItem('sb8j1-videos-view', view);
+  };
 
   const videos = [
     {
@@ -118,7 +127,7 @@ const SB8J1Videos = () => {
                           <ChevronDown className="ml-1 h-4 w-4" />
                         </button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px]">
+                      <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px] z-50">
                         <DropdownMenuItem asChild>
                           <Link to="/sb8j-1/news" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
                             General News
@@ -182,9 +191,8 @@ const SB8J1Videos = () => {
                       <Link to="/sb8j-1/statements" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Statements</Link>
                       <Link to="/sb8j-1/documents" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Documents</Link>
                       
-                      {/* Mobile News & Media submenu */}
                       <div className="border-b border-white/10">
-                        <div className="px-6 py-3 text-white bg-white/20 text-lg font-medium">News & Media</div>
+                        <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
                         <Link to="/sb8j-1/news" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">General News</Link>
                         <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Media Coverage Links</Link>
                         <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">IIFB Social Media Toolkit</Link>
