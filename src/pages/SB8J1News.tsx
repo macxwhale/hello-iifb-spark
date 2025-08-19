@@ -1,9 +1,9 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Calendar, Clock, Tag, ChevronDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +16,7 @@ import ViewToggle, { ViewType } from '@/components/ViewToggle';
 const SB8J1News = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState<ViewType>(() => {
-    const saved = localStorage.getItem('sb8j1-news-view');
+    const saved = localStorage.getItem('sb8j-news-view');
     return (saved as ViewType) || 'cards';
   });
   const { imageUrl, isLoading } = usePexelsImage('sb8j-news');
@@ -25,7 +25,7 @@ const SB8J1News = () => {
 
   const handleViewChange = (view: ViewType) => {
     setCurrentView(view);
-    localStorage.setItem('sb8j1-news-view', view);
+    localStorage.setItem('sb8j-news-view', view);
   };
 
   const newsItems = [
@@ -225,14 +225,14 @@ const SB8J1News = () => {
           <div className="flex-1 flex items-center">
             <div className="text-white text-center w-full">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                News
+                SB8J-1
                 <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
-                  Latest SB8J-1 Updates
+                  First Meeting on Article 8(j)
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-                Stay informed with the latest developments from the first Article 8(j) subsidiary body meeting
+                Historic milestone for Indigenous Peoples and local communities in biodiversity governance
               </p>
               
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
@@ -328,8 +328,9 @@ const SB8J1News = () => {
                       <Link to="/sb8j-1/statements" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Statements</Link>
                       <Link to="/sb8j-1/documents" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Documents</Link>
                       
+                      {/* Mobile News & Media submenu */}
                       <div className="border-b border-white/10">
-                        <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
+                        <div className="px-6 py-3 text-white bg-white/20 text-lg font-medium">News & Media</div>
                         <Link to="/sb8j-1/news" className="px-8 py-3 text-white bg-white/20 transition-all duration-300 text-sm">General News</Link>
                         <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Media Coverage Links</Link>
                         <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">IIFB Social Media Toolkit</Link>
