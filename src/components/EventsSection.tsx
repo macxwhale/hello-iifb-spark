@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, ArrowRight, MapPin, Clock, Globe } from 'lucide-react';
@@ -8,7 +7,7 @@ import sb8jImage from '@/assets/sb8j-event.jpg';
 
 const EventsSection = () => {
   return (
-    <section id="events" className="py-16 lg:py-20 relative">
+    <section id="events" className="py-16 lg:py-20 relative bg-white">
       <div className="container mx-auto px-4">
         {/* Enhanced Section Header */}
         <div className="text-center mb-16 relative">
