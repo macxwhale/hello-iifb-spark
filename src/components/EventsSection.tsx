@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, ArrowRight, MapPin, Clock, Globe } from 'lucide-react';
@@ -150,9 +151,6 @@ const EventsSection = () => {
                 </span>
                 <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
                   Cultural Diversity
-                </span>
-                <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
-                  Community Governance
                 </span>
               </div>
               
