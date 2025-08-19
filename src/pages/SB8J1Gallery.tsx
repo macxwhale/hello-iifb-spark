@@ -1,8 +1,9 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Calendar, Clock, Tag, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, Camera, Calendar, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,198 +11,77 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
-import ViewToggle, { ViewType } from '@/components/ViewToggle';
 
-const SB8J1News = () => {
+const SB8J1Gallery = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentView, setCurrentView] = useState<ViewType>(() => {
-    const saved = localStorage.getItem('sb8j1-news-view');
-    return (saved as ViewType) || 'cards';
-  });
-  const { imageUrl, isLoading } = usePexelsImage('sb8j-news');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const { imageUrl, isLoading } = usePexelsImage('sb8j-gallery');
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const handleViewChange = (view: ViewType) => {
-    setCurrentView(view);
-    localStorage.setItem('sb8j1-news-view', view);
-  };
+  const categories = [
+    { id: 'all', label: 'All Photos' },
+    { id: 'ceremonies', label: 'Opening Ceremonies' },
+    { id: 'sessions', label: 'Meeting Sessions' },
+    { id: 'networking', label: 'Networking Events' },
+    { id: 'cultural', label: 'Cultural Activities' },
+    { id: 'delegates', label: 'Delegate Portraits' }
+  ];
 
-  const newsItems = [
+  const galleryItems = [
     {
-      title: "SB8J-1 Meeting Officially Opens in Panama City",
+      id: 1,
+      title: "SB8J-1 Opening Ceremony",
+      category: "ceremonies",
       date: "October 27, 2025",
-      category: "Breaking News",
-      summary: "The historic first meeting of the Subsidiary Body on Implementation of Article 8(j) officially commenced with delegates from Indigenous Peoples and local communities worldwide.",
-      readTime: "3 min read",
-      featured: true
+      description: "Traditional blessing ceremony to open the historic first meeting",
+      imageUrl: "/assets/indigenous-community-gathering.jpg"
     },
     {
-      title: "Indigenous Youth Voices Take Center Stage",
-      date: "October 26, 2025",
-      category: "Community",
-      summary: "Young Indigenous leaders present their vision for biodiversity conservation and intergenerational knowledge transfer at pre-meeting consultations.",
-      readTime: "4 min read",
-      featured: false
+      id: 2,
+      title: "Plenary Session",
+      category: "sessions",
+      date: "October 28, 2025",
+      description: "Delegates during the main plenary discussions",
+      imageUrl: "/assets/indigenous-governance.jpg"
     },
     {
-      title: "Traditional Knowledge Systems Recognition Framework Unveiled",
-      date: "October 25, 2025",
-      category: "Policy",
-      summary: "A new framework for recognizing and protecting Indigenous traditional knowledge systems in biodiversity governance has been presented to delegates.",
-      readTime: "5 min read",
-      featured: false
+      id: 3,
+      title: "Youth Voices Panel",
+      category: "sessions",
+      date: "October 28, 2025",
+      description: "Indigenous youth leaders presenting their perspectives",
+      imageUrl: "/assets/indigenous-voices.jpg"
     },
     {
-      title: "Panama Welcomes Global Indigenous Representatives",
-      date: "October 24, 2025",
-      category: "Event News",
-      summary: "Panama City officially welcomes hundreds of Indigenous representatives from seven regions for the landmark SB8J-1 meeting.",
-      readTime: "2 min read",
-      featured: false
+      id: 4,
+      title: "Traditional Knowledge Workshop",
+      category: "cultural",
+      date: "October 29, 2025",
+      description: "Interactive session on traditional ecological knowledge",
+      imageUrl: "/assets/indigenous-traditional-knowledge.jpg"
+    },
+    {
+      id: 5,
+      title: "Evening Reception",
+      category: "networking",
+      date: "October 29, 2025",
+      description: "Networking reception with cultural performances",
+      imageUrl: "/assets/indigenous-nature-conservation.jpg"
+    },
+    {
+      id: 6,
+      title: "Delegate Group Photo",
+      category: "delegates",
+      date: "October 30, 2025",
+      description: "Official group photo of all participating delegates",
+      imageUrl: "/assets/sb8j-event.jpg"
     }
   ];
 
-  const renderCardsView = () => (
-    <div className="grid gap-8">
-      {newsItems.map((item, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow">
-          <CardHeader>
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                    {item.category}
-                  </span>
-                  {item.featured && (
-                    <span className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium">
-                      Featured
-                    </span>
-                  )}
-                </div>
-                <CardTitle className="text-xl md:text-2xl mb-2 leading-tight">
-                  {item.title}
-                </CardTitle>
-              </div>
-              <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" />
-                {item.date}
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-foreground leading-relaxed mb-4">
-              {item.summary}
-            </p>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Clock className="h-4 w-4" />
-                <span>{item.readTime}</span>
-              </div>
-              <Button size="sm" className="bg-secondary text-white hover:bg-secondary/90">
-                Read More
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-
-  const renderGridView = () => (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {newsItems.map((item, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow h-full flex flex-col">
-          <CardHeader className="flex-shrink-0">
-            <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
-              <Calendar className="h-3 w-3" />
-              {item.date}
-            </div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                {item.category}
-              </span>
-              {item.featured && (
-                <span className="bg-secondary/10 text-secondary px-1 py-0.5 rounded-full text-xs font-medium">
-                  Featured
-                </span>
-              )}
-            </div>
-            <CardTitle className="text-lg leading-tight line-clamp-2">
-              {item.title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col">
-            <p className="text-sm text-foreground leading-relaxed mb-4 flex-1 line-clamp-3">
-              {item.summary}
-            </p>
-            <div className="flex items-center justify-between mt-auto">
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="h-3 w-3" />
-                <span>{item.readTime}</span>
-              </div>
-              <Button size="sm" className="bg-secondary text-white hover:bg-secondary/90">
-                Read More
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-
-  const renderListView = () => (
-    <div className="space-y-4">
-      {newsItems.map((item, index) => (
-        <div key={index} className="border border-border rounded-lg p-6 hover:bg-muted/50 transition-colors">
-          <div className="flex items-start justify-between mb-3">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                  {item.category}
-                </span>
-                {item.featured && (
-                  <span className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium">
-                    Featured
-                  </span>
-                )}
-              </div>
-              <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-            </div>
-            <div className="flex items-center gap-1 text-sm text-muted-foreground">
-              <Calendar className="h-4 w-4" />
-              {item.date}
-            </div>
-          </div>
-          <p className="text-sm text-foreground leading-relaxed mb-4 line-clamp-2">
-            {item.summary}
-          </p>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Clock className="h-4 w-4" />
-              <span>{item.readTime}</span>
-            </div>
-            <Button size="sm" className="bg-secondary text-white hover:bg-secondary/90">
-              Read More
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Button>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-
-  const renderContent = () => {
-    switch (currentView) {
-      case 'grid':
-        return renderGridView();
-      case 'list':
-        return renderListView();
-      default:
-        return renderCardsView();
-    }
-  };
+  const filteredItems = selectedCategory === 'all' 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -222,14 +102,14 @@ const SB8J1News = () => {
           <div className="flex-1 flex items-center">
             <div className="text-white text-center w-full">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                News
+                Gallery
                 <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
-                  Latest SB8J-1 Updates
+                  SB8J-1 Visual Highlights
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-                Stay informed with the latest developments from the first Article 8(j) subsidiary body meeting
+                Capturing the historic moments of the first Article 8(j) subsidiary body meeting
               </p>
 
               {/* Navigation */}
@@ -252,7 +132,7 @@ const SB8J1News = () => {
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px]">
                         <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/news" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100 bg-gray-100">
+                          <Link to="/sb8j-1/news" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
                             General News
                           </Link>
                         </DropdownMenuItem>
@@ -282,7 +162,7 @@ const SB8J1News = () => {
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/gallery" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
+                          <Link to="/sb8j-1/gallery" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100 bg-gray-100">
                             Gallery
                           </Link>
                         </DropdownMenuItem>
@@ -316,13 +196,13 @@ const SB8J1News = () => {
                       
                       <div className="border-b border-white/10">
                         <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
-                        <Link to="/sb8j-1/news" className="px-8 py-3 text-white bg-white/20 transition-all duration-300 text-sm">General News</Link>
+                        <Link to="/sb8j-1/news" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">General News</Link>
                         <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Media Coverage Links</Link>
                         <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">IIFB Social Media Toolkit</Link>
                         <Link to="/sb8j-1/press-conferences" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Press Conferences</Link>
                         <Link to="/sb8j-1/articles" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Articles</Link>
                         <Link to="/sb8j-1/videos" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Videos</Link>
-                        <Link to="/sb8j-1/gallery" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Gallery</Link>
+                        <Link to="/sb8j-1/gallery" className="px-8 py-3 text-white bg-white/20 transition-all duration-300 text-sm">Gallery</Link>
                       </div>
                       
                       <Link to="/sb8j-1/side-events" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-lg">Side Events</Link>
@@ -338,21 +218,73 @@ const SB8J1News = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          {/* View Toggle Controls */}
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">Latest News</h2>
-              <p className="text-muted-foreground">Stay updated with the latest developments from SB8J-1</p>
+          {/* Category Filter */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-foreground mb-4">Photo Categories</h2>
+            <div className="flex flex-wrap gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`px-4 py-2 rounded-full border transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? 'bg-primary text-white border-primary'
+                      : 'bg-background text-foreground border-border hover:border-primary hover:text-primary'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
             </div>
-            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
-          
-          {/* Content based on selected view */}
-          {renderContent()}
+
+          {/* Gallery Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredItems.map((item) => (
+              <Card key={item.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2">
+                    <Camera className="h-4 w-4 text-foreground" />
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium capitalize">
+                      {categories.find(cat => cat.id === item.category)?.label || item.category}
+                    </span>
+                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <Calendar className="h-3 w-3" />
+                      {item.date}
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {filteredItems.length === 0 && (
+            <div className="text-center py-12">
+              <Camera className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-foreground mb-2">No photos found</h3>
+              <p className="text-muted-foreground">Try selecting a different category or check back later for more photos.</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default SB8J1News;
+export default SB8J1Gallery;
