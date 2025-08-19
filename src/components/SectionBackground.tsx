@@ -35,8 +35,8 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-gradient-to-br from-background via-muted/30 to-iifb-cream/50',
           pattern: null,
           divider: null,
-          edgePattern: <GeometricPattern variant="diamond" color="hsl(var(--secondary))" opacity={0.12} size={100} className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 md:w-44" />,
-          contentClass: 'pr-8 sm:pr-12 md:pr-16'
+          edgePattern: null,
+          contentClass: ''
         };
       
       case 'statements':
