@@ -1,27 +1,39 @@
 
+import heroBannerIndigenous from '@/assets/hero-banner-indigenous.jpg';
+import indigenousTraditionalKnowledge from '@/assets/indigenous-traditional-knowledge.jpg';
+import indigenousGovernance from '@/assets/indigenous-governance.jpg';
+import indigenousDocuments from '@/assets/indigenous-documents.jpg';
+import indigenousMedia from '@/assets/indigenous-media.jpg';
+import indigenousCommunityGathering from '@/assets/indigenous-community-gathering.jpg';
+import indigenousVoices from '@/assets/indigenous-voices.jpg';
+import indigenousPress from '@/assets/indigenous-press.jpg';
+import indigenousSocialMedia from '@/assets/indigenous-social-media.jpg';
+import indigenousVideoStorytelling from '@/assets/indigenous-video-storytelling.jpg';
+import indigenousNatureConservation from '@/assets/indigenous-nature-conservation.jpg';
+
 const PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY;
 
 // Simple cache to avoid hitting the API too often
 const cache: { [key: string]: string } = {};
 
 export const fallbackImages: { [key: string]: string } = {
-  'home': '/assets/hero-banner-indigenous.jpg',
-  'about': '/assets/hero-banner-indigenous.jpg',
-  'statements': '/assets/hero-banner-indigenous.jpg',
-  'documents': '/assets/hero-banner-indigenous.jpg',
-  'news': '/assets/hero-banner-indigenous.jpg',
-  'side-events': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-statements': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-documents': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-news': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-side-events': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-about': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-articles': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-media-coverage': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-press-conferences': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-social-toolkit': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-videos': '/assets/hero-banner-indigenous.jpg',
-  'sb8j-gallery': '/assets/hero-banner-indigenous.jpg'
+  'home': heroBannerIndigenous,
+  'about': indigenousTraditionalKnowledge,
+  'statements': indigenousGovernance,
+  'documents': indigenousDocuments,
+  'news': indigenousMedia,
+  'side-events': indigenousCommunityGathering,
+  'sb8j-statements': indigenousGovernance,
+  'sb8j-documents': indigenousDocuments,
+  'sb8j-news': indigenousMedia,
+  'sb8j-side-events': indigenousCommunityGathering,
+  'sb8j-about': indigenousTraditionalKnowledge,
+  'sb8j-articles': indigenousVoices,
+  'sb8j-media-coverage': indigenousMedia,
+  'sb8j-press-conferences': indigenousPress,
+  'sb8j-social-toolkit': indigenousSocialMedia,
+  'sb8j-videos': indigenousVideoStorytelling,
+  'sb8j-gallery': indigenousNatureConservation
 };
 
 export const imageQueries = {
