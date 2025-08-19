@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, FileText, Download, Calendar, ChevronDown, ArrowRight, User } from 'lucide-react';
+import { Menu, X, FileText, Download, Calendar, ChevronDown, ArrowRight, User, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -35,17 +35,20 @@ const SB8J1Articles = () => {
     {
       title: "The Path to SB8J-1: A Historic Milestone for Indigenous Rights",
       description: "An in-depth analysis of the journey leading to the establishment of the first subsidiary body dedicated to Article 8(j) implementation.",
+      excerpt: "An in-depth analysis of the journey leading to the establishment of the first subsidiary body dedicated to Article 8(j) implementation.",
       date: "March 20, 2025",
       day: "20",
       month: "Mar",
       author: "Dr. Maria Santos, Indigenous Rights Scholar",
       category: "Analysis",
       image: indigenousBodyImage,
-      readTime: "12 min read"
+      readTime: "12 min read",
+      featured: true
     },
     {
       title: "Traditional Knowledge Systems in Modern Conservation",
       description: "Exploring how ancestral wisdom is being integrated into contemporary biodiversity protection strategies.",
+      excerpt: "Exploring how ancestral wisdom is being integrated into contemporary biodiversity protection strategies.",
       date: "March 18, 2025",
       day: "18",
       month: "Mar",
@@ -57,6 +60,7 @@ const SB8J1Articles = () => {
     {
       title: "Panama's Role as Host: Bridging Cultures for Biodiversity",
       description: "How Panama's unique position as a biodiversity hotspot makes it the ideal location for this groundbreaking meeting.",
+      excerpt: "How Panama's unique position as a biodiversity hotspot makes it the ideal location for this groundbreaking meeting.",
       date: "March 15, 2025",
       day: "15",
       month: "Mar",
@@ -68,6 +72,7 @@ const SB8J1Articles = () => {
     {
       title: "Youth Voices in Indigenous Governance: The Next Generation",
       description: "Young Indigenous leaders share their perspectives on participating in global biodiversity decision-making processes.",
+      excerpt: "Young Indigenous leaders share their perspectives on participating in global biodiversity decision-making processes.",
       date: "March 12, 2025",
       day: "12",
       month: "Mar",
@@ -79,6 +84,7 @@ const SB8J1Articles = () => {
     {
       title: "Financial Frameworks for Indigenous Conservation",
       description: "Examining innovative funding mechanisms that support Indigenous-led conservation while respecting territorial rights.",
+      excerpt: "Examining innovative funding mechanisms that support Indigenous-led conservation while respecting territorial rights.",
       date: "March 10, 2025",
       day: "10",
       month: "Mar",
@@ -90,6 +96,7 @@ const SB8J1Articles = () => {
     {
       title: "Technology and Tradition: Digital Tools for Knowledge Preservation",
       description: "How modern technology is helping Indigenous communities document and protect their traditional ecological knowledge.",
+      excerpt: "How modern technology is helping Indigenous communities document and protect their traditional ecological knowledge.",
       date: "March 8, 2025",
       day: "8",
       month: "Mar",
@@ -99,6 +106,9 @@ const SB8J1Articles = () => {
       readTime: "11 min read"
     }
   ];
+
+  const featuredArticle = articles.find(article => article.featured);
+  const regularArticles = articles.filter(article => !article.featured);
 
   const renderCardsView = () => (
     <div>
@@ -127,7 +137,7 @@ const SB8J1Articles = () => {
                 </div>
                 <span>{featuredArticle.readTime}</span>
               </div>
-              <Button size="lg" className="bg-secondary text-white hover:bg-secondary-hover">
+              <Button size="lg" className="bg-secondary text-white hover:bg-secondary/90">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Read Full Article
               </Button>
@@ -249,7 +259,7 @@ const SB8J1Articles = () => {
                   {article.author}
                 </div>
               </div>
-              <Button className="bg-secondary text-white hover:bg-secondary-hover ml-4">
+              <Button className="bg-secondary text-white hover:bg-secondary/90 ml-4">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Read Article
               </Button>

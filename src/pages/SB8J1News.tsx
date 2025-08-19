@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, FileText, Download, Calendar, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, FileText, Download, Calendar, ChevronDown, ArrowRight, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -35,16 +35,19 @@ const SB8J1News = () => {
     {
       title: "Historic Indigenous Subsidiary Body Approved at CBD COP16",
       description: "The Convention on Biological Diversity takes a groundbreaking step by establishing a permanent subsidiary body for Indigenous Peoples and local communities.",
+      summary: "The Convention on Biological Diversity takes a groundbreaking step by establishing a permanent subsidiary body for Indigenous Peoples and local communities.",
       date: "March 15, 2025",
       day: "15",
       month: "Mar",
       category: "Breaking News",
       image: indigenousBodyImage,
-      readTime: "5 min read"
+      readTime: "5 min read",
+      featured: true
     },
     {
       title: "Panama Prepares to Welcome Global Indigenous Leaders",
       description: "Panama City gears up to host the inaugural SB8J-1 meeting, bringing together Indigenous representatives from around the world.",
+      summary: "Panama City gears up to host the inaugural SB8J-1 meeting, bringing together Indigenous representatives from around the world.",
       date: "March 10, 2025",
       day: "10",
       month: "Mar",
@@ -55,6 +58,7 @@ const SB8J1News = () => {
     {
       title: "Traditional Knowledge Integration Guidelines Released",
       description: "New framework guidelines outline how traditional ecological knowledge will be incorporated into biodiversity conservation planning.",
+      summary: "New framework guidelines outline how traditional ecological knowledge will be incorporated into biodiversity conservation planning.",
       date: "March 8, 2025",
       day: "8",
       month: "Mar",
@@ -65,6 +69,7 @@ const SB8J1News = () => {
     {
       title: "Youth Caucus Mobilizes for SB8J-1 Participation",
       description: "Indigenous youth organizations coordinate global participation in the historic first meeting of the subsidiary body.",
+      summary: "Indigenous youth organizations coordinate global participation in the historic first meeting of the subsidiary body.",
       date: "March 5, 2025",
       day: "5",
       month: "Mar",
@@ -75,6 +80,7 @@ const SB8J1News = () => {
     {
       title: "Financial Mechanisms for Indigenous Conservation Discussed",
       description: "Experts explore innovative financing approaches that respect Indigenous rights while supporting biodiversity goals.",
+      summary: "Experts explore innovative financing approaches that respect Indigenous rights while supporting biodiversity goals.",
       date: "March 1, 2025",
       day: "1",
       month: "Mar",
@@ -85,6 +91,7 @@ const SB8J1News = () => {
     {
       title: "Capacity Building Programs Launched Ahead of SB8J-1",
       description: "Training initiatives help Indigenous representatives prepare for meaningful participation in the subsidiary body meetings.",
+      summary: "Training initiatives help Indigenous representatives prepare for meaningful participation in the subsidiary body meetings.",
       date: "February 28, 2025",
       day: "28",
       month: "Feb",
