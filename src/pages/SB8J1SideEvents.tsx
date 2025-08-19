@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Calendar, Clock, MapPin, Users, ChevronDown, Mic } from 'lucide-react';
+import { Menu, X, Calendar, Clock, MapPin, Users, ChevronDown, Mic, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
+import sb8jEventImage from '@/assets/sb8j-event.jpg';
+import sbsttaEventImage from '@/assets/sbstta-event.jpg';
 
 const SB8J1SideEvents = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,13 +34,17 @@ const SB8J1SideEvents = () => {
   const sideEvents = [
     {
       title: "Indigenous Women's Knowledge Systems Workshop",
-      date: "October 27, 2025",
+      date: "27",
+      month: "October",
+      year: "2025",
+      fullDate: "October 27, 2025",
       time: "9:00 AM - 12:00 PM",
       location: "Conference Room A",
       organizer: "Indigenous Women's Network",
       summary: "Interactive workshop exploring the critical role of Indigenous women as knowledge keepers and environmental stewards in biodiversity conservation.",
       capacity: "50 participants",
       status: "Open Registration",
+      image: sb8jEventImage,
       keynoteSpeakers: [
         {
           name: "Dr. María Xólotl Gonzalez",
@@ -56,13 +62,17 @@ const SB8J1SideEvents = () => {
     },
     {
       title: "Youth Voices for Intergenerational Equity",
-      date: "October 28, 2025",
+      date: "28",
+      month: "October", 
+      year: "2025",
+      fullDate: "October 28, 2025",
       time: "2:00 PM - 5:00 PM",
       location: "Cultural Center Hall",
       organizer: "Global Indigenous Youth Caucus",
       summary: "Forum for Indigenous youth to share their perspectives on climate action and biodiversity protection for future generations.",
       capacity: "100 participants",
       status: "Registration Full",
+      image: sbsttaEventImage,
       keynoteSpeakers: [
         {
           name: "Autumn Peltier",
@@ -80,13 +90,17 @@ const SB8J1SideEvents = () => {
     },
     {
       title: "Traditional Ecological Knowledge Documentation",
-      date: "October 29, 2025",
+      date: "29",
+      month: "October",
+      year: "2025", 
+      fullDate: "October 29, 2025",
       time: "10:00 AM - 1:00 PM",
       location: "Workshop Room B",
       organizer: "Knowledge Holders Alliance",
       summary: "Collaborative session on best practices for documenting and protecting traditional ecological knowledge systems.",
       capacity: "30 participants",
       status: "Open Registration",
+      image: sb8jEventImage,
       keynoteSpeakers: [
         {
           name: "Dr. Robin Wall Kimmerer",
@@ -98,13 +112,17 @@ const SB8J1SideEvents = () => {
     },
     {
       title: "Community-Based Conservation Success Stories",
-      date: "October 30, 2025",
+      date: "30",
+      month: "October",
+      year: "2025",
+      fullDate: "October 30, 2025", 
       time: "3:00 PM - 6:00 PM",
       location: "Main Auditorium",
       organizer: "IPLC Conservation Network",
       summary: "Showcase of successful community-led conservation initiatives from Indigenous Peoples and local communities worldwide.",
       capacity: "200 participants",
       status: "Open Registration",
+      image: sbsttaEventImage,
       keynoteSpeakers: [
         {
           name: "Hindou Oumarou Ibrahim",
@@ -215,72 +233,59 @@ const SB8J1SideEvents = () => {
   const renderGridView = () => (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {sideEvents.map((event, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow h-full flex flex-col">
-          <CardHeader className="flex-shrink-0">
-            <div className="flex items-center justify-between mb-2">
-              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                event.status === 'Open Registration' 
-                  ? 'bg-green-100 text-green-800' 
-                  : 'bg-red-100 text-red-800'
-              }`}>
-                {event.status}
-              </span>
+        <Card key={index} className="h-full bg-card border-2 border-transparent hover:border-secondary shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer">
+          {/* Featured Image */}
+          <div className="relative h-64 overflow-hidden">
+            <img 
+              src={event.image} 
+              alt={event.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            
+            {/* Date Badge */}
+            <div className="absolute top-4 right-4 bg-primary text-white rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg">
+              <span className="text-2xl font-bold leading-none">{event.date}</span>
+              <span className="text-xs font-medium leading-none">{event.month}</span>
+              <span className="text-xs leading-none opacity-90">{event.year}</span>
             </div>
-            <CardTitle className="text-lg leading-tight line-clamp-2">
+          </div>
+          
+          {/* Content */}
+          <CardContent className="p-6 space-y-4 flex-1 flex flex-col">
+            <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
               {event.title}
-            </CardTitle>
-            <CardDescription className="line-clamp-1">
-              {event.organizer}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col">
-            <div className="space-y-2 mb-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
-                {event.date}
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                {event.time}
-              </div>
-              <div className="flex items-center gap-1">
-                <MapPin className="h-3 w-3" />
-                {event.location}
-              </div>
-            </div>
-            <p className="text-sm text-foreground leading-relaxed mb-4 flex-1 line-clamp-3">
+            </h3>
+            
+            <p className="text-muted-foreground leading-relaxed line-clamp-2 flex-1">
               {event.summary}
             </p>
             
-            {/* Keynote Speakers - Compact Version */}
-            <div className="border-t border-border pt-3 mb-4">
-              <div className="flex items-center gap-1 mb-2">
-                <Mic className="h-3 w-3 text-primary" />
-                <span className="text-xs font-medium text-foreground">Keynote Speakers</span>
+            {/* Event Details */}
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4" />
+                <span>{event.time}</span>
               </div>
-              <div className="space-y-2">
-                {event.keynoteSpeakers.slice(0, 2).map((speaker, speakerIndex) => (
-                  <div key={speakerIndex} className="text-xs">
-                    <p className="font-medium text-foreground line-clamp-1">{speaker.name}</p>
-                    <p className="text-muted-foreground line-clamp-1">{speaker.title}</p>
-                  </div>
-                ))}
-                {event.keynoteSpeakers.length > 2 && (
-                  <p className="text-xs text-primary">+{event.keynoteSpeakers.length - 2} more speakers</p>
-                )}
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                <span>{event.location}</span>
+              </div>
+              <div className="text-primary font-medium">
+                Organized by: {event.organizer}
               </div>
             </div>
             
-            <div className="flex flex-col gap-2 mt-auto">
+            {/* Learn More Button */}
+            <div className="pt-4 border-t border-border/50 mt-auto">
               <Button 
-                size="sm" 
-                className="bg-secondary text-white hover:bg-secondary/90 w-full"
-                disabled={event.status === 'Registration Full'}
+                variant="ghost" 
+                className="w-full justify-start group/btn hover:bg-primary/5 p-0"
               >
-                {event.status === 'Registration Full' ? 'Full' : 'Register'}
-              </Button>
-              <Button size="sm" variant="outline" className="w-full">
-                Details
+                <div className="flex items-center justify-between w-full">
+                  <span className="text-primary font-medium">Learn More</span>
+                  <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
+                </div>
               </Button>
             </div>
           </CardContent>
