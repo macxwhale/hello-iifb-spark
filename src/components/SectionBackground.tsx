@@ -23,7 +23,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       
       case 'introduction':
         return {
-          bgClass: 'bg-gradient-to-r from-iifb-cream to-muted/50',
+          bgClass: 'bg-[#F2F1D5]',
           pattern: null,
           divider: <IndigenousPatterns variant="border-diamond" color="hsl(var(--iifb-orange))" opacity={0.2} className="absolute top-0 left-0 right-0" />,
           edgePattern: <GeometricPattern variant="weave" color="hsl(var(--iifb-rust))" opacity={0.15} size={80} className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-40" />,
