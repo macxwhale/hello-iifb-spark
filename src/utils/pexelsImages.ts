@@ -1,3 +1,4 @@
+
 const PEXELS_API_KEY = import.meta.env.VITE_PEXELS_API_KEY;
 
 // Simple cache to avoid hitting the API too often
@@ -5,16 +6,16 @@ const cache: { [key: string]: string } = {};
 
 export const fallbackImages: { [key: string]: string } = {
   'home': '/assets/hero-banner.jpg',
-  'about': '/assets/about-hero.jpg',
-  'statements': '/assets/statements-hero.jpg',
-  'documents': '/assets/documents-hero.jpg',
-  'news': '/assets/news-hero.jpg',
-  'side-events': '/assets/side-events-hero.jpg',
-  'sb8j-statements': '/assets/statements-hero.jpg',
-  'sb8j-documents': '/assets/documents-hero.jpg',
-  'sb8j-news': '/assets/news-hero.jpg',
-  'sb8j-side-events': '/assets/side-events-hero.jpg',
-  'sb8j-about': '/assets/about-hero.jpg',
+  'about': '/assets/indigenous-traditional-knowledge.jpg',
+  'statements': '/assets/indigenous-governance.jpg',
+  'documents': '/assets/indigenous-documents.jpg',
+  'news': '/assets/indigenous-voices.jpg',
+  'side-events': '/assets/indigenous-community-gathering.jpg',
+  'sb8j-statements': '/assets/indigenous-governance.jpg',
+  'sb8j-documents': '/assets/indigenous-documents.jpg',
+  'sb8j-news': '/assets/indigenous-voices.jpg',
+  'sb8j-side-events': '/assets/indigenous-community-gathering.jpg',
+  'sb8j-about': '/assets/indigenous-traditional-knowledge.jpg',
   'sb8j-articles': '/assets/indigenous-voices.jpg',
   'sb8j-media-coverage': '/assets/indigenous-media.jpg',
   'sb8j-press-conferences': '/assets/indigenous-press.jpg',
@@ -45,7 +46,7 @@ export const imageQueries = {
 
 export const getImageForPage = async (pageKey: keyof typeof imageQueries): Promise<string | null> => {
   if (!PEXELS_API_KEY) {
-    console.warn('Pexels API key is missing. Please set the VITE_PEXELS_API_KEY environment variable.');
+    console.warn('Pexels API key is missing. Using fallback image.');
     return null;
   }
 
@@ -54,7 +55,7 @@ export const getImageForPage = async (pageKey: keyof typeof imageQueries): Promi
   }
 
   const query = imageQueries[pageKey];
-  const url = `https://api.pexels.com/v1/search?query=${query}&per_page=1`;
+  const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=1`;
 
   try {
     const response = await fetch(url, {
