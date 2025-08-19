@@ -40,25 +40,25 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       
       case 'statements':
         return {
-          bgClass: 'bg-gradient-to-r from-iifb-sage/20 via-iifb-cream/40 to-iifb-sage/20',
+          bgClass: 'bg-[#F2F1D5]',
           pattern: null,
-          divider: null, // REMOVED BOTTOM PATTERN
+          divider: null,
           edgePattern: <IndigenousPatterns variant="stepped-diamond" color="hsl(var(--iifb-forest))" opacity={0.12} className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-40" />,
           contentClass: 'pl-8 sm:pl-12 md:pl-16'
         };
       
       case 'news':
         return {
-          bgClass: 'bg-gradient-to-br from-iifb-orange/20 via-iifb-cream to-iifb-orange/30',
+          bgClass: 'bg-white',
           pattern: null,
-          divider: null, // REMOVED TOP PATTERN
+          divider: null,
           edgePattern: <GeometricPattern variant="spiral" color="hsl(var(--iifb-orange))" opacity={0.25} size={90} className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 md:w-48" />,
           contentClass: 'pr-8 sm:pr-12 md:pr-20'
         };
       
       case 'side-events':
         return {
-          bgClass: 'bg-gradient-to-tr from-iifb-sage/30 via-iifb-cream/80 to-iifb-forest/20',
+          bgClass: 'bg-[#F2F1D5]',
           pattern: null,
           divider: null,
           edgePattern: <IndigenousPatterns variant="geometric-border" color="hsl(var(--iifb-forest))" opacity={0.3} className="absolute left-0 top-0 bottom-0 w-12 transform rotate-90 origin-left" />,
