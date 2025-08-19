@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Calendar, Clock, MapPin, Users, ChevronDown, Mic } from 'lucide-react';
@@ -379,6 +380,7 @@ const SB8J1SideEvents = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-fit h-auto overflow-hidden">
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
@@ -390,6 +392,7 @@ const SB8J1SideEvents = () => {
           <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
         </div>
 
+        {/* Content */}
         <div className="relative z-10 flex flex-col justify-between min-h-[50vh] sm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[35vh] xl:min-h-[30vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="flex-1 flex items-center">
             <div className="text-white text-center w-full">
@@ -403,6 +406,17 @@ const SB8J1SideEvents = () => {
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
                 Participate in workshops, forums, and collaborative sessions during SB8J-1
               </p>
+              
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+                <div className="flex items-center space-x-2 text-lg">
+                  <span className="w-2 h-2 bg-white rounded-full"></span>
+                  <span>October 27-30, 2025</span>
+                </div>
+                <div className="flex items-center space-x-2 text-lg">
+                  <span className="w-2 h-2 bg-white rounded-full"></span>
+                  <span>Panama City, Panama</span>
+                </div>
+              </div>
 
               {/* Navigation */}
               <div className="pt-8">
