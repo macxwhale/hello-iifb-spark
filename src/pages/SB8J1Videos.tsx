@@ -21,64 +21,42 @@ const SB8J1Videos = () => {
 
   const videos = [
     {
-      title: "Understanding Article 8(j): A Visual Guide",
-      description: "An animated explainer video breaking down Article 8(j) and its importance for Indigenous Peoples and biodiversity conservation.",
-      duration: "8:42",
+      title: "Opening Ceremony Highlights",
+      description: "Key moments from the historic opening of SB8J-1",
+      duration: "12:45",
+      date: "October 27, 2025",
+      category: "Event Coverage",
+      thumbnail: "/assets/indigenous-video-storytelling.jpg",
+      featured: true
+    },
+    {
+      title: "Indigenous Youth Voices",
+      description: "Young Indigenous leaders share their perspectives on biodiversity conservation",
+      duration: "18:30",
+      date: "October 26, 2025",
+      category: "Community Voices",
+      thumbnail: "/assets/indigenous-voices.jpg",
+      featured: false
+    },
+    {
+      title: "Traditional Knowledge Panel Discussion",
+      description: "Elders and knowledge keepers discuss the integration of traditional knowledge systems",
+      duration: "45:20",
       date: "October 25, 2025",
-      category: "Educational",
-      thumbnail: "/api/placeholder/400/225",
-      featured: true,
-      views: "12,450"
-    },
-    {
-      title: "Indigenous Voices: Preparing for SB8J-1",
-      description: "Indigenous leaders from around the world share their hopes and expectations for the historic first meeting.",
-      duration: "15:30",
-      date: "October 22, 2025",
-      category: "Interview",
-      thumbnail: "/api/placeholder/400/225",
-      views: "8,920"
-    },
-    {
-      title: "Traditional Knowledge in Action",
-      description: "Documentary footage showing traditional ecological knowledge being applied in conservation efforts across different ecosystems.",
-      duration: "22:15",
-      date: "October 20, 2025",
-      category: "Documentary",
-      thumbnail: "/api/placeholder/400/225",
-      views: "15,780"
-    },
-    {
-      title: "Women as Knowledge Keepers",
-      description: "Highlighting the crucial role of Indigenous women in preserving and transmitting traditional knowledge systems.",
-      duration: "12:08",
-      date: "October 18, 2025",
-      category: "Profile",
-      thumbnail: "/api/placeholder/400/225",
-      views: "6,340"
-    },
-    {
-      title: "Youth Panel: Future of Biodiversity Governance",
-      description: "Young Indigenous activists discuss their vision for inclusive biodiversity governance and decision-making processes.",
-      duration: "18:25",
-      date: "October 15, 2025",
       category: "Panel Discussion",
-      thumbnail: "/api/placeholder/400/225",
-      views: "9,560"
+      thumbnail: "/assets/indigenous-traditional-knowledge.jpg",
+      featured: false
     },
     {
-      title: "Panama's Indigenous Communities",
-      description: "Exploring the rich biodiversity and traditional knowledge of Panama's Indigenous communities as they prepare to host SB8J-1.",
-      duration: "25:40",
-      date: "October 12, 2025",
-      category: "Documentary",
-      thumbnail: "/api/placeholder/400/225",
-      views: "11,200"
+      title: "Panama Cultural Welcome",
+      description: "Traditional ceremony welcoming delegates to Panama",
+      duration: "8:15",
+      date: "October 24, 2025",
+      category: "Cultural",
+      thumbnail: "/assets/indigenous-community-gathering.jpg",
+      featured: false
     }
   ];
-
-  const featuredVideo = videos.find(video => video.featured);
-  const regularVideos = videos.filter(video => !video.featured);
 
   return (
     <div className="min-h-screen bg-background">
@@ -135,7 +113,7 @@ const SB8J1Videos = () => {
                     {/* News & Media Dropdown */}
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <button className="flex items-center px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">
+                        <button className="flex items-center px-4 py-2 text-white bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">
                           News & Media
                           <ChevronDown className="ml-1 h-4 w-4" />
                         </button>
@@ -167,8 +145,13 @@ const SB8J1Videos = () => {
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/videos" className="w-full px-3 py-2 text-gray-700 bg-gray-100">
+                          <Link to="/sb8j-1/videos" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100 bg-gray-100">
                             Videos
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild>
+                          <Link to="/sb8j-1/gallery" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
+                            Gallery
                           </Link>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
@@ -201,13 +184,14 @@ const SB8J1Videos = () => {
                       
                       {/* Mobile News & Media submenu */}
                       <div className="border-b border-white/10">
-                        <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
-                        <Link to="/sb8j-1/news" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-base">General News</Link>
-                        <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-base">Media Coverage Links</Link>
-                        <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-base">IIFB Social Media Toolkit</Link>
-                        <Link to="/sb8j-1/press-conferences" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-base">Press Conferences</Link>
-                        <Link to="/sb8j-1/articles" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-base">Articles</Link>
-                        <Link to="/sb8j-1/videos" className="px-8 py-3 text-white bg-white/20 transition-all duration-300 text-base">Videos</Link>
+                        <div className="px-6 py-3 text-white bg-white/20 text-lg font-medium">News & Media</div>
+                        <Link to="/sb8j-1/news" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">General News</Link>
+                        <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Media Coverage Links</Link>
+                        <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">IIFB Social Media Toolkit</Link>
+                        <Link to="/sb8j-1/press-conferences" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Press Conferences</Link>
+                        <Link to="/sb8j-1/articles" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Articles</Link>
+                        <Link to="/sb8j-1/videos" className="px-8 py-3 text-white bg-white/20 transition-all duration-300 text-sm">Videos</Link>
+                        <Link to="/sb8j-1/gallery" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Gallery</Link>
                       </div>
                       
                       <Link to="/sb8j-1/side-events" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-lg">Side Events</Link>
@@ -224,95 +208,62 @@ const SB8J1Videos = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Videos</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Video content featuring Indigenous voices, educational materials, and documentary coverage related to SB8J-1 and Article 8(j).
-            </p>
+            <h2 className="text-2xl font-bold text-foreground mb-2">Event Videos</h2>
+            <p className="text-muted-foreground">Watch highlights and key moments from SB8J-1</p>
           </div>
-
-          {/* Featured Video */}
-          {featuredVideo && (
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Featured Video</h3>
-              <Card className="overflow-hidden bg-card border-2 border-primary shadow-xl">
-                <div className="relative">
-                  <img 
-                    src={featuredVideo.thumbnail} 
-                    alt={featuredVideo.title}
-                    className="w-full h-64 lg:h-80 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <Button size="lg" className="bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 rounded-full h-16 w-16 p-0">
-                      <Play className="h-8 w-8 ml-1" />
-                    </Button>
-                  </div>
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-primary text-white">Featured</Badge>
-                  </div>
-                  <div className="absolute bottom-4 right-4">
-                    <Badge variant="secondary">{featuredVideo.duration}</Badge>
-                  </div>
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge variant="outline">{featuredVideo.category}</Badge>
-                    <span className="text-sm text-muted-foreground">{featuredVideo.views} views</span>
-                  </div>
-                  <CardTitle className="text-2xl">{featuredVideo.title}</CardTitle>
-                  <CardDescription className="text-lg">{featuredVideo.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                    <Calendar className="h-4 w-4" />
-                    {featuredVideo.date}
-                  </div>
-                  <Button size="lg" className="bg-secondary text-white hover:bg-secondary-hover">
-                    <Play className="h-4 w-4 mr-2" />
-                    Watch Now
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          )}
-
+          
           {/* Videos Grid */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-6">All Videos</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {regularVideos.map((video, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="relative">
-                    <img 
-                      src={video.thumbnail} 
-                      alt={video.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <Button className="bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 rounded-full h-12 w-12 p-0">
-                        <Play className="h-6 w-6 ml-1" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.map((video, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative">
+                  <div 
+                    className="aspect-video bg-cover bg-center relative"
+                    style={{ backgroundImage: `url(${video.thumbnail})` }}
+                  >
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Button size="icon" className="bg-white/90 text-primary hover:bg-white w-16 h-16 rounded-full shadow-lg">
+                        <Play className="h-8 w-8 ml-1" />
                       </Button>
                     </div>
                     <div className="absolute bottom-2 right-2">
-                      <Badge variant="secondary" className="text-xs">{video.duration}</Badge>
+                      <span className="bg-black/70 text-white px-2 py-1 rounded text-sm">
+                        {video.duration}
+                      </span>
                     </div>
+                    {video.featured && (
+                      <div className="absolute top-2 left-2">
+                        <Badge className="bg-secondary text-white">Featured</Badge>
+                      </div>
+                    )}
                   </div>
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="outline" className="text-xs">{video.category}</Badge>
-                      <span className="text-xs text-muted-foreground">{video.views} views</span>
-                    </div>
-                    <CardTitle className="text-lg line-clamp-2">{video.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <CardDescription className="line-clamp-3 mb-3">{video.description}</CardDescription>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                </div>
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Badge variant="outline" className="text-xs">
+                      {video.category}
+                    </Badge>
+                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Calendar className="h-3 w-3" />
                       {video.date}
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                  </div>
+                  <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
+                    {video.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                    {video.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Clock className="h-3 w-3" />
+                    <span>Duration: {video.duration}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
