@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, ArrowRight, MapPin, Clock, Globe } from 'lucide-react';
@@ -69,7 +68,7 @@ const EventsSection = () => {
             <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
                 Focus on science-based recommendations for implementing the Kunming-Montreal Global Biodiversity Framework, 
-                with emphasis on monitoring progress and ecosystem-based approaches.
+                with emphasis on monitoring and ecosystem-based approaches.
               </p>
               
               <div className="flex flex-wrap gap-2">
