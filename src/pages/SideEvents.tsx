@@ -2,6 +2,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, MapPin, Users, ExternalLink } from 'lucide-react';
+import sb8jEventImage from '@/assets/sb8j-event.jpg';
+import sbsttaEventImage from '@/assets/sbstta-event.jpg';
 
 const sideEvents = [
   {
@@ -14,7 +16,8 @@ const sideEvents = [
     organizer: "International Indigenous Women's Forum",
     participants: "50-75",
     category: "Panel Discussion",
-    featured: true
+    featured: true,
+    image: sb8jEventImage
   },
   {
     id: 2,
@@ -25,7 +28,8 @@ const sideEvents = [
     location: "Panama Convention Center - Room B",
     organizer: "IIFB Knowledge Systems Working Group",
     participants: "30-40",
-    category: "Workshop"
+    category: "Workshop",
+    image: sbsttaEventImage
   },
   {
     id: 3,
@@ -36,7 +40,8 @@ const sideEvents = [
     location: "Panama Convention Center - Main Hall",
     organizer: "Global Youth Biodiversity Network",
     participants: "100-150",
-    category: "Interactive Session"
+    category: "Interactive Session",
+    image: sb8jEventImage
   },
   {
     id: 4,
@@ -47,7 +52,8 @@ const sideEvents = [
     location: "Panama Convention Center - Room C",
     organizer: "Indigenous Conservation Finance Coalition",
     participants: "40-60",
-    category: "Roundtable"
+    category: "Roundtable",
+    image: sbsttaEventImage
   },
   {
     id: 5,
@@ -58,7 +64,8 @@ const sideEvents = [
     location: "Panama Convention Center - Tech Lab",
     organizer: "Digital Indigenous Knowledge Alliance",
     participants: "25-35",
-    category: "Demo Session"
+    category: "Demo Session",
+    image: sb8jEventImage
   },
   {
     id: 6,
@@ -69,7 +76,8 @@ const sideEvents = [
     location: "Panama Convention Center - Room D",
     organizer: "Community Monitoring Alliance",
     participants: "60-80",
-    category: "Showcase"
+    category: "Showcase",
+    image: sbsttaEventImage
   }
 ];
 
@@ -99,6 +107,16 @@ const SideEvents = () => {
               <h2 className="text-3xl font-bold text-foreground mb-4">Featured Event</h2>
             </div>
             <Card className="overflow-hidden bg-card border-2 border-primary shadow-xl">
+              {/* Featured Image */}
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={featuredEvent.image} 
+                  alt={featuredEvent.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+              
               <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10 pb-8">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                   <div>
@@ -168,6 +186,16 @@ const SideEvents = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             {regularEvents.map((event) => (
               <Card key={event.id} className="overflow-hidden bg-card border border-border hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300 group">
+                {/* Event Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={event.image} 
+                    alt={event.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                
                 <CardHeader>
                   <div className="flex items-center justify-between mb-3">
                     <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
