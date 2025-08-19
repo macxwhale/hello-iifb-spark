@@ -71,7 +71,7 @@ const SB8J1Videos = () => {
             transition: 'opacity 0.3s ease-in-out'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         {/* Content */}
