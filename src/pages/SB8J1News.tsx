@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Calendar, Clock, Tag, ChevronDown, ArrowRight } from 'lucide-react';
+import { Menu, X, FileText, Download, Calendar, ChevronDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,11 +12,14 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
+import indigenousBodyImage from '@/assets/news-indigenous-body.jpg';
+import panamaMeetingsImage from '@/assets/news-panama-meetings.jpg';
+import ipbesWorkshopImage from '@/assets/news-ipbes-workshop.jpg';
 
 const SB8J1News = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState<ViewType>(() => {
-    const saved = localStorage.getItem('sb8j-news-view');
+    const saved = localStorage.getItem('sb8j1-news-view');
     return (saved as ViewType) || 'cards';
   });
   const { imageUrl, isLoading } = usePexelsImage('sb8j-news');
@@ -25,41 +28,69 @@ const SB8J1News = () => {
 
   const handleViewChange = (view: ViewType) => {
     setCurrentView(view);
-    localStorage.setItem('sb8j-news-view', view);
+    localStorage.setItem('sb8j1-news-view', view);
   };
 
   const newsItems = [
     {
-      title: "SB8J-1 Meeting Officially Opens in Panama City",
-      date: "October 27, 2025",
+      title: "Historic Indigenous Subsidiary Body Approved at CBD COP16",
+      description: "The Convention on Biological Diversity takes a groundbreaking step by establishing a permanent subsidiary body for Indigenous Peoples and local communities.",
+      date: "March 15, 2025",
+      day: "15",
+      month: "Mar",
       category: "Breaking News",
-      summary: "The historic first meeting of the Subsidiary Body on Implementation of Article 8(j) officially commenced with delegates from Indigenous Peoples and local communities worldwide.",
-      readTime: "3 min read",
-      featured: true
+      image: indigenousBodyImage,
+      readTime: "5 min read"
     },
     {
-      title: "Indigenous Youth Voices Take Center Stage",
-      date: "October 26, 2025",
-      category: "Community",
-      summary: "Young Indigenous leaders present their vision for biodiversity conservation and intergenerational knowledge transfer at pre-meeting consultations.",
-      readTime: "4 min read",
-      featured: false
+      title: "Panama Prepares to Welcome Global Indigenous Leaders",
+      description: "Panama City gears up to host the inaugural SB8J-1 meeting, bringing together Indigenous representatives from around the world.",
+      date: "March 10, 2025",
+      day: "10",
+      month: "Mar",
+      category: "Event Update",
+      image: panamaMeetingsImage,
+      readTime: "3 min read"
     },
     {
-      title: "Traditional Knowledge Systems Recognition Framework Unveiled",
-      date: "October 25, 2025",
+      title: "Traditional Knowledge Integration Guidelines Released",
+      description: "New framework guidelines outline how traditional ecological knowledge will be incorporated into biodiversity conservation planning.",
+      date: "March 8, 2025",
+      day: "8",
+      month: "Mar",
       category: "Policy",
-      summary: "A new framework for recognizing and protecting Indigenous traditional knowledge systems in biodiversity governance has been presented to delegates.",
-      readTime: "5 min read",
-      featured: false
+      image: ipbesWorkshopImage,
+      readTime: "4 min read"
     },
     {
-      title: "Panama Welcomes Global Indigenous Representatives",
-      date: "October 24, 2025",
-      category: "Event News",
-      summary: "Panama City officially welcomes hundreds of Indigenous representatives from seven regions for the landmark SB8J-1 meeting.",
-      readTime: "2 min read",
-      featured: false
+      title: "Youth Caucus Mobilizes for SB8J-1 Participation",
+      description: "Indigenous youth organizations coordinate global participation in the historic first meeting of the subsidiary body.",
+      date: "March 5, 2025",
+      day: "5",
+      month: "Mar",
+      category: "Community",
+      image: indigenousBodyImage,
+      readTime: "3 min read"
+    },
+    {
+      title: "Financial Mechanisms for Indigenous Conservation Discussed",
+      description: "Experts explore innovative financing approaches that respect Indigenous rights while supporting biodiversity goals.",
+      date: "March 1, 2025",
+      day: "1",
+      month: "Mar",
+      category: "Finance",
+      image: panamaMeetingsImage,
+      readTime: "6 min read"
+    },
+    {
+      title: "Capacity Building Programs Launched Ahead of SB8J-1",
+      description: "Training initiatives help Indigenous representatives prepare for meaningful participation in the subsidiary body meetings.",
+      date: "February 28, 2025",
+      day: "28",
+      month: "Feb",
+      category: "Education",
+      image: ipbesWorkshopImage,
+      readTime: "4 min read"
     }
   ];
 
@@ -111,39 +142,45 @@ const SB8J1News = () => {
   );
 
   const renderGridView = () => (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {newsItems.map((item, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow h-full flex flex-col">
-          <CardHeader className="flex-shrink-0">
-            <div className="flex items-center gap-1 text-xs text-muted-foreground mb-2">
-              <Calendar className="h-3 w-3" />
-              {item.date}
+        <Card key={index} className="overflow-hidden bg-card border-2 border-transparent hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+          <div className="relative h-56 overflow-hidden">
+            <img 
+              src={item.image} 
+              alt={item.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            
+            {/* Date Badge */}
+            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-lg">
+              <span className="text-lg font-bold text-primary">{item.day}</span>
+              <span className="text-xs font-medium text-muted-foreground uppercase">{item.month}</span>
             </div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
+            
+            {/* Category Badge */}
+            <div className="absolute top-4 left-4">
+              <Badge variant="secondary" className="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">
                 {item.category}
-              </span>
-              {item.featured && (
-                <span className="bg-secondary/10 text-secondary px-1 py-0.5 rounded-full text-xs font-medium">
-                  Featured
-                </span>
-              )}
+              </Badge>
             </div>
-            <CardTitle className="text-lg leading-tight line-clamp-2">
+          </div>
+          
+          <CardContent className="p-6">
+            <h3 className="text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
               {item.title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex-1 flex flex-col">
-            <p className="text-sm text-foreground leading-relaxed mb-4 flex-1 line-clamp-3">
-              {item.summary}
+            </h3>
+            
+            <p className="text-muted-foreground leading-relaxed mb-6 line-clamp-3">
+              {item.description}
             </p>
-            <div className="flex items-center justify-between mt-auto">
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <Clock className="h-3 w-3" />
-                <span>{item.readTime}</span>
-              </div>
-              <Button size="sm" className="bg-secondary text-white hover:bg-secondary/90">
-                Read More
+            
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground">{item.readTime}</span>
+              <Button variant="ghost" className="group/btn hover:bg-primary/5 p-2">
+                <span className="text-primary font-medium mr-2">Learn More</span>
+                <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
               </Button>
             </div>
           </CardContent>

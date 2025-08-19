@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ExternalLink, Calendar, User, ChevronDown } from 'lucide-react';
+import { Menu, X, FileText, Download, Calendar, ChevronDown, ArrowRight, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,11 +12,14 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
+import indigenousBodyImage from '@/assets/news-indigenous-body.jpg';
+import panamaMeetingsImage from '@/assets/news-panama-meetings.jpg';
+import ipbesWorkshopImage from '@/assets/news-ipbes-workshop.jpg';
 
 const SB8J1Articles = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState<ViewType>(() => {
-    const saved = localStorage.getItem('sb8j-articles-view');
+    const saved = localStorage.getItem('sb8j1-articles-view');
     return (saved as ViewType) || 'cards';
   });
   const { imageUrl, isLoading } = usePexelsImage('sb8j-articles');
@@ -25,69 +28,77 @@ const SB8J1Articles = () => {
 
   const handleViewChange = (view: ViewType) => {
     setCurrentView(view);
-    localStorage.setItem('sb8j-articles-view', view);
+    localStorage.setItem('sb8j1-articles-view', view);
   };
 
   const articles = [
     {
       title: "The Path to SB8J-1: A Historic Milestone for Indigenous Rights",
-      author: "Maria Santos, IIFB Coordinator",
-      date: "October 20, 2025",
-      readTime: "8 min read",
+      description: "An in-depth analysis of the journey leading to the establishment of the first subsidiary body dedicated to Article 8(j) implementation.",
+      date: "March 20, 2025",
+      day: "20",
+      month: "Mar",
+      author: "Dr. Maria Santos, Indigenous Rights Scholar",
       category: "Analysis",
-      excerpt: "Exploring the significance of establishing the first Subsidiary Body on Article 8(j) and what it means for Indigenous Peoples' participation in global biodiversity governance.",
-      featured: true,
-      url: "#"
+      image: indigenousBodyImage,
+      readTime: "12 min read"
     },
     {
       title: "Traditional Knowledge Systems in Modern Conservation",
-      author: "Dr. James Running Bear",
-      date: "October 18, 2025",
-      readTime: "12 min read",
+      description: "Exploring how ancestral wisdom is being integrated into contemporary biodiversity protection strategies.",
+      date: "March 18, 2025",
+      day: "18",
+      month: "Mar",
+      author: "James Whitehorse, Environmental Anthropologist",
       category: "Research",
-      excerpt: "How Indigenous traditional knowledge systems can inform and enhance contemporary biodiversity conservation strategies and spatial planning initiatives.",
-      url: "#"
+      image: ipbesWorkshopImage,
+      readTime: "15 min read"
     },
     {
-      title: "Women as Guardians: Indigenous Women's Role in Biodiversity",
-      author: "Ana Tuxá, Indigenous Women's Network",
-      date: "October 15, 2025",
-      readTime: "10 min read",
-      category: "Perspective",
-      excerpt: "Highlighting the crucial role of Indigenous women as knowledge keepers and environmental stewards in biodiversity conservation efforts worldwide.",
-      url: "#"
+      title: "Panama's Role as Host: Bridging Cultures for Biodiversity",
+      description: "How Panama's unique position as a biodiversity hotspot makes it the ideal location for this groundbreaking meeting.",
+      date: "March 15, 2025",
+      day: "15",
+      month: "Mar",
+      author: "Carlos Mendez, Panama Biodiversity Institute",
+      category: "Feature",
+      image: panamaMeetingsImage,
+      readTime: "8 min read"
     },
     {
-      title: "Youth Voices: The Next Generation of Indigenous Leaders",
-      author: "Global Indigenous Youth Caucus",
-      date: "October 12, 2025",
-      readTime: "6 min read",
+      title: "Youth Voices in Indigenous Governance: The Next Generation",
+      description: "Young Indigenous leaders share their perspectives on participating in global biodiversity decision-making processes.",
+      date: "March 12, 2025",
+      day: "12",
+      month: "Mar",
+      author: "Aiyana Thompson, Indigenous Youth Network",
       category: "Interview",
-      excerpt: "Conversations with young Indigenous leaders about their vision for the future of biodiversity governance and their expectations for SB8J-1.",
-      url: "#"
+      image: indigenousBodyImage,
+      readTime: "10 min read"
     },
     {
-      title: "Territorial Rights and Biodiversity Conservation: Finding Balance",
-      author: "Prof. Elena Vargas",
-      date: "October 10, 2025",
-      readTime: "15 min read",
-      category: "Academic",
-      excerpt: "An academic examination of how Indigenous territorial rights intersect with biodiversity conservation goals and international environmental law.",
-      url: "#"
+      title: "Financial Frameworks for Indigenous Conservation",
+      description: "Examining innovative funding mechanisms that support Indigenous-led conservation while respecting territorial rights.",
+      date: "March 10, 2025",
+      day: "10",
+      month: "Mar",
+      author: "Prof. Elena Rodriguez, Conservation Finance Expert",
+      category: "Policy",
+      image: panamaMeetingsImage,
+      readTime: "14 min read"
     },
     {
-      title: "Panama Prepares: Hosting the Historic SB8J-1 Meeting",
-      author: "Panama Ministry of Environment",
-      date: "October 8, 2025",
-      readTime: "5 min read",
-      category: "News",
-      excerpt: "Panama's preparations for hosting the first meeting of the Subsidiary Body on Article 8(j) and the country's commitment to Indigenous rights.",
-      url: "#"
+      title: "Technology and Tradition: Digital Tools for Knowledge Preservation",
+      description: "How modern technology is helping Indigenous communities document and protect their traditional ecological knowledge.",
+      date: "March 8, 2025",
+      day: "8",
+      month: "Mar",
+      author: "David Kim, Digital Heritage Specialist",
+      category: "Technology",
+      image: ipbesWorkshopImage,
+      readTime: "11 min read"
     }
   ];
-
-  const featuredArticle = articles.find(article => article.featured);
-  const regularArticles = articles.filter(article => !article.featured);
 
   const renderCardsView = () => (
     <div>
@@ -163,35 +174,52 @@ const SB8J1Articles = () => {
   );
 
   const renderGridView = () => (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {articles.map((article, index) => (
-        <Card key={index} className={`hover:shadow-lg transition-shadow ${article.featured ? 'border-2 border-primary' : ''}`}>
-          <CardHeader>
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex items-center gap-2">
-                {article.featured && <Badge className="bg-primary text-white text-xs">Featured</Badge>}
-                <Badge variant="secondary" className="text-xs">{article.category}</Badge>
-              </div>
-              <span className="text-xs text-muted-foreground">{article.readTime}</span>
+        <Card key={index} className="overflow-hidden bg-card border-2 border-transparent hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+          <div className="relative h-56 overflow-hidden">
+            <img 
+              src={article.image} 
+              alt={article.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            
+            {/* Date Badge */}
+            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-lg">
+              <span className="text-lg font-bold text-primary">{article.day}</span>
+              <span className="text-xs font-medium text-muted-foreground uppercase">{article.month}</span>
             </div>
-            <CardTitle className="text-lg line-clamp-2">{article.title}</CardTitle>
-            <CardDescription className="text-sm line-clamp-3">{article.excerpt}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center gap-3 mb-4 text-xs text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <User className="h-3 w-3" />
-                <span className="line-clamp-1">{article.author}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
-                {article.date}
-              </div>
+            
+            {/* Category Badge */}
+            <div className="absolute top-4 left-4">
+              <Badge variant="secondary" className="bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                {article.category}
+              </Badge>
             </div>
-            <Button size="sm" variant="outline" className="w-full">
-              <ExternalLink className="h-3 w-3 mr-1" />
-              Read
-            </Button>
+          </div>
+          
+          <CardContent className="p-6">
+            <h3 className="text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
+              {article.title}
+            </h3>
+            
+            <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+              {article.description}
+            </p>
+            
+            <div className="flex items-center text-sm text-muted-foreground mb-4">
+              <User className="h-4 w-4 mr-2" />
+              <span className="line-clamp-1">{article.author}</span>
+            </div>
+            
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground">{article.readTime}</span>
+              <Button variant="ghost" className="group/btn hover:bg-primary/5 p-2">
+                <span className="text-primary font-medium mr-2">Learn More</span>
+                <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </CardContent>
         </Card>
       ))}
