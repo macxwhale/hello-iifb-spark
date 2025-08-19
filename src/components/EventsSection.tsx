@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, ArrowRight, MapPin, Clock, Globe } from 'lucide-react';
@@ -25,7 +26,7 @@ const EventsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* SBSTTA-27 Event Card - Enhanced */}
-          <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative">
+          <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
             <div className="relative h-72 overflow-hidden">
               <img 
@@ -65,7 +66,7 @@ const EventsSection = () => {
               </div>
             </CardHeader>
             
-            <CardContent className="space-y-8 pb-8">
+            <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
                 Focus on science-based recommendations for implementing the Kunming-Montreal Global Biodiversity Framework, 
                 with emphasis on monitoring progress and ecosystem-based approaches.
@@ -83,7 +84,7 @@ const EventsSection = () => {
                 </span>
               </div>
               
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link to="/sbstta-27">
                   <Button className="w-full group bg-primary hover:bg-primary-hover text-lg py-6 rounded-xl font-semibold">
                     Learn More About SBSTTA-27
@@ -95,7 +96,7 @@ const EventsSection = () => {
           </Card>
 
           {/* SB8J-1 Event Card - Enhanced */}
-          <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative">
+          <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
             <div className="relative h-72 overflow-hidden">
               <img 
@@ -135,7 +136,7 @@ const EventsSection = () => {
               </div>
             </CardHeader>
             
-            <CardContent className="space-y-8 pb-8">
+            <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
                 Historic establishment of a permanent body focused on Indigenous Peoples and local communities, 
                 addressing traditional knowledge and territorial rights.
@@ -153,7 +154,7 @@ const EventsSection = () => {
                 </span>
               </div>
               
-              <div className="pt-4">
+              <div className="pt-4 mt-auto">
                 <Link to="/sb8j-1">
                   <Button className="w-full group bg-secondary hover:bg-secondary-hover text-lg py-6 rounded-xl font-semibold">
                     Learn More About SB8J-1
