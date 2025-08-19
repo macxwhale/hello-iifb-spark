@@ -27,13 +27,13 @@ const Index = () => {
         <EventsSection />
       </SectionBackground>
       
-      {/* Statements Section - Zigzag pattern with textured background */}
+      {/* Statements Section - Zigzag pattern with textured background - REMOVED BOTTOM PATTERN */}
       <SectionBackground variant="statements" className="border-y border-border/40 relative">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.1)_25%,rgba(255,255,255,0.1)_50%,transparent_50%,transparent_75%,rgba(255,255,255,0.1)_75%)] bg-[length:20px_20px] opacity-20"></div>
         <StatementsCarousel />
       </SectionBackground>
       
-      {/* News Section - Clean orange/amber background with spiral pattern */}
+      {/* News Section - Clean orange/amber background - REMOVED TOP PATTERN */}
       <SectionBackground variant="news" className="border-y-4 border-y-primary/30">
         <NewsCarousel />
       </SectionBackground>
