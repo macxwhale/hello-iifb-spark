@@ -62,7 +62,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-gradient-to-tr from-iifb-sage/30 via-iifb-cream/80 to-iifb-forest/20',
           pattern: null,
           divider: <IndigenousPatterns variant="geometric-border" color="hsl(var(--iifb-forest))" opacity={0.3} className="absolute top-0 left-0 right-0" />,
-          edgePattern: <IndigenousPatterns variant="tribal-weave" color="hsl(var(--iifb-forest))" opacity={0.25} className="absolute left-0 top-8 w-16 h-16" />,
+          edgePattern: <IndigenousPatterns variant="tribal-weave" color="hsl(var(--iifb-forest))" opacity={0.25} className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-52" />,
           contentClass: 'pl-8 sm:pl-12 md:pl-20'
         };
       
