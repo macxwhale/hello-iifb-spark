@@ -1,4 +1,3 @@
-
 import React from 'react';
 import GeometricPattern from './patterns/GeometricPattern';
 import IndigenousPatterns from './patterns/IndigenousPatterns';
@@ -25,7 +24,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
         return {
           bgClass: 'bg-[#F2F1D5]',
           pattern: null,
-          divider: <IndigenousPatterns variant="border-diamond" color="hsl(var(--iifb-orange))" opacity={0.2} className="absolute top-0 left-0 right-0" />,
+          divider: null,
           edgePattern: <GeometricPattern variant="weave" color="hsl(var(--iifb-rust))" opacity={0.15} size={80} className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-40" />,
           contentClass: 'pl-8 sm:pl-12 md:pl-16'
         };
