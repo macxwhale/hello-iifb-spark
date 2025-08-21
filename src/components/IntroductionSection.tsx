@@ -7,18 +7,18 @@ const IntroductionSection = () => {
     <>
       {/* Section Header with Visual Identifier */}
       <section className="w-full py-12 lg:py-16 text-center relative">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full"></div>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 rounded-full" style={{ backgroundColor: '#741b00' }}></div>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">About the Meetings</span>
-            <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+            <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: '#741b00' }}></div>
+            <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: '#741b00' }}>About the Meetings</span>
+            <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: '#741b00' }}></div>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             WELCOME TO
-            <span className="block text-primary mt-2 relative">
+            <span className="block mt-2 relative" style={{ color: '#741b00' }}>
               SBSTTA-27 AND SB8J-1, PANAMA 2025
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent to-transparent" style={{ background: `linear-gradient(to right, transparent, #741b00, transparent)` }}></div>
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -68,10 +68,10 @@ const IntroductionSection = () => {
 
               {/* Enhanced Feature Cards */}
               <div className="grid grid-cols-1 gap-6 pt-8">
-                <div className="bg-gradient-to-r from-primary/10 to-primary/5 border-l-4 border-l-primary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
+                <div className="border-l-4 rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', borderLeftColor: '#741b00' }}>
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Users className="h-6 w-6 text-primary" />
+                    <div className="flex-shrink-0 p-3 rounded-full group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: 'rgba(116, 27, 0, 0.2)' }}>
+                      <Users className="h-6 w-6" style={{ color: '#741b00' }} />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">

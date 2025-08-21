@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Users, ArrowRight, MapPin, Clock, Globe } from 'lucide-react';
@@ -11,12 +12,12 @@ const EventsSection = () => {
       <div className="container mx-auto px-4">
         {/* Enhanced Section Header */}
         <div className="text-center mb-16 relative">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-xl"></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full blur-xl" style={{ background: `linear-gradient(to bottom right, rgba(140, 60, 25, 0.2), rgba(116, 27, 0, 0.2))` }}></div>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Meetings
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mb-6"></div>
+            <div className="w-24 h-1 mx-auto mb-6" style={{ background: `linear-gradient(to right, #140 60% 25%, #741b00)` }}></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Join global experts and Indigenous leaders in shaping the future of biodiversity conservation
             </p>
@@ -26,7 +27,7 @@ const EventsSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* SBSTTA-27 Event Card - Enhanced */}
           <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
+            <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(to right, #741b00, #25 85% 55%, #741b00)` }}></div>
             <div className="relative h-72 overflow-hidden">
               <img 
                 src={sbsttaImage} 
@@ -35,7 +36,7 @@ const EventsSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute top-6 left-6">
-                <span className="bg-primary/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20">
+                <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'rgba(116, 27, 0, 0.9)' }}>
                   Scientific Advisory
                 </span>
               </div>
@@ -52,15 +53,15 @@ const EventsSection = () => {
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between mb-3">
                 <CardTitle className="text-2xl lg:text-3xl text-foreground">SBSTTA-27</CardTitle>
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Users className="h-6 w-6 text-primary" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)' }}>
+                  <Users className="h-6 w-6" style={{ color: '#741b00' }} />
                 </div>
               </div>
               <CardDescription className="text-base text-muted-foreground mb-4">
                 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                <Calendar className="h-6 w-6 text-primary" />
+                <Calendar className="h-6 w-6" style={{ color: '#741b00' }} />
                 October 20-25, 2025
               </div>
             </CardHeader>
@@ -72,20 +73,20 @@ const EventsSection = () => {
               </p>
               
               <div className="flex flex-wrap gap-2">
-                <span className="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', color: '#741b00', borderColor: 'rgba(116, 27, 0, 0.2)' }}>
                   Biodiversity Monitoring
                 </span>
-                <span className="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', color: '#741b00', borderColor: 'rgba(116, 27, 0, 0.2)' }}>
                   Scientific Research
                 </span>
-                <span className="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', color: '#741b00', borderColor: 'rgba(116, 27, 0, 0.2)' }}>
                   Policy Framework
                 </span>
               </div>
               
               <div className="pt-4 mt-auto">
                 <Link to="/sbstta-27">
-                  <Button className="w-full group bg-primary hover:bg-primary-hover text-lg py-6 rounded-xl font-semibold">
+                  <Button className="w-full group text-lg py-6 rounded-xl font-semibold text-white hover:opacity-90" style={{ backgroundColor: '#741b00' }}>
                     Learn More About SBSTTA-27
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
