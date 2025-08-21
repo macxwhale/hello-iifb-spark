@@ -10,7 +10,7 @@ import SectionBackground from '@/components/SectionBackground';
 
 const Index = () => {
   return (
-    <div className="bg-background">
+    <div className="bg-background" style={{ '--custom-orange': '#741b00' } as React.CSSProperties}>
       {/* Hero Section - Gradient background */}
       <SectionBackground variant="hero">
         <HeroBanner />
