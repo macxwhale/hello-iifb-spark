@@ -15,9 +15,9 @@ const IntroductionSection = () => {
             <div className="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            Welcome to
+            WELCOME TO
             <span className="block text-primary mt-2 relative">
-              CBD Panama 2025
+              SBSTTA-27 AND SB8J-1, PANAMA 2025
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
             </span>
           </h2>

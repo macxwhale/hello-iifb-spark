@@ -14,7 +14,7 @@ const EventsSection = () => {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-xl"></div>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Key Meetings
+              Meetings
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mb-6"></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
