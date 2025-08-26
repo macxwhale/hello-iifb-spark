@@ -1,6 +1,8 @@
+
 import React from 'react';
 import GeometricPattern from './patterns/GeometricPattern';
 import IndigenousPatterns from './patterns/IndigenousPatterns';
+import DiamondPattern from './patterns/DiamondPattern';
 
 interface SectionBackgroundProps {
   children: React.ReactNode;
@@ -25,8 +27,8 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-[#F2F1D5]',
           pattern: null,
           divider: null,
-          edgePattern: <GeometricPattern variant="weave" color="hsl(var(--iifb-rust))" opacity={0.15} size={80} className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-40" />,
-          contentClass: 'pl-8 sm:pl-12 md:pl-16'
+          edgePattern: null,
+          contentClass: ''
         };
       
       case 'events':
@@ -43,7 +45,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-[#F2F1D5]',
           pattern: null,
           divider: null,
-          edgePattern: <IndigenousPatterns variant="stepped-diamond" color="hsl(var(--iifb-forest))" opacity={0.12} className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 md:w-40" />,
+          edgePattern: <DiamondPattern color="#D1D5DB" opacity={0.3} size={120} className="absolute left-0 top-0 bottom-0 w-32 sm:w-40 md:w-48" />,
           contentClass: 'pl-8 sm:pl-12 md:pl-16'
         };
       
@@ -52,8 +54,8 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-white',
           pattern: null,
           divider: null,
-          edgePattern: <GeometricPattern variant="spiral" color="hsl(var(--iifb-orange))" opacity={0.25} size={90} className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 md:w-48" />,
-          contentClass: 'pr-8 sm:pr-12 md:pr-20'
+          edgePattern: null,
+          contentClass: ''
         };
       
       case 'side-events':
@@ -61,17 +63,17 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-[#F2F1D5]',
           pattern: null,
           divider: null,
-          edgePattern: <IndigenousPatterns variant="geometric-border" color="hsl(var(--iifb-forest))" opacity={0.3} className="absolute left-0 top-0 bottom-0 w-12 transform rotate-90 origin-left" />,
-          contentClass: 'pl-8 sm:pl-12 md:pl-20'
+          edgePattern: null,
+          contentClass: ''
         };
       
       case 'resources':
         return {
-          bgClass: 'bg-gradient-to-r from-iifb-rust/20 via-iifb-cream to-iifb-earth/25',
+          bgClass: 'bg-white',
           pattern: null,
           divider: null,
-          edgePattern: <GeometricPattern variant="zigzag" color="hsl(var(--iifb-rust))" opacity={0.20} size={110} className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 md:w-44" />,
-          contentClass: 'pr-8 sm:pr-12 md:pr-16'
+          edgePattern: null,
+          contentClass: ''
         };
       
       default:

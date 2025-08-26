@@ -30,9 +30,9 @@ const IntroductionSection = () => {
       {/* Main Content Section */}
       <section className="py-12 lg:py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* YouTube Video Section */}
-            <div className="relative order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
+            {/* YouTube Video Section - Increased size */}
+            <div className="relative order-2 lg:order-1 lg:col-span-2">
               <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
                 <iframe
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -49,19 +49,19 @@ const IntroductionSection = () => {
               </div>
             </div>
 
-            {/* Enhanced Text Content */}
-            <div className="space-y-8 order-1 lg:order-2">
+            {/* Enhanced Text Content - Reduced size */}
+            <div className="space-y-8 order-1 lg:order-2 lg:col-span-1">
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-1 bg-secondary rounded-full"></div>
                   <span className="text-secondary font-medium uppercase tracking-wide text-sm">Historic Gathering</span>
                 </div>
                 
-                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
                   Panama City will host two critical meetings that will shape the future of biodiversity governance. SBSTTA-27 will provide scientific guidance for implementing the Global Biodiversity Framework, while SB8J-1 marks a historic milestone in recognizing Indigenous Peoples' rights.
                 </p>
                 
-                <p className="text-lg md:text-xl text-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
                   Join us for this unprecedented gathering that represents a new era of inclusive decision-making in biodiversity conservation.
                 </p>
               </div>
