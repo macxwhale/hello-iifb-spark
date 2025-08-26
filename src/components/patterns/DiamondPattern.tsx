@@ -9,31 +9,19 @@ interface DiamondPatternProps {
 }
 
 const DiamondPattern: React.FC<DiamondPatternProps> = ({ 
-  color = '#D1D5DB', 
   opacity = 0.3,
-  size = 120,
   className = 'absolute inset-0'
 }) => {
-  const patternId = `diamond-pattern-${Math.random().toString(36).substr(2, 9)}`;
-
   return (
-    <div className={`pointer-events-none ${className}`}>
-      <svg width="100%" height="100%" className="w-full h-full overflow-hidden">
-        <defs>
-          <pattern id={patternId} x="0" y="0" width={size} height={size} patternUnits="userSpaceOnUse">
-            <g opacity={opacity}>
-              {/* Simple diamond outline only - exactly as shown in reference image */}
-              <path 
-                d="M60,10 L110,60 L60,110 L10,60 Z" 
-                fill="none" 
-                stroke={color} 
-                strokeWidth="2"
-              />
-            </g>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#${patternId})`} />
-      </svg>
+    <div 
+      className={`pointer-events-none ${className}`}
+      style={{ opacity }}
+    >
+      <img 
+        src="/lovable-uploads/8dd10b81-b80e-4374-86ec-6e10dd6fa1ab.png" 
+        alt="Diamond pattern" 
+        className="w-full h-full object-cover"
+      />
     </div>
   );
 };
