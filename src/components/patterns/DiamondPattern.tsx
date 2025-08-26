@@ -18,8 +18,8 @@ const DiamondPattern: React.FC<DiamondPatternProps> = ({
       style={{ opacity }}
     >
       <img 
-        src="/lovable-uploads/8dd10b81-b80e-4374-86ec-6e10dd6fa1ab.png" 
-        alt="Diamond pattern" 
+        src="/lovable-uploads/33329568-4604-4bf7-9b9f-0dd29e49dce6.png" 
+        alt="Indigenous diamond pattern" 
         className="w-full h-full object-cover"
       />
     </div>
