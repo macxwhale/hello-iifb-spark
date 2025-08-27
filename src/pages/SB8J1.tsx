@@ -47,7 +47,7 @@ const SB8J1 = () => {
                 </div>
               </div>
 
-              <SB8J1Navigation />
+              <SB8J1Navigation currentPage="home" />
             </div>
           </div>
         </div>
