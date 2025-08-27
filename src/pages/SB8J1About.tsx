@@ -1,21 +1,8 @@
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
+import SB8J1Navigation from '@/components/SB8J1Navigation';
 
 const SB8J1About = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { imageUrl, isLoading } = usePexelsImage('sb8j-about');
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,7 +25,7 @@ const SB8J1About = () => {
           <div className="flex-1 flex items-center">
             <div className="text-white text-center w-full">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                SB8J-1
+                About SB8J-1
                 <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
                   First Meeting on Article 8(j)
                 </span>
@@ -59,105 +46,7 @@ const SB8J1About = () => {
                 </div>
               </div>
 
-              {/* Navigation */}
-              <div className="pt-8">
-                {/* Desktop Navigation */}
-                <nav className="hidden md:block">
-                  <div className="flex items-center justify-center space-x-1 bg-gradient-to-r from-iifb-rust/20 via-iifb-earth/20 to-iifb-forest/20 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
-                    <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
-                    <Link to="/sb8j-1/about" className="px-4 py-2 text-white bg-gradient-to-r from-iifb-rust/40 to-iifb-forest/40 rounded-full transition-all duration-300 text-xl font-medium">About</Link>
-                    <Link to="/sb8j-1/statements" className="px-4 py-2 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 rounded-full transition-all duration-300 text-xl font-medium">Statements</Link>
-                    <Link to="/sb8j-1/documents" className="px-4 py-2 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 rounded-full transition-all duration-300 text-xl font-medium">Documents</Link>
-                    
-                    {/* News & Media Dropdown */}
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <button className="flex items-center px-4 py-2 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 rounded-full transition-all duration-300 text-xl font-medium">
-                          News & Media
-                          <ChevronDown className="ml-1 h-4 w-4" />
-                        </button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px] z-50">
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/news" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            General News
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/media-coverage" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            Media Coverage Links
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/social-toolkit" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            IIFB Social Media Toolkit
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/press-conferences" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            Press Conferences
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/articles" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            Articles
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/videos" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            Videos
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/gallery" className="w-full px-3 py-2 text-gray-700 hover:bg-gradient-to-r hover:from-iifb-rust/10 hover:to-iifb-forest/10">
-                            Gallery
-                          </Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-
-                    <Link to="/sb8j-1/side-events" className="px-4 py-2 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 rounded-full transition-all duration-300 text-xl font-medium">Side Events</Link>
-                  </div>
-                </nav>
-
-                {/* Mobile Menu Button */}
-                <div className="md:hidden flex justify-center">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 bg-gradient-to-r from-iifb-rust/20 to-iifb-forest/20 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
-                    onClick={toggleMenu}
-                  >
-                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                  </Button>
-                </div>
-
-                {/* Mobile Navigation */}
-                {isMenuOpen && (
-                  <nav className="md:hidden mt-4 bg-gradient-to-br from-iifb-rust/20 via-iifb-earth/20 to-iifb-forest/20 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
-                    <div className="flex flex-col">
-                      <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
-                      <Link to="/sb8j-1/about" className="px-6 py-4 text-white bg-gradient-to-r from-iifb-rust/40 to-iifb-forest/40 transition-all duration-300 border-b border-white/10 text-lg">About</Link>
-                      <Link to="/sb8j-1/statements" className="px-6 py-4 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 border-b border-white/10 text-lg">Statements</Link>
-                      <Link to="/sb8j-1/documents" className="px-6 py-4 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 border-b border-white/10 text-lg">Documents</Link>
-                      
-                      {/* Mobile News & Media submenu */}
-                      <div className="border-b border-white/10">
-                        <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
-                        <Link to="/sb8j-1/news" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">General News</Link>
-                        <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">Media Coverage Links</Link>
-                        <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">IIFB Social Media Toolkit</Link>
-                        <Link to="/sb8j-1/press-conferences" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">Press Conferences</Link>
-                        <Link to="/sb8j-1/articles" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">Articles</Link>
-                        <Link to="/sb8j-1/videos" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">Videos</Link>
-                        <Link to="/sb8j-1/gallery" className="px-8 py-3 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-sm block">Gallery</Link>
-                      </div>
-                      
-                      <Link to="/sb8j-1/side-events" className="px-6 py-4 text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-iifb-rust/30 hover:to-iifb-forest/30 transition-all duration-300 text-lg">Side Events</Link>
-                    </div>
-                  </nav>
-                )}
-              </div>
+              <SB8J1Navigation currentPage="about" />
             </div>
           </div>
         </div>

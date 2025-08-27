@@ -1,0 +1,294 @@
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+interface SB8J1NavigationProps {
+  currentPage?: string;
+}
+
+const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  return (
+    <div className="pt-8">
+      {/* Desktop Navigation */}
+      <nav className="hidden md:block">
+        <div className="flex items-center justify-center space-x-1 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
+          <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
+          <Link 
+            to="/sb8j-1/about" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'about' 
+                ? 'text-white bg-white/20' 
+                : 'text-white/90 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            About
+          </Link>
+          <Link 
+            to="/sb8j-1/statements" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'statements' 
+                ? 'text-white bg-white/20' 
+                : 'text-white/90 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            Statements
+          </Link>
+          <Link 
+            to="/sb8j-1/documents" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'documents' 
+                ? 'text-white bg-white/20' 
+                : 'text-white/90 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            Documents
+          </Link>
+          
+          {/* News & Media Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">
+                News & Media
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px] z-50">
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/news" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'news' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  General News
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/media-coverage" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'media-coverage' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Media Coverage Links
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/social-toolkit" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'social-toolkit' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  IIFB Social Media Toolkit
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/press-conferences" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'press-conferences' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Press Conferences
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/articles" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'articles' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Articles
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/videos" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'videos' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Videos
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sb8j-1/gallery" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'gallery' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Gallery
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Link 
+            to="/sb8j-1/side-events" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'side-events' 
+                ? 'text-white bg-white/20' 
+                : 'text-white/90 hover:text-white hover:bg-white/10'
+            }`}
+          >
+            Side Events
+          </Link>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <div className="md:hidden flex justify-center">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-white hover:bg-white/10 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+          onClick={toggleMenu}
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <nav className="md:hidden mt-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+          <div className="flex flex-col">
+            <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
+            <Link 
+              to="/sb8j-1/about" 
+              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
+                currentPage === 'about' 
+                  ? 'text-white bg-white/20' 
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/sb8j-1/statements" 
+              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
+                currentPage === 'statements' 
+                  ? 'text-white bg-white/20' 
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Statements
+            </Link>
+            <Link 
+              to="/sb8j-1/documents" 
+              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
+                currentPage === 'documents' 
+                  ? 'text-white bg-white/20' 
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Documents
+            </Link>
+            
+            {/* Mobile News & Media submenu */}
+            <div className="border-b border-white/10">
+              <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
+              <Link 
+                to="/sb8j-1/news" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'news' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                General News
+              </Link>
+              <Link 
+                to="/sb8j-1/media-coverage" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'media-coverage' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Media Coverage Links
+              </Link>
+              <Link 
+                to="/sb8j-1/social-toolkit" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'social-toolkit' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                IIFB Social Media Toolkit
+              </Link>
+              <Link 
+                to="/sb8j-1/press-conferences" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'press-conferences' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Press Conferences
+              </Link>
+              <Link 
+                to="/sb8j-1/articles" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'articles' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Articles
+              </Link>
+              <Link 
+                to="/sb8j-1/videos" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'videos' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Videos
+              </Link>
+              <Link 
+                to="/sb8j-1/gallery" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'gallery' 
+                    ? 'text-white bg-white/20' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Gallery
+              </Link>
+            </div>
+            
+            <Link 
+              to="/sb8j-1/side-events" 
+              className={`px-6 py-4 transition-all duration-300 text-lg ${
+                currentPage === 'side-events' 
+                  ? 'text-white bg-white/20' 
+                  : 'text-white/90 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              Side Events
+            </Link>
+          </div>
+        </nav>
+      )}
+    </div>
+  );
+};
+
+export default SB8J1Navigation;
