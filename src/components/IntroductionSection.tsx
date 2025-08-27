@@ -27,32 +27,6 @@ const IntroductionSection = () => {
         </div>
       </section>
       
-      {/* Welcome Message Section */}
-      <section className="py-8 lg:py-12 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-card to-card/80 rounded-2xl p-8 lg:p-12 shadow-strong border border-border/50">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-1 bg-secondary rounded-full"></div>
-                <span className="text-secondary font-medium uppercase tracking-wide text-sm">Historic Moment</span>
-              </div>
-              
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
-                CBD Panama 2025 marks a historic moment in global biodiversity governance, as Indigenous Peoples and local communities will, for the first time, have their own dedicated subsidiary body within the Convention on Biological Diversity (CBD).
-              </p>
-              
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6">
-                In October 2025, the CBD will host two key meetings in Panama City, the Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), from 20–24 October, to provide scientific guidance for implementing the Global Biodiversity Framework, and the inaugural meeting of the Subsidiary Body on Article 8(j) and Other Provisions (SB8J-1), from 27–30 October, focusing on safeguarding and promoting the knowledge, innovations, and practices of Indigenous Peoples and local communities.
-              </p>
-              
-              <p className="text-lg md:text-xl text-foreground leading-relaxed">
-                Together, these bodies will play a critical role in advancing the objectives of the CBD at a time when urgent action is needed to address global biodiversity challenges.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       {/* Main Content Section */}
       <section className="py-12 lg:py-16 relative">
         <div className="container mx-auto px-4">
