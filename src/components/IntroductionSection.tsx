@@ -58,11 +58,15 @@ const IntroductionSection = () => {
                 </div>
                 
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  Panama City will host two critical meetings that will shape the future of biodiversity governance. SBSTTA-27 will provide scientific guidance for implementing the Global Biodiversity Framework, while SB8J-1 marks a historic milestone in recognizing Indigenous Peoples' rights.
+                  CBD Panama 2025 marks a historic moment in global biodiversity governance, as Indigenous Peoples and local communities will, for the first time, have their own dedicated subsidiary body within the Convention on Biological Diversity (CBD).
                 </p>
                 
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  Join us for this unprecedented gathering that represents a new era of inclusive decision-making in biodiversity conservation.
+                  In October 2025, the CBD will host two key meetings in Panama City, the Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), from 20–24 October, to provide scientific guidance for implementing the Global Biodiversity Framework, and the inaugural meeting of the Subsidiary Body on Article 8(j) and Other Provisions (SB8J-1), from 27–30 October, focusing on safeguarding and promoting the knowledge, innovations, and practices of Indigenous Peoples and local communities.
+                </p>
+                
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  Together, these bodies will play a critical role in advancing the objectives of the CBD at a time when urgent action is needed to address global biodiversity challenges.
                 </p>
               </div>
 
