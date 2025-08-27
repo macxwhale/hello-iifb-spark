@@ -1,30 +1,21 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, Calendar, Clock, MapPin, Users, ChevronDown, Mic, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Mic, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { usePexelsImage } from '@/hooks/usePexelsImage';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
+import SB8J1Navigation from '@/components/SB8J1Navigation';
 import sb8jEventImage from '@/assets/sb8j-event.jpg';
 import sbsttaEventImage from '@/assets/sbstta-event.jpg';
 
 const SB8J1SideEvents = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState<ViewType>(() => {
     const saved = localStorage.getItem('sb8j-side-events-view');
     return (saved as ViewType) || 'cards';
   });
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const { imageUrl, isLoading } = usePexelsImage('sb8j-side-events');
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleViewChange = (view: ViewType) => {
     setCurrentView(view);
@@ -395,7 +386,7 @@ const SB8J1SideEvents = () => {
             transition: 'opacity 0.3s ease-in-out'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
         {/* Content */}
@@ -403,14 +394,14 @@ const SB8J1SideEvents = () => {
           <div className="flex-1 flex items-center">
             <div className="text-white text-center w-full">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                SB8J-1
+                SB8J-1 Side Events
                 <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
-                  First Meeting on Article 8(j)
+                  Community Workshops & Forums
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-                Historic milestone for Indigenous Peoples and local communities in biodiversity governance
+                Interactive sessions and community-led discussions alongside the main meeting
               </p>
               
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
@@ -425,104 +416,7 @@ const SB8J1SideEvents = () => {
               </div>
 
               {/* Navigation */}
-              <div className="pt-8">
-                {/* Desktop Navigation */}
-                <nav className="hidden md:block">
-                  <div className="flex items-center justify-center space-x-1 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
-                    <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
-                    <Link to="/sb8j-1/about" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">About</Link>
-                    <Link to="/sb8j-1/statements" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">Statements</Link>
-                    <Link to="/sb8j-1/documents" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">Documents</Link>
-                    
-                    {/* News & Media Dropdown */}
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <button className="flex items-center px-4 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300 text-xl font-medium">
-                          News & Media
-                          <ChevronDown className="ml-1 h-4 w-4" />
-                        </button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px]">
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/news" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            General News
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/media-coverage" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            Media Coverage Links
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/social-toolkit" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            IIFB Social Media Toolkit
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/press-conferences" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            Press Conferences
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/articles" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            Articles
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/videos" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            Videos
-                          </Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link to="/sb8j-1/gallery" className="w-full px-3 py-2 text-gray-700 hover:bg-gray-100">
-                            Gallery
-                          </Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-
-                    <Link to="/sb8j-1/side-events" className="px-4 py-2 text-white bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">Side Events</Link>
-                  </div>
-                </nav>
-
-                {/* Mobile Menu Button */}
-                <div className="md:hidden flex justify-center">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-white hover:bg-white/10 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
-                    onClick={toggleMenu}
-                  >
-                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                  </Button>
-                </div>
-
-                {/* Mobile Navigation */}
-                {isMenuOpen && (
-                  <nav className="md:hidden mt-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
-                    <div className="flex flex-col">
-                      <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
-                      <Link to="/sb8j-1/about" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">About</Link>
-                      <Link to="/sb8j-1/statements" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Statements</Link>
-                      <Link to="/sb8j-1/documents" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 border-b border-white/10 text-lg">Documents</Link>
-                      
-                      {/* Mobile News & Media submenu */}
-                      <div className="border-b border-white/10">
-                        <div className="px-6 py-3 text-white/70 text-lg font-medium">News & Media</div>
-                        <Link to="/sb8j-1/news" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">General News</Link>
-                        <Link to="/sb8j-1/media-coverage" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Media Coverage Links</Link>
-                        <Link to="/sb8j-1/social-toolkit" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">IIFB Social Media Toolkit</Link>
-                        <Link to="/sb8j-1/press-conferences" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Press Conferences</Link>
-                        <Link to="/sb8j-1/articles" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Articles</Link>
-                        <Link to="/sb8j-1/videos" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Videos</Link>
-                        <Link to="/sb8j-1/gallery" className="px-8 py-3 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 text-sm">Gallery</Link>
-                      </div>
-                      
-                      <Link to="/sb8j-1/side-events" className="px-6 py-4 text-white bg-white/20 transition-all duration-300 text-lg">Side Events</Link>
-                    </div>
-                  </nav>
-                )}
-              </div>
+              <SB8J1Navigation currentPage="side-events" />
             </div>
           </div>
         </div>
@@ -531,11 +425,12 @@ const SB8J1SideEvents = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          {/* View Toggle Controls */}
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">Side Events & Workshops</h2>
-              <p className="text-muted-foreground">Join community-led sessions and collaborative workshops featuring renowned keynote speakers</p>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Side Events</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Interactive workshops and community forums happening alongside SB8J-1 in Panama City.
+              </p>
             </div>
             <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
