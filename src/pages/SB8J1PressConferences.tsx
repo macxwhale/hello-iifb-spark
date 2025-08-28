@@ -233,7 +233,7 @@ const SB8J1PressConferences = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative min-h-fit h-auto overflow-hidden">
+      <section className="relative min-h-[60vh] h-auto overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 

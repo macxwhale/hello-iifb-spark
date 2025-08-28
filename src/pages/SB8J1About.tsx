@@ -1,3 +1,4 @@
+
 import { usePexelsImage } from '@/hooks/usePexelsImage';
 import SB8J1Navigation from '@/components/SB8J1Navigation';
 
@@ -7,7 +8,7 @@ const SB8J1About = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] h-auto overflow-hidden">
+      <section className="relative min-h-[60vh] h-auto overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
@@ -21,7 +22,7 @@ const SB8J1About = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center min-h-[80vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="text-white text-center w-full">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               About SB8J-1
