@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import { Menu, X } from 'lucide-react';
@@ -32,7 +33,7 @@ const SBSTTA27 = () => {
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-              Providing scientific guidance for implementing the Global Biodiversity Framework
+              Critical milestone providing science-based recommendations for implementing the Kunming–Montreal Global Biodiversity Framework
             </p>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
@@ -46,9 +47,6 @@ const SBSTTA27 = () => {
               </div>
             </div>
           </div>
-
-          {/* Navigation */}
-          
         </div>
       </section>
 
@@ -58,39 +56,71 @@ const SBSTTA27 = () => {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-foreground leading-relaxed mb-8">
-                SBSTTA-27 refers to the 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA) under the Convention on Biological Diversity (CBD). It will be held in Panama City, Panama, from October 20-24, 2025. This meeting is a crucial step in preparing for the upcoming CBD COP16, and will focus on providing science-based recommendations to guide the implementation of the Kunming-Montreal Global Biodiversity Framework.
+                The 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27) under the Convention on Biological Diversity (CBD) will be held in Panama City, Panama, from 20–24 October 2025. This meeting is a critical milestone in the lead-up to CBD COP16, as it will provide science-based recommendations to guide the effective implementation of the Kunming–Montreal Global Biodiversity Framework (KMGBF).
               </p>
 
               <p className="text-lg text-foreground leading-relaxed mb-12">
-                SBSTTA is a subsidiary body of the CBD, responsible for providing scientific and technical advice to the CBD's governing body, the Conference of the Parties (COP). SBSTTA-27 will bring together experts, government representatives, and stakeholders to discuss key issues related to biodiversity and provide recommendations on topics like:
+                SBSTTA is the CBD's main advisory body, mandated to provide the Conference of the Parties (COP) with scientific, technical and technological input on issues relating to biodiversity. SBSTTA-27 will bring together government representatives, scientific experts, Indigenous Peoples and local communities, and other stakeholders to examine pressing issues that influence the global biodiversity agenda.
               </p>
 
+              <h2 className="text-3xl font-bold text-foreground mb-8">Key Areas of Focus</h2>
+              
               <div className="grid md:grid-cols-1 gap-8 mb-12">
                 <div className="bg-card p-8 rounded-lg border border-border/50 shadow-soft">
                   <h3 className="text-2xl font-bold text-foreground mb-4">Monitoring Progress</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Assessing the effectiveness of the Kunming-Montreal Global Biodiversity Framework.
+                    Evaluating the effectiveness of actions taken so far towards achieving the KMGBF targets, including mechanisms for global review of collective progress.
                   </p>
                 </div>
 
                 <div className="bg-card p-8 rounded-lg border border-border/50 shadow-soft">
                   <h3 className="text-2xl font-bold text-foreground mb-4">Ecosystem-based Approaches</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Promoting and integrating nature-based solutions for biodiversity conservation.
+                    Promoting and integrating nature-based solutions to enhance biodiversity conservation and sustainable use.
                   </p>
                 </div>
 
                 <div className="bg-card p-8 rounded-lg border border-border/50 shadow-soft">
                   <h3 className="text-2xl font-bold text-foreground mb-4">Cross-sectoral Mainstreaming</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Ensuring biodiversity considerations are integrated into various sectors like agriculture, forestry, and fisheries.
+                    Strengthening the integration of biodiversity considerations into sectors such as agriculture, forestry, fisheries, and beyond.
                   </p>
                 </div>
               </div>
 
-              {/* Additional Resources */}
+              {/* Additional Agenda Items */}
               <div className="bg-gradient-subtle p-8 lg:p-12 rounded-lg border border-border/30 mb-12">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Related Resources</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Additional Agenda Items</h3>
+                <div className="text-lg text-foreground leading-relaxed space-y-4">
+                  <p>
+                    The meeting will consider specific matters highly relevant to Indigenous Peoples and local communities, including planning, monitoring, reporting and review processes under the Framework.
+                  </p>
+                  <p>
+                    Other thematic areas on the agenda will include:
+                  </p>
+                  <ul className="space-y-3 ml-6">
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
+                      Invasive alien species
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
+                      The interlinkages between biodiversity and health
+                    </li>
+                    <li className="flex items-center">
+                      <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
+                      The impacts of climate change on biodiversity
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Additional Context */}
+              <div className="bg-gradient-subtle p-8 lg:p-12 rounded-lg border border-border/30 mb-12">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Supporting Activities</h3>
+                <p className="text-lg text-foreground leading-relaxed mb-4">
+                  Regional consultations and a dedicated workshop on the latest Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES) assessments will provide additional context to guide deliberations.
+                </p>
                 <ul className="space-y-3 text-lg text-foreground">
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
@@ -98,30 +128,26 @@ const SBSTTA27 = () => {
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
-                    IIFB Preparatory session
+                    Regional Consultations
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
-                    IIFB Statements
+                    Strategic Review and Analysis
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
-                    Photos
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-4"></span>
-                    Side events
+                    Side Events
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gradient-subtle p-8 lg:p-12 rounded-lg border border-border/30">
-                <h3 className="text-2xl font-bold text-foreground mb-6">Meeting Impact</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Expected Outcomes</h3>
                 <p className="text-lg text-foreground leading-relaxed mb-6">
-                  The outcomes of SBSTTA-27 will play a vital role in shaping global biodiversity governance and supporting countries in achieving their biodiversity targets.
+                  The outcomes of SBSTTA-27 will play a central role in shaping global biodiversity policy, ensuring that decisions taken at COP16 are informed by the best available science and inclusive of diverse perspectives.
                 </p>
                 <p className="text-lg text-foreground leading-relaxed">
-                  The meeting will be preceded by regional consultations and a workshop on recently completed IPBES assessments.
+                  Through its strategic review and analysis of the Convention's programmes of work within the context of the KMGBF, SBSTTA-27 is expected to provide countries with critical guidance and tools to accelerate action, address emerging challenges, and support the achievement of global biodiversity targets.
                 </p>
               </div>
             </div>
