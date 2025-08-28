@@ -31,7 +31,25 @@ const IntroductionSection = () => {
       <section className="py-12 lg:py-16 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* Text Content - Left Side */}
+            {/* YouTube Video Section - Left Side */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="CBD Panama 2025 Introduction"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                
+                {/* Enhanced overlay */}
+                <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
+                  <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Text Content - Right Side */}
             <div className="space-y-8">
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
@@ -52,27 +70,9 @@ const IntroductionSection = () => {
                 </p>
               </div>
             </div>
-
-            {/* YouTube Video Section - Right Side */}
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="CBD Panama 2025 Introduction"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-                
-                {/* Enhanced overlay */}
-                <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
-                  <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Feature Cards - Below Video, Horizontal Layout */}
+          {/* Feature Cards - Below Video and Text, Horizontal Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 lg:mt-16">
             <div className="border-l-4 rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', borderLeftColor: '#741b00' }}>
               <div className="flex items-center space-x-4">
