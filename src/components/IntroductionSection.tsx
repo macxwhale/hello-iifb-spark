@@ -46,6 +46,41 @@ const IntroductionSection = () => {
                   <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
                 </div>
               </div>
+
+              {/* Feature Cards - Below Video */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div className="border-l-4 rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', borderLeftColor: '#741b00' }}>
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 p-3 rounded-full group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: 'rgba(116, 27, 0, 0.2)' }}>
+                      <Users className="h-6 w-6" style={{ color: '#741b00' }} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        Indigenous Leadership
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        First-ever subsidiary body for Indigenous Peoples and local communities
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Globe className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        Global Impact
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Advancing the Global Biodiversity Framework for nature-positive outcomes
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Text Content - Right Side */}
@@ -67,41 +102,6 @@ const IntroductionSection = () => {
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
                   Together, these bodies will play a critical role in advancing the objectives of the CBD at a time when urgent action is needed to address global biodiversity challenges.
                 </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature Cards - Below Video and Text, Horizontal Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 lg:mt-16">
-            <div className="border-l-4 rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', borderLeftColor: '#741b00' }}>
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 p-3 rounded-full group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: 'rgba(116, 27, 0, 0.2)' }}>
-                  <Users className="h-6 w-6" style={{ color: '#741b00' }} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Indigenous Leadership
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    First-ever subsidiary body for Indigenous Peoples and local communities
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Global Impact
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Advancing the Global Biodiversity Framework for nature-positive outcomes
-                  </p>
-                </div>
               </div>
             </div>
           </div>
