@@ -1,4 +1,3 @@
-
 import SB8J1Navigation from '@/components/SB8J1Navigation';
 import { Calendar, MapPin, Users, Target, Globe, Leaf } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -30,21 +29,6 @@ const SB8J1About = () => {
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-iifb-cream to-iifb-sage bg-clip-text text-transparent">
               SB8J-1
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Subsidiary Body on Article 8(j) and Related Provisions
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-6 mb-10 text-white/80">
-              <div className="flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-iifb-orange" />
-                <span className="text-lg">October 27-30, 2025</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-iifb-orange" />
-                <span className="text-lg">Panama City, Panama</span>
-              </div>
-            </div>
 
             <SB8J1Navigation currentPage="about" />
           </div>
