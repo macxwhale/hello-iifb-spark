@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Play, Users, Globe, Triangle } from 'lucide-react';
 
@@ -30,9 +29,9 @@ const IntroductionSection = () => {
       {/* Main Content Section */}
       <section className="py-12 lg:py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            {/* YouTube Video Section - Left Side */}
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
+            {/* YouTube Video Section - Left Side - Larger */}
+            <div className="relative lg:col-span-2">
               <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
                 <iframe
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -50,7 +49,7 @@ const IntroductionSection = () => {
             </div>
 
             {/* Text Content - Right Side */}
-            <div className="space-y-8">
+            <div className="space-y-8 lg:col-span-1">
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-1 bg-secondary rounded-full"></div>
