@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroBannerImage from '@/assets/hero-banner-indigenous.jpg';
 import CountdownTimer from '@/components/CountdownTimer';
 
 const HeroBanner = () => {
@@ -12,7 +11,7 @@ const HeroBanner = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-        style={{ backgroundImage: `url(${heroBannerImage})` }}
+        style={{ backgroundImage: `url(/lovable-uploads/2c451cde-40f8-4887-9201-300870158e24.png)` }}
       >
         <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
       </div>
