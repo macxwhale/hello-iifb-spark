@@ -93,7 +93,7 @@ const SB8J1Articles = () => {
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-2xl font-bold text-foreground">Featured Articles</h2>
-            <ViewToggle view={currentView} setView={handleViewChange} />
+            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
           
           {/* Articles Grid */}

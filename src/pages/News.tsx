@@ -22,7 +22,7 @@ const News = () => {
     const saved = localStorage.getItem('news-view');
     return (saved as ViewType) || 'cards';
   });
-  const { imageUrl, isLoading } = usePexelsImage('news-hero');
+  const { imageUrl, isLoading } = usePexelsImage('news');
 
   const handleViewChange = (view: ViewType) => {
     setCurrentView(view);
@@ -151,7 +151,7 @@ const News = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold text-foreground">News & Updates</h2>
-          <ViewToggle view={currentView} onViewChange={handleViewChange} />
+          <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
         </div>
 
         {/* Search and Filter */}
