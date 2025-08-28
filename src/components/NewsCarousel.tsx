@@ -3,9 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Calendar, Clock, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import indigenousBodyImage from '@/assets/news-indigenous-body.jpg';
-import panamaMeetingsImage from '@/assets/news-panama-meetings.jpg';
-import ipbesWorkshopImage from '@/assets/news-ipbes-workshop.jpg';
+// Using uploaded Indigenous community photos
+const indigenousBodyImage = '/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png';
+const panamaMeetingsImage = '/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png';
+const ipbesWorkshopImage = '/lovable-uploads/96490106-76fa-41f3-9b84-56f75115fa1e.png';
 
 const newsItems = [
   {

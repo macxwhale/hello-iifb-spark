@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, ArrowRight, Calendar, MapPin } from 'lucide-react';
-import sb8jEventImage from '@/assets/sb8j-event.jpg';
-import sbsttaEventImage from '@/assets/sbstta-event.jpg';
+// Using uploaded Indigenous community photos
+const sb8jEventImage = '/lovable-uploads/92063f54-04a6-4747-9804-6d8f59490788.png';
+const sbsttaEventImage = '/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
 
 const sideEvents = [
   {
@@ -16,7 +17,7 @@ const sideEvents = [
     time: "09:00 - 11:00",
     location: "Panama Convention Center - Room A",
     organizer: "IIFB & CBD Secretariat",
-    image: sb8jEventImage,
+    image: '/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
     link: "#"
   },
   {
@@ -29,7 +30,7 @@ const sideEvents = [
     time: "14:00 - 16:00",
     location: "Panama Convention Center - Room B",
     organizer: "Scientific Partners Consortium",
-    image: sbsttaEventImage,
+    image: '/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png',
     link: "#"
   },
   {
@@ -42,7 +43,7 @@ const sideEvents = [
     time: "16:30 - 18:00",
     location: "Panama Convention Center - Main Hall",
     organizer: "Indigenous Youth Network",
-    image: sb8jEventImage,
+    image: '/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png',
     link: "#"
   },
   {
@@ -55,7 +56,7 @@ const sideEvents = [
     time: "10:00 - 12:00",
     location: "Panama Convention Center - Room C",
     organizer: "Community Monitoring Alliance",
-    image: sbsttaEventImage,
+    image: '/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png',
     link: "#"
   },
   {
@@ -68,7 +69,7 @@ const sideEvents = [
     time: "13:00 - 15:00",
     location: "Panama Convention Center - Room A",
     organizer: "Conservation Finance Network",
-    image: sb8jEventImage,
+    image: '/lovable-uploads/e7288d9d-1175-4f7d-8c6a-098b2ba82056.png',
     link: "#"
   }
 ];
