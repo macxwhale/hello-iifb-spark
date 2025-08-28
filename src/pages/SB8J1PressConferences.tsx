@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { usePexelsImage } from '@/hooks/usePexelsImage';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
@@ -90,9 +90,9 @@ const SB8J1PressConferences = () => {
                   </Badge>
                 </div>
                 <CardTitle className="text-xl mb-2">{conference.title}</CardTitle>
-                <CardDescription className="text-base">
+                <div className="text-base text-muted-foreground">
                   Speakers: {conference.speakers.join(', ')}
-                </CardDescription>
+                </div>
               </div>
             </div>
           </CardHeader>
@@ -138,9 +138,9 @@ const SB8J1PressConferences = () => {
               {conference.status}
             </Badge>
             <CardTitle className="text-lg line-clamp-2">{conference.title}</CardTitle>
-            <CardDescription className="text-sm line-clamp-2">
+            <div className="text-sm line-clamp-2 text-muted-foreground">
               Speakers: {conference.speakers.join(', ')}
-            </CardDescription>
+            </div>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground line-clamp-3 mb-4">{conference.description}</p>
@@ -237,9 +237,7 @@ const SB8J1PressConferences = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
-            backgroundImage: `url(${imageUrl})`,
-            opacity: isLoading ? 0.5 : 1,
-            transition: 'opacity 0.3s ease-in-out'
+            backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>

@@ -68,9 +68,7 @@ const SB8J1Articles = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
-            backgroundImage: `url(${imageUrl})`,
-            opacity: isLoading ? 0.5 : 1,
-            transition: 'opacity 0.3s ease-in-out'
+            backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
