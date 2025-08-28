@@ -26,7 +26,7 @@ const SB8J1Videos = () => {
       duration: "12:45",
       date: "October 27, 2025",
       category: "Event Coverage",
-      thumbnail: "/assets/indigenous-video-storytelling.jpg",
+      thumbnail: "/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png",
       featured: true
     },
     {
@@ -35,7 +35,7 @@ const SB8J1Videos = () => {
       duration: "18:30",
       date: "October 26, 2025",
       category: "Community Voices",
-      thumbnail: "/assets/indigenous-voices.jpg",
+      thumbnail: "/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png",
       featured: false
     },
     {
@@ -44,7 +44,7 @@ const SB8J1Videos = () => {
       duration: "45:20",
       date: "October 25, 2025",
       category: "Panel Discussion",
-      thumbnail: "/assets/indigenous-traditional-knowledge.jpg",
+      thumbnail: "/lovable-uploads/96490106-76fa-41f3-9b84-56f75115fa1e.png",
       featured: false
     },
     {
@@ -53,7 +53,7 @@ const SB8J1Videos = () => {
       duration: "8:15",
       date: "October 24, 2025",
       category: "Cultural",
-      thumbnail: "/assets/indigenous-community-gathering.jpg",
+      thumbnail: "/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png",
       featured: false
     }
   ];

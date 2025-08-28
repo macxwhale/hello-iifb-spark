@@ -1,240 +1,212 @@
-
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, MapPin, Users, ExternalLink } from 'lucide-react';
-import sb8jEventImage from '@/assets/sb8j-event.jpg';
-import sbsttaEventImage from '@/assets/sbstta-event.jpg';
+import { Badge } from '@/components/ui/badge';
+import { Calendar, Clock, MapPin, Users, ArrowRight, Search, Filter } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { usePexelsImage } from '@/hooks/usePexelsImage';
+import ViewToggle, { ViewType } from '@/components/ViewToggle';
 
-const sideEvents = [
-  {
-    id: 1,
-    title: "Indigenous Women's Leadership in Biodiversity Conservation",
-    description: "A panel discussion highlighting the critical role of Indigenous women in protecting and managing biodiversity, featuring leaders from across the Americas.",
-    date: "October 21, 2025",
-    time: "14:00 - 16:00",
-    location: "Panama Convention Center - Room A",
-    organizer: "International Indigenous Women's Forum",
-    participants: "50-75",
-    category: "Panel Discussion",
-    featured: true,
-    image: sb8jEventImage
-  },
-  {
-    id: 2,
-    title: "Traditional Ecological Knowledge Workshop",
-    description: "Hands-on workshop demonstrating how traditional knowledge systems can inform modern conservation practices and spatial planning.",
-    date: "October 22, 2025",
-    time: "09:00 - 12:00",
-    location: "Panama Convention Center - Room B",
-    organizer: "IIFB Knowledge Systems Working Group",
-    participants: "30-40",
-    category: "Workshop",
-    image: sbsttaEventImage
-  },
-  {
-    id: 3,
-    title: "Youth Voices for Biodiversity",
-    description: "Interactive session where Indigenous youth share their vision for the future of biodiversity conservation and their role in implementing the Global Biodiversity Framework.",
-    date: "October 23, 2025",
-    time: "16:00 - 18:00",
-    location: "Panama Convention Center - Main Hall",
-    organizer: "Global Youth Biodiversity Network",
-    participants: "100-150",
-    category: "Interactive Session",
-    image: sb8jEventImage
-  },
-  {
-    id: 4,
-    title: "Territorial Rights and Conservation Finance",
-    description: "Exploring innovative financing mechanisms that respect Indigenous territorial rights while supporting biodiversity conservation goals.",
-    date: "October 24, 2025",
-    time: "10:00 - 12:00",
-    location: "Panama Convention Center - Room C",
-    organizer: "Indigenous Conservation Finance Coalition",
-    participants: "40-60",
-    category: "Roundtable",
-    image: sbsttaEventImage
-  },
-  {
-    id: 5,
-    title: "Technology and Traditional Knowledge Integration",
-    description: "Demonstrating how modern technology can support and enhance traditional knowledge systems without compromising their integrity.",
-    date: "October 28, 2025",
-    time: "14:00 - 17:00",
-    location: "Panama Convention Center - Tech Lab",
-    organizer: "Digital Indigenous Knowledge Alliance",
-    participants: "25-35",
-    category: "Demo Session",
-    image: sb8jEventImage
-  },
-  {
-    id: 6,
-    title: "Community-Based Monitoring Networks",
-    description: "Showcasing successful community-based biodiversity monitoring initiatives and how they contribute to global biodiversity assessments.",
-    date: "October 29, 2025",
-    time: "09:00 - 11:00",
-    location: "Panama Convention Center - Room D",
-    organizer: "Community Monitoring Alliance",
-    participants: "60-80",
-    category: "Showcase",
-    image: sbsttaEventImage
-  }
-];
+// Using uploaded Indigenous community photos
+const sb8jEventImage = '/lovable-uploads/92063f54-04a6-4747-9804-6d8f59490788.png';
+const sbsttaEventImage = '/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
 
 const SideEvents = () => {
-  const featuredEvent = sideEvents.find(event => event.featured);
-  const regularEvents = sideEvents.filter(event => !event.featured);
+  const [currentView, setCurrentView] = useState<ViewType>(() => {
+    const saved = localStorage.getItem('side-events-view');
+    return (saved as ViewType) || 'cards';
+  });
+  const { imageUrl, isLoading } = usePexelsImage('side-events');
+
+  const handleViewChange = (view: ViewType) => {
+    setCurrentView(view);
+    localStorage.setItem('side-events-view', view);
+  };
+
+  const events = [
+    {
+      id: 1,
+      title: "Indigenous Knowledge Systems in Biodiversity Conservation",
+      description: "A collaborative dialogue exploring how traditional ecological knowledge can inform modern conservation strategies and policy frameworks.",
+      date: "October 25, 2025",
+      time: "09:00 - 11:00",
+      location: "Panama Convention Center - Room A",
+      organizer: "IIFB & CBD Secretariat",
+      category: "Conservation",
+      tags: ["Traditional Knowledge", "Biodiversity", "Policy"],
+      image: "/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png"
+    },
+    {
+      id: 2,
+      title: "Digital Sequence Information: Bridging Science and Rights",
+      description: "Technical workshop on digital sequence information implications for Indigenous Peoples' rights and benefit-sharing mechanisms.",
+      date: "October 26, 2025",
+      time: "14:00 - 16:00",
+      location: "Panama Convention Center - Room B",
+      organizer: "Scientific Partners Consortium",
+      category: "Technology",
+      tags: ["DSI", "Rights", "Benefit-Sharing"],
+      image: "/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png"
+    },
+    {
+      id: 3,
+      title: "Youth Voices in Biodiversity Governance",
+      description: "Interactive session featuring Indigenous youth leaders sharing perspectives on biodiversity conservation and traditional knowledge preservation.",
+      date: "October 27, 2025",
+      time: "16:30 - 18:00",
+      location: "Panama Convention Center - Main Hall",
+      organizer: "Indigenous Youth Network",
+      category: "Youth",
+      tags: ["Youth", "Governance", "Conservation"],
+      image: "/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png"
+    },
+    {
+      id: 4,
+      title: "Community-Based Monitoring Systems",
+      description: "Hands-on workshop demonstrating how Indigenous communities are using technology to monitor biodiversity and environmental changes.",
+      date: "October 28, 2025",
+      time: "10:00 - 12:00",
+      location: "Panama Convention Center - Room C",
+      organizer: "Community Monitoring Alliance",
+      category: "Monitoring",
+      tags: ["Community", "Technology", "Biodiversity"],
+      image: "/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png"
+    },
+    {
+      id: 5,
+      title: "Financing Indigenous-Led Conservation",
+      description: "Panel discussion on innovative funding mechanisms and partnerships to support Indigenous-led biodiversity conservation initiatives.",
+      date: "October 29, 2025",
+      time: "13:00 - 15:00",
+      location: "Panama Convention Center - Room A",
+      organizer: "Conservation Finance Network",
+      category: "Finance",
+      tags: ["Finance", "Conservation", "Partnerships"],
+      image: "/lovable-uploads/e7288d9d-1175-4f7d-8c6a-098b2ba82056.png"
+    }
+  ];
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [categoryFilter, setCategoryFilter] = useState('');
+
+  const filteredEvents = events.filter(event => {
+    const searchMatch = event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                        event.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const categoryMatch = categoryFilter === '' || event.category === categoryFilter;
+    return searchMatch && categoryMatch;
+  });
 
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 lg:py-24 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Side Events
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Complementary events that enrich the CBD Panama 2025 experience with diverse perspectives and innovative approaches
-          </p>
+      <section className="relative min-h-[60vh] h-auto overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
+          style={{ 
+            backgroundImage: `url(${imageUrl})`,
+            opacity: isLoading ? 0.5 : 1,
+            transition: 'opacity 0.3s ease-in-out'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+          <div className="text-white text-center w-full">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Side Events & Workshops
+            </h1>
+            <p className="text-xl md:text-2xl mb-12">
+              Explore a diverse range of side events and workshops at SB8J-1
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Featured Event */}
-      {featuredEvent && (
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Featured Event</h2>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto">
+          {/* Filters and View Toggle */}
+          <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <Input
+                type="search"
+                placeholder="Search events..."
+                className="w-full md:w-64 lg:w-80"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+                <SelectTrigger className="w-full md:w-48">
+                  <SelectValue placeholder="Filter by category" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="">All Categories</SelectItem>
+                  {[...new Set(events.map(event => event.category))].map(category => (
+                    <SelectItem key={category} value={category}>{category}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
-            <Card className="overflow-hidden bg-card border-2 border-primary shadow-xl">
-              {/* Featured Image */}
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={featuredEvent.image} 
-                  alt={featuredEvent.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-              
-              <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10 pb-8">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        Featured
-                      </span>
-                      <span className="bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium">
-                        {featuredEvent.category}
-                      </span>
-                    </div>
-                    <CardTitle className="text-2xl lg:text-3xl mb-4">{featuredEvent.title}</CardTitle>
-                    <CardDescription className="text-lg">{featuredEvent.description}</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                  <div className="flex items-center space-x-3">
-                    <Calendar className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">Date</p>
-                      <p className="font-medium">{featuredEvent.date}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Clock className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">Time</p>
-                      <p className="font-medium">{featuredEvent.time}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="font-medium">{featuredEvent.location}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Users className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="text-sm text-muted-foreground">Capacity</p>
-                      <p className="font-medium">{featuredEvent.participants}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="flex-1">
-                    Register Now
-                  </Button>
-                  <Button variant="outline" size="lg" className="flex-1">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Learn More
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
-        </section>
-      )}
 
-      {/* Events Grid */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">All Side Events</h2>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {regularEvents.map((event) => (
-              <Card key={event.id} className="overflow-hidden bg-card border border-border hover:border-primary shadow-lg hover:shadow-xl transition-all duration-300 group">
-                {/* Event Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={event.image} 
-                    alt={event.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-                
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                      {event.category}
-                    </span>
-                    <span className="text-sm text-muted-foreground">{event.participants}</span>
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{event.title}</CardTitle>
-                  <CardDescription>{event.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center space-x-2">
-                      <Calendar className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">{event.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Clock className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">{event.time}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 sm:col-span-2">
-                      <MapPin className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">{event.location}</span>
+          {/* Event Listing */}
+          {filteredEvents.length === 0 ? (
+            <div className="text-center text-muted-foreground">
+              No events found matching your criteria.
+            </div>
+          ) : (
+            <div className={currentView === 'cards' ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6" : "grid grid-cols-1 gap-4"}>
+              {filteredEvents.map(event => (
+                <Card key={event.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  <div className="relative">
+                    <div 
+                      className="aspect-video bg-cover bg-center relative"
+                      style={{ backgroundImage: `url(${event.image})` }}
+                    >
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                      <div className="absolute top-2 left-2">
+                        <Badge className="bg-secondary text-white">{event.category}</Badge>
+                      </div>
+                      <div className="absolute bottom-2 right-2">
+                        <span className="bg-black/70 text-white px-2 py-1 rounded text-sm">
+                          {event.time}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex space-x-2">
-                    <Button variant="outline" className="flex-1">
-                      Register
-                    </Button>
-                    <Button variant="ghost" className="flex-1">
-                      Details
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
+                      {event.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                      {event.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Calendar className="h-3 w-3" />
+                      {event.date}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <MapPin className="h-3 w-3" />
+                      {event.location}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Users className="h-3 w-3" />
+                      {event.organizer}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
-      </section>
+      </div>
     </div>
   );
 };
