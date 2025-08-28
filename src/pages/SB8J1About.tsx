@@ -20,12 +20,6 @@ const SB8J1About = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center min-h-[70vh] max-w-7xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="text-white text-center w-full">
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-iifb-orange/20 backdrop-blur-sm rounded-full text-iifb-orange border border-iifb-orange/30 text-sm font-medium uppercase tracking-wider">
-                First Meeting
-              </span>
-            </div>
-            
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-iifb-cream to-iifb-sage bg-clip-text text-transparent">
               SB8J-1
             </h1>
