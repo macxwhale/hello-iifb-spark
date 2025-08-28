@@ -23,14 +23,14 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
     <div className="pt-8">
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <div className="flex items-center justify-center space-x-1 bg-gradient-hero/20 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
-          <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-gradient-hero/30 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
+        <div className="flex items-center justify-center space-x-1 bg-iifb-forest/90 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
+          <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
           <Link 
             to="/sb8j-1" 
             className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
               currentPage === 'home' 
-                ? 'text-white bg-gradient-hero/40' 
-                : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
             }`}
           >
             SB8J-1
@@ -39,8 +39,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
             to="/sb8j-1/about" 
             className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
               currentPage === 'about' 
-                ? 'text-white bg-gradient-hero/40' 
-                : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
             }`}
           >
             About
@@ -49,8 +49,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
             to="/sb8j-1/statements" 
             className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
               currentPage === 'statements' 
-                ? 'text-white bg-gradient-hero/40' 
-                : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
             }`}
           >
             Statements
@@ -59,8 +59,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
             to="/sb8j-1/documents" 
             className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
               currentPage === 'documents' 
-                ? 'text-white bg-gradient-hero/40' 
-                : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
             }`}
           >
             Documents
@@ -71,8 +71,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
             <DropdownMenuTrigger asChild>
               <button className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
                 ['news', 'media-coverage', 'social-toolkit', 'press-conferences', 'articles', 'videos', 'gallery'].includes(currentPage || '')
-                  ? 'text-white bg-gradient-hero/40'
-                  : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                  ? 'text-white bg-white/30'
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}>
                 News & Media
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -156,8 +156,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
             to="/sb8j-1/side-events" 
             className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
               currentPage === 'side-events' 
-                ? 'text-white bg-gradient-hero/40' 
-                : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
             }`}
           >
             Side Events
@@ -170,7 +170,7 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-gradient-hero/30 bg-gradient-hero/20 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+          className="text-white hover:bg-white/20 bg-iifb-forest/90 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -179,15 +179,15 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-gradient-hero/20 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+        <nav className="md:hidden mt-4 bg-iifb-forest/90 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
           <div className="flex flex-col">
-            <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-gradient-hero/30 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
+            <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
             <Link 
               to="/sb8j-1" 
               className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
                 currentPage === 'home' 
-                  ? 'text-white bg-gradient-hero/40' 
-                  : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
               SB8J-1
@@ -196,8 +196,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
               to="/sb8j-1/about" 
               className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
                 currentPage === 'about' 
-                  ? 'text-white bg-gradient-hero/40' 
-                  : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
               About
@@ -206,8 +206,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
               to="/sb8j-1/statements" 
               className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
                 currentPage === 'statements' 
-                  ? 'text-white bg-gradient-hero/40' 
-                  : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
               Statements
@@ -216,8 +216,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
               to="/sb8j-1/documents" 
               className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
                 currentPage === 'documents' 
-                  ? 'text-white bg-gradient-hero/40' 
-                  : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
               Documents
@@ -230,8 +230,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/news" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'news' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 General News
@@ -240,8 +240,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/media-coverage" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'media-coverage' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 Media Coverage Links
@@ -250,8 +250,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/social-toolkit" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'social-toolkit' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 IIFB Social Media Toolkit
@@ -260,8 +260,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/press-conferences" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'press-conferences' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 Press Conferences
@@ -270,8 +270,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/articles" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'articles' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 Articles
@@ -280,8 +280,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/videos" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'videos' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 Videos
@@ -290,8 +290,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
                 to="/sb8j-1/gallery" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${
                   currentPage === 'gallery' 
-                    ? 'text-white bg-gradient-hero/40' 
-                    : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
                 }`}
               >
                 Gallery
@@ -302,8 +302,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
               to="/sb8j-1/side-events" 
               className={`px-6 py-4 transition-all duration-300 text-lg ${
                 currentPage === 'side-events' 
-                  ? 'text-white bg-gradient-hero/40' 
-                  : 'text-white/90 hover:text-white hover:bg-gradient-hero/30'
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
               Side Events
