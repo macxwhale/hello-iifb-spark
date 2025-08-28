@@ -9,7 +9,7 @@ import ViewToggle, { ViewType } from '@/components/ViewToggle';
 const SB8J1MediaCoverage = () => {
   const [currentView, setCurrentView] = useState<ViewType>(() => {
     const saved = localStorage.getItem('sb8j-media-coverage-view');
-    return (saved as ViewType) || 'cards';
+    return (saved as ViewType) || 'grid';
   });
 
   const handleViewChange = (view: ViewType) => {

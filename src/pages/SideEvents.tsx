@@ -15,7 +15,7 @@ const sbsttaEventImage = '/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.
 const SideEvents = () => {
   const [currentView, setCurrentView] = useState<ViewType>(() => {
     const saved = localStorage.getItem('side-events-view');
-    return (saved as ViewType) || 'cards';
+    return (saved as ViewType) || 'grid';
   });
   const { imageUrl, isLoading } = usePexelsImage('side-events');
 

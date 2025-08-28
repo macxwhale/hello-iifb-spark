@@ -10,7 +10,7 @@ import SB8J1Navigation from '@/components/SB8J1Navigation';
 const SB8J1Videos = () => {
   const [currentView, setCurrentView] = useState<ViewType>(() => {
     const saved = localStorage.getItem('sb8j1-videos-view');
-    return (saved as ViewType) || 'cards';
+    return (saved as ViewType) || 'grid';
   });
   const { imageUrl, isLoading } = usePexelsImage('sb8j-videos');
 

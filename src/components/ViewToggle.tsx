@@ -1,5 +1,4 @@
 
-
 import { Grid, List, LayoutGrid, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
@@ -65,4 +64,3 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
 };
 
 export default ViewToggle;
-
