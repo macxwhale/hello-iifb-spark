@@ -1,4 +1,5 @@
 
+
 import { Grid, List, LayoutGrid, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
@@ -58,12 +59,10 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
         title={isExpanded ? "Show fewer options" : "Show more view options"}
       >
         <MoreHorizontal className="h-4 w-4" />
-        <span className="hidden sm:inline text-xs">
-          {isExpanded ? "Less" : "More"}
-        </span>
       </Button>
     </div>
   );
 };
 
 export default ViewToggle;
+
