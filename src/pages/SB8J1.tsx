@@ -1,10 +1,7 @@
 
-import { usePexelsImage } from '@/hooks/usePexelsImage';
 import SB8J1Navigation from '@/components/SB8J1Navigation';
 
 const SB8J1 = () => {
-  const { imageUrl, isLoading } = usePexelsImage('sb8j-about');
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -13,9 +10,7 @@ const SB8J1 = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
-            backgroundImage: `url(${imageUrl})`,
-            opacity: isLoading ? 0.5 : 1,
-            transition: 'opacity 0.3s ease-in-out'
+            backgroundImage: `url(/lovable-uploads/7685290b-0f07-4df8-8472-c5deb1b68778.png)`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
