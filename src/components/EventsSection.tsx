@@ -62,14 +62,15 @@ const EventsSection = () => {
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 <Calendar className="h-6 w-6" style={{ color: '#741b00' }} />
-                October 20-25, 2025
+                October 20-24, 2025
               </div>
             </CardHeader>
             
             <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
-                Focus on science-based recommendations for implementing the Kunming-Montreal Global Biodiversity Framework, 
-                with emphasis on monitoring and ecosystem-based approaches.
+                Critical milestone providing science-based recommendations to guide implementation of the Global Biodiversity Framework. 
+                Focuses on monitoring progress, ecosystem-based approaches, and cross-sectoral mainstreaming of biodiversity considerations. 
+                Outcomes will shape global biodiversity policy and inform COP16 decisions with the best available science.
               </p>
               
               <div className="flex flex-wrap gap-2">
@@ -132,14 +133,15 @@ const EventsSection = () => {
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 <Calendar className="h-6 w-6 text-secondary" />
-                October 26-30, 2025
+                October 27-30, 2025
               </div>
             </CardHeader>
             
             <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
-                Historic establishment of a permanent body focused on Indigenous Peoples and local communities, 
-                addressing traditional knowledge and territorial rights.
+                Historic establishment of permanent body dedicated to Indigenous Peoples and local communities following COP16 landmark decision. 
+                Addresses territorial guidelines, traditional knowledge integration in planning, and terminology review for cultural relevance. 
+                Sets foundation for elevating IPLC leadership and enhancing biodiversity governance toward global targets.
               </p>
               
               <div className="flex flex-wrap gap-2">
