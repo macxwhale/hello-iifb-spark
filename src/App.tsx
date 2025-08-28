@@ -3,11 +3,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import SBSTTA27 from "./pages/SBSTTA27";
-import SB8J1 from "./pages/SB8J1";
 import SB8J1About from "./pages/SB8J1About";
 import SB8J1Statements from "./pages/SB8J1Statements";
 import SB8J1Documents from "./pages/SB8J1Documents";
@@ -38,7 +37,7 @@ const App = () => (
           <Route path="/" element={<Layout />}>
             <Route index element={<Index />} />
             <Route path="sbstta-27" element={<SBSTTA27 />} />
-            <Route path="sb8j-1" element={<SB8J1 />} />
+            <Route path="sb8j-1" element={<Navigate to="/sb8j-1/about" replace />} />
             <Route path="sb8j-1/about" element={<SB8J1About />} />
             <Route path="sb8j-1/statements" element={<SB8J1Statements />} />
             <Route path="sb8j-1/documents" element={<SB8J1Documents />} />
