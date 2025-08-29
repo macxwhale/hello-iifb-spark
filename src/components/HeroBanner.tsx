@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
@@ -10,7 +11,7 @@ const HeroBanner = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-        style={{ backgroundImage: `url(/lovable-uploads/2c451cde-40f8-4887-9201-300870158e24.png)` }}
+        style={{ backgroundImage: `url(/lovable-uploads/95f294c7-ff76-4789-9634-1fb9f29dff86.png)` }}
       >
       </div>
 
