@@ -2,7 +2,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 
 interface HeightMessage {
-  type: 'height-update';
+  type: 'iframeHeight';
   height: number;
   route?: string;
   timestamp: number;
@@ -49,7 +49,7 @@ export const useHeightCommunication = (options: UseHeightCommunicationOptions = 
       lastHeightRef.current = currentHeight;
 
       const message: HeightMessage = {
-        type: 'height-update',
+        type: 'iframeHeight', // Changed from 'height-update' to match parent code
         height: currentHeight,
         timestamp: Date.now(),
         ...(includeRoute && { route: window.location.pathname })
@@ -72,6 +72,16 @@ export const useHeightCommunication = (options: UseHeightCommunicationOptions = 
 
   useEffect(() => {
     if (!enabled) return;
+
+    // Listen for height requests from parent
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data === 'requestHeight') {
+        console.log('Height request received from parent');
+        sendHeightUpdate();
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
 
     // Send initial height
     sendHeightUpdate();
@@ -115,6 +125,7 @@ export const useHeightCommunication = (options: UseHeightCommunicationOptions = 
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
+      window.removeEventListener('message', handleMessage);
       resizeObserver.disconnect();
       mutationObserver.disconnect();
       window.removeEventListener('resize', handleResize);
