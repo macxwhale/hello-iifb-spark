@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
@@ -16,7 +15,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between min-h-[60vh] sm:min-h-[54vh] md:min-h-[48vh] lg:min-h-[42vh] xl:min-h-[36vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="relative z-10 flex flex-col justify-between min-h-[72vh] sm:min-h-[65vh] md:min-h-[58vh] lg:min-h-[50vh] xl:min-h-[43vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex-1 flex items-center">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 md:gap-8 w-full">
             {/* Left Container - Main Content */}
