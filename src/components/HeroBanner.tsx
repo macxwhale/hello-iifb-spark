@@ -13,11 +13,10 @@ const HeroBanner = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
         style={{ backgroundImage: `url(/lovable-uploads/2c451cde-40f8-4887-9201-300870158e24.png)` }}
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between min-h-[50vh] sm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[35vh] xl:min-h-[30vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="relative z-10 flex flex-col justify-between min-h-[60vh] sm:min-h-[54vh] md:min-h-[48vh] lg:min-h-[42vh] xl:min-h-[36vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex-1 flex items-center">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 md:gap-8 w-full">
             {/* Left Container - Main Content */}
@@ -28,10 +27,6 @@ const HeroBanner = () => {
                   Meetings 2025
                 </span>
               </h1>
-              
-              <p className="text-xl md:text-2xl mb-8 max-w-2xl leading-relaxed opacity-90">
-                Join the global conversation on biodiversity conservation and Indigenous rights in Panama City
-              </p>
 
               <div className="flex flex-col md:flex-row items-start gap-6">
                 <div className="flex items-center space-x-2 text-lg">
