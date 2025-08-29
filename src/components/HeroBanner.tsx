@@ -16,26 +16,28 @@ const HeroBanner = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between min-h-[144vh] sm:min-h-[130vh] md:min-h-[116vh] lg:min-h-[100vh] xl:min-h-[86vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="relative z-10 flex flex-col justify-between min-h-[288vh] sm:min-h-[260vh] md:min-h-[232vh] lg:min-h-[200vh] xl:min-h-[172vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="flex-1 flex items-center">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 md:gap-8 w-full">
             {/* Left Container - Main Content */}
             <div className="text-white text-left">
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-                CBD Panama
-                <span className="block text-4xl md:text-5xl font-normal mt-2 opacity-90">
-                  Meetings 2025
-                </span>
-              </h1>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-xl mb-6">
+                <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+                  CBD Panama
+                  <span className="block text-4xl md:text-5xl font-normal mt-2 opacity-90">
+                    Meetings 2025
+                  </span>
+                </h1>
 
-              <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="flex items-center space-x-2 text-lg">
-                  <Calendar className="h-5 w-5" />
-                  <span>October 20-30, 2025</span>
-                </div>
-                <div className="flex items-center space-x-2 text-lg">
-                  <MapPin className="h-5 w-5" />
-                  <span>Panama City, Panama</span>
+                <div className="flex flex-col md:flex-row items-start gap-6">
+                  <div className="flex items-center space-x-2 text-lg">
+                    <Calendar className="h-5 w-5" />
+                    <span>October 20-30, 2025</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-lg">
+                    <MapPin className="h-5 w-5" />
+                    <span>Panama City, Panama</span>
+                  </div>
                 </div>
               </div>
             </div>
