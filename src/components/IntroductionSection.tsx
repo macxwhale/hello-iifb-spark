@@ -1,4 +1,5 @@
 
+
 import { Button } from '@/components/ui/button';
 import { Play, Users, Globe, Triangle } from 'lucide-react';
 
@@ -57,7 +58,7 @@ const IntroductionSection = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">
-                        Indigenous Leadership
+                        Leadership
                       </h3>
                       <p className="text-muted-foreground leading-relaxed">
                         First-ever subsidiary body for Indigenous Peoples and local communities
@@ -109,3 +110,4 @@ const IntroductionSection = () => {
 };
 
 export default IntroductionSection;
+
