@@ -1,175 +1,126 @@
 
-import { useEffect, useState } from "react";
 import BackToTop from '@/components/BackToTop';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const Footer = () => {
-  const [footerHtml, setFooterHtml] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  return (
+    <footer className="bg-iifb-footer-bg text-white py-16 relative">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* IIFB Logo and Tagline */}
+          <div className="lg:col-span-1">
+            <div className="mb-6">
+              <img 
+                src="/lovable-uploads/61637718-f961-4a62-b50b-e863dd2fb3f3.png" 
+                alt="IIFB - International Indigenous Forum on Biodiversity" 
+                className="h-20 w-auto mb-4"
+              />
+              <h3 className="text-lg font-semibold text-white">
+                One Voice for Mother Earth
+              </h3>
+            </div>
+          </div>
 
-  // Mock data fallback for testing
-  const mockFooterHtml = `
-    <div class="wp-footer bg-muted/30 border-t">
-      <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="font-semibold text-lg mb-4">International Indigenous Forum on Biodiversity</h3>
-            <p class="text-muted-foreground text-sm">Promoting Indigenous voices in biodiversity conservation and governance worldwide.</p>
+          {/* Office Section */}
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold mb-4 text-white">Office</h4>
+            <div className="space-y-4 text-sm text-gray-300">
+              <div>
+                <p>Adams Arcade, Former Tele poster Flats, off</p>
+                <p>Elgeyo Marakwet Road, House C6</p>
+              </div>
+              <div>
+                <p>4to. Pasaje, casa 1-222, Colonia San Rafael, Zona</p>
+                <p>2, Chimaltenango, Guatemala, C.A.</p>
+              </div>
+              <div>
+                <p>iifbindigenouspeoples@iifb-indigenous.org</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h4 class="font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/about" class="text-muted-foreground hover:text-foreground">About IIFB</a></li>
-              <li><a href="/news" class="text-muted-foreground hover:text-foreground">Latest News</a></li>
-              <li><a href="/documents" class="text-muted-foreground hover:text-foreground">Documents</a></li>
-              <li><a href="/side-events" class="text-muted-foreground hover:text-foreground">Side Events</a></li>
-            </ul>
+
+          {/* Website Section */}
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold mb-4 text-white">Website</h4>
+            <nav className="space-y-2">
+              <a href="https://iifb-indigenous.org/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Home
+              </a>
+              <a href="https://iifb-indigenous.org/about-us/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                About us
+              </a>
+              <a href="https://iifb-indigenous.org/our-work/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Our Work
+              </a>
+              <a href="https://iifb-indigenous.org/capacity-building-center/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Capacity Building Center
+              </a>
+              <a href="https://iifb-indigenous.org/resources/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Statements
+              </a>
+              <a href="https://iifb-indigenous.org/news/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                News
+              </a>
+              <a href="https://iifb-indigenous.org/events/month/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Events
+              </a>
+              <a href="https://iifb-indigenous.org/get-involved/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                How to Engage
+              </a>
+              <a href="https://iifb-indigenous.org/iifb-jobs/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Work with IIFB
+              </a>
+              <a href="https://iifb-indigenous.org/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
+                Code of Conduct
+              </a>
+            </nav>
           </div>
-          <div>
-            <h4 class="font-semibold mb-4">Contact</h4>
-            <p class="text-muted-foreground text-sm">International Indigenous Forum on Biodiversity</p>
-            <p class="text-muted-foreground text-sm">© 2024 All Rights Reserved</p>
+
+          {/* Bulletin Section */}
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold mb-4 text-white">Bulletin</h4>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <Input 
+                  type="email"
+                  placeholder="macxwhale@gmail.com"
+                  className="bg-white border-gray-300 text-gray-800 placeholder:text-gray-500 text-sm"
+                />
+                <Button 
+                  size="sm"
+                  className="bg-iifb-rust hover:bg-iifb-orange px-3"
+                >
+                  →
+                </Button>
+              </div>
+              
+              <div className="flex items-start space-x-2">
+                <Checkbox id="privacy" className="mt-1" />
+                <label htmlFor="privacy" className="text-xs text-gray-300">
+                  I agree to the{' '}
+                  <a href="#" className="text-white underline hover:text-gray-300">
+                    Privacy Policy
+                  </a>
+                </label>
+              </div>
+              
+              <p className="text-xs text-gray-300">
+                Please select at least one list.
+              </p>
+            </div>
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-12 pt-8 border-t border-gray-500 text-center">
+          <p className="text-sm text-gray-300">
+            FIIB © 2025. All Rights Reserved.
+          </p>
         </div>
       </div>
-    </div>
-  `;
-
-  const extractAndInjectResources = (html: string) => {
-    console.log(`🔧 Footer: Extracting CSS and JS resources from HTML`);
-    
-    // Extract CSS links
-    const cssLinkRegex = /<link[^>]*rel=["']stylesheet["'][^>]*>/gi;
-    const cssLinks = html.match(cssLinkRegex) || [];
-    
-    // Extract script tags
-    const scriptRegex = /<script[^>]*src=["'][^"']*["'][^>]*><\/script>/gi;
-    const scriptTags = html.match(scriptRegex) || [];
-    
-    console.log(`📊 Footer: Found ${cssLinks.length} CSS links and ${scriptTags.length} script tags`);
-    
-    // Inject CSS links into document head
-    cssLinks.forEach((linkTag, index) => {
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = linkTag;
-      const linkElement = tempDiv.querySelector('link');
       
-      if (linkElement && !document.querySelector(`link[href="${linkElement.href}"]`)) {
-        document.head.appendChild(linkElement);
-        console.log(`✅ Footer: Injected CSS ${index + 1}: ${linkElement.href}`);
-      }
-    });
-    
-    // Inject script tags into document head
-    scriptTags.forEach((scriptTag, index) => {
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = scriptTag;
-      const scriptElement = tempDiv.querySelector('script');
-      
-      if (scriptElement && !document.querySelector(`script[src="${scriptElement.src}"]`)) {
-        const newScript = document.createElement('script');
-        newScript.src = scriptElement.src;
-        newScript.async = true;
-        document.head.appendChild(newScript);
-        console.log(`✅ Footer: Injected JS ${index + 1}: ${scriptElement.src}`);
-      }
-    });
-    
-    // Clean HTML by removing extracted links and scripts
-    let cleanHtml = html
-      .replace(cssLinkRegex, '')
-      .replace(scriptRegex, '');
-    
-    return cleanHtml;
-  };
-
-  const fetchFooter = async () => {
-    const apiUrl = "https://iifb-indigenous.org/wp-json/custom/v1/footer";
-    
-    try {
-      console.log(`🔄 Footer API: Fetching footer data from ${apiUrl}`);
-      setLoading(true);
-      setError(null);
-
-      const response = await fetch(apiUrl, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors'
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log(`✅ Footer API: Successfully fetched footer data`);
-        
-        if (data.html) {
-          const cleanHtml = extractAndInjectResources(data.html);
-          setFooterHtml(cleanHtml);
-          console.log(`🎯 Footer: Processed HTML with ${cleanHtml.length} characters`);
-        } else {
-          throw new Error('No HTML content in API response');
-        }
-        
-        setLoading(false);
-        return;
-      } else {
-        throw new Error(`API returned ${response.status}`);
-      }
-
-    } catch (err) {
-      console.error(`💥 Footer API: Failed to fetch footer:`, err);
-      setError(err instanceof Error ? err.message : 'Failed to load footer');
-      
-      // Use mock data as fallback
-      console.log(`🎭 Footer: Using mock data as fallback`);
-      setFooterHtml(mockFooterHtml);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchFooter();
-  }, []);
-
-  // Loading state
-  if (loading) {
-    return (
-      <footer className="relative bg-muted/50 p-8">
-        <div className="flex items-center justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-          <span className="ml-3 text-muted-foreground">Loading footer...</span>
-        </div>
-        <BackToTop />
-      </footer>
-    );
-  }
-
-  // Success state - render footer content
-  console.log(`🎯 Footer: Rendering footer with ${footerHtml.length} characters`);
-  
-  return (
-    <footer className="relative" id="wp-footer">
-      {/* Render WordPress footer HTML */}
-      {footerHtml ? (
-        <div
-          className="footer-content"
-          dangerouslySetInnerHTML={{ __html: footerHtml }}
-        />
-      ) : (
-        <div className="container mx-auto px-4 py-8 text-center text-muted-foreground">
-          <p>Footer content is loading...</p>
-        </div>
-      )}
-
-      {/* Show error message if there was an issue but we're using fallback */}
-      {error && (
-        <div className="text-center py-2 text-xs text-amber-600 bg-amber-50 border-t">
-          Using fallback footer content (API: {error})
-        </div>
-      )}
-
       <BackToTop />
     </footer>
   );
