@@ -1,15 +1,16 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import BackToTop from '@/components/BackToTop';
 
 const Footer = () => {
   const [footerLoaded, setFooterLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [footerContent, setFooterContent] = useState<string>('');
+  const addedStylesRef = useRef<string[]>([]);
 
   useEffect(() => {
     const fetchFooter = async () => {
       try {
-        // Try fetching with no-cors mode first
         const response = await fetch("https://iifb-indigenous.org/wp-json/custom/v1/footer", {
           mode: 'cors',
           headers: {
@@ -24,7 +25,7 @@ const Footer = () => {
 
         const data = await response.json();
         
-        // Insert styles
+        // Insert styles safely
         if (data.styles && Array.isArray(data.styles)) {
           data.styles.forEach((href: string) => {
             // Check if the stylesheet is already loaded to avoid duplicates
@@ -34,14 +35,14 @@ const Footer = () => {
               link.rel = "stylesheet";
               link.href = href;
               document.head.appendChild(link);
+              addedStylesRef.current.push(href);
             }
           });
         }
 
-        // Insert footer HTML
-        const footerElement = document.getElementById("wp-footer");
-        if (footerElement && data.html) {
-          footerElement.innerHTML = data.html;
+        // Set footer content via React state instead of direct DOM manipulation
+        if (data.html) {
+          setFooterContent(data.html);
           setFooterLoaded(true);
         }
         
@@ -50,27 +51,36 @@ const Footer = () => {
         console.error('Error fetching WordPress footer:', error);
         setError('Failed to load WordPress footer');
         
-        // Fallback: Show a basic footer message
-        const footerElement = document.getElementById("wp-footer");
-        if (footerElement) {
-          footerElement.innerHTML = `
-            <div class="container mx-auto px-4 text-center">
-              <p class="text-white/80">International Indigenous Forum on Biodiversity</p>
-              <p class="text-white/60 text-sm mt-2">Footer content temporarily unavailable</p>
-            </div>
-          `;
-        }
+        // Set fallback content via React state
+        setFooterContent(`
+          <div class="container mx-auto px-4 text-center">
+            <p class="text-white/80">International Indigenous Forum on Biodiversity</p>
+            <p class="text-white/60 text-sm mt-2">Footer content temporarily unavailable</p>
+          </div>
+        `);
       }
     };
 
     fetchFooter();
+
+    // Cleanup function to remove added stylesheets
+    return () => {
+      addedStylesRef.current.forEach(href => {
+        const link = document.querySelector(`link[href="${href}"]`);
+        if (link && link.parentNode) {
+          link.parentNode.removeChild(link);
+        }
+      });
+      addedStylesRef.current = [];
+    };
   }, []);
 
   return (
     <footer className="bg-iifb-footer-bg text-white py-16 relative">
       <div id="wp-footer">
-        {/* WordPress footer content will be inserted here */}
-        {!footerLoaded && !error && (
+        {footerLoaded || error ? (
+          <div dangerouslySetInnerHTML={{ __html: footerContent }} />
+        ) : (
           <div className="container mx-auto px-4 text-center">
             <p className="text-white/80">Loading footer...</p>
           </div>
