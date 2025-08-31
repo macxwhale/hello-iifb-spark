@@ -7,6 +7,25 @@ const Footer = () => {
   const [error, setError] = useState<string | null>(null);
   const [footerContent, setFooterContent] = useState<string>('');
   const addedStylesRef = useRef<string[]>([]);
+  const addedScriptsRef = useRef<string[]>([]);
+
+  // WordPress and Elementor resources
+  const wpResources = {
+    styles: [
+      'https://iifb-indigenous.org/wp-content/themes/heart-child/style.css',
+      'https://iifb-indigenous.org/wp-content/themes/heart/style.css',
+      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/css/frontend.min.css',
+      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css',
+      'https://iifb-indigenous.org/wp-content/uploads/elementor/css/post-18536.css'
+    ],
+    scripts: [
+      'https://iifb-indigenous.org/wp-includes/js/jquery/jquery.min.js',
+      'https://iifb-indigenous.org/wp-includes/js/jquery/jquery-migrate.min.js',
+      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/js/frontend.min.js',
+      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/lib/elements-handlers.min.js',
+      'https://iifb-indigenous.org/wp-content/uploads/elementor/js/post-18536.js'
+    ]
+  };
 
   // Function to decode JSON-escaped HTML
   const decodeHtml = (html: string): string => {
@@ -33,10 +52,44 @@ const Footer = () => {
     }
   };
 
+  // Load WordPress styles and scripts
+  const loadWpResources = () => {
+    console.log('Loading WordPress resources...');
+    
+    // Load styles
+    wpResources.styles.forEach((href) => {
+      const existingLink = document.querySelector(`link[href="${href}"]`);
+      if (!existingLink) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
+        addedStylesRef.current.push(href);
+        console.log('Added stylesheet:', href);
+      }
+    });
+
+    // Load scripts
+    wpResources.scripts.forEach((src) => {
+      const existingScript = document.querySelector(`script[src="${src}"]`);
+      if (!existingScript) {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = false; // Maintain load order for jQuery dependencies
+        document.head.appendChild(script);
+        addedScriptsRef.current.push(src);
+        console.log('Added script:', src);
+      }
+    });
+  };
+
   useEffect(() => {
     const fetchFooter = async () => {
       try {
-        console.log('Fetching WordPress footer...');
+        console.log('Loading WordPress resources and fetching footer...');
+        
+        // Load WordPress resources first
+        loadWpResources();
         
         const response = await fetch("https://iifb-indigenous.org/wp-json/custom/v1/footer", {
           mode: 'cors',
@@ -53,11 +106,10 @@ const Footer = () => {
         const data = await response.json();
         console.log('WordPress footer data received:', data);
         
-        // Insert styles safely
+        // Insert additional styles if provided by API
         if (data.styles && Array.isArray(data.styles)) {
-          console.log('Loading styles:', data.styles);
+          console.log('Loading additional styles from API:', data.styles);
           data.styles.forEach((href: string) => {
-            // Check if the stylesheet is already loaded to avoid duplicates
             const existingLink = document.querySelector(`link[href="${href}"]`);
             if (!existingLink) {
               const link = document.createElement("link");
@@ -65,7 +117,7 @@ const Footer = () => {
               link.href = href;
               document.head.appendChild(link);
               addedStylesRef.current.push(href);
-              console.log('Added stylesheet:', href);
+              console.log('Added additional stylesheet:', href);
             }
           });
         }
@@ -100,7 +152,7 @@ const Footer = () => {
 
     fetchFooter();
 
-    // Cleanup function to remove added stylesheets
+    // Cleanup function to remove added stylesheets and scripts
     return () => {
       addedStylesRef.current.forEach(href => {
         const link = document.querySelector(`link[href="${href}"]`);
@@ -108,7 +160,14 @@ const Footer = () => {
           link.parentNode.removeChild(link);
         }
       });
+      addedScriptsRef.current.forEach(src => {
+        const script = document.querySelector(`script[src="${src}"]`);
+        if (script && script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
+      });
       addedStylesRef.current = [];
+      addedScriptsRef.current = [];
     };
   }, []);
 
