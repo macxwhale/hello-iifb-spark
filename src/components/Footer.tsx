@@ -1,3 +1,4 @@
+
 import BackToTop from '@/components/BackToTop';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -44,34 +45,34 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold mb-4 text-white">Website</h4>
             <nav className="space-y-2">
-              <a href="/" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Home
               </a>
-              <a href="/about" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/about-us/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 About us
               </a>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/our-work/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Our Work
               </a>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/capacity-building-center/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Capacity Building Center
               </a>
-              <a href="/sb8j-1/statements" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/resources/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Statements
               </a>
-              <a href="/news" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/news/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 News
               </a>
-              <a href="/side-events" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/events/month/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Events
               </a>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/get-involved/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 How to Engage
               </a>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/iifb-jobs/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Work with IIFB
               </a>
-              <a href="#" className="block text-sm text-gray-300 hover:text-white transition-colors">
+              <a href="https://iifb-indigenous.org/" target="_blank" rel="noopener noreferrer" className="block text-sm text-gray-300 hover:text-white transition-colors">
                 Code of Conduct
               </a>
             </nav>
