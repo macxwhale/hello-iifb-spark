@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -70,7 +69,8 @@ export default {
 					earth: 'hsl(var(--iifb-earth))',
 					sage: 'hsl(var(--iifb-sage))',
 					cream: 'hsl(var(--iifb-cream))',
-					'dark-earth': 'hsl(var(--iifb-dark-earth))'
+					'dark-earth': 'hsl(var(--iifb-dark-earth))',
+					'footer-bg': '#393838'
 				}
 			},
 			backgroundImage: {

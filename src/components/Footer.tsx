@@ -1,4 +1,3 @@
-
 import BackToTop from '@/components/BackToTop';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,7 +5,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-600 text-white py-16 relative">
+    <footer className="bg-iifb-footer-bg text-white py-16 relative">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* IIFB Logo and Tagline */}
