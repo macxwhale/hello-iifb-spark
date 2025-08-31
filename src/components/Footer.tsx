@@ -3,134 +3,134 @@ import { useEffect, useState } from "react";
 import BackToTop from '@/components/BackToTop';
 
 const Footer = () => {
-  const [footer, setFooter] = useState({ html: "", styles: [], scripts: [] });
+  const [footerHtml, setFooterHtml] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   // Mock data fallback for testing
-  const mockFooter = {
-    html: `
-      <div class="wp-footer bg-muted/30 border-t">
-        <div class="container mx-auto px-4 py-8">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 class="font-semibold text-lg mb-4">International Indigenous Forum on Biodiversity</h3>
-              <p class="text-muted-foreground text-sm">Promoting Indigenous voices in biodiversity conservation and governance worldwide.</p>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-4">Quick Links</h4>
-              <ul class="space-y-2 text-sm">
-                <li><a href="/about" class="text-muted-foreground hover:text-foreground">About IIFB</a></li>
-                <li><a href="/news" class="text-muted-foreground hover:text-foreground">Latest News</a></li>
-                <li><a href="/documents" class="text-muted-foreground hover:text-foreground">Documents</a></li>
-                <li><a href="/side-events" class="text-muted-foreground hover:text-foreground">Side Events</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-semibold mb-4">Contact</h4>
-              <p class="text-muted-foreground text-sm">International Indigenous Forum on Biodiversity</p>
-              <p class="text-muted-foreground text-sm">© 2024 All Rights Reserved</p>
-            </div>
+  const mockFooterHtml = `
+    <div class="wp-footer bg-muted/30 border-t">
+      <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-4">International Indigenous Forum on Biodiversity</h3>
+            <p class="text-muted-foreground text-sm">Promoting Indigenous voices in biodiversity conservation and governance worldwide.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/about" class="text-muted-foreground hover:text-foreground">About IIFB</a></li>
+              <li><a href="/news" class="text-muted-foreground hover:text-foreground">Latest News</a></li>
+              <li><a href="/documents" class="text-muted-foreground hover:text-foreground">Documents</a></li>
+              <li><a href="/side-events" class="text-muted-foreground hover:text-foreground">Side Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contact</h4>
+            <p class="text-muted-foreground text-sm">International Indigenous Forum on Biodiversity</p>
+            <p class="text-muted-foreground text-sm">© 2024 All Rights Reserved</p>
           </div>
         </div>
       </div>
-    `,
-    styles: [],
-    scripts: []
-  };
+    </div>
+  `;
 
-  const fetchFooterWithProxy = async (url: string) => {
-    console.log(`🔄 Footer API: Trying CORS proxy for ${url}`);
-    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+  const extractAndInjectResources = (html: string) => {
+    console.log(`🔧 Footer: Extracting CSS and JS resources from HTML`);
     
-    const response = await fetch(proxyUrl);
-    if (!response.ok) {
-      throw new Error(`Proxy failed: ${response.status}`);
-    }
+    // Extract CSS links
+    const cssLinkRegex = /<link[^>]*rel=["']stylesheet["'][^>]*>/gi;
+    const cssLinks = html.match(cssLinkRegex) || [];
     
-    const data = await response.json();
-    return JSON.parse(data.contents);
-  };
-
-  const testApiDirectly = async () => {
-    const apiUrl = "https://iifb-indigenous.org/wp-json/custom/v1/footer";
+    // Extract script tags
+    const scriptRegex = /<script[^>]*src=["'][^"']*["'][^>]*><\/script>/gi;
+    const scriptTags = html.match(scriptRegex) || [];
     
-    try {
-      console.log(`🧪 Footer API: Testing direct access to ${apiUrl}`);
+    console.log(`📊 Footer: Found ${cssLinks.length} CSS links and ${scriptTags.length} script tags`);
+    
+    // Inject CSS links into document head
+    cssLinks.forEach((linkTag, index) => {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = linkTag;
+      const linkElement = tempDiv.querySelector('link');
       
-      // Test if API is accessible
-      const response = await fetch(apiUrl, {
-        method: 'HEAD',
-        mode: 'no-cors'
-      });
+      if (linkElement && !document.querySelector(`link[href="${linkElement.href}"]`)) {
+        document.head.appendChild(linkElement);
+        console.log(`✅ Footer: Injected CSS ${index + 1}: ${linkElement.href}`);
+      }
+    });
+    
+    // Inject script tags into document head
+    scriptTags.forEach((scriptTag, index) => {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = scriptTag;
+      const scriptElement = tempDiv.querySelector('script');
       
-      console.log(`📊 Footer API: HEAD request completed`);
-      return true;
-    } catch (err) {
-      console.log(`❌ Footer API: Direct access test failed:`, err);
-      return false;
-    }
+      if (scriptElement && !document.querySelector(`script[src="${scriptElement.src}"]`)) {
+        const newScript = document.createElement('script');
+        newScript.src = scriptElement.src;
+        newScript.async = true;
+        document.head.appendChild(newScript);
+        console.log(`✅ Footer: Injected JS ${index + 1}: ${scriptElement.src}`);
+      }
+    });
+    
+    // Clean HTML by removing extracted links and scripts
+    let cleanHtml = html
+      .replace(cssLinkRegex, '')
+      .replace(scriptRegex, '');
+    
+    return cleanHtml;
   };
 
   const fetchFooter = async () => {
     const apiUrl = "https://iifb-indigenous.org/wp-json/custom/v1/footer";
     
     try {
-      console.log(`🔄 Footer API: Attempting to fetch footer data`);
+      console.log(`🔄 Footer API: Fetching footer data from ${apiUrl}`);
       setLoading(true);
       setError(null);
 
-      // First try direct API call
-      try {
-        const response = await fetch(apiUrl, {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          mode: 'cors'
-        });
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors'
+      });
 
-        if (response.ok) {
-          const data = await response.json();
-          console.log(`✅ Footer API: Direct call successful`, data);
-          setFooter(data);
-          setLoading(false);
-          return;
+      if (response.ok) {
+        const data = await response.json();
+        console.log(`✅ Footer API: Successfully fetched footer data`);
+        
+        if (data.html) {
+          const cleanHtml = extractAndInjectResources(data.html);
+          setFooterHtml(cleanHtml);
+          console.log(`🎯 Footer: Processed HTML with ${cleanHtml.length} characters`);
+        } else {
+          throw new Error('No HTML content in API response');
         }
-      } catch (directError) {
-        console.log(`⚠️ Footer API: Direct call failed, trying proxy...`, directError);
-      }
-
-      // If direct call fails, try CORS proxy
-      try {
-        const proxyData = await fetchFooterWithProxy(apiUrl);
-        console.log(`✅ Footer API: Proxy call successful`, proxyData);
-        setFooter(proxyData);
+        
         setLoading(false);
         return;
-      } catch (proxyError) {
-        console.log(`⚠️ Footer API: Proxy call failed`, proxyError);
+      } else {
+        throw new Error(`API returned ${response.status}`);
       }
 
-      // If both fail, use mock data
-      console.log(`🎭 Footer API: Using mock data as fallback`);
-      setFooter(mockFooter);
-      setLoading(false);
-
     } catch (err) {
-      console.error(`💥 Footer API: All methods failed:`, err);
+      console.error(`💥 Footer API: Failed to fetch footer:`, err);
       setError(err instanceof Error ? err.message : 'Failed to load footer');
-      setFooter(mockFooter); // Use mock data even on error
+      
+      // Use mock data as fallback
+      console.log(`🎭 Footer: Using mock data as fallback`);
+      setFooterHtml(mockFooterHtml);
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    // Test API accessibility first
-    testApiDirectly().then(() => {
-      fetchFooter();
-    });
+    fetchFooter();
   }, []);
 
   // Loading state
@@ -147,38 +147,20 @@ const Footer = () => {
   }
 
   // Success state - render footer content
-  console.log(`🎯 Footer API: Rendering footer with ${footer.html.length} characters`);
+  console.log(`🎯 Footer: Rendering footer with ${footerHtml.length} characters`);
   
   return (
     <footer className="relative" id="wp-footer">
-      {/* Inject CSS */}
-      {footer.styles && footer.styles.length > 0 && (
-        <>
-          {footer.styles.map((href, i) => (
-            <link key={i} rel="stylesheet" href={href} />
-          ))}
-        </>
-      )}
-
-      {/* Inject HTML */}
-      {footer.html ? (
+      {/* Render WordPress footer HTML */}
+      {footerHtml ? (
         <div
           className="footer-content"
-          dangerouslySetInnerHTML={{ __html: footer.html }}
+          dangerouslySetInnerHTML={{ __html: footerHtml }}
         />
       ) : (
         <div className="container mx-auto px-4 py-8 text-center text-muted-foreground">
           <p>Footer content is loading...</p>
         </div>
-      )}
-
-      {/* Inject JS */}
-      {footer.scripts && footer.scripts.length > 0 && (
-        <>
-          {footer.scripts.map((src, i) => (
-            <script key={i} src={src}></script>
-          ))}
-        </>
       )}
 
       {/* Show error message if there was an issue but we're using fallback */}
