@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/bfba4f5a-290d-41ce-8eca-ac310edf3aad.png" 
+                src="/lovable-uploads/61637718-f961-4a62-b50b-e863dd2fb3f3.png" 
                 alt="IIFB - International Indigenous Forum on Biodiversity" 
                 className="h-20 w-auto mb-4"
               />
