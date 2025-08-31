@@ -1,5 +1,5 @@
-
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, ArrowRight, Calendar, MapPin } from 'lucide-react';
@@ -128,10 +128,12 @@ const SideEventsCarousel = () => {
             </Button>
           </div>
           
-          <Button variant="ghost" className="group text-primary hover:text-primary-hover">
-            View All Events
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          <Link to="/sb8j-1/side-events/all">
+            <Button variant="ghost" className="group text-primary hover:text-primary-hover">
+              View All Events
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </Link>
         </div>
 
         <div className="relative overflow-hidden">

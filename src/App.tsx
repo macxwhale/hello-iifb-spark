@@ -12,6 +12,7 @@ import SB8J1Statements from "./pages/SB8J1Statements";
 import SB8J1Documents from "./pages/SB8J1Documents";
 import SB8J1News from "./pages/SB8J1News";
 import SB8J1SideEvents from "./pages/SB8J1SideEvents";
+import AllSideEvents from "./pages/AllSideEvents";
 import SB8J1MediaCoverage from "./pages/SB8J1MediaCoverage";
 import SB8J1SocialToolkit from "./pages/SB8J1SocialToolkit";
 import SB8J1PressConferences from "./pages/SB8J1PressConferences";
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="sb8j-1/videos" element={<SB8J1Videos />} />
             <Route path="sb8j-1/gallery" element={<SB8J1Gallery />} />
             <Route path="sb8j-1/side-events" element={<SB8J1SideEvents />} />
+            <Route path="sb8j-1/side-events/all" element={<AllSideEvents />} />
             <Route path="documents" element={<Documents />} />
             <Route path="resources" element={<Resources />} />
             <Route path="about" element={<About />} />
