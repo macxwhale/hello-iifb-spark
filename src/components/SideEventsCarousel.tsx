@@ -1,76 +1,65 @@
+
 import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, ArrowRight, Calendar, MapPin } from 'lucide-react';
-// Using uploaded Indigenous community photos
-const sb8jEventImage = '/lovable-uploads/92063f54-04a6-4747-9804-6d8f59490788.png';
-const sbsttaEventImage = '/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
 
 const sideEvents = [
   {
-    id: 1,
-    title: "Indigenous Knowledge Systems in Biodiversity Conservation",
-    description: "A collaborative dialogue exploring how traditional ecological knowledge can inform modern conservation strategies and policy frameworks.",
-    date: "25",
-    month: "October",
-    year: "2025",
-    time: "09:00 - 11:00",
-    location: "Panama Convention Center - Room A",
-    organizer: "IIFB & CBD Secretariat",
-    image: '/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
-    link: "#"
-  },
-  {
-    id: 2,
-    title: "Digital Sequence Information: Bridging Science and Rights",
-    description: "Technical workshop on digital sequence information implications for Indigenous Peoples' rights and benefit-sharing mechanisms.",
-    date: "26",
-    month: "October",
-    year: "2025",
-    time: "14:00 - 16:00",
-    location: "Panama Convention Center - Room B",
-    organizer: "Scientific Partners Consortium",
-    image: '/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png',
-    link: "#"
-  },
-  {
-    id: 3,
-    title: "Youth Voices in Biodiversity Governance",
-    description: "Interactive session featuring Indigenous youth leaders sharing perspectives on biodiversity conservation and traditional knowledge preservation.",
+    id: 6762,
+    title: "Modus operandi of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
+    description: "Discussion on the operational framework and working methods for the new Subsidiary Body on Article 8(j), establishing clear procedures for effective governance and meaningful participation.",
     date: "27",
     month: "October",
     year: "2025",
-    time: "16:30 - 18:00",
-    location: "Panama Convention Center - Main Hall",
-    organizer: "Indigenous Youth Network",
-    image: '/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png',
-    link: "#"
+    time: "13:15 - 14:45",
+    location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
+    organizer: "IIFB | SCBD | IWBN | CBD | IIN | RMIB-LAC",
+    interpretation: "Eng/Sp",
+    image: '/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
+    link: "https://www.cbd.int/side-events/6762"
   },
   {
-    id: 4,
-    title: "Community-Based Monitoring Systems",
-    description: "Hands-on workshop demonstrating how Indigenous communities are using technology to monitor biodiversity and environmental changes.",
+    id: 6756,
+    title: "Indigenous and Traditional Territories (ITTs) for conservation, restoration and spatial planning of biodiversity",
+    description: "Exploring how Indigenous and Traditional Territories contribute to biodiversity conservation and restoration efforts, and their integration into spatial planning processes.",
     date: "28",
     month: "October",
     year: "2025",
-    time: "10:00 - 12:00",
-    location: "Panama Convention Center - Room C",
-    organizer: "Community Monitoring Alliance",
-    image: '/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png',
-    link: "#"
+    time: "13:15 - 14:45",
+    location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
+    organizer: "IIFB | IWBN | IIN | RMIB-LAC | IUCN | BMZ | HAC N&P",
+    interpretation: "Eng/Sp",
+    image: '/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png',
+    link: "https://www.cbd.int/side-events/6756"
   },
   {
-    id: 5,
-    title: "Financing Indigenous-Led Conservation",
-    description: "Panel discussion on innovative funding mechanisms and partnerships to support Indigenous-led biodiversity conservation initiatives.",
+    id: 6758,
+    title: "Evaluating effectiveness of marine Other Effective Area-based Conservation Measures (mOECMs) in the ocean, from an Indigenous Peoples and local communities perspective",
+    description: "Assessment of marine conservation measures from Indigenous Peoples and local communities perspectives, examining effectiveness and community involvement in ocean conservation.",
     date: "29",
     month: "October",
     year: "2025",
-    time: "13:00 - 15:00",
-    location: "Panama Convention Center - Room A",
-    organizer: "Conservation Finance Network",
-    image: '/lovable-uploads/e7288d9d-1175-4f7d-8c6a-098b2ba82056.png',
-    link: "#"
+    time: "13:15 - 14:45",
+    location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
+    organizer: "IIFB | IWBN | RMIB-LAC | IIN | Oregon State University",
+    interpretation: "Eng/Sp",
+    image: '/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png',
+    link: "https://www.cbd.int/side-events/6758"
+  },
+  {
+    id: 6763,
+    title: "Enabling direct access for Indigenous Peoples and Local Communities to achieve the KMGBF",
+    description: "Panel discussion on mechanisms for direct access funding and support systems to enable Indigenous Peoples and Local Communities to contribute to achieving the Kunming-Montreal Global Biodiversity Framework targets.",
+    date: "29",
+    month: "October",
+    year: "2025",
+    time: "18:15 - 19:45",
+    location: "Africa Regional Group Room - 1st floor (Capacity: 84 people)",
+    organizer: "IUCN | IIFB | GAC",
+    interpretation: "Eng/Sp/Fr",
+    image: '/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png',
+    link: "https://www.cbd.int/side-events/6763"
   }
 ];
 
@@ -115,7 +104,7 @@ const SideEventsCarousel = () => {
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Side Events</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 lg:mb-10">
-            Side Events & Workshops
+            SB8J-1 Approved Side Events
           </h2>
         </div>
 
@@ -175,15 +164,20 @@ const SideEventsCarousel = () => {
                       <span className="text-xs font-medium leading-none">{event.month}</span>
                       <span className="text-xs leading-none opacity-90">{event.year}</span>
                     </div>
+
+                    {/* Event ID Badge */}
+                    <div className="absolute top-4 left-4 bg-secondary text-white rounded-lg px-3 py-1 text-sm font-bold shadow-lg">
+                      #{event.id}
+                    </div>
                   </div>
                   
                   {/* Content */}
                   <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
+                    <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-3">
                       {event.title}
                     </h3>
                     
-                    <p className="text-muted-foreground leading-relaxed line-clamp-2">
+                    <p className="text-muted-foreground leading-relaxed line-clamp-3">
                       {event.description}
                     </p>
                     
@@ -193,26 +187,36 @@ const SideEventsCarousel = () => {
                         <Calendar className="h-4 w-4" />
                         <span>{event.time}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
-                        <span>{event.location}</span>
+                      <div className="flex items-start gap-2">
+                        <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                        <span className="line-clamp-2">{event.location}</span>
                       </div>
-                      <div className="text-primary font-medium">
+                      <div className="text-primary font-medium line-clamp-2">
                         Organized by: {event.organizer}
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Interpretation: {event.interpretation}
                       </div>
                     </div>
                     
                     {/* Learn More Button */}
                     <div className="pt-4 border-t border-border/50">
-                      <Button 
-                        variant="ghost" 
-                        className="w-full justify-start group/btn hover:bg-primary/5 p-0"
+                      <a 
+                        href={event.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
                       >
-                        <div className="flex items-center justify-between w-full">
-                          <span className="text-primary font-medium">Learn More</span>
-                          <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
-                        </div>
-                      </Button>
+                        <Button 
+                          variant="ghost" 
+                          className="w-full justify-start group/btn hover:bg-primary/5 p-0"
+                        >
+                          <div className="flex items-center justify-between w-full">
+                            <span className="text-primary font-medium">Learn More</span>
+                            <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
+                          </div>
+                        </Button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
