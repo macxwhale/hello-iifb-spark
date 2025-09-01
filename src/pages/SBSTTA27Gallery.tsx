@@ -8,50 +8,61 @@ import SBSTTA27Navigation from '@/components/SBSTTA27Navigation';
 const SBSTTA27Gallery = () => {
   const galleryItems = [
     {
-      title: "Opening Session",
-      description: "SBSTTA-27 officially begins with scientific presentations",
+      title: "Opening Ceremony",
+      description: "Official opening of SBSTTA-27 with global delegates",
       date: "October 20, 2025",
-      category: "Opening",
+      category: "Ceremony",
+      image: "/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png"
+    },
+    {
+      title: "Scientific Panel Discussion",
+      description: "Expert scientists discussing biodiversity monitoring frameworks",
+      date: "October 21, 2025", 
+      category: "Panel",
+      image: "/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png"
+    },
+    {
+      title: "Technical Working Group",
+      description: "Delegates working on invasive species management strategies",
+      date: "October 22, 2025",
+      category: "Workshop", 
+      image: "/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png"
+    },
+    {
+      title: "Indigenous Knowledge Session",
+      description: "Integration of traditional ecological knowledge in scientific assessments",
+      date: "October 22, 2025",
+      category: "Knowledge",
       image: "/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png"
     },
     {
-      title: "Scientific Advisory Panel",
-      description: "Expert discussions on biodiversity monitoring",
-      date: "October 21, 2025", 
-      category: "Panel",
-      image: "/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png"
+      title: "Regional Consultations",
+      description: "Regional groups discussing implementation strategies",
+      date: "October 23, 2025",
+      category: "Consultation",
+      image: "/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png"
     },
     {
-      title: "Technical Workshop",
-      description: "Methodological approaches to target implementation",
-      date: "October 22, 2025",
-      category: "Workshop", 
-      image: "/lovable-uploads/96490106-76fa-41f3-9b84-56f75115fa1e.png"
-    },
-    {
-      title: "Plenary Session",
-      description: "Adoption of scientific recommendations",
-      date: "October 24, 2025",
-      category: "Plenary",
+      title: "Closing Ceremony",
+      description: "Conclusion of SBSTTA-27 with adopted recommendations",
+      date: "October 24, 2025", 
+      category: "Ceremony",
       image: "/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
       <section className="relative min-h-[60vh] h-auto overflow-hidden">
-        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
-            backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
+            backgroundImage: `url(/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png)`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        {/* Content */}
         <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="text-white text-center w-full">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
@@ -66,11 +77,10 @@ const SBSTTA27Gallery = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-foreground">Scientific Meeting Gallery</h2>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-foreground">Event Gallery</h2>
           </div>
           
-          {/* Gallery Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryItems.map((item, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
@@ -81,7 +91,7 @@ const SBSTTA27Gallery = () => {
                   >
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                     <div className="absolute top-2 left-2">
-                      <Badge className="bg-secondary text-white">{item.category}</Badge>
+                      <Badge className="bg-primary text-white">{item.category}</Badge>
                     </div>
                   </div>
                 </div>
