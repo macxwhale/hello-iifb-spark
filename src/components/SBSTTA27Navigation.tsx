@@ -23,7 +23,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
     <div className="pt-8">
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <div className="flex items-center justify-center space-x-1 bg-primary/90 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
+        <div className="flex items-center justify-center space-x-1 bg-iifb-forest/90 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
           <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
           <Link 
             to="/sbstta-27/about" 
@@ -120,7 +120,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-white/20 bg-primary/90 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+          className="text-white hover:bg-white/20 bg-iifb-forest/90 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -129,7 +129,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-primary/90 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+        <nav className="md:hidden mt-4 bg-iifb-forest/90 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
           <div className="flex flex-col">
             <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
             <Link 
