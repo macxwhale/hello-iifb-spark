@@ -224,7 +224,7 @@ const SBSTTA27SideEvents = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Approved Side Events</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Side Events</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Official side events organized alongside SBSTTA-27 to enhance discussions on biodiversity science and policy.
               </p>
