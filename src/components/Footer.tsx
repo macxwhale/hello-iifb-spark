@@ -1,186 +1,116 @@
 
 import { useEffect, useState, useRef } from 'react';
 import BackToTop from '@/components/BackToTop';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const Footer = () => {
-  const [footerLoaded, setFooterLoaded] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [footerContent, setFooterContent] = useState<string>('');
-  const addedStylesRef = useRef<string[]>([]);
-  const addedScriptsRef = useRef<string[]>([]);
+  const [email, setEmail] = useState('');
+  const [agreed, setAgreed] = useState(false);
 
-  // WordPress and Elementor resources
-  const wpResources = {
-    styles: [
-      'https://iifb-indigenous.org/wp-content/themes/heart-child/style.css',
-      'https://iifb-indigenous.org/wp-content/themes/heart/style.css',
-      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/css/frontend.min.css',
-      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css',
-      'https://iifb-indigenous.org/wp-content/uploads/elementor/css/post-18536.css'
-    ],
-    scripts: [
-      'https://iifb-indigenous.org/wp-includes/js/jquery/jquery.min.js',
-      'https://iifb-indigenous.org/wp-includes/js/jquery/jquery-migrate.min.js',
-      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/js/frontend.min.js',
-      'https://iifb-indigenous.org/wp-content/plugins/elementor/assets/lib/elements-handlers.min.js',
-      'https://iifb-indigenous.org/wp-content/uploads/elementor/js/post-18536.js'
-    ]
-  };
-
-  // Function to decode JSON-escaped HTML
-  const decodeHtml = (html: string): string => {
-    try {
-      // First, try to parse as JSON in case it's double-encoded
-      let decoded = html;
-      
-      // Handle common JSON escape sequences
-      decoded = decoded
-        .replace(/\\u003C/g, '<')
-        .replace(/\\u003E/g, '>')
-        .replace(/\\u0026/g, '&')
-        .replace(/\\u0022/g, '"')
-        .replace(/\\u0027/g, "'")
-        .replace(/\\n/g, '\n')
-        .replace(/\\t/g, '\t')
-        .replace(/\\r/g, '\r')
-        .replace(/\\\\/g, '\\');
-      
-      return decoded;
-    } catch (e) {
-      console.warn('Failed to decode HTML, using original:', e);
-      return html;
+  const handleBulletinSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email && agreed) {
+      console.log('Bulletin signup:', { email, agreed });
+      // Handle bulletin signup logic here
+      setEmail('');
+      setAgreed(false);
     }
   };
 
-  // Load WordPress styles and scripts
-  const loadWpResources = () => {
-    console.log('Loading WordPress resources...');
-    
-    // Load styles
-    wpResources.styles.forEach((href) => {
-      const existingLink = document.querySelector(`link[href="${href}"]`);
-      if (!existingLink) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = href;
-        document.head.appendChild(link);
-        addedStylesRef.current.push(href);
-        console.log('Added stylesheet:', href);
-      }
-    });
-
-    // Load scripts
-    wpResources.scripts.forEach((src) => {
-      const existingScript = document.querySelector(`script[src="${src}"]`);
-      if (!existingScript) {
-        const script = document.createElement("script");
-        script.src = src;
-        script.async = false; // Maintain load order for jQuery dependencies
-        document.head.appendChild(script);
-        addedScriptsRef.current.push(src);
-        console.log('Added script:', src);
-      }
-    });
-  };
-
-  useEffect(() => {
-    const fetchFooter = async () => {
-      try {
-        console.log('Loading WordPress resources and fetching footer...');
-        
-        // Load WordPress resources first
-        loadWpResources();
-        
-        const response = await fetch("https://iifb-indigenous.org/wp-json/custom/v1/footer", {
-          mode: 'cors',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log('WordPress footer data received:', data);
-        
-        // Insert additional styles if provided by API
-        if (data.styles && Array.isArray(data.styles)) {
-          console.log('Loading additional styles from API:', data.styles);
-          data.styles.forEach((href: string) => {
-            const existingLink = document.querySelector(`link[href="${href}"]`);
-            if (!existingLink) {
-              const link = document.createElement("link");
-              link.rel = "stylesheet";
-              link.href = href;
-              document.head.appendChild(link);
-              addedStylesRef.current.push(href);
-              console.log('Added additional stylesheet:', href);
-            }
-          });
-        }
-
-        // Set footer content via React state with proper HTML decoding
-        if (data.html) {
-          const decodedHtml = decodeHtml(data.html);
-          console.log('Decoded HTML length:', decodedHtml.length);
-          console.log('Decoded HTML preview:', decodedHtml.substring(0, 200) + '...');
-          
-          setFooterContent(decodedHtml);
-          setFooterLoaded(true);
-        } else {
-          console.warn('No HTML content received from WordPress API');
-          throw new Error('No HTML content received');
-        }
-        
-        setError(null);
-      } catch (error) {
-        console.error('Error fetching WordPress footer:', error);
-        setError('Failed to load WordPress footer');
-        
-        // Set fallback content via React state
-        setFooterContent(`
-          <div class="container mx-auto px-4 text-center">
-            <p class="text-white/80">International Indigenous Forum on Biodiversity</p>
-            <p class="text-white/60 text-sm mt-2">Footer content temporarily unavailable</p>
-          </div>
-        `);
-      }
-    };
-
-    fetchFooter();
-
-    // Cleanup function to remove added stylesheets and scripts
-    return () => {
-      addedStylesRef.current.forEach(href => {
-        const link = document.querySelector(`link[href="${href}"]`);
-        if (link && link.parentNode) {
-          link.parentNode.removeChild(link);
-        }
-      });
-      addedScriptsRef.current.forEach(src => {
-        const script = document.querySelector(`script[src="${src}"]`);
-        if (script && script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-      });
-      addedStylesRef.current = [];
-      addedScriptsRef.current = [];
-    };
-  }, []);
-
   return (
     <footer className="bg-iifb-footer-bg text-white py-16 relative">
-      <div id="wp-footer">
-        {footerLoaded || error ? (
-          <div dangerouslySetInnerHTML={{ __html: footerContent }} />
-        ) : (
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-white/80">Loading footer...</p>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {/* IIFB Logo and Tagline */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-16 h-16 bg-gradient-to-r from-iifb-orange to-iifb-rust rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">IIFB</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">IIFB</h3>
+                <p className="text-sm text-white/80">International Indigenous Forum on Biodiversity</p>
+              </div>
+            </div>
+            <p className="text-lg font-medium text-white/90">One Voice for Mother Earth</p>
           </div>
-        )}
+
+          {/* Office Information */}
+          <div className="space-y-4">
+            <h4 className="text-xl font-semibold text-white">Office</h4>
+            <div className="space-y-2 text-white/80">
+              <p>Adams Arcade, Former Tele poster Flats, off</p>
+              <p>Elgeyo Marakwet Road, House C6</p>
+              <p className="mt-3">4to. Pasaje, casa 1-222, Colonia San Rafael,</p>
+              <p>Zona</p>
+              <p>2. Chimaltenango, Guatemala, C.A.</p>
+              <p className="mt-3">iifbindigenouspeoples@iifb-indigenous.org</p>
+            </div>
+          </div>
+
+          {/* Website Links and Bulletin */}
+          <div className="space-y-6">
+            {/* Website Links */}
+            <div>
+              <h4 className="text-xl font-semibold text-white mb-4">Website</h4>
+              <div className="space-y-2">
+                <a href="/" className="block text-white/80 hover:text-white transition-colors">Home</a>
+                <a href="/about" className="block text-white/80 hover:text-white transition-colors">About us</a>
+                <a href="/resources" className="block text-white/80 hover:text-white transition-colors">Our Work</a>
+                <a href="/resources" className="block text-white/80 hover:text-white transition-colors">Capacity Building Center</a>
+                <a href="/documents" className="block text-white/80 hover:text-white transition-colors">Statements</a>
+                <a href="/news" className="block text-white/80 hover:text-white transition-colors">News</a>
+                <a href="/side-events" className="block text-white/80 hover:text-white transition-colors">Events</a>
+                <a href="/resources" className="block text-white/80 hover:text-white transition-colors">How to Engage</a>
+                <a href="/about" className="block text-white/80 hover:text-white transition-colors">Work with IIFB</a>
+                <a href="/about" className="block text-white/80 hover:text-white transition-colors">Code of Conduct</a>
+              </div>
+            </div>
+
+            {/* Bulletin Signup */}
+            <div>
+              <h4 className="text-xl font-semibold text-white mb-4">Bulletin</h4>
+              <form onSubmit={handleBulletinSubmit} className="space-y-3">
+                <div className="flex">
+                  <Input
+                    type="email"
+                    placeholder="macwhale@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-white text-black placeholder:text-gray-500 border-0"
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="ml-2 bg-iifb-orange hover:bg-iifb-rust text-white px-6"
+                    disabled={!email || !agreed}
+                  >
+                    →
+                  </Button>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <input
+                    type="checkbox"
+                    id="privacy"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    className="mt-1"
+                  />
+                  <label htmlFor="privacy" className="text-sm text-white/80">
+                    I agree to the <a href="/privacy" className="text-iifb-orange hover:underline">Privacy Policy</a>
+                  </label>
+                </div>
+                <p className="text-xs text-white/60">Please select at least one list.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-white/20 mt-12 pt-8 text-center">
+          <p className="text-white/60 text-sm">IIFB © 2025. All Rights Reserved.</p>
+        </div>
       </div>
       
       <BackToTop />
