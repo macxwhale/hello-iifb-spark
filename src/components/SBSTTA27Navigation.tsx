@@ -1,14 +1,8 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 interface SBSTTA27NavigationProps {
   currentPage?: string;
@@ -55,43 +49,6 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
           >
             Documents
           </Link>
-          
-          {/* News & Media Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
-                ['videos', 'gallery'].includes(currentPage || '')
-                  ? 'text-white bg-white/30'
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}>
-                Media
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px] z-50">
-              <DropdownMenuItem asChild>
-                <Link 
-                  to="/sbstta-27/videos" 
-                  className={`w-full px-3 py-2 text-gray-700 ${
-                    currentPage === 'videos' ? 'bg-gray-100' : 'hover:bg-gray-100'
-                  }`}
-                >
-                  Videos
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link 
-                  to="/sbstta-27/gallery" 
-                  className={`w-full px-3 py-2 text-gray-700 ${
-                    currentPage === 'gallery' ? 'bg-gray-100' : 'hover:bg-gray-100'
-                  }`}
-                >
-                  Gallery
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
           <Link 
             to="/sbstta-27/side-events" 
             className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
@@ -152,32 +109,6 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
             >
               Documents
             </Link>
-            
-            {/* Mobile Media submenu */}
-            <div className="border-b border-white/10">
-              <div className="px-6 py-3 text-white/70 text-lg font-medium">Media</div>
-              <Link 
-                to="/sbstta-27/videos" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'videos' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
-                }`}
-              >
-                Videos
-              </Link>
-              <Link 
-                to="/sbstta-27/gallery" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'gallery' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
-                }`}
-              >
-                Gallery
-              </Link>
-            </div>
-            
             <Link 
               to="/sbstta-27/side-events" 
               className={`px-6 py-4 transition-all duration-300 text-lg ${

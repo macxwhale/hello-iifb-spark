@@ -3,12 +3,9 @@ import SBSTTA27Navigation from '@/components/SBSTTA27Navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, MapPin, Users, ExternalLink, Globe } from 'lucide-react';
-import { usePexelsImage } from '@/hooks/usePexelsImage';
+import { Calendar, Clock, MapPin, Globe, ExternalLink } from 'lucide-react';
 
 const SBSTTA27SideEvents = () => {
-  const { imageUrl, isLoading } = usePexelsImage('sbstta-27-side-events');
-
   const events = [
     {
       id: 6754,
@@ -34,9 +31,7 @@ const SBSTTA27SideEvents = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
-            backgroundImage: `url(${imageUrl})`,
-            opacity: isLoading ? 0.5 : 1,
-            transition: 'opacity 0.3s ease-in-out'
+            backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
@@ -60,105 +55,99 @@ const SBSTTA27SideEvents = () => {
       {/* Events Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto">
-          {events.length === 0 ? (
-            <div className="text-center text-muted-foreground">
-              More side events will be announced soon.
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-8">
-              {events.map(event => (
-                <Card key={event.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-                  <div className="grid lg:grid-cols-2 gap-0">
-                    {/* Event Image */}
-                    <div className="relative h-80 lg:h-full overflow-hidden">
-                      <img 
-                        src={event.image} 
-                        alt={event.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <Badge className="bg-primary/90 text-white">
-                          {event.category}
-                        </Badge>
-                      </div>
+          <div className="grid grid-cols-1 gap-8">
+            {events.map(event => (
+              <Card key={event.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  {/* Event Image */}
+                  <div className="relative h-80 lg:h-full overflow-hidden">
+                    <img 
+                      src={event.image} 
+                      alt={event.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-primary/90 text-white">
+                        {event.category}
+                      </Badge>
                     </div>
+                  </div>
 
-                    {/* Event Details */}
-                    <div className="p-8 lg:p-10 flex flex-col">
-                      <CardHeader className="p-0 mb-6">
-                        <CardTitle className="text-2xl lg:text-3xl text-foreground mb-4 leading-tight">
-                          {event.title}
-                        </CardTitle>
-                        <CardDescription className="text-base text-muted-foreground leading-relaxed">
-                          {event.description}
-                        </CardDescription>
-                      </CardHeader>
+                  {/* Event Details */}
+                  <div className="p-8 lg:p-10 flex flex-col">
+                    <CardHeader className="p-0 mb-6">
+                      <CardTitle className="text-2xl lg:text-3xl text-foreground mb-4 leading-tight">
+                        {event.title}
+                      </CardTitle>
+                      <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                        {event.description}
+                      </CardDescription>
+                    </CardHeader>
 
-                      <CardContent className="p-0 space-y-6 flex-grow">
-                        {/* Event Info */}
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-3 text-foreground">
-                            <Calendar className="h-5 w-5 text-primary flex-shrink-0" />
-                            <span className="font-medium">{event.date}</span>
-                          </div>
-                          <div className="flex items-center gap-3 text-foreground">
-                            <Clock className="h-5 w-5 text-primary flex-shrink-0" />
-                            <span>{event.time}</span>
-                          </div>
-                          <div className="flex items-start gap-3 text-foreground">
-                            <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                            <span>{event.location}</span>
-                          </div>
-                          <div className="flex items-center gap-3 text-foreground">
-                            <Globe className="h-5 w-5 text-primary flex-shrink-0" />
-                            <span>{event.languages.join(' / ')}</span>
-                          </div>
+                    <CardContent className="p-0 space-y-6 flex-grow">
+                      {/* Event Info */}
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3 text-foreground">
+                          <Calendar className="h-5 w-5 text-primary flex-shrink-0" />
+                          <span className="font-medium">{event.date}</span>
                         </div>
-
-                        {/* Organizers */}
-                        <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
-                          <p className="text-sm text-muted-foreground mb-2">Organized by</p>
-                          <div className="flex flex-wrap gap-2">
-                            {event.organizers.map((org, index) => (
-                              <span
-                                key={index}
-                                className="bg-primary/10 text-primary border border-primary/20 px-2 py-1 rounded text-sm font-medium"
-                              >
-                                {org}
-                              </span>
-                            ))}
-                          </div>
+                        <div className="flex items-center gap-3 text-foreground">
+                          <Clock className="h-5 w-5 text-primary flex-shrink-0" />
+                          <span>{event.time}</span>
                         </div>
+                        <div className="flex items-start gap-3 text-foreground">
+                          <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>{event.location}</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-foreground">
+                          <Globe className="h-5 w-5 text-primary flex-shrink-0" />
+                          <span>{event.languages.join(' / ')}</span>
+                        </div>
+                      </div>
 
-                        {/* Tags */}
+                      {/* Organizers */}
+                      <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
+                        <p className="text-sm text-muted-foreground mb-2">Organized by</p>
                         <div className="flex flex-wrap gap-2">
-                          {event.tags.map((tag, index) => (
+                          {event.organizers.map((org, index) => (
                             <span
                               key={index}
-                              className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium"
+                              className="bg-primary/10 text-primary border border-primary/20 px-2 py-1 rounded text-sm font-medium"
                             >
-                              {tag}
+                              {org}
                             </span>
                           ))}
                         </div>
+                      </div>
 
-                        {/* Action Button */}
-                        <div className="pt-4">
-                          <a href={event.url} target="_blank" rel="noopener noreferrer">
-                            <Button className="w-full group bg-primary hover:bg-primary/90 text-white">
-                              View Event Details
-                              <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                            </Button>
-                          </a>
-                        </div>
-                      </CardContent>
-                    </div>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2">
+                        {event.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Action Button */}
+                      <div className="pt-4">
+                        <a href={event.url} target="_blank" rel="noopener noreferrer">
+                          <Button className="w-full group bg-primary hover:bg-primary/90 text-white">
+                            View Event Details
+                            <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
                   </div>
-                </Card>
-              ))}
-            </div>
-          )}
+                </div>
+              </Card>
+            ))}
+          </div>
 
           {/* More Events Coming Soon */}
           <div className="mt-12 text-center">
