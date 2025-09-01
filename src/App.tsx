@@ -7,13 +7,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import SBSTTA27 from "./pages/SBSTTA27";
-import SBSTTA27About from "./pages/SBSTTA27About";
-import SBSTTA27Statements from "./pages/SBSTTA27Statements";
-import SBSTTA27Documents from "./pages/SBSTTA27Documents";
-import SBSTTA27SideEvents from "./pages/SBSTTA27SideEvents";
-import SBSTTA27Articles from "./pages/SBSTTA27Articles";
-import SBSTTA27Videos from "./pages/SBSTTA27Videos";
-import SBSTTA27Gallery from "./pages/SBSTTA27Gallery";
 import SB8J1About from "./pages/SB8J1About";
 import SB8J1Statements from "./pages/SB8J1Statements";
 import SB8J1Documents from "./pages/SB8J1Documents";
@@ -44,14 +37,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Index />} />
-            <Route path="sbstta-27" element={<Navigate to="/sbstta-27/about" replace />} />
-            <Route path="sbstta-27/about" element={<SBSTTA27About />} />
-            <Route path="sbstta-27/statements" element={<SBSTTA27Statements />} />
-            <Route path="sbstta-27/documents" element={<SBSTTA27Documents />} />
-            <Route path="sbstta-27/side-events" element={<SBSTTA27SideEvents />} />
-            <Route path="sbstta-27/articles" element={<SBSTTA27Articles />} />
-            <Route path="sbstta-27/videos" element={<SBSTTA27Videos />} />
-            <Route path="sbstta-27/gallery" element={<SBSTTA27Gallery />} />
+            <Route path="sbstta-27" element={<SBSTTA27 />} />
             <Route path="sb8j-1" element={<Navigate to="/sb8j-1/about" replace />} />
             <Route path="sb8j-1/about" element={<SB8J1About />} />
             <Route path="sb8j-1/statements" element={<SB8J1Statements />} />
