@@ -1,4 +1,3 @@
-
 import heroImage from '@/assets/hero-banner.jpg';
 import indigenousImage from '@/assets/hero-banner-indigenous.jpg';
 import documentsImage from '@/assets/indigenous-documents.jpg';
@@ -30,7 +29,6 @@ export const imageQueries = {
   'sb8j-media-coverage': 'media press conference',
   'sb8j-press-conferences': 'press conference speakers',
   'sb8j-social-toolkit': 'social media communication',
-  'sb8j-statements': 'official government statements',
   'sb8j-videos': 'conference video recording',
   'sb8j-gallery': 'conference photo gallery',
   'sbstta-27-about': 'scientific advisory meeting biodiversity',
