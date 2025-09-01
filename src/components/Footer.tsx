@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#2a2a2a] text-white py-20 relative">
       <div className="container mx-auto px-8 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 lg:gap-20">
           {/* IIFB Logo and Tagline */}
           <div className="space-y-8">
             <div className="flex items-start space-x-4">
@@ -56,60 +56,57 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Website Links and Bulletin */}
-          <div className="space-y-12">
-            {/* Website Links */}
-            <div>
-              <h4 className="text-xl font-semibold text-white mb-6">Website</h4>
-              <div className="space-y-3 text-sm">
-                <a href="/" className="block text-white/80 hover:text-white transition-colors">Home</a>
-                <a href="/about" className="block text-white/80 hover:text-white transition-colors">About us</a>
-                <a href="/resources" className="block text-white/80 hover:text-white transition-colors">Our Work</a>
-                <a href="/resources" className="block text-white/80 hover:text-white transition-colors">Capacity Building Center</a>
-                <a href="/documents" className="block text-white/80 hover:text-white transition-colors">Statements</a>
-                <a href="/news" className="block text-white/80 hover:text-white transition-colors">News</a>
-                <a href="/side-events" className="block text-white/80 hover:text-white transition-colors">Events</a>
-                <a href="/resources" className="block text-white/80 hover:text-white transition-colors">How to Engage</a>
-                <a href="/about" className="block text-white/80 hover:text-white transition-colors">Work with IIFB</a>
-                <a href="/about" className="block text-white/80 hover:text-white transition-colors">Code of Conduct</a>
-              </div>
+          {/* Website Links */}
+          <div className="space-y-6">
+            <h4 className="text-xl font-semibold text-white mb-6">Website</h4>
+            <div className="space-y-3 text-sm">
+              <a href="/" className="block text-white/80 hover:text-white transition-colors">Home</a>
+              <a href="/about" className="block text-white/80 hover:text-white transition-colors">About us</a>
+              <a href="/resources" className="block text-white/80 hover:text-white transition-colors">Our Work</a>
+              <a href="/resources" className="block text-white/80 hover:text-white transition-colors">Capacity Building Center</a>
+              <a href="/documents" className="block text-white/80 hover:text-white transition-colors">Statements</a>
+              <a href="/news" className="block text-white/80 hover:text-white transition-colors">News</a>
+              <a href="/side-events" className="block text-white/80 hover:text-white transition-colors">Events</a>
+              <a href="/resources" className="block text-white/80 hover:text-white transition-colors">How to Engage</a>
+              <a href="/about" className="block text-white/80 hover:text-white transition-colors">Work with IIFB</a>
+              <a href="/about" className="block text-white/80 hover:text-white transition-colors">Code of Conduct</a>
             </div>
+          </div>
 
-            {/* Bulletin Signup */}
-            <div>
-              <h4 className="text-xl font-semibold text-white mb-6">Bulletin</h4>
-              <form onSubmit={handleBulletinSubmit} className="space-y-4">
-                <div className="flex">
-                  <Input
-                    type="email"
-                    placeholder="Enter Your Email Address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="bg-white text-black placeholder:text-gray-500 border-0 text-sm rounded-r-none"
-                    required
-                  />
-                  <Button 
-                    type="submit" 
-                    className="bg-transparent hover:bg-white/10 text-white px-6 border border-white/20 rounded-l-none"
-                    disabled={!email || !agreed}
-                  >
-                    →
-                  </Button>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <input
-                    type="checkbox"
-                    id="privacy"
-                    checked={agreed}
-                    onChange={(e) => setAgreed(e.target.checked)}
-                    className="mt-1 w-4 h-4"
-                  />
-                  <label htmlFor="privacy" className="text-sm text-white/80 leading-relaxed">
-                    I agree to the <span className="underline cursor-pointer">Privacy Policy</span>
-                  </label>
-                </div>
-              </form>
-            </div>
+          {/* Bulletin Signup */}
+          <div className="space-y-6">
+            <h4 className="text-xl font-semibold text-white mb-6">Bulletin</h4>
+            <form onSubmit={handleBulletinSubmit} className="space-y-4">
+              <div className="flex">
+                <Input
+                  type="email"
+                  placeholder="Enter Your Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-white text-black placeholder:text-gray-500 border-0 text-sm rounded-r-none"
+                  required
+                />
+                <Button 
+                  type="submit" 
+                  className="bg-transparent hover:bg-white/10 text-white px-6 border border-white/20 rounded-l-none"
+                  disabled={!email || !agreed}
+                >
+                  →
+                </Button>
+              </div>
+              <div className="flex items-start space-x-3">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  checked={agreed}
+                  onChange={(e) => setAgreed(e.target.checked)}
+                  className="mt-1 w-4 h-4"
+                />
+                <label htmlFor="privacy" className="text-sm text-white/80 leading-relaxed">
+                  I agree to the <span className="underline cursor-pointer">Privacy Policy</span>
+                </label>
+              </div>
+            </form>
           </div>
         </div>
 
