@@ -1,145 +1,197 @@
 
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X, FileText, Calendar, Users, Camera, Video, MessageSquare } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface SBSTTA27NavigationProps {
   currentPage?: string;
 }
 
 const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigationItems = [
-    { 
-      name: 'About', 
-      href: '/sbstta-27/about', 
-      icon: FileText,
-      description: 'Learn about SBSTTA-27'
-    },
-    { 
-      name: 'Documents', 
-      href: '/sbstta-27/documents', 
-      icon: FileText,
-      description: 'Official documents and resources'
-    },
-    { 
-      name: 'Side Events', 
-      href: '/sbstta-27/side-events', 
-      icon: Calendar,
-      description: 'Side events and workshops'
-    },
-    { 
-      name: 'Statements', 
-      href: '/sbstta-27/statements', 
-      icon: MessageSquare,
-      description: 'Official statements and positions'
-    },
-    { 
-      name: 'Gallery', 
-      href: '/sbstta-27/gallery', 
-      icon: Camera,
-      description: 'Photo gallery from the meeting'
-    },
-    { 
-      name: 'Videos', 
-      href: '/sbstta-27/videos', 
-      icon: Video,
-      description: 'Video coverage and recordings'
-    }
-  ];
-
-  const isCurrentPage = (href: string) => {
-    return location.pathname === href || currentPage === href.split('/').pop();
-  };
-
-  const closeSheet = () => setIsOpen(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="w-full">
+    <div className="pt-8">
       {/* Desktop Navigation */}
-      <div className="hidden lg:block">
-        <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
-          {navigationItems.map((item) => {
-            const Icon = item.icon;
-            const isCurrent = isCurrentPage(item.href);
-            
-            return (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`group flex items-center gap-2 px-4 lg:px-6 py-3 rounded-lg transition-all duration-300 ${
-                  isCurrent
-                    ? 'bg-white/20 text-white border border-white/30 shadow-lg'
-                    : 'bg-white/10 text-white/90 hover:bg-white/20 hover:text-white border border-white/20'
-                }`}
-              >
-                <Icon className="h-5 w-5" />
-                <span className="font-medium text-sm lg:text-base">{item.name}</span>
-              </Link>
-            );
-          })}
+      <nav className="hidden md:block">
+        <div className="flex items-center justify-center space-x-1 bg-iifb-forest/90 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
+          <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
+          <Link 
+            to="/sbstta-27/about" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'about' 
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
+            }`}
+          >
+            About
+          </Link>
+          <Link 
+            to="/sbstta-27/statements" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'statements' 
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
+            }`}
+          >
+            Statements
+          </Link>
+          <Link 
+            to="/sbstta-27/documents" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'documents' 
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
+            }`}
+          >
+            Documents
+          </Link>
+          
+          {/* News & Media Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+                ['videos', 'gallery'].includes(currentPage || '')
+                  ? 'text-white bg-white/30'
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
+              }`}>
+                Media
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[220px] z-50">
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sbstta-27/videos" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'videos' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Videos
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link 
+                  to="/sbstta-27/gallery" 
+                  className={`w-full px-3 py-2 text-gray-700 ${
+                    currentPage === 'gallery' ? 'bg-gray-100' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Gallery
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Link 
+            to="/sbstta-27/side-events" 
+            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              currentPage === 'side-events' 
+                ? 'text-white bg-white/30' 
+                : 'text-white/90 hover:text-white hover:bg-white/20'
+            }`}
+          >
+            Side Events
+          </Link>
         </div>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <div className="md:hidden flex justify-center">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-white hover:bg-white/20 bg-iifb-forest/90 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+          onClick={toggleMenu}
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
       </div>
 
       {/* Mobile Navigation */}
-      <div className="lg:hidden">
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white"
+      {isMenuOpen && (
+        <nav className="md:hidden mt-4 bg-iifb-forest/90 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+          <div className="flex flex-col">
+            <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
+            <Link 
+              to="/sbstta-27/about" 
+              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
+                currentPage === 'about' 
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
+              }`}
             >
-              <Menu className="h-6 w-6 mr-2" />
-              Navigation
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-80 bg-gradient-to-b from-primary to-primary-dark border-r border-white/20">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-xl font-bold text-white">SBSTTA-27</h2>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={closeSheet}
-                className="text-white hover:bg-white/10"
+              About
+            </Link>
+            <Link 
+              to="/sbstta-27/statements" 
+              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
+                currentPage === 'statements' 
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
+              }`}
+            >
+              Statements
+            </Link>
+            <Link 
+              to="/sbstta-27/documents" 
+              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
+                currentPage === 'documents' 
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
+              }`}
+            >
+              Documents
+            </Link>
+            
+            {/* Mobile Media submenu */}
+            <div className="border-b border-white/10">
+              <div className="px-6 py-3 text-white/70 text-lg font-medium">Media</div>
+              <Link 
+                to="/sbstta-27/videos" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'videos' 
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                }`}
               >
-                <X className="h-5 w-5" />
-              </Button>
+                Videos
+              </Link>
+              <Link 
+                to="/sbstta-27/gallery" 
+                className={`px-8 py-3 transition-all duration-300 text-base block ${
+                  currentPage === 'gallery' 
+                    ? 'text-white bg-white/30' 
+                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                }`}
+              >
+                Gallery
+              </Link>
             </div>
             
-            <div className="space-y-2">
-              {navigationItems.map((item) => {
-                const Icon = item.icon;
-                const isCurrent = isCurrentPage(item.href);
-                
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    onClick={closeSheet}
-                    className={`flex items-center gap-3 p-4 rounded-lg transition-all duration-300 ${
-                      isCurrent
-                        ? 'bg-white/20 text-white border border-white/30'
-                        : 'text-white/90 hover:bg-white/10 hover:text-white'
-                    }`}
-                  >
-                    <Icon className="h-5 w-5 flex-shrink-0" />
-                    <div>
-                      <div className="font-medium">{item.name}</div>
-                      <div className="text-sm text-white/70">{item.description}</div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </nav>
+            <Link 
+              to="/sbstta-27/side-events" 
+              className={`px-6 py-4 transition-all duration-300 text-lg ${
+                currentPage === 'side-events' 
+                  ? 'text-white bg-white/30' 
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
+              }`}
+            >
+              Side Events
+            </Link>
+          </div>
+        </nav>
+      )}
+    </div>
   );
 };
 

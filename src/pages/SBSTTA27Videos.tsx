@@ -1,10 +1,7 @@
 
 import SBSTTA27Navigation from '@/components/SBSTTA27Navigation';
-import { usePexelsImage } from '@/hooks/usePexelsImage';
 
 const SBSTTA27Videos = () => {
-  const { imageUrl, isLoading } = usePexelsImage('sbstta-27-videos');
-
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -12,9 +9,7 @@ const SBSTTA27Videos = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
-            backgroundImage: `url(${imageUrl})`,
-            opacity: isLoading ? 0.5 : 1,
-            transition: 'opacity 0.3s ease-in-out'
+            backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
           }}
         >
           <div className="absolute inset-0 bg-black/40"></div>
@@ -25,9 +20,6 @@ const SBSTTA27Videos = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               SBSTTA-27 Videos
             </h1>
-            <p className="text-xl md:text-2xl mb-12">
-              Video coverage and recordings from the 27th Scientific Advisory Meeting
-            </p>
 
             <SBSTTA27Navigation currentPage="videos" />
           </div>
