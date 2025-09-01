@@ -30,11 +30,11 @@ const BackToTop = () => {
     <div className="absolute bottom-8 right-8">
       <Button
         onClick={scrollToTop}
-        className="bg-primary text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 animate-fade-in flex items-center gap-2 px-6 py-3 h-auto rounded-full border-2 border-white/20"
+        className="bg-primary text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 animate-fade-in rounded-full border-2 border-white/20 p-3"
         aria-label="Back to top"
+        size="icon"
       >
-        <ChevronUp className="h-5 w-5" />
-        <span className="text-sm font-semibold">Back to Top</span>
+        <ChevronUp className="h-6 w-6" />
       </Button>
     </div>
   );
