@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
@@ -104,7 +105,7 @@ const SideEventsCarousel = () => {
             <span className="text-sm font-medium text-primary uppercase tracking-wider">Side Events</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 lg:mb-10">
-            SB8J-1 Approved Side Events
+            Side Events
           </h2>
         </div>
 

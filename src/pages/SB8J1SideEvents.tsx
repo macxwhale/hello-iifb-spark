@@ -21,7 +21,7 @@ const SB8J1SideEvents = () => {
         <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="text-white text-center w-full">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-              SB8J-1 Side Events
+              Side Events
             </h1>
 
             <SB8J1Navigation currentPage="side-events" />
