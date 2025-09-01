@@ -1,245 +1,212 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, ArrowRight, Calendar, MapPin } from 'lucide-react';
 
-const sideEvents = [
-  {
-    id: 6762,
-    title: "Modus operandi of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
-    description: "Discussion on the operational framework and working methods for the new Subsidiary Body on Article 8(j), establishing clear procedures for effective governance and meaningful participation.",
-    date: "27",
-    month: "October",
-    year: "2025",
-    time: "13:15 - 14:45",
-    location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
-    organizer: "IIFB | SCBD | IWBN | CBD | IIN | RMIB-LAC",
-    interpretation: "Eng/Sp",
-    image: '/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
-    link: "https://www.cbd.int/side-events/6762"
-  },
-  {
-    id: 6756,
-    title: "Indigenous and Traditional Territories (ITTs) for conservation, restoration and spatial planning of biodiversity",
-    description: "Exploring how Indigenous and Traditional Territories contribute to biodiversity conservation and restoration efforts, and their integration into spatial planning processes.",
-    date: "28",
-    month: "October",
-    year: "2025",
-    time: "13:15 - 14:45",
-    location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
-    organizer: "IIFB | IWBN | IIN | RMIB-LAC | IUCN | BMZ | HAC N&P",
-    interpretation: "Eng/Sp",
-    image: '/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png',
-    link: "https://www.cbd.int/side-events/6756"
-  },
-  {
-    id: 6758,
-    title: "Evaluating effectiveness of marine Other Effective Area-based Conservation Measures (mOECMs) in the ocean, from an Indigenous Peoples and local communities perspective",
-    description: "Assessment of marine conservation measures from Indigenous Peoples and local communities perspectives, examining effectiveness and community involvement in ocean conservation.",
-    date: "29",
-    month: "October",
-    year: "2025",
-    time: "13:15 - 14:45",
-    location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
-    organizer: "IIFB | IWBN | RMIB-LAC | IIN | Oregon State University",
-    interpretation: "Eng/Sp",
-    image: '/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png',
-    link: "https://www.cbd.int/side-events/6758"
-  },
-  {
-    id: 6763,
-    title: "Enabling direct access for Indigenous Peoples and Local Communities to achieve the KMGBF",
-    description: "Panel discussion on mechanisms for direct access funding and support systems to enable Indigenous Peoples and Local Communities to contribute to achieving the Kunming-Montreal Global Biodiversity Framework targets.",
-    date: "29",
-    month: "October",
-    year: "2025",
-    time: "18:15 - 19:45",
-    location: "Africa Regional Group Room - 1st floor (Capacity: 84 people)",
-    organizer: "IUCN | IIFB | GAC",
-    interpretation: "Eng/Sp/Fr",
-    image: '/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png',
-    link: "https://www.cbd.int/side-events/6763"
-  }
-];
+import { useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Calendar, MapPin, Clock, Users, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const SideEventsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerView, setItemsPerView] = useState(1);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setItemsPerView(3);
-      } else if (window.innerWidth >= 768) {
-        setItemsPerView(2);
-      } else {
-        setItemsPerView(1);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const sideEvents = [
+    {
+      id: 1,
+      title: "Indigenous Knowledge Systems for Biodiversity Conservation",
+      date: "October 27, 2025",
+      time: "09:00 - 12:00",
+      location: "Convention Center - Room A",
+      organizer: "International Indigenous Forum on Biodiversity",
+      description: "Exploring traditional ecological knowledge and its integration into modern conservation practices. This session will highlight successful case studies from Indigenous communities worldwide.",
+      participants: "50",
+      tags: ["Traditional Knowledge", "Conservation", "Indigenous Rights"],
+      image: "/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png"
+    },
+    {
+      id: 2,
+      title: "Community-Based Natural Resource Management",
+      date: "October 28, 2025",
+      time: "14:00 - 17:00",
+      location: "Convention Center - Room B",
+      organizer: "Global Indigenous Alliance",
+      description: "Discussing community-led approaches to natural resource management and their effectiveness in biodiversity conservation.",
+      participants: "75",
+      tags: ["Community Management", "Natural Resources", "Sustainability"],
+      image: "/lovable-uploads/491c8948-0c3c-454d-a003-f3b7a5662af5.png"
+    },
+    {
+      id: 3,
+      title: "Digital Tools for Indigenous Territory Mapping",
+      date: "October 29, 2025",
+      time: "10:00 - 13:00",
+      location: "Convention Center - Room C",
+      organizer: "Indigenous Technology Network",
+      description: "Hands-on workshop on using digital mapping tools to document and protect Indigenous territories and sacred sites.",
+      participants: "30",
+      tags: ["Digital Tools", "Territory Mapping", "Technology"],
+      image: "/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png"
+    }
+  ];
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => 
-      prev + itemsPerView >= sideEvents.length ? 0 : prev + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % sideEvents.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => 
-      prev === 0 ? Math.max(0, sideEvents.length - itemsPerView) : prev - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + sideEvents.length) % sideEvents.length);
   };
 
   return (
-    <section id="side-events" className="py-20 lg:py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8 lg:mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-primary"></div>
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Side Events</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 lg:mb-10">
-            SB8J-1 Approved Side Events
+    <section className="py-16 lg:py-20 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-secondary rotate-45"></div>
+        <div className="absolute bottom-32 right-20 w-24 h-24 border-2 border-accent rotate-12"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 border-2 border-primary rotate-45"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Side Events
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-secondary via-accent to-secondary mx-auto mb-6"></div>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Join specialized sessions and workshops that complement the main meetings
+          </p>
         </div>
 
-        <div className="flex items-center justify-between mb-12 lg:mb-16">
-          <div className="flex space-x-3">
+        {/* Events Carousel */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Navigation Buttons */}
+          <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 flex justify-between z-20 pointer-events-none">
             <Button
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-full"
+              className="pointer-events-auto -translate-x-4 bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white shadow-lg"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-4 w-4" />
             </Button>
             <Button
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-full"
+              className="pointer-events-auto translate-x-4 bg-white/90 backdrop-blur-sm border-gray-200 hover:bg-white shadow-lg"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
-          
-          <Link to="/sb8j-1/side-events/all">
-            <Button variant="ghost" className="group text-primary hover:text-primary-hover">
-              View All Events
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </div>
 
-        <div className="relative overflow-hidden">
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ 
-              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-              width: `${(sideEvents.length / itemsPerView) * 100}%`
-            }}
-          >
-            {sideEvents.map((event) => (
-              <div
-                key={event.id}
-                className="flex-shrink-0 px-3"
-                style={{ width: `${100 / sideEvents.length}%` }}
-              >
-                <Card className="h-full bg-card border-2 border-transparent hover:border-secondary shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer">
-                  {/* Featured Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    <img 
-                      src={event.image} 
-                      alt={event.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    
-                    {/* Date Badge */}
-                    <div className="absolute top-4 right-4 bg-primary text-white rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg">
-                      <span className="text-2xl font-bold leading-none">{event.date}</span>
-                      <span className="text-xs font-medium leading-none">{event.month}</span>
-                      <span className="text-xs leading-none opacity-90">{event.year}</span>
-                    </div>
+          {/* Event Cards */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {sideEvents.map((event) => (
+                <div key={event.id} className="w-full flex-shrink-0 px-4">
+                  <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-card to-card/80">
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      {/* Event Image */}
+                      <div className="relative h-80 lg:h-full overflow-hidden">
+                        <img 
+                          src={event.image} 
+                          alt={event.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-secondary/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Side Event
+                          </span>
+                        </div>
+                      </div>
 
-                    {/* Event ID Badge */}
-                    <div className="absolute top-4 left-4 bg-secondary text-white rounded-lg px-3 py-1 text-sm font-bold shadow-lg">
-                      #{event.id}
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-3">
-                      {event.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground leading-relaxed line-clamp-3">
-                      {event.description}
-                    </p>
-                    
-                    {/* Event Details */}
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4" />
-                        <span>{event.time}</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                        <span className="line-clamp-2">{event.location}</span>
-                      </div>
-                      <div className="text-primary font-medium line-clamp-2">
-                        Organized by: {event.organizer}
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        Interpretation: {event.interpretation}
-                      </div>
-                    </div>
-                    
-                    {/* Learn More Button */}
-                    <div className="pt-4 border-t border-border/50">
-                      <a 
-                        href={event.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full"
-                      >
-                        <Button 
-                          variant="ghost" 
-                          className="w-full justify-start group/btn hover:bg-primary/5 p-0"
-                        >
-                          <div className="flex items-center justify-between w-full">
-                            <span className="text-primary font-medium">Learn More</span>
-                            <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
+                      {/* Event Details */}
+                      <div className="p-8 lg:p-10 flex flex-col">
+                        <CardHeader className="p-0 mb-6">
+                          <CardTitle className="text-2xl lg:text-3xl text-foreground mb-4 leading-tight">
+                            {event.title}
+                          </CardTitle>
+                          <CardDescription className="text-base text-muted-foreground leading-relaxed">
+                            {event.description}
+                          </CardDescription>
+                        </CardHeader>
+
+                        <CardContent className="p-0 space-y-6 flex-grow">
+                          {/* Event Info */}
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-3 text-foreground">
+                              <Calendar className="h-5 w-5 text-secondary flex-shrink-0" />
+                              <span className="font-medium">{event.date}</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-foreground">
+                              <Clock className="h-5 w-5 text-secondary flex-shrink-0" />
+                              <span>{event.time}</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-foreground">
+                              <MapPin className="h-5 w-5 text-secondary flex-shrink-0" />
+                              <span>{event.location}</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-foreground">
+                              <Users className="h-5 w-5 text-secondary flex-shrink-0" />
+                              <span>{event.participants} participants expected</span>
+                            </div>
                           </div>
-                        </Button>
-                      </a>
+
+                          {/* Organizer */}
+                          <div className="p-4 bg-secondary/5 rounded-lg border border-secondary/10">
+                            <p className="text-sm text-muted-foreground mb-1">Organized by</p>
+                            <p className="font-medium text-foreground">{event.organizer}</p>
+                          </div>
+
+                          {/* Tags */}
+                          <div className="flex flex-wrap gap-2">
+                            {event.tags.map((tag, index) => (
+                              <span
+                                key={index}
+                                className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {sideEvents.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-secondary scale-125' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              />
             ))}
           </div>
         </div>
 
-        {/* Indicators */}
-        <div className="flex justify-center mt-12 space-x-2">
-          {Array.from({ length: Math.ceil(sideEvents.length / itemsPerView) }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                Math.floor(currentIndex / itemsPerView) === index
-                  ? 'bg-primary shadow-md scale-110'
-                  : 'bg-muted hover:bg-primary/50 hover:scale-105'
-              }`}
-            />
-          ))}
+        {/* View All Events Button */}
+        <div className="text-center mt-12">
+          <Link to="/sb8j-1/side-events/all">
+            <Button 
+              className="bg-secondary hover:bg-secondary-hover text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              View All Events
+              <ExternalLink className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
