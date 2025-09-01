@@ -4,6 +4,7 @@ import heroBannerImage from '@/assets/hero-banner.jpg';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import SBSTTA27Navigation from '@/components/SBSTTA27Navigation';
 
 const SBSTTA27 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,39 +14,26 @@ const SBSTTA27 = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative min-h-[60vh] h-auto overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ backgroundImage: `url(${heroBannerImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center text-white py-20 lg:py-24">
-          <div className="mb-12 lg:mb-16">
+        <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+          <div className="text-white text-center w-full">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               SBSTTA-27
-              <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
-                27th Scientific Advisory Meeting
-              </span>
             </h1>
-            
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
-              Critical milestone providing science-based recommendations for implementing the Kunming–Montreal Global Biodiversity Framework
+              27th Scientific Advisory Meeting
             </p>
-            
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
-              <div className="flex items-center space-x-2 text-lg">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                <span>October 20-24, 2025</span>
-              </div>
-              <div className="flex items-center space-x-2 text-lg">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                <span>Panama City, Panama</span>
-              </div>
-            </div>
+
+            <SBSTTA27Navigation currentPage="home" />
           </div>
         </div>
       </section>
