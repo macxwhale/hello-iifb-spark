@@ -106,9 +106,9 @@ const NewsCarousel = () => {
                   {newsItems[0].description}
                 </p>
                 
-                <Button className="w-fit group/btn text-lg px-8 py-3 text-white hover:opacity-90" style={{ backgroundColor: '#741b00' }}>
+                <Button className="w-fit group/btn text-lg px-8 py-3 text-white" style={{ backgroundColor: '#741b00' }}>
                   Read Full Article
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
             </div>
@@ -153,9 +153,9 @@ const NewsCarousel = () => {
                   {item.description}
                 </p>
                 
-                <Button variant="ghost" className="w-full justify-between group/btn p-0" style={{ backgroundColor: 'rgba(116, 27, 0, 0.05)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(116, 27, 0, 0.05)'}>
+                <Button variant="ghost" className="w-full justify-between group/btn p-0" style={{ backgroundColor: 'rgba(116, 27, 0, 0.05)' }}>
                   <span className="font-medium" style={{ color: '#741b00' }}>Read More</span>
-                  <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" style={{ color: '#741b00' }} />
+                  <ArrowRight className="h-4 w-4" style={{ color: '#741b00' }} />
                 </Button>
               </CardContent>
             </Card>
@@ -165,7 +165,7 @@ const NewsCarousel = () => {
         {/* View All Button */}
         <div className="text-center">
           <Link to="/news">
-            <Button variant="outline" size="lg" className="border-2 transition-all duration-300 px-8 py-3 text-white hover:text-white" style={{ borderColor: '#741b00', color: '#741b00', backgroundColor: 'transparent' }} onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#741b00'; e.currentTarget.style.color = 'white'; }} onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#741b00'; }}>
+            <Button variant="outline" size="lg" className="border-2 px-8 py-3 text-white" style={{ borderColor: '#741b00', color: '#741b00', backgroundColor: 'transparent' }}>
               View All Articles
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
