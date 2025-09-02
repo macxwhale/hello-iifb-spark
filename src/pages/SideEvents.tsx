@@ -93,7 +93,7 @@ const SideEvents = () => {
   const filteredEvents = events.filter(event => {
     const searchMatch = event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                         event.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const categoryMatch = categoryFilter === '' || event.category === categoryFilter;
+    const categoryMatch = !categoryFilter || categoryFilter === 'all' || event.category === categoryFilter;
     return searchMatch && categoryMatch;
   });
 
@@ -144,7 +144,7 @@ const SideEvents = () => {
                   <SelectValue placeholder="Filter by category" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Categories</SelectItem>
+                  <SelectItem value="all">All Categories</SelectItem>
                   {[...new Set(events.map(event => event.category))].map(category => (
                     <SelectItem key={category} value={category}>{category}</SelectItem>
                   ))}

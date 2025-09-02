@@ -107,7 +107,7 @@ const News = () => {
   const filteredNews = newsItems.filter(item => {
     const searchMatch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                         item.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const categoryMatch = categoryFilter ? item.category === categoryFilter : true;
+    const categoryMatch = !categoryFilter || categoryFilter === 'all' || item.category === categoryFilter;
     return searchMatch && categoryMatch;
   });
 
@@ -171,7 +171,7 @@ const News = () => {
                 <SelectValue placeholder="Filter by Category" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all">All Categories</SelectItem>
                 <SelectItem value="Policy Update">Policy Update</SelectItem>
                 <SelectItem value="Event News">Event News</SelectItem>
                 <SelectItem value="Research">Research</SelectItem>
@@ -185,7 +185,7 @@ const News = () => {
                 <SelectValue placeholder="Sort By" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Relevance</SelectItem>
+                <SelectItem value="relevance">Relevance</SelectItem>
                 <SelectItem value="date">Date</SelectItem>
               </SelectContent>
             </Select>
