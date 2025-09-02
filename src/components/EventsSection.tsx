@@ -27,7 +27,7 @@ const EventsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* SBSTTA-27 Event Card - Enhanced */}
-          <Card className="overflow-hidden border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
+          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: '#741b00' }}>
             <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(to right, #741b00, #25 85% 55%, #741b00)` }}></div>
             <div className="relative h-72 overflow-hidden">
               <img 
@@ -97,7 +97,7 @@ const EventsSection = () => {
           </Card>
 
           {/* SB8J-1 Event Card - Enhanced */}
-          <Card className="overflow-hidden border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
+          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: '#741b00' }}>
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
             <div className="relative h-72 overflow-hidden">
               <img 
