@@ -209,17 +209,9 @@ const SideEventsCarousel = () => {
                         rel="noopener noreferrer"
                         className="w-full"
                       >
-                        <Button 
-                          variant="ghost" 
-                          className="w-full justify-start group/btn p-0"
-                          style={{ '--hover-bg': 'rgba(116, 27, 0, 0.05)' } as React.CSSProperties}
-                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(116, 27, 0, 0.05)'}
-                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
-                        >
-                          <div className="flex items-center justify-between w-full">
-                            <span className="font-medium" style={{ color: '#741b00' }}>Learn More</span>
-                            <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" style={{ color: '#741b00' }} />
-                          </div>
+                        <Button className="w-full group/btn px-6 py-3 rounded-lg font-medium transition-all duration-200 border text-white hover:shadow-lg hover:scale-105" style={{ backgroundColor: '#741b00', borderColor: '#741b00' }}>
+                          <span>Learn More</span>
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                         </Button>
                       </a>
                     </div>
