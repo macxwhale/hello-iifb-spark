@@ -28,7 +28,7 @@ All colors MUST be HSL.
     --secondary: 140 60% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    /* Warm Orange Accent */
+    /* Warm Orange Accent - Updated to #741b00 */
     --accent: 14 100% 22%;
     --accent-foreground: 0 0% 98%;
 
@@ -45,7 +45,7 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* IIFB Brand Colors */
+    /* IIFB Brand Colors - Updated orange to #741b00 */
     --iifb-rust: 15 75% 45%;
     --iifb-forest: 140 60% 25%;
     --iifb-orange: 14 100% 22%;
