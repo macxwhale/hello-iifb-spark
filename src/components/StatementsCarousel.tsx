@@ -86,10 +86,17 @@ const StatementsCarousel = () => {
       case 'Latest': return 'bg-green-100 text-green-800 border-green-200';
       case 'Featured': return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'New': return 'bg-purple-100 text-purple-800 border-purple-200';
-      case 'Updated': return 'bg-orange-100 text-orange-800 border-orange-200';
+      case 'Updated': return 'bg-orange-100 border-orange-200';
       case 'Important': return 'bg-red-100 text-red-800 border-red-200';
       default: return 'bg-gray-100 text-gray-800 border-gray-200';
     }
+  };
+
+  const getUpdatedTextColor = (status: string) => {
+    if (status === 'Updated') {
+      return { color: '#741b00' };
+    }
+    return {};
   };
 
   return (
@@ -147,7 +154,10 @@ const StatementsCarousel = () => {
                 <Card className="h-full shadow-medium hover:shadow-strong transition-all duration-300 border-l-4 border-l-iifb-forest bg-gradient-to-br from-card to-iifb-cream/10 group">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-3">
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(statement.status)}`}>
+                     <span 
+                        className={`px-3 py-1 rounded-full text-sm font-medium border ${getStatusColor(statement.status)}`}
+                        style={getUpdatedTextColor(statement.status)}
+                      >
                         {statement.status}
                       </span>
                       <div className="flex items-center text-muted-foreground text-sm bg-muted/50 rounded-full px-3 py-1">
