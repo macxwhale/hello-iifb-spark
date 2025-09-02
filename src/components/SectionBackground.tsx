@@ -25,7 +25,8 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       case 'events':
         return {
           bgClass: 'bg-gradient-to-br from-background via-muted/30 to-iifb-cream/50',
-          contentClass: ''
+          contentClass: '',
+          hasTexture: true
         };
       
       case 'statements':
