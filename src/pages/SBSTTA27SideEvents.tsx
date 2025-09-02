@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -85,7 +84,7 @@ const SBSTTA27SideEvents = () => {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button className="w-full group/btn bg-secondary hover:bg-secondary-hover">
+              <Button className="w-full group/btn text-white hover:opacity-90" style={{ backgroundColor: '#741b00' }}>
                 <ExternalLink className="h-4 w-4 mr-2" />
                 View Event Details
                 <ArrowRight className="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
@@ -131,7 +130,7 @@ const SBSTTA27SideEvents = () => {
               <div className="line-clamp-1">{event.organizer}</div>
             </div>
             <a href={event.link} target="_blank" rel="noopener noreferrer">
-              <Button size="sm" className="w-full bg-secondary hover:bg-secondary-hover text-xs">
+              <Button size="sm" className="w-full text-white hover:opacity-90 text-xs" style={{ backgroundColor: '#741b00' }}>
                 View Details
               </Button>
             </a>
@@ -173,7 +172,7 @@ const SBSTTA27SideEvents = () => {
                 </div>
               </div>
               <a href={event.link} target="_blank" rel="noopener noreferrer" className="ml-4">
-                <Button className="bg-secondary hover:bg-secondary-hover">
+                <Button className="text-white hover:opacity-90" style={{ backgroundColor: '#741b00' }}>
                   <ExternalLink className="h-4 w-4 mr-2" />
                   View Details
                 </Button>
