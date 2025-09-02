@@ -51,10 +51,10 @@ const IntroductionSection = () => {
 
               {/* Feature Cards - Below Video */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div className="border-l-4 rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', borderLeftColor: '#741b00' }}>
+                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
                   <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 rounded-full group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: 'rgba(116, 27, 0, 0.2)' }}>
-                      <Users className="h-6 w-6" style={{ color: '#741b00' }} />
+                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Users className="h-6 w-6 text-secondary" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">
