@@ -55,7 +55,7 @@ const SBSTTA27SideEvents = () => {
             </div>
           </div>
           <CardContent className="p-6">
-            <h3 className="text-xl font-bold text-foreground line-clamp-3 group-hover:text-primary transition-colors mb-4">
+            <h3 className="text-xl font-bold text-foreground line-clamp-3 transition-colors mb-4" style={{ color: 'inherit' }} onMouseEnter={(e) => e.currentTarget.style.color = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
               {event.title}
             </h3>
             <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
@@ -72,7 +72,7 @@ const SBSTTA27SideEvents = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4" />
-                <span className="text-primary font-medium">{event.organizer}</span>
+                <span className="font-medium" style={{ color: '#741b00' }}>{event.organizer}</span>
               </div>
               <div className="text-xs">
                 Interpretation: {event.interpretation}
@@ -164,7 +164,7 @@ const SBSTTA27SideEvents = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Users className="h-4 w-4" />
-                    <span className="text-primary">{event.organizer}</span>
+                    <span style={{ color: '#741b00' }}>{event.organizer}</span>
                   </div>
                 </div>
                 <div className="text-sm text-muted-foreground mt-2">
