@@ -35,7 +35,6 @@ const EventsSection = () => {
                 alt="SBSTTA-27 Meeting"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute top-6 left-6">
                 <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'rgba(116, 27, 0, 0.9)' }}>
                   Scientific Advisory
@@ -106,7 +105,7 @@ const EventsSection = () => {
                 alt="SB8J-1 Meeting"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              
               <div className="absolute top-6 left-6">
                 <span className="bg-secondary/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20">
                   Indigenous Rights
