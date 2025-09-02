@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
@@ -151,7 +150,7 @@ const SideEventsCarousel = () => {
                 className="flex-shrink-0 px-3"
                 style={{ width: `${100 / sideEvents.length}%` }}
               >
-                <Card className="h-full bg-card border-2 border-transparent hover:border-secondary shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer">
+                <Card className="h-full bg-card border-2 border-transparent hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer" style={{ '--hover-border-color': '#741b00' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
                   {/* Featured Image */}
                   <div className="relative h-64 overflow-hidden">
                     <img 
@@ -176,7 +175,7 @@ const SideEventsCarousel = () => {
                   
                   {/* Content */}
                   <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-3">
+                    <h3 className="text-xl font-bold text-foreground leading-tight transition-colors duration-200 line-clamp-3" style={{ color: 'inherit' }} onMouseEnter={(e) => e.currentTarget.style.color = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
                       {event.title}
                     </h3>
                     
@@ -212,11 +211,14 @@ const SideEventsCarousel = () => {
                       >
                         <Button 
                           variant="ghost" 
-                          className="w-full justify-start group/btn hover:bg-primary/5 p-0"
+                          className="w-full justify-start group/btn p-0"
+                          style={{ '--hover-bg': 'rgba(116, 27, 0, 0.05)' } as React.CSSProperties}
+                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(116, 27, 0, 0.05)'}
+                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
                         >
                           <div className="flex items-center justify-between w-full">
-                            <span className="text-primary font-medium">Learn More</span>
-                            <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
+                            <span className="font-medium" style={{ color: '#741b00' }}>Learn More</span>
+                            <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" style={{ color: '#741b00' }} />
                           </div>
                         </Button>
                       </a>
@@ -237,8 +239,20 @@ const SideEventsCarousel = () => {
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 Math.floor(currentIndex / itemsPerView) === index
                   ? 'bg-primary shadow-md scale-110'
-                  : 'bg-muted hover:bg-primary/50 hover:scale-105'
+                  : 'bg-muted hover:scale-105'
               }`}
+              style={Math.floor(currentIndex / itemsPerView) !== index ? { '--hover-bg': 'rgba(116, 27, 0, 0.5)' } as React.CSSProperties : {}}
+              onMouseEnter={(e) => {
+                if (Math.floor(currentIndex / itemsPerView) !== index) {
+                  e.currentTarget.style.backgroundColor = 'rgba(116, 27, 0, 0.5)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (Math.floor(currentIndex / itemsPerView) !== index) {
+                  e.currentTarget.style.backgroundColor = '';
+                  e.currentTarget.className = e.currentTarget.className.replace('hover:bg-primary/50', '');
+                }
+              }}
             />
           ))}
         </div>
