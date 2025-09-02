@@ -160,8 +160,8 @@ const SideEventsCarousel = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     
-                    {/* Date Badge */}
-                    <div className="absolute top-4 right-4 bg-primary text-white rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg">
+                     {/* Date Badge */}
+                     <div className="absolute top-4 right-4 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg" style={{ backgroundColor: '#741b00', color: 'white' }}>
                       <span className="text-2xl font-bold leading-none">{event.date}</span>
                       <span className="text-xs font-medium leading-none">{event.month}</span>
                       <span className="text-xs leading-none opacity-90">{event.year}</span>
