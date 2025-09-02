@@ -27,13 +27,13 @@ const EventsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* SBSTTA-27 Event Card - Enhanced */}
-          <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
+          <Card className="overflow-hidden shadow-strong border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
             <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(to right, #741b00, #25 85% 55%, #741b00)` }}></div>
             <div className="relative h-72 overflow-hidden">
               <img 
                 src={sbsttaImage} 
                 alt="SBSTTA-27 Meeting"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
               <div className="absolute top-6 left-6">
                 <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'rgba(116, 27, 0, 0.9)' }}>
@@ -97,13 +97,13 @@ const EventsSection = () => {
           </Card>
 
           {/* SB8J-1 Event Card - Enhanced */}
-          <Card className="overflow-hidden shadow-strong hover:shadow-xl transition-all duration-500 group border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
+          <Card className="overflow-hidden shadow-strong border-0 bg-gradient-to-br from-card to-card/80 relative flex flex-col">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
             <div className="relative h-72 overflow-hidden">
               <img 
                 src={sb8jImage} 
                 alt="SB8J-1 Meeting"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
               
               <div className="absolute top-6 left-6">
