@@ -118,7 +118,7 @@ const KeyResourcesSection = () => {
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+              className="hover:bg-primary hover:text-primary-foreground hover:scale-105 border-primary/30 transition-all duration-200"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -126,7 +126,7 @@ const KeyResourcesSection = () => {
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+              className="hover:bg-primary hover:text-primary-foreground hover:scale-105 border-primary/30 transition-all duration-200"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -173,11 +173,11 @@ const KeyResourcesSection = () => {
                         {resource.description}
                       </CardDescription>
                       <div className="flex flex-col sm:flex-row gap-2">
-                        <Button variant="outline" size="sm" className="flex-1">
+                        <Button variant="outline" size="sm" className="flex-1 hover:bg-primary hover:text-primary-foreground transition-colors">
                           <ExternalLink className="h-3 w-3 mr-2" />
                           View
                         </Button>
-                        <Button variant="ghost" size="sm" className="flex-1">
+                        <Button variant="ghost" size="sm" className="flex-1 hover:bg-primary/10 hover:text-primary transition-colors">
                           <Download className="h-3 w-3 mr-2" />
                           Download
                         </Button>
@@ -198,7 +198,7 @@ const KeyResourcesSection = () => {
               onClick={() => setCurrentIndex(index * itemsPerView)}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
                 Math.floor(currentIndex / itemsPerView) === index
-                  ? 'bg-primary shadow-md'
+                  ? 'bg-primary shadow-md scale-110'
                   : 'bg-muted hover:bg-primary/50 hover:scale-110'
               }`}
             />
@@ -208,7 +208,7 @@ const KeyResourcesSection = () => {
         {/* View All Resources Button */}
         <div className="text-center mt-8">
           <Link to="/resources">
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
               <FileText className="h-4 w-4 mr-2" />
               View All Resources
             </Button>

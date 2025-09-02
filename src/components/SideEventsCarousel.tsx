@@ -114,7 +114,7 @@ const SideEventsCarousel = () => {
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-full"
+              className="hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200 rounded-full border-primary/30"
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
@@ -122,14 +122,14 @@ const SideEventsCarousel = () => {
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-full"
+              className="hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200 rounded-full border-primary/30"
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
           </div>
           
           <Link to="/sb8j-1/side-events/all">
-            <Button variant="ghost" className="group text-primary hover:text-primary-hover">
+            <Button variant="ghost" className="group text-primary hover:text-primary hover:bg-primary/10 transition-colors">
               View All Events
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -161,7 +161,7 @@ const SideEventsCarousel = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     
                      {/* Date Badge */}
-                     <div className="absolute top-4 right-4 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg" style={{ backgroundColor: '#741b00', color: 'white' }}>
+                     <div className="absolute top-4 right-4 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg bg-primary text-primary-foreground">
                       <span className="text-2xl font-bold leading-none">{event.date}</span>
                       <span className="text-xs font-medium leading-none">{event.month}</span>
                       <span className="text-xs leading-none opacity-90">{event.year}</span>
@@ -209,16 +209,13 @@ const SideEventsCarousel = () => {
                         rel="noopener noreferrer"
                         className="w-full"
                       >
-                        <Button 
+                         <Button 
                           variant="ghost" 
-                          className="w-full justify-start group/btn p-0"
-                          style={{ '--hover-bg': 'rgba(116, 27, 0, 0.05)' } as React.CSSProperties}
-                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(116, 27, 0, 0.05)'}
-                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                          className="w-full justify-start group/btn p-0 hover:bg-primary/5 transition-colors"
                         >
                           <div className="flex items-center justify-between w-full">
-                            <span className="font-medium" style={{ color: '#741b00' }}>Learn More</span>
-                            <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" style={{ color: '#741b00' }} />
+                            <span className="font-medium text-primary">Learn More</span>
+                            <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
                           </div>
                         </Button>
                       </a>

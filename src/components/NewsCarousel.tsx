@@ -53,8 +53,8 @@ const NewsCarousel = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#741b00' }}></div>
-            <span className="text-sm font-medium uppercase tracking-wider" style={{ color: '#741b00' }}>Stay Updated</span>
+            <div className="w-2 h-2 rounded-full bg-primary"></div>
+            <span className="text-sm font-medium uppercase tracking-wider text-primary">Stay Updated</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Latest News and Articles
@@ -76,7 +76,7 @@ const NewsCarousel = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent lg:from-transparent lg:to-black/20"></div>
                 <div className="absolute top-6 left-6">
-                  <span className="text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg" style={{ backgroundColor: '#741b00' }}>
+                  <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                     Featured
                   </span>
                 </div>
@@ -106,9 +106,9 @@ const NewsCarousel = () => {
                   {newsItems[0].description}
                 </p>
                 
-                <Button className="w-fit group/btn text-lg px-8 py-3 text-white" style={{ backgroundColor: '#741b00' }}>
+                <Button className="w-fit group/btn text-lg px-8 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
                   Read Full Article
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </div>
@@ -127,7 +127,7 @@ const NewsCarousel = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="text-white px-3 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: 'rgba(116, 27, 0, 0.9)' }}>
+                  <span className="bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
                     {item.category}
                   </span>
                 </div>
@@ -153,9 +153,9 @@ const NewsCarousel = () => {
                   {item.description}
                 </p>
                 
-                <Button variant="ghost" className="w-full justify-between group/btn p-0" style={{ backgroundColor: 'rgba(116, 27, 0, 0.05)' }}>
-                  <span className="font-medium" style={{ color: '#741b00' }}>Read More</span>
-                  <ArrowRight className="h-4 w-4" style={{ color: '#741b00' }} />
+                <Button variant="ghost" className="w-full justify-between group/btn p-0 hover:bg-primary/5 transition-colors">
+                  <span className="font-medium text-primary">Read More</span>
+                  <ArrowRight className="h-4 w-4 text-primary group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </CardContent>
             </Card>
@@ -165,7 +165,7 @@ const NewsCarousel = () => {
         {/* View All Button */}
         <div className="text-center">
           <Link to="/news">
-            <Button variant="outline" size="lg" className="border-2 px-8 py-3 text-white" style={{ borderColor: '#741b00', color: '#741b00', backgroundColor: 'transparent' }}>
+            <Button variant="outline" size="lg" className="border-2 border-primary text-primary px-8 py-3 hover:bg-primary hover:text-primary-foreground transition-colors">
               View All Articles
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
