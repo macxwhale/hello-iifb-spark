@@ -36,8 +36,9 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       
       case 'news':
         return {
-          bgClass: 'bg-white',
-          contentClass: ''
+          bgClass: 'bg-white relative',
+          contentClass: '',
+          hasTexture: true
         };
       
       case 'side-events':
@@ -48,8 +49,9 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       
       case 'resources':
         return {
-          bgClass: 'bg-white',
-          contentClass: ''
+          bgClass: 'bg-white relative',
+          contentClass: '',
+          hasTexture: true
         };
       
       default:
@@ -60,10 +62,20 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
     }
   };
 
-  const { bgClass, contentClass } = getBackgroundConfig();
+  const { bgClass, contentClass, hasTexture } = getBackgroundConfig();
 
   return (
     <div className={`relative ${bgClass} ${className} overflow-hidden`}>
+      {hasTexture && (
+        <div 
+          className="absolute top-0 left-0 w-64 h-64 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: "url('/src/assets/textura-5.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain'
+          }}
+        />
+      )}
       <div className={`relative z-10 ${contentClass}`}>
         {children}
       </div>
