@@ -11,6 +11,18 @@ const ipbesWorkshopImage = '/lovable-uploads/96490106-76fa-41f3-9b84-56f75115fa1
 const newsItems = [
   {
     id: 1,
+    title: "IIFB Guidelines on Indigenous and Traditional Territories (ITTs)",
+    description: "Comprehensive framework for recognizing Indigenous Peoples' vital role in biodiversity conservation, sustainable use, and restoration within their territories. Promotes respect for traditional knowledge, governance systems, and culturally appropriate practices.",
+    date: "15",
+    month: "July",
+    year: "2025",
+    category: "Guidelines",
+    image: indigenousBodyImage,
+    link: "https://iifb-indigenous.org/iifb-guidelines-on-indigenous-and-traditional-territories-itts/",
+    readTime: "8 min read"
+  },
+  {
+    id: 2,
     title: "Views of Indigenous Peoples and Local Communities in Preparation to SB8J-1",
     description: "IIFB concludes series of working meetings presenting collective in-depth analysis and contributions from seven socio-cultural regions. Includes endorsed guidelines on territorial rights and spatial planning for biodiversity conservation.",
     date: "02",
@@ -22,7 +34,7 @@ const newsItems = [
     readTime: "6 min read"
   },
   {
-    id: 2,
+    id: 3,
     title: "CBD COP16 Establishes Historic Indigenous Subsidiary Body",
     description: "Parties to the Convention on Biological Diversity made the groundbreaking decision to create a permanent subsidiary body dedicated to Indigenous Peoples and local communities.",
     date: "06",
@@ -52,9 +64,64 @@ const NewsCarousel = () => {
           </p>
         </div>
 
-        {/* News Articles Grid */}
+        {/* Featured Article (First Item) */}
+        <div className="mb-16">
+          <Card className="overflow-hidden bg-card border-2 border-transparent shadow-xl hover:shadow-2xl transition-all duration-500 group" style={{ borderColor: 'transparent' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative h-80 lg:h-full overflow-hidden">
+                <img 
+                  src={newsItems[0].image} 
+                  alt={newsItems[0].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent lg:from-transparent lg:to-black/20"></div>
+                <div className="absolute top-6 left-6">
+                  <span className="text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
+                    Featured
+                  </span>
+                </div>
+              </div>
+              
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>{newsItems[0].month} {newsItems[0].date}, {newsItems[0].year}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    <span>{newsItems[0].readTime}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Tag className="h-4 w-4" />
+                    <span>{newsItems[0].category}</span>
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 leading-tight transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                  {newsItems[0].title}
+                </h3>
+                
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  {newsItems[0].description}
+                </p>
+                
+                <Button 
+                  className="w-fit group/btn text-lg px-8 py-3 text-white" 
+                  style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}
+                  onClick={() => window.open(newsItems[0].link, '_blank')}
+                >
+                  Read Full Article
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        {/* Secondary Articles */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {newsItems.map((item, index) => (
+          {newsItems.slice(1, 3).map((item, index) => (
             <Card key={item.id} className="overflow-hidden bg-card border-2 border-transparent shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
               <div className="relative h-56 overflow-hidden">
                 <img 
