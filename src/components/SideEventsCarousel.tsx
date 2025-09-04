@@ -100,8 +100,8 @@ const SideEventsCarousel = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 lg:mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-primary"></div>
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">Side Events</span>
+            <div className="w-2 h-2 rounded-full bg-iifb-forest"></div>
+            <span className="text-sm font-medium text-iifb-forest uppercase tracking-wider">Side Events</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 lg:mb-10">
             Side Events
