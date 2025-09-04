@@ -230,7 +230,7 @@ const SBSTTA27About = () => {
                     and support the achievement of global biodiversity targets.
                   </p>
                   
-                  <div className="mt-8 inline-flex items-center gap-2 text-primary font-medium">
+                  <div className="mt-8 inline-flex items-center gap-2 text-iifb-orange font-medium">
                     <Leaf className="w-5 h-5" />
                     <span>Informing science-based policy decisions at COP16</span>
                   </div>
