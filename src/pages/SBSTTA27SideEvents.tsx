@@ -49,9 +49,6 @@ const SBSTTA27SideEvents = () => {
                 <span className="text-2xl font-bold leading-none">{event.date}</span>
                 <span className="text-xs font-medium leading-none">{event.month}</span>
               </div>
-              <div className="absolute top-4 left-4">
-                <Badge className="bg-secondary text-white">#{event.id}</Badge>
-              </div>
             </div>
           </div>
           <CardContent className="p-6">
@@ -110,9 +107,6 @@ const SBSTTA27SideEvents = () => {
                 <span className="font-bold">{event.date}</span>
                 <span>{event.month.slice(0, 3)}</span>
               </div>
-              <div className="absolute top-2 left-2">
-                <Badge className="bg-secondary text-white text-xs">#{event.id}</Badge>
-              </div>
             </div>
           </div>
           <CardContent className="p-4">
@@ -148,7 +142,6 @@ const SBSTTA27SideEvents = () => {
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
-                  <Badge className="bg-secondary text-white">#{event.id}</Badge>
                   <span className="text-sm text-muted-foreground">{event.day}, {event.date} {event.month} {event.year}</span>
                   <div className="flex items-center gap-1 text-sm text-muted-foreground">
                     <Calendar className="h-4 w-4 text-iifb-orange" />
