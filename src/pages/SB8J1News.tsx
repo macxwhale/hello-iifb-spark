@@ -21,6 +21,26 @@ const SB8J1News = () => {
   const newsItems = [
     {
       id: 1,
+      title: "IIFB Guidelines on Indigenous and Traditional Territories (ITTs)",
+      description: "Comprehensive framework for recognizing Indigenous Peoples' vital role in biodiversity conservation, sustainable use, and restoration within their territories. Promotes respect for traditional knowledge, governance systems, and culturally appropriate practices.",
+      date: "July 15, 2025",
+      category: "Guidelines",
+      image: '/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png',
+      link: "https://iifb-indigenous.org/iifb-guidelines-on-indigenous-and-traditional-territories-itts/",
+      readTime: "8 min read"
+    },
+    {
+      id: 2,
+      title: "Views of Indigenous Peoples and Local Communities in Preparation to SB8J-1",
+      description: "IIFB concludes series of working meetings presenting collective in-depth analysis and contributions from seven socio-cultural regions. Includes endorsed guidelines on territorial rights and spatial planning for biodiversity conservation.",
+      date: "June 2, 2025",
+      category: "Regional Views",
+      image: '/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png',
+      link: "https://iifb-indigenous.org/views-of-indigenous-peoples-and-local-communities-in-preparation-sb8j1/",
+      readTime: "6 min read"
+    },
+    {
+      id: 3,
       title: "CBD COP16 Establishes Historic Indigenous Subsidiary Body",
       description: "Parties to the Convention on Biological Diversity made the groundbreaking decision to create a permanent subsidiary body dedicated to Indigenous Peoples and local communities.",
       date: "March 6, 2025",
@@ -30,7 +50,7 @@ const SB8J1News = () => {
       readTime: "5 min read"
     },
     {
-      id: 2,
+      id: 4,
       title: "Panama to Host Crucial Biodiversity Meetings",
       description: "Panama City will welcome global experts for SBSTTA-27 and the inaugural SB8J-1 meeting, marking a new era in biodiversity governance.",
       date: "February 15, 2025",
@@ -40,7 +60,7 @@ const SB8J1News = () => {
       readTime: "3 min read"
     },
     {
-      id: 3,
+      id: 5,
       title: "IPBES Workshop Prepares for SBSTTA-27",
       description: "Latest IPBES assessments will inform scientific recommendations at the upcoming SBSTTA meeting, providing crucial data for biodiversity framework implementation.",
       date: "January 22, 2025",
@@ -50,7 +70,7 @@ const SB8J1News = () => {
       readTime: "4 min read"
     },
     {
-      id: 4,
+      id: 6,
       title: "New Conservation Finance Mechanisms Unveiled",
       description: "Innovative financial tools are being developed to support Indigenous-led conservation efforts and promote sustainable biodiversity management.",
       date: "April 10, 2025",
@@ -60,7 +80,7 @@ const SB8J1News = () => {
       readTime: "6 min read"
     },
     {
-      id: 5,
+      id: 7,
       title: "Indigenous Knowledge to Inform Global Biodiversity Strategy",
       description: "Traditional ecological knowledge is increasingly recognized as a vital component of effective biodiversity conservation strategies worldwide.",
       date: "May 1, 2025",
@@ -100,7 +120,10 @@ const SB8J1News = () => {
               />
               <div className="flex-1">
                 <p className="text-foreground leading-relaxed mb-4">{item.description}</p>
-                <Button className="bg-secondary text-white hover:bg-secondary-hover">
+                <Button 
+                  className="bg-secondary text-white hover:bg-secondary-hover"
+                  onClick={() => window.open(item.link, '_blank')}
+                >
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Read Article
                 </Button>
@@ -140,7 +163,11 @@ const SB8J1News = () => {
                 <Calendar className="h-3 w-3" />
                 {item.date}
               </div>
-              <Button size="sm" className="bg-secondary text-white hover:bg-secondary-hover">
+              <Button 
+                size="sm" 
+                className="bg-secondary text-white hover:bg-secondary-hover"
+                onClick={() => window.open(item.link, '_blank')}
+              >
                 <ExternalLink className="h-3 w-3 mr-1" />
                 Read
               </Button>
@@ -176,7 +203,10 @@ const SB8J1News = () => {
                   <p className="text-muted-foreground">{item.description}</p>
                 </div>
               </div>
-              <Button className="bg-secondary text-white hover:bg-secondary-hover ml-4">
+              <Button 
+                className="bg-secondary text-white hover:bg-secondary-hover ml-4"
+                onClick={() => window.open(item.link, '_blank')}
+              >
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Read Article
               </Button>
