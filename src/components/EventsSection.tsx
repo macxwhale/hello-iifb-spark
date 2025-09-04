@@ -141,7 +141,7 @@ const EventsSection = () => {
               <p className="text-foreground leading-relaxed text-lg">
                 Historic establishment of permanent body dedicated to Indigenous Peoples and local communities following COP16 landmark decision. 
                 Addresses territorial guidelines, traditional knowledge integration in planning, and terminology review for cultural relevance. 
-                Sets foundation for elevating IPLC leadership and enhancing biodiversity governance toward global targets.
+                Sets foundation for elevating IPLC leadership and enhancing biodiversity governance.
               </p>
               
               <div className="flex flex-wrap gap-2">
