@@ -77,6 +77,17 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           }}
         />
       )}
+      {/* Geometric pattern for white background sections */}
+      {(variant === 'news' || variant === 'resources') && (
+        <div 
+          className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage: "url('/lovable-uploads/7d105940-0611-46f4-bf33-ba287a0243de.png')",
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain'
+          }}
+        />
+      )}
       <div className={`relative z-10 ${contentClass}`}>
         {children}
       </div>
