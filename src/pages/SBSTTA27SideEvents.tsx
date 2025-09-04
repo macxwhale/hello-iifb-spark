@@ -220,23 +220,18 @@ const SBSTTA27SideEvents = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-card rounded-lg p-8 md:p-12 shadow-lg border">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Coming Soon</h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Side events organized alongside SBSTTA-27 will be listed here once the program is finalized.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-iifb-orange rounded-full animate-pulse"></div>
-                <span>Meeting starts October 20, 2025</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
-                <span>Event schedule coming soon</span>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Side Events</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Official side events organized alongside SBSTTA-27 to enhance discussions on biodiversity science and policy.
+              </p>
             </div>
+            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
+
+          {renderContent()}
         </div>
       </div>
     </div>

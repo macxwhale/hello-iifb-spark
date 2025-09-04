@@ -76,22 +76,39 @@ const SBSTTA27Gallery = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-card rounded-lg p-8 md:p-12 shadow-lg border">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Coming Soon</h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Photo gallery from SBSTTA-27 sessions and activities will be available here during the meeting.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-iifb-orange rounded-full animate-pulse"></div>
-                <span>Meeting starts October 20, 2025</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
-                <span>Photos updated daily</span>
-              </div>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-foreground">Event Gallery</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {galleryItems.map((item, index) => (
+              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative">
+                  <div 
+                    className="aspect-video bg-cover bg-center relative"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  >
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                    <div className="absolute top-2 left-2">
+                      <Badge className="bg-primary text-white">{item.category}</Badge>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                    {item.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
+                    {item.date}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

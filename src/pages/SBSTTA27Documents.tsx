@@ -185,23 +185,18 @@ const SBSTTA27Documents = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-card rounded-lg p-8 md:p-12 shadow-lg border">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Coming Soon</h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Official documents, scientific reports, and technical resources from SBSTTA-27 will be available here once the meeting begins.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-iifb-orange rounded-full animate-pulse"></div>
-                <span>Meeting starts October 20, 2025</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
-                <span>Documents will be published in real-time</span>
-              </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Documents</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Official documents, scientific reports, and technical resources from SBSTTA-27.
+              </p>
             </div>
+            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
           </div>
+
+          {renderContent()}
         </div>
       </div>
     </div>
