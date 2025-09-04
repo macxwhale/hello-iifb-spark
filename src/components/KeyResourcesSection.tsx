@@ -118,7 +118,7 @@ const KeyResourcesSection = () => {
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+              className="hover:bg-iifb-orange hover:text-white transition-all duration-200"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -126,7 +126,7 @@ const KeyResourcesSection = () => {
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+              className="hover:bg-iifb-orange hover:text-white transition-all duration-200"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -153,8 +153,8 @@ const KeyResourcesSection = () => {
                     <CardHeader>
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center space-x-3">
-                          <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                            <IconComponent className="h-5 w-5 text-primary" />
+                          <div className="p-2 bg-iifb-orange/10 rounded-lg group-hover:bg-iifb-orange/20 transition-colors">
+                            <IconComponent className="h-5 w-5 text-iifb-orange" />
                           </div>
                           <div>
                             <span className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium">
@@ -164,7 +164,7 @@ const KeyResourcesSection = () => {
                           </div>
                         </div>
                       </div>
-                      <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">
+                      <CardTitle className="text-lg leading-tight group-hover:text-iifb-orange transition-colors">
                         {resource.title}
                       </CardTitle>
                     </CardHeader>
@@ -198,8 +198,8 @@ const KeyResourcesSection = () => {
               onClick={() => setCurrentIndex(index * itemsPerView)}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
                 Math.floor(currentIndex / itemsPerView) === index
-                  ? 'bg-primary shadow-md'
-                  : 'bg-muted hover:bg-primary/50 hover:scale-110'
+                  ? 'bg-iifb-orange shadow-md'
+                  : 'bg-muted hover:bg-iifb-orange/50 hover:scale-110'
               }`}
             />
           ))}
@@ -208,7 +208,7 @@ const KeyResourcesSection = () => {
         {/* View All Resources Button */}
         <div className="text-center mt-8">
           <Link to="/resources">
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+            <Button size="lg" variant="outline" className="border-iifb-orange text-iifb-orange hover:bg-iifb-orange/10">
               <FileText className="h-4 w-4 mr-2" />
               View All Resources
             </Button>
