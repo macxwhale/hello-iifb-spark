@@ -8,18 +8,18 @@ const IntroductionSection = () => {
     <>
       {/* Section Header with Visual Identifier */}
       <section className="w-full py-12 lg:py-16 text-center relative">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 rounded-full" style={{ backgroundColor: '#741b00' }}></div>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-1 rounded-full" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: '#741b00' }}></div>
-            <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: '#741b00' }}>About the Meetings</span>
-            <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: '#741b00' }}></div>
+            <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
+            <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'hsl(var(--iifb-orange))' }}>About the Meetings</span>
+            <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             WELCOME TO
-            <span className="block mt-2 relative" style={{ color: '#741b00' }}>
+            <span className="block mt-2 relative" style={{ color: 'hsl(var(--iifb-orange))' }}>
               SBSTTA-27 AND SB8J-1, PANAMA 2025
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent to-transparent" style={{ background: `linear-gradient(to right, transparent, #741b00, transparent)` }}></div>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent to-transparent" style={{ background: `linear-gradient(to right, transparent, hsl(var(--iifb-orange)), transparent)` }}></div>
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
