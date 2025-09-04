@@ -64,7 +64,15 @@ const SB8J1Documents = () => {
               </div>
               <Button 
                 className="bg-secondary text-white hover:bg-secondary-hover"
-                onClick={() => window.open(doc.downloadUrl, '_blank')}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = doc.downloadUrl;
+                  link.target = '_blank';
+                  link.rel = 'noopener noreferrer';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download
@@ -95,7 +103,15 @@ const SB8J1Documents = () => {
                 <Button 
                   size="sm" 
                   className="bg-secondary text-white hover:bg-secondary-hover"
-                  onClick={() => window.open(doc.downloadUrl, '_blank')}
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = doc.downloadUrl;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                 >
                   <Download className="h-3 w-3 mr-1" />
                   Download
@@ -128,7 +144,15 @@ const SB8J1Documents = () => {
               </div>
               <Button 
                 className="bg-secondary text-white hover:bg-secondary-hover ml-4"
-                onClick={() => window.open(doc.downloadUrl, '_blank')}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = doc.downloadUrl;
+                  link.target = '_blank';
+                  link.rel = 'noopener noreferrer';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
               >
                 <Download className="h-4 w-4 mr-2" />
                 Download
