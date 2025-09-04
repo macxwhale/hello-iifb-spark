@@ -6,48 +6,21 @@ import { ChevronLeft, ChevronRight, FileText, Download, Star } from 'lucide-reac
 const statements = [
   {
     id: 1,
-    title: "IIFB Position on SB8J-1 Modus Operandi",
-    description: "Comprehensive framework for ensuring meaningful Indigenous participation in the new subsidiary body's operations and decision-making processes.",
-    date: "March 2025",
-    type: "Position Paper",
-    status: "Latest",
-    link: "#"
+    title: "CBD meetings SB8J-01",
+    description: "Meeting documents - First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
+    date: "27–30 October 2025 - Panama City, Panama",
+    type: "Meeting Documents",
+    status: "Available",
+    link: "https://www.cbd.int/meetings/SB8J-01"
   },
   {
     id: 2,
-    title: "Indigenous Territorial Guidelines Statement",
-    description: "Detailed recommendations for recognizing and protecting Indigenous territorial rights within the KMGBF implementation framework.",
-    date: "February 2025",
-    type: "Policy Statement",
-    status: "Featured",
-    link: "#"
-  },
-  {
-    id: 3,
-    title: "Traditional Knowledge Integration Framework",
-    description: "Guidelines for incorporating Indigenous traditional ecological knowledge into biodiversity conservation and spatial planning initiatives.",
-    date: "January 2025",
-    type: "Technical Paper",
-    status: "New",
-    link: "#"
-  },
-  {
-    id: 4,
-    title: "SBSTTA-27 Indigenous Participation Strategy",
-    description: "Strategic approach to ensure Indigenous voices are heard and considered in scientific and technical advisory processes.",
-    date: "December 2024",
-    type: "Strategy Document",
-    status: "Updated",
-    link: "#"
-  },
-  {
-    id: 5,
-    title: "Youth and Women Engagement Protocol",
-    description: "Special focus on empowering Indigenous youth and women in biodiversity governance and conservation leadership roles.",
-    date: "November 2024",
-    type: "Protocol",
-    status: "Important",
-    link: "#"
+    title: "CBD meetings SBSTTA-27",
+    description: "Meeting documents - Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice",
+    date: "20–24 October 2025 - Panama City, Panama",
+    type: "Meeting Documents",
+    status: "Available",
+    link: "https://www.cbd.int/meetings/SBSTTA-27"
   }
 ];
 
@@ -110,7 +83,7 @@ const StatementsCarousel = () => {
               <Star className="h-4 w-4 text-iifb-forest" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
-              IIFB Statements
+              IIFB documents
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-iifb-sage via-iifb-forest to-iifb-sage mx-auto"></div>
           </div>
@@ -177,12 +150,13 @@ const StatementsCarousel = () => {
                       {statement.description}
                     </p>
                     <div className="flex space-x-2">
-                      <Button variant="outline" className="flex-1 group/btn border-iifb-forest/30 hover:bg-iifb-forest hover:text-white">
+                      <Button 
+                        variant="outline" 
+                        className="flex-1 group/btn border-iifb-forest/30 hover:bg-iifb-forest hover:text-white"
+                        onClick={() => window.open(statement.link, '_blank')}
+                      >
                         <Download className="h-4 w-4 mr-2 group-hover/btn:translate-y-1 transition-transform" />
-                        Download
-                      </Button>
-                      <Button variant="ghost" className="flex-1 hover:bg-iifb-sage/10 hover:text-iifb-forest">
-                        View Details
+                        View Documents
                       </Button>
                     </div>
                   </CardContent>
