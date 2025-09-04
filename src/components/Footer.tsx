@@ -99,7 +99,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start space-x-2">
-                <Checkbox id="privacy" className="mt-1" />
+                <Checkbox id="privacy" className="mt-1 data-[state=checked]:bg-iifb-orange data-[state=checked]:border-iifb-orange" />
                 <label htmlFor="privacy" className="text-sm text-gray-300">
                   I agree to the{' '}
                   <a href="#" className="text-white underline hover:text-gray-300">

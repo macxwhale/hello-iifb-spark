@@ -30,7 +30,8 @@ const BackToTop = () => {
     <div className="absolute bottom-8 right-8">
       <Button
         onClick={scrollToTop}
-        className="bg-primary text-primary-foreground shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 animate-fade-in rounded-full border-2 border-white/20 p-3"
+        className="text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 animate-fade-in rounded-full border-2 border-white/20 p-3"
+        style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}
         aria-label="Back to top"
         size="icon"
       >
