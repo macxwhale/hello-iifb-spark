@@ -34,7 +34,7 @@ const SB8J1 = () => {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-foreground leading-relaxed mb-8">
-                Historic establishment of body dedicated to Indigenous Peoples and local communities following COP16 decision. Addresses territorial guidelines, traditional knowledge integration in planning, and terminology review for cultural relevance. Sets foundation for elevating IPLC leadership and enhancing biodiversity governance toward global targets.
+                Historic establishment of body dedicated to Indigenous Peoples and local communities following COP16 decision. Addresses territorial guidelines, traditional knowledge integration in planning, and terminology review for cultural relevance. Sets foundation for elevating IPLC leadership and enhancing biodiversity governance.
               </p>
 
               <p className="text-lg text-foreground leading-relaxed mb-12">
