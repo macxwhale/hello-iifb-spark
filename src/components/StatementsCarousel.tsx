@@ -83,7 +83,7 @@ const StatementsCarousel = () => {
               <Star className="h-4 w-4 text-iifb-forest" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
-              IIFB documents
+              Meeting Documents
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-iifb-sage via-iifb-forest to-iifb-sage mx-auto"></div>
           </div>
