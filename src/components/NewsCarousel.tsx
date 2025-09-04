@@ -11,18 +11,6 @@ const ipbesWorkshopImage = '/lovable-uploads/96490106-76fa-41f3-9b84-56f75115fa1
 const newsItems = [
   {
     id: 1,
-    title: "IIFB Guidelines on Indigenous and Traditional Territories (ITTs)",
-    description: "Comprehensive framework for recognizing Indigenous Peoples' vital role in biodiversity conservation, sustainable use, and restoration within their territories. Promotes respect for traditional knowledge, governance systems, and culturally appropriate practices.",
-    date: "15",
-    month: "July",
-    year: "2025",
-    category: "Guidelines",
-    image: indigenousBodyImage,
-    link: "https://iifb-indigenous.org/iifb-guidelines-on-indigenous-and-traditional-territories-itts/",
-    readTime: "8 min read"
-  },
-  {
-    id: 2,
     title: "Views of Indigenous Peoples and Local Communities in Preparation to SB8J-1",
     description: "IIFB concludes series of working meetings presenting collective in-depth analysis and contributions from seven socio-cultural regions. Includes endorsed guidelines on territorial rights and spatial planning for biodiversity conservation.",
     date: "02",
@@ -34,7 +22,7 @@ const newsItems = [
     readTime: "6 min read"
   },
   {
-    id: 3,
+    id: 2,
     title: "CBD COP16 Establishes Historic Indigenous Subsidiary Body",
     description: "Parties to the Convention on Biological Diversity made the groundbreaking decision to create a permanent subsidiary body dedicated to Indigenous Peoples and local communities.",
     date: "06",
