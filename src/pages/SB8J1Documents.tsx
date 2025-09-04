@@ -64,10 +64,12 @@ const SB8J1Documents = () => {
               </div>
               <Button 
                 className="bg-secondary text-white hover:bg-secondary-hover"
-                onClick={() => window.open(doc.downloadUrl, '_blank')}
+                asChild
               >
-                <FileText className="h-4 w-4 mr-2" />
-                View PDF
+                <a href={doc.downloadUrl} target="_blank" rel="noopener noreferrer">
+                  <FileText className="h-4 w-4 mr-2" />
+                  View PDF
+                </a>
               </Button>
             </div>
           </CardContent>
@@ -95,10 +97,12 @@ const SB8J1Documents = () => {
                 <Button 
                   size="sm" 
                   className="bg-secondary text-white hover:bg-secondary-hover"
-                  onClick={() => window.open(doc.downloadUrl, '_blank')}
+                  asChild
                 >
-                  <FileText className="h-3 w-3 mr-1" />
-                  View PDF
+                  <a href={doc.downloadUrl} target="_blank" rel="noopener noreferrer">
+                    <FileText className="h-3 w-3 mr-1" />
+                    View PDF
+                  </a>
                 </Button>
               </div>
             </div>
@@ -128,10 +132,12 @@ const SB8J1Documents = () => {
               </div>
               <Button 
                 className="bg-secondary text-white hover:bg-secondary-hover ml-4"
-                onClick={() => window.open(doc.downloadUrl, '_blank')}
+                asChild
               >
-                <FileText className="h-4 w-4 mr-2" />
-                View PDF
+                <a href={doc.downloadUrl} target="_blank" rel="noopener noreferrer">
+                  <FileText className="h-4 w-4 mr-2" />
+                  View PDF
+                </a>
               </Button>
             </div>
           </CardContent>
