@@ -34,8 +34,8 @@ const SB8J1About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
-              <div className="w-16 h-16 bg-iifb-rust/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calendar className="w-8 h-8 text-iifb-rust" />
+              <div className="w-16 h-16 bg-iifb-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-iifb-orange" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-2">4</div>
               <div className="text-muted-foreground">Days</div>
@@ -100,7 +100,7 @@ const SB8J1About = () => {
                     </div>
                     <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
                       <div className="flex items-center gap-3 mb-4">
-                        <Globe className="w-6 h-6 text-iifb-rust" />
+                        <Globe className="w-6 h-6 text-iifb-orange" />
                         <h4 className="text-xl font-semibold text-foreground">Global Impact</h4>
                       </div>
                       <p className="text-muted-foreground leading-relaxed">
