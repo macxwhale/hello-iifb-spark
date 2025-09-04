@@ -16,7 +16,7 @@ const statements = [
   {
     id: 2,
     title: "CBD meetings SB8J-01",
-    description: "First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
+    description: "Meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
     date: "27–30 October 2025 - Panama City, Panama",
     type: "Meeting Documents",
     status: "Available",
