@@ -124,7 +124,7 @@ const SideEventsCarousel = () => {
             </Button>
           </div>
           
-          <Link to="/sb8j-1/side-events/all">
+          <Link to="/sb8j-1/side-events">
             <Button variant="ghost" className="group text-primary hover:text-primary-hover">
               View All Events
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
