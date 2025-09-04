@@ -29,7 +29,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 98%;
 
     /* Warm Orange Accent - Updated to #741b00 */
-    --accent: 14 100% 22%;
+    --accent: 14 100% 23%;
     --accent-foreground: 0 0% 98%;
 
     /* Earth Muted Tones */
@@ -48,7 +48,7 @@ All colors MUST be HSL.
     /* IIFB Brand Colors - Updated colors to #3A6435 */
     --iifb-rust: 15 75% 45%;
     --iifb-forest: 114 27% 38%;
-    --iifb-orange: 14 100% 22%;
+    --iifb-orange: 14 100% 23%;
     --iifb-earth: 35 40% 35%;
     --iifb-sage: 114 27% 38%;
     --iifb-cream: 28 30% 92%;
