@@ -67,57 +67,13 @@ const SBSTTA27Videos = () => {
         </div>
       </section>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-foreground">Event Videos</h2>
-            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer">
-                <div className="relative">
-                  <div 
-                    className="aspect-video bg-cover bg-center relative"
-                    style={{ backgroundImage: `url(${video.thumbnail})` }}
-                  >
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Play className="w-8 h-8 text-white ml-1" />
-                      </div>
-                    </div>
-                    <div className="absolute top-2 left-2">
-                      <Badge className="bg-secondary text-white">{video.category}</Badge>
-                    </div>
-                    <div className="absolute bottom-2 right-2">
-                      <Badge variant="outline" className="bg-black/50 text-white border-white/50">
-                        {video.duration}
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors mb-2">
-                    {video.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                    {video.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3" />
-                    {video.date}
-                    <Clock className="h-3 w-3 ml-2" />
-                    {video.duration}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* Coming Soon Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Coming Soon</h2>
+          <p className="text-xl text-muted-foreground">Videos will be available soon.</p>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
