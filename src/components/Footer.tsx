@@ -91,7 +91,8 @@ const Footer = () => {
                 />
                 <Button 
                   size="sm"
-                  className="bg-iifb-rust hover:bg-iifb-orange px-3"
+                  className="px-3 text-white hover:shadow-lg hover:scale-105 transition-all duration-200" 
+                  style={{ backgroundColor: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange))' }}
                 >
                   →
                 </Button>
