@@ -19,52 +19,28 @@ const SB8J1Documents = () => {
 
   const documents = [
     {
-      title: "Preparatory Documents for SB8J-1",
-      description: "Official preparatory documents and background materials for the first meeting of the Subsidiary Body on Article 8(j).",
-      date: "October 2025",
-      fileSize: "2.4 MB",
-      downloadUrl: "#",
-      type: "Official Document"
-    },
-    {
-      title: "Traditional Knowledge Protocols Framework",
-      description: "Comprehensive framework for protecting and respecting traditional knowledge systems in biodiversity conservation.",
+      title: "IIFB Modus Operandi for SB8J",
+      description: "Operational framework and procedures for the Subsidiary Body on Article 8(j), outlining working methods, decision-making processes, and coordination mechanisms for Indigenous Peoples and local communities participation.",
       date: "September 2025",
-      fileSize: "1.8 MB",
-      downloadUrl: "#",
-      type: "Framework"
+      fileSize: "PDF",
+      downloadUrl: "https://dev.iifb-indigenous.org/wp-content/uploads/2025/09/03-iifb-modus-operandi-sb8j-2.pdf",
+      type: "Modus Operandi"
     },
     {
-      title: "Indigenous Participation Guidelines",
-      description: "Guidelines for meaningful participation of Indigenous Peoples and local communities in CBD processes.",
-      date: "August 2025",
-      fileSize: "1.2 MB",
-      downloadUrl: "#",
-      type: "Guidelines"
-    },
-    {
-      title: "Benefit Sharing Mechanisms Report",
-      description: "Analysis of benefit-sharing mechanisms for traditional knowledge associated with genetic resources.",
-      date: "July 2025",
-      fileSize: "3.1 MB",
-      downloadUrl: "#",
-      type: "Report"
-    },
-    {
-      title: "Digital Sequence Information Position Paper",
-      description: "IIFB position paper on digital sequence information and its implications for Indigenous rights.",
-      date: "June 2025",
-      fileSize: "945 KB",
-      downloadUrl: "#",
-      type: "Position Paper"
-    },
-    {
-      title: "Community Protocols Best Practices",
-      description: "Collection of best practices for developing and implementing community protocols.",
+      title: "IIFB Spatial Planning Guide",
+      description: "Comprehensive guide for spatial planning in biodiversity conservation, sustainable use and restoration within Indigenous Peoples and local communities' lands, territories and waters.",
       date: "May 2025",
-      fileSize: "2.7 MB",
-      downloadUrl: "#",
-      type: "Best Practices"
+      fileSize: "PDF",
+      downloadUrl: "https://dev.iifb-indigenous.org/wp-content/uploads/2025/09/02-iifb-spatial-planning-guide30may2025-1-2.pdf",
+      type: "Planning Guide"
+    },
+    {
+      title: "IIFB Guidelines on Indigenous and Traditional Territories (ITTs)",
+      description: "Guidelines for recognizing and supporting Indigenous Peoples and local communities' vital role in biodiversity conservation, sustainable use, and ecosystem restoration within their territories.",
+      date: "May 2025",
+      fileSize: "PDF",
+      downloadUrl: "https://dev.iifb-indigenous.org/wp-content/uploads/2025/09/01-iifb-itts-guide-30may2025-1-2.pdf",
+      type: "Guidelines"
     }
   ];
 
@@ -86,7 +62,10 @@ const SB8J1Documents = () => {
                 <Calendar className="h-4 w-4" />
                 {doc.date}
               </div>
-              <Button className="bg-secondary text-white hover:bg-secondary-hover">
+              <Button 
+                className="bg-secondary text-white hover:bg-secondary-hover"
+                onClick={() => window.open(doc.downloadUrl, '_blank')}
+              >
                 <Download className="h-4 w-4 mr-2" />
                 Download
               </Button>
@@ -113,7 +92,11 @@ const SB8J1Documents = () => {
                   <Calendar className="h-3 w-3" />
                   {doc.date}
                 </div>
-                <Button size="sm" className="bg-secondary text-white hover:bg-secondary-hover">
+                <Button 
+                  size="sm" 
+                  className="bg-secondary text-white hover:bg-secondary-hover"
+                  onClick={() => window.open(doc.downloadUrl, '_blank')}
+                >
                   <Download className="h-3 w-3 mr-1" />
                   Download
                 </Button>
@@ -143,7 +126,10 @@ const SB8J1Documents = () => {
                 <h3 className="text-xl font-semibold mb-2">{doc.title}</h3>
                 <p className="text-muted-foreground">{doc.description}</p>
               </div>
-              <Button className="bg-secondary text-white hover:bg-secondary-hover ml-4">
+              <Button 
+                className="bg-secondary text-white hover:bg-secondary-hover ml-4"
+                onClick={() => window.open(doc.downloadUrl, '_blank')}
+              >
                 <Download className="h-4 w-4 mr-2" />
                 Download
               </Button>
