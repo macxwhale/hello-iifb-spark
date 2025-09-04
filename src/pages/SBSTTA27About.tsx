@@ -49,8 +49,8 @@ const SBSTTA27About = () => {
               <div className="text-muted-foreground">Participation</div>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 bg-iifb-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-iifb-orange" />
               </div>
               <div className="text-3xl font-bold text-foreground mb-2">Scientific</div>
               <div className="text-muted-foreground">Advisory</div>
