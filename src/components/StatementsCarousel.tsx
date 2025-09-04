@@ -6,21 +6,21 @@ import { ChevronLeft, ChevronRight, FileText, Download, Star } from 'lucide-reac
 const statements = [
   {
     id: 1,
-    title: "CBD meetings SB8J-01",
-    description: "Meeting documents - First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
-    date: "27–30 October 2025 - Panama City, Panama",
-    type: "Meeting Documents",
-    status: "Available",
-    link: "https://www.cbd.int/meetings/SB8J-01"
-  },
-  {
-    id: 2,
     title: "CBD meetings SBSTTA-27",
     description: "Meeting documents - Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice",
     date: "20–24 October 2025 - Panama City, Panama",
     type: "Meeting Documents",
     status: "Available",
     link: "https://www.cbd.int/meetings/SBSTTA-27"
+  },
+  {
+    id: 2,
+    title: "CBD meetings SB8J-01",
+    description: "First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities",
+    date: "27–30 October 2025 - Panama City, Panama",
+    type: "Meeting Documents",
+    status: "Available",
+    link: "https://www.cbd.int/meetings/SB8J-01"
   }
 ];
 
