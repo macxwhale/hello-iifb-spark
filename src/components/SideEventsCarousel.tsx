@@ -193,7 +193,7 @@ const SideEventsCarousel = () => {
                         <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                         <span className="line-clamp-2">{event.location}</span>
                       </div>
-                      <div className="text-primary font-medium line-clamp-2">
+                      <div className="text-iifb-orange font-medium line-clamp-2">
                         Organized by: {event.organizer}
                       </div>
                       <div className="text-sm text-muted-foreground">
