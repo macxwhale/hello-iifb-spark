@@ -7,7 +7,7 @@ const statements = [
   {
     id: 1,
     title: "CBD meetings SBSTTA-27",
-    description: "Meeting documents - Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice",
+    description: "Meeting documents - Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice focusing on biodiversity science, policy recommendations, and technical guidance for the implementation of the Kunming-Montreal Global Biodiversity Framework",
     date: "20–24 October 2025 - Panama City, Panama",
     type: "Meeting Documents",
     status: "Available",
