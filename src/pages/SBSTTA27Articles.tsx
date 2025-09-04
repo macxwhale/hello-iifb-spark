@@ -78,59 +78,22 @@ const SBSTTA27Articles = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-foreground">Featured Articles</h2>
-            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
-          </div>
-          
-          <div className={`grid ${currentView === 'list' ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-3'} gap-6`}>
-            {articles.map((article, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <div className="relative">
-                  <div 
-                    className="aspect-video bg-cover bg-center relative"
-                    style={{ backgroundImage: `url(${article.image})` }}
-                  >
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                    {article.featured && (
-                      <div className="absolute top-2 left-2">
-                        <Badge className="bg-iifb-orange text-white">Featured</Badge>
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge variant="outline" className="text-xs">
-                      {article.category}
-                    </Badge>
-                    <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                      <Calendar className="h-3 w-3" />
-                      {article.date}
-                    </div>
-                  </div>
-                  <CardTitle className="text-lg line-clamp-2 group-hover:text-iifb-orange transition-colors">
-                    {article.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                    {article.description}
-                  </p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <User className="h-3 w-3" />
-                      {article.author}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-3 w-3" />
-                      {article.readTime}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-card rounded-lg p-8 md:p-12 shadow-lg border">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Coming Soon</h2>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Articles and analysis from SBSTTA-27 will be published here during and after the meeting.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-iifb-orange rounded-full animate-pulse"></div>
+                <span>Meeting starts October 20, 2025</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
+                <span>Expert analysis coming soon</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

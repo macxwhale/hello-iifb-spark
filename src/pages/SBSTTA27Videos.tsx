@@ -69,52 +69,22 @@ const SBSTTA27Videos = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold text-foreground">Event Videos</h2>
-            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {videos.map((video, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer">
-                <div className="relative">
-                  <div 
-                    className="aspect-video bg-cover bg-center relative"
-                    style={{ backgroundImage: `url(${video.thumbnail})` }}
-                  >
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Play className="w-8 h-8 text-white ml-1" />
-                      </div>
-                    </div>
-                    <div className="absolute top-2 left-2">
-                      <Badge className="bg-secondary text-white">{video.category}</Badge>
-                    </div>
-                    <div className="absolute bottom-2 right-2">
-                      <Badge variant="outline" className="bg-black/50 text-white border-white/50">
-                        {video.duration}
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors mb-2">
-                    {video.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                    {video.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3" />
-                    {video.date}
-                    <Clock className="h-3 w-3 ml-2" />
-                    {video.duration}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-card rounded-lg p-8 md:p-12 shadow-lg border">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Coming Soon</h2>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Video recordings of SBSTTA-27 sessions and presentations will be available here during and after the meeting.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-iifb-orange rounded-full animate-pulse"></div>
+                <span>Meeting starts October 20, 2025</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse delay-150"></div>
+                <span>Videos available post-session</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
