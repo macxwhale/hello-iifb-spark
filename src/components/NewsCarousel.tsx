@@ -71,17 +71,6 @@ const NewsCarousel = () => {
               </div>
               
               <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    <span>{item.month} {item.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-3 w-3" />
-                    <span>{item.readTime}</span>
-                  </div>
-                </div>
-                
                 <h3 className="text-xl font-bold text-foreground mb-3 leading-tight transition-colors duration-200 line-clamp-1 truncate" onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   {item.title}
                 </h3>
