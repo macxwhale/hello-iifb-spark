@@ -34,7 +34,7 @@ const SB8J1 = () => {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-foreground leading-relaxed mb-8">
-                The First Meeting of the Subsidiary Body on Article 8(j) and Related Provisions (SB8J-1) will be held from 27 to 30 October 2025 in Panama City, Panama. This historic gathering follows a landmark decision adopted at COP 16, where Parties to the Convention on Biological Diversity (CBD) agreed to establish a new permanent Subsidiary Body dedicated specifically to Article 8(j) and related provisions concerning Indigenous Peoples and local communities. The creation of this body marks an important step in elevating IPLC issues within CBD processes and ensuring stronger participation and contributions of Indigenous Peoples and local communities toward the achievement of global biodiversity goals.
+                Historic establishment of body dedicated to Indigenous Peoples and local communities following COP16 decision. Addresses territorial guidelines, traditional knowledge integration in planning, and terminology review for cultural relevance. Sets foundation for elevating IPLC leadership and enhancing biodiversity governance toward global targets.
               </p>
 
               <p className="text-lg text-foreground leading-relaxed mb-12">
