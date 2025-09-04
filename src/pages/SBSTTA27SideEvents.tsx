@@ -45,7 +45,7 @@ const SBSTTA27SideEvents = () => {
               style={{ backgroundImage: `url(${event.image})` }}
             >
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-              <div className="absolute top-4 right-4 bg-primary text-white rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg">
+              <div className="absolute top-4 right-4 bg-iifb-orange text-white rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg">
                 <span className="text-2xl font-bold leading-none">{event.date}</span>
                 <span className="text-xs font-medium leading-none">{event.month}</span>
               </div>
@@ -63,7 +63,7 @@ const SBSTTA27SideEvents = () => {
             </p>
             <div className="space-y-2 text-sm text-muted-foreground mb-4">
               <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-4 w-4 text-iifb-orange" />
                 <span>{event.day}, {event.time}</span>
               </div>
               <div className="flex items-start gap-2">
@@ -106,7 +106,7 @@ const SBSTTA27SideEvents = () => {
               style={{ backgroundImage: `url(${event.image})` }}
             >
               <div className="absolute inset-0 bg-black/20"></div>
-              <div className="absolute top-2 right-2 bg-primary text-white rounded-full w-12 h-12 flex flex-col items-center justify-center text-xs">
+              <div className="absolute top-2 right-2 bg-iifb-orange text-white rounded-full w-12 h-12 flex flex-col items-center justify-center text-xs">
                 <span className="font-bold">{event.date}</span>
                 <span>{event.month.slice(0, 3)}</span>
               </div>
@@ -124,7 +124,7 @@ const SBSTTA27SideEvents = () => {
             </p>
             <div className="space-y-1 text-xs text-muted-foreground mb-3">
               <div className="flex items-center gap-1">
-                <Calendar className="h-3 w-3" />
+                <Calendar className="h-3 w-3 text-iifb-orange" />
                 <span>{event.time}</span>
               </div>
               <div className="line-clamp-1">{event.organizer}</div>
@@ -151,7 +151,7 @@ const SBSTTA27SideEvents = () => {
                   <Badge className="bg-secondary text-white">#{event.id}</Badge>
                   <span className="text-sm text-muted-foreground">{event.day}, {event.date} {event.month} {event.year}</span>
                   <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
+                    <Calendar className="h-4 w-4 text-iifb-orange" />
                     {event.time}
                   </div>
                 </div>

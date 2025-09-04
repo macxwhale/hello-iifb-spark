@@ -95,7 +95,7 @@ const SBSTTA27Articles = () => {
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                     {article.featured && (
                       <div className="absolute top-2 left-2">
-                        <Badge className="bg-primary text-white">Featured</Badge>
+                        <Badge className="bg-iifb-orange text-white">Featured</Badge>
                       </div>
                     )}
                   </div>
@@ -110,7 +110,7 @@ const SBSTTA27Articles = () => {
                       {article.date}
                     </div>
                   </div>
-                  <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg line-clamp-2 group-hover:text-iifb-orange transition-colors">
                     {article.title}
                   </CardTitle>
                 </CardHeader>

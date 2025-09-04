@@ -88,7 +88,7 @@ const SBSTTA27Documents = () => {
                         <Calendar className="h-3 w-3" />
                         {doc.date}
                       </div>
-                      <Button size="sm" className="bg-primary hover:bg-primary/90">
+                      <Button size="sm" className="text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                         <Download className="h-3 w-3 mr-1" />
                         Download
                       </Button>
@@ -118,7 +118,7 @@ const SBSTTA27Documents = () => {
                       <h3 className="text-xl font-semibold mb-2">{doc.title}</h3>
                       <p className="text-muted-foreground">{doc.description}</p>
                     </div>
-                    <Button className="bg-primary hover:bg-primary/90 ml-4">
+                    <Button className="text-white hover:opacity-90 ml-4" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -147,7 +147,7 @@ const SBSTTA27Documents = () => {
                       <Calendar className="h-4 w-4" />
                       {doc.date}
                     </div>
-                    <Button className="bg-primary hover:bg-primary/90">
+                    <Button className="text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>

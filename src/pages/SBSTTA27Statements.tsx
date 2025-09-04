@@ -93,14 +93,14 @@ const SBSTTA27Statements = () => {
                       {statement.category}
                     </Badge>
                     {statement.featured && (
-                      <Badge className="bg-primary text-white text-xs">Featured</Badge>
+                      <Badge className="bg-iifb-orange text-white text-xs">Featured</Badge>
                     )}
                     <div className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Calendar className="h-3 w-3" />
                       {statement.date}
                     </div>
                   </div>
-                  <CardTitle className="text-lg line-clamp-2 group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg line-clamp-2 group-hover:text-iifb-orange transition-colors">
                     {statement.title}
                   </CardTitle>
                 </CardHeader>
