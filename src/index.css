@@ -25,7 +25,7 @@ All colors MUST be HSL.
     --primary-foreground: 0 0% 98%;
 
     /* Deep Forest Secondary */
-    --secondary: 140 60% 25%;
+    --secondary: 114 31% 30%;
     --secondary-foreground: 0 0% 98%;
 
     /* Warm Orange Accent - Updated to #741b00 */
@@ -47,10 +47,10 @@ All colors MUST be HSL.
 
     /* IIFB Brand Colors - Updated orange to #741b00 */
     --iifb-rust: 15 75% 45%;
-    --iifb-forest: 140 60% 25%;
+    --iifb-forest: 114 31% 30%;
     --iifb-orange: 14 100% 22%;
     --iifb-earth: 35 40% 35%;
-    --iifb-sage: 140 30% 60%;
+    --iifb-sage: 114 31% 30%;
     --iifb-cream: 28 30% 92%;
     --iifb-dark-earth: 20 20% 20%;
 
