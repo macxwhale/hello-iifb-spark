@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Download, Calendar } from 'lucide-react';
+import { FileText, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -64,18 +64,10 @@ const SB8J1Documents = () => {
               </div>
               <Button 
                 className="bg-secondary text-white hover:bg-secondary-hover"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = doc.downloadUrl;
-                  link.target = '_blank';
-                  link.rel = 'noopener noreferrer';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
+                onClick={() => window.open(doc.downloadUrl, '_blank')}
               >
-                <Download className="h-4 w-4 mr-2" />
-                Download
+                <FileText className="h-4 w-4 mr-2" />
+                View PDF
               </Button>
             </div>
           </CardContent>
@@ -103,18 +95,10 @@ const SB8J1Documents = () => {
                 <Button 
                   size="sm" 
                   className="bg-secondary text-white hover:bg-secondary-hover"
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = doc.downloadUrl;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                  onClick={() => window.open(doc.downloadUrl, '_blank')}
                 >
-                  <Download className="h-3 w-3 mr-1" />
-                  Download
+                  <FileText className="h-3 w-3 mr-1" />
+                  View PDF
                 </Button>
               </div>
             </div>
@@ -144,18 +128,10 @@ const SB8J1Documents = () => {
               </div>
               <Button 
                 className="bg-secondary text-white hover:bg-secondary-hover ml-4"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = doc.downloadUrl;
-                  link.target = '_blank';
-                  link.rel = 'noopener noreferrer';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
+                onClick={() => window.open(doc.downloadUrl, '_blank')}
               >
-                <Download className="h-4 w-4 mr-2" />
-                Download
+                <FileText className="h-4 w-4 mr-2" />
+                View PDF
               </Button>
             </div>
           </CardContent>
