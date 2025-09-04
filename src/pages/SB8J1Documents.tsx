@@ -23,7 +23,7 @@ const SB8J1Documents = () => {
       description: "Operational framework and procedures for the Subsidiary Body on Article 8(j), outlining working methods, decision-making processes, and coordination mechanisms for Indigenous Peoples and local communities participation.",
       date: "September 2025",
       fileSize: "PDF",
-      downloadUrl: "https://dev.iifb-indigenous.org/wp-content/uploads/2025/09/03-iifb-modus-operandi-sb8j-2.pdf",
+      downloadUrl: "https://iifb-indigenous.org/wp-content/uploads/2025/09/03-iifb-modus-operandi-sb8j-2.pdf",
       type: "Modus Operandi"
     },
     {
@@ -31,7 +31,7 @@ const SB8J1Documents = () => {
       description: "Comprehensive guide for spatial planning in biodiversity conservation, sustainable use and restoration within Indigenous Peoples and local communities' lands, territories and waters.",
       date: "May 2025",
       fileSize: "PDF",
-      downloadUrl: "https://dev.iifb-indigenous.org/wp-content/uploads/2025/09/02-iifb-spatial-planning-guide30may2025-1-2.pdf",
+      downloadUrl: "https://iifb-indigenous.org/wp-content/uploads/2025/09/02-iifb-spatial-planning-guide30may2025-1-2.pdf",
       type: "Planning Guide"
     },
     {
@@ -39,7 +39,7 @@ const SB8J1Documents = () => {
       description: "Guidelines for recognizing and supporting Indigenous Peoples and local communities' vital role in biodiversity conservation, sustainable use, and ecosystem restoration within their territories.",
       date: "May 2025",
       fileSize: "PDF",
-      downloadUrl: "https://dev.iifb-indigenous.org/wp-content/uploads/2025/09/01-iifb-itts-guide-30may2025-1-2.pdf",
+      downloadUrl: "https://iifb-indigenous.org/wp-content/uploads/2025/09/01-iifb-itts-guide-30may2025-1-2.pdf",
       type: "Guidelines"
     }
   ];
