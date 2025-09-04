@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Download, ExternalLink, FileText, Video, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Download, ExternalLink, FileText, Video, BookOpen, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const resources = [
@@ -208,9 +208,10 @@ const KeyResourcesSection = () => {
         {/* View All Resources Button */}
         <div className="text-center mt-8">
           <Link to="/resources">
-            <Button size="lg" variant="outline" className="border-iifb-orange text-iifb-orange hover:bg-iifb-orange/10">
+            <Button className="group/btn px-6 py-3 rounded-lg font-medium transition-all duration-200 border text-white hover:shadow-lg hover:scale-105" style={{ backgroundColor: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange))' }}>
               <FileText className="h-4 w-4 mr-2" />
-              View All Resources
+              <span>View All Resources</span>
+              <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
             </Button>
           </Link>
         </div>
