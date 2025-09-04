@@ -1,239 +1,11 @@
-import { useState } from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { usePexelsImage } from '@/hooks/usePexelsImage';
-import ViewToggle, { ViewType } from '@/components/ViewToggle';
 import SB8J1Navigation from '@/components/SB8J1Navigation';
 
 const SB8J1PressConferences = () => {
-  const [currentView, setCurrentView] = useState<ViewType>(() => {
-    const saved = localStorage.getItem('sb8j-press-conferences-view');
-    return (saved as ViewType) || 'cards';
-  });
-  const { imageUrl, isLoading } = usePexelsImage('sb8j-press-conferences');
-
-  const handleViewChange = (view: ViewType) => {
-    setCurrentView(view);
-    localStorage.setItem('sb8j-press-conferences-view', view);
-  };
-
-  const pressConferences = [
-    {
-      title: "Opening Press Conference - IIFB Leadership",
-      date: "October 27, 2025",
-      time: "10:00 AM",
-      location: "Panama Convention Center - Press Room A",
-      speakers: ["Maria Santos", "Dr. James Anaya", "Rosa Tanguila"],
-      status: "Upcoming",
-      description: "IIFB leadership will outline key priorities and expectations for the first meeting of the Subsidiary Body on Article 8(j)."
-    },
-    {
-      title: "Traditional Knowledge Protection Framework",
-      date: "October 28, 2025",
-      time: "2:00 PM",
-      location: "Panama Convention Center - Press Room B",
-      speakers: ["Dr. Patricia Gualinga", "Chief Robert Joseph"],
-      status: "Upcoming",
-      description: "Experts discuss the proposed framework for protecting traditional knowledge and ensuring Indigenous intellectual property rights."
-    },
-    {
-      title: "Indigenous Women and Biodiversity Conservation",
-      date: "October 29, 2025",
-      time: "11:00 AM",
-      location: "Panama Convention Center - Main Auditorium",
-      speakers: ["Hindou Oumarou Ibrahim", "Victoria Tauli-Corpuz", "Galina Angarova"],
-      status: "Upcoming",
-      description: "Indigenous women leaders highlight their crucial role in biodiversity conservation and environmental stewardship."
-    },
-    {
-      title: "Daily Briefing - Day 1 Outcomes",
-      date: "October 27, 2025",
-      time: "6:00 PM",
-      location: "Panama Convention Center - Press Room A",
-      speakers: ["IIFB Communications Team"],
-      status: "Scheduled",
-      description: "Daily briefing on the first day's negotiations, key decisions, and upcoming agenda items."
-    },
-    {
-      title: "Youth Perspectives on Article 8(j) Implementation",
-      date: "October 30, 2025",
-      time: "9:00 AM",
-      location: "Panama Convention Center - Press Room C",
-      speakers: ["Indigenous Youth Caucus Representatives"],
-      status: "Upcoming",
-      description: "Young Indigenous leaders share their vision for the future implementation of Article 8(j) and intergenerational knowledge transfer."
-    },
-    {
-      title: "Closing Press Conference - Meeting Outcomes",
-      date: "October 30, 2025",
-      time: "5:00 PM",
-      location: "Panama Convention Center - Main Auditorium",
-      speakers: ["IIFB Co-Chairs", "Key Negotiators"],
-      status: "Upcoming",
-      description: "Comprehensive overview of meeting outcomes, agreements reached, and next steps for Article 8(j) implementation."
-    }
-  ];
-
-  const renderCardsView = () => (
-    <div className="grid gap-6">
-      {pressConferences.map((conference, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow">
-          <CardHeader>
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <Badge variant={conference.status === 'Upcoming' ? 'default' : 'secondary'} 
-                         className={conference.status === 'Upcoming' ? 'bg-secondary' : ''}>
-                    {conference.status}
-                  </Badge>
-                </div>
-                <CardTitle className="text-xl mb-2">{conference.title}</CardTitle>
-                <div className="text-base text-muted-foreground">
-                  Speakers: {conference.speakers.join(', ')}
-                </div>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-foreground leading-relaxed mb-4">{conference.description}</p>
-            
-            <div className="grid md:grid-cols-3 gap-4 mb-4">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="h-4 w-4" />
-                {conference.date}
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Clock className="h-4 w-4" />
-                {conference.time}
-              </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4" />
-                {conference.location}
-              </div>
-            </div>
-
-            <div className="flex gap-3">
-              <Button className="bg-secondary text-white hover:bg-secondary-hover">
-                Register for Media Access
-              </Button>
-              <Button variant="outline">
-                Add to Calendar
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-
-  const renderGridView = () => (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {pressConferences.map((conference, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow">
-          <CardHeader>
-            <Badge variant={conference.status === 'Upcoming' ? 'default' : 'secondary'} 
-                   className={`w-fit mb-2 ${conference.status === 'Upcoming' ? 'bg-secondary' : ''}`}>
-              {conference.status}
-            </Badge>
-            <CardTitle className="text-lg line-clamp-2">{conference.title}</CardTitle>
-            <div className="text-sm line-clamp-2 text-muted-foreground">
-              Speakers: {conference.speakers.join(', ')}
-            </div>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground line-clamp-3 mb-4">{conference.description}</p>
-            
-            <div className="space-y-2 mb-4">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Calendar className="h-3 w-3" />
-                {conference.date}
-              </div>
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <Clock className="h-3 w-3" />
-                {conference.time}
-              </div>
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <MapPin className="h-3 w-3" />
-                <span className="line-clamp-1">{conference.location}</span>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <Button size="sm" className="bg-secondary text-white hover:bg-secondary-hover">
-                Register
-              </Button>
-              <Button size="sm" variant="outline">
-                Add to Calendar
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-
-  const renderListView = () => (
-    <div className="space-y-4">
-      {pressConferences.map((conference, index) => (
-        <Card key={index} className="hover:shadow-lg transition-shadow">
-          <CardContent className="p-6">
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <Badge variant={conference.status === 'Upcoming' ? 'default' : 'secondary'} 
-                         className={conference.status === 'Upcoming' ? 'bg-secondary' : ''}>
-                    {conference.status}
-                  </Badge>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    {conference.date}
-                  </div>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    {conference.time}
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{conference.title}</h3>
-                <p className="text-muted-foreground mb-2">{conference.description}</p>
-                <div className="text-sm text-muted-foreground mb-2">
-                  <strong>Speakers:</strong> {conference.speakers.join(', ')}
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4" />
-                  {conference.location}
-                </div>
-              </div>
-              <div className="flex flex-col gap-2 ml-4">
-                <Button className="bg-secondary text-white hover:bg-secondary-hover">
-                  Register for Media Access
-                </Button>
-                <Button variant="outline">
-                  Add to Calendar
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-
-  const renderContent = () => {
-    switch (currentView) {
-      case 'grid':
-        return renderGridView();
-      case 'list':
-        return renderListView();
-      default:
-        return renderCardsView();
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background">
+      {/* Hero Section */}
       <section className="relative min-h-[60vh] h-auto overflow-hidden">
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
           style={{ 
@@ -243,34 +15,25 @@ const SB8J1PressConferences = () => {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 flex flex-col justify-between min-h-[50vh] sm:min-h-[45vh] md:min-h-[40vh] lg:min-h-[35vh] xl:min-h-[30vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-          <div className="flex-1 flex items-center">
-            <div className="text-white text-center w-full">
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                SB8J-1 Press Conferences
-              </h1>
+        {/* Content */}
+        <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+          <div className="text-white text-center w-full">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Press Conferences
+            </h1>
 
-              <SB8J1Navigation currentPage="press-conferences" />
-            </div>
+            <SB8J1Navigation currentPage="home" />
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-3xl font-bold text-foreground mb-4">Press Conferences</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Scheduled press conferences and media briefings during SB8J-1 meeting in Panama City.
-              </p>
-            </div>
-            <ViewToggle currentView={currentView} onViewChange={handleViewChange} />
-          </div>
-
-          {renderContent()}
+      {/* Coming Soon Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Coming Soon</h2>
+          <p className="text-xl text-muted-foreground">Press conferences will be available soon.</p>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
