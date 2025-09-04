@@ -11,7 +11,7 @@ interface IndigenousPatternsProps {
 const IndigenousPatterns: React.FC<IndigenousPatternsProps> = ({ 
   variant, 
   color = 'hsl(var(--iifb-orange))', 
-  opacity = 0.15,
+  opacity = 0.3,
   className = ''
 }) => {
   const patternId = `indigenous-pattern-${variant}-${Math.random().toString(36).substr(2, 9)}`;
