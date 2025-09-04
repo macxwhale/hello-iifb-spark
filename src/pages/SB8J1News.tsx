@@ -38,56 +38,6 @@ const SB8J1News = () => {
       image: '/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png',
       link: "https://iifb-indigenous.org/views-of-indigenous-peoples-and-local-communities-in-preparation-sb8j1/",
       readTime: "6 min read"
-    },
-    {
-      id: 3,
-      title: "CBD COP16 Establishes Historic Indigenous Subsidiary Body",
-      description: "Parties to the Convention on Biological Diversity made the groundbreaking decision to create a permanent subsidiary body dedicated to Indigenous Peoples and local communities.",
-      date: "March 6, 2025",
-      category: "Policy Update",
-      image: '/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png',
-      link: "#",
-      readTime: "5 min read"
-    },
-    {
-      id: 4,
-      title: "Panama to Host Crucial Biodiversity Meetings",
-      description: "Panama City will welcome global experts for SBSTTA-27 and the inaugural SB8J-1 meeting, marking a new era in biodiversity governance.",
-      date: "February 15, 2025",
-      category: "Event News",
-      image: '/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png',
-      link: "#",
-      readTime: "3 min read"
-    },
-    {
-      id: 5,
-      title: "IPBES Workshop Prepares for SBSTTA-27",
-      description: "Latest IPBES assessments will inform scientific recommendations at the upcoming SBSTTA meeting, providing crucial data for biodiversity framework implementation.",
-      date: "January 22, 2025",
-      category: "Research",
-      image: '/lovable-uploads/96490106-76fa-41f3-9b84-56f75115fa1e.png',
-      link: "#",
-      readTime: "4 min read"
-    },
-    {
-      id: 6,
-      title: "New Conservation Finance Mechanisms Unveiled",
-      description: "Innovative financial tools are being developed to support Indigenous-led conservation efforts and promote sustainable biodiversity management.",
-      date: "April 10, 2025",
-      category: "Finance",
-      image: '/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png',
-      link: "#",
-      readTime: "6 min read"
-    },
-    {
-      id: 7,
-      title: "Indigenous Knowledge to Inform Global Biodiversity Strategy",
-      description: "Traditional ecological knowledge is increasingly recognized as a vital component of effective biodiversity conservation strategies worldwide.",
-      date: "May 1, 2025",
-      category: "Traditional Knowledge",
-      image: '/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png',
-      link: "#",
-      readTime: "4 min read"
     }
   ];
 
