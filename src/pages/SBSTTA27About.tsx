@@ -84,7 +84,7 @@ const SBSTTA27About = () => {
 
             {/* Background Story */}
             <div className="mb-20">
-              <Card className="border-none shadow-none bg-gradient-to-br from-primary/5 to-background">
+              <Card className="border-2 border-border shadow-lg bg-gradient-to-br from-primary/5 to-background">
                 <CardContent className="p-8 lg:p-12">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
