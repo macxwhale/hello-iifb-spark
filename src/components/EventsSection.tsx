@@ -13,12 +13,12 @@ const EventsSection = () => {
       <div className="container mx-auto px-4">
         {/* Enhanced Section Header */}
         <div className="text-center mb-16 relative">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full blur-xl" style={{ background: `linear-gradient(to bottom right, rgba(140, 60, 25, 0.2), rgba(116, 27, 0, 0.2))` }}></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full blur-xl" style={{ background: `linear-gradient(to bottom right, hsl(var(--iifb-rust) / 0.2), hsl(var(--iifb-orange) / 0.2))` }}></div>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Meetings
             </h2>
-            <div className="w-24 h-1 mx-auto mb-6" style={{ background: `linear-gradient(to right, #140 60% 25%, #741b00)` }}></div>
+            <div className="w-24 h-1 mx-auto mb-6" style={{ background: `linear-gradient(to right, hsl(var(--iifb-rust)), hsl(var(--iifb-orange)))` }}></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Join global experts and Indigenous leaders in shaping the future of biodiversity conservation
             </p>
@@ -27,8 +27,8 @@ const EventsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* SBSTTA-27 Event Card - Enhanced */}
-          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: '#741b00' }}>
-            <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(to right, #741b00, #25 85% 55%, #741b00)` }}></div>
+          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: 'hsl(var(--iifb-orange))' }}>
+            <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(to right, hsl(var(--iifb-orange)), hsl(var(--iifb-rust)), hsl(var(--iifb-orange)))` }}></div>
             <div className="relative h-72 overflow-hidden">
               <img 
                 src={sbsttaImage} 
@@ -36,7 +36,7 @@ const EventsSection = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-6 left-6">
-                <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'rgba(116, 27, 0, 0.9)' }}>
+                <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.9)' }}>
                   Scientific Advisory
                 </span>
               </div>
@@ -53,15 +53,15 @@ const EventsSection = () => {
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between mb-3">
                 <CardTitle className="text-2xl lg:text-3xl text-foreground">SBSTTA-27</CardTitle>
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)' }}>
-                  <Users className="h-6 w-6" style={{ color: '#741b00' }} />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)' }}>
+                  <Users className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
                 </div>
               </div>
               <CardDescription className="text-base text-muted-foreground mb-4">
                 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                <Calendar className="h-6 w-6" style={{ color: '#741b00' }} />
+                <Calendar className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
                 October 20-24, 2025
               </div>
             </CardHeader>
@@ -74,20 +74,20 @@ const EventsSection = () => {
               </p>
               
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', color: '#741b00', borderColor: 'rgba(116, 27, 0, 0.2)' }}>
+                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
                   Biodiversity Monitoring
                 </span>
-                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', color: '#741b00', borderColor: 'rgba(116, 27, 0, 0.2)' }}>
+                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
                   Scientific Research
                 </span>
-                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'rgba(116, 27, 0, 0.1)', color: '#741b00', borderColor: 'rgba(116, 27, 0, 0.2)' }}>
+                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
                   Policy Framework
                 </span>
               </div>
               
               <div className="pt-4 mt-auto">
                 <Link to="/sbstta-27">
-                  <Button className="w-full group text-lg py-6 rounded-xl font-semibold text-white hover:opacity-90" style={{ backgroundColor: '#741b00' }}>
+                  <Button className="w-full group text-lg py-6 rounded-xl font-semibold text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                     Learn More About SBSTTA-27
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -97,7 +97,7 @@ const EventsSection = () => {
           </Card>
 
           {/* SB8J-1 Event Card - Enhanced */}
-          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: '#741b00' }}>
+          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: 'hsl(var(--iifb-orange))' }}>
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
             <div className="relative h-72 overflow-hidden">
               <img 

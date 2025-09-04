@@ -53,8 +53,8 @@ const NewsCarousel = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#741b00' }}></div>
-            <span className="text-sm font-medium uppercase tracking-wider" style={{ color: '#741b00' }}>Stay Updated</span>
+            <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
+            <span className="text-sm font-medium uppercase tracking-wider" style={{ color: 'hsl(var(--iifb-orange))' }}>Stay Updated</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Latest News and Articles
@@ -66,7 +66,7 @@ const NewsCarousel = () => {
 
         {/* Featured Article (First Item) */}
         <div className="mb-16">
-          <Card className="overflow-hidden bg-card border-2 border-transparent shadow-xl hover:shadow-2xl transition-all duration-500 group" style={{ borderColor: 'transparent' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
+          <Card className="overflow-hidden bg-card border-2 border-transparent shadow-xl hover:shadow-2xl transition-all duration-500 group" style={{ borderColor: 'transparent' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-80 lg:h-full overflow-hidden">
                 <img 
@@ -76,7 +76,7 @@ const NewsCarousel = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent lg:from-transparent lg:to-black/20"></div>
                 <div className="absolute top-6 left-6">
-                  <span className="text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg" style={{ backgroundColor: '#741b00' }}>
+                  <span className="text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                     Featured
                   </span>
                 </div>
@@ -98,7 +98,7 @@ const NewsCarousel = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 leading-tight transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 leading-tight transition-colors duration-300" onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   {newsItems[0].title}
                 </h3>
                 
@@ -106,7 +106,7 @@ const NewsCarousel = () => {
                   {newsItems[0].description}
                 </p>
                 
-                <Button className="w-fit group/btn text-lg px-8 py-3 text-white" style={{ backgroundColor: '#741b00' }}>
+                <Button className="w-fit group/btn text-lg px-8 py-3 text-white" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                   Read Full Article
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -118,7 +118,7 @@ const NewsCarousel = () => {
         {/* Secondary Articles */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {newsItems.slice(1, 3).map((item, index) => (
-            <Card key={item.id} className="overflow-hidden bg-card border-2 border-transparent shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.borderColor = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
+            <Card key={item.id} className="overflow-hidden bg-card border-2 border-transparent shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
               <div className="relative h-56 overflow-hidden">
                 <img 
                   src={item.image} 
@@ -127,7 +127,7 @@ const NewsCarousel = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="text-white px-3 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: 'rgba(116, 27, 0, 0.9)' }}>
+                  <span className="text-white px-3 py-1 rounded-full text-sm font-medium" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.9)' }}>
                     {item.category}
                   </span>
                 </div>
@@ -145,7 +145,7 @@ const NewsCarousel = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-3 leading-tight transition-colors duration-200 line-clamp-2" onMouseEnter={(e) => e.currentTarget.style.color = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                <h3 className="text-xl font-bold text-foreground mb-3 leading-tight transition-colors duration-200 line-clamp-2" onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
                   {item.title}
                 </h3>
                 
@@ -153,7 +153,7 @@ const NewsCarousel = () => {
                   {item.description}
                 </p>
                 
-                <Button className="w-full group/btn px-6 py-3 rounded-lg font-medium transition-all duration-200 border text-white hover:shadow-lg hover:scale-105" style={{ backgroundColor: '#741b00', borderColor: '#741b00' }}>
+                <Button className="w-full group/btn px-6 py-3 rounded-lg font-medium transition-all duration-200 border text-white hover:shadow-lg hover:scale-105" style={{ backgroundColor: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange))' }}>
                   <span>Read More</span>
                   <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                 </Button>
@@ -165,7 +165,7 @@ const NewsCarousel = () => {
         {/* View All Button */}
         <div className="text-center">
           <Link to="/news">
-            <Button variant="outline" size="lg" className="border-2 px-8 py-3 text-white" style={{ borderColor: '#741b00', color: '#741b00', backgroundColor: 'transparent' }}>
+            <Button variant="outline" size="lg" className="border-2 px-8 py-3 text-white" style={{ borderColor: 'hsl(var(--iifb-orange))', color: 'hsl(var(--iifb-orange))', backgroundColor: 'transparent' }}>
               View All Articles
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

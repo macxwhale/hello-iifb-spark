@@ -48,7 +48,7 @@ const HeroBanner = () => {
                 </div>
                 <div className="flex flex-col space-y-3 w-full">
                   <Link to="/sbstta-27">
-                    <Button size="lg" className="text-white hover:opacity-90 w-full font-semibold shadow-lg" style={{ backgroundColor: '#741b00' }}>
+                    <Button size="lg" className="text-white hover:opacity-90 w-full font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                       SBSTTA-27
                     </Button>
                   </Link>

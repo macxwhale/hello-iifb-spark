@@ -94,7 +94,7 @@ const StatementsCarousel = () => {
 
   const getUpdatedTextColor = (status: string) => {
     if (status === 'Updated') {
-      return { color: '#741b00' };
+      return { color: 'hsl(var(--iifb-orange))' };
     }
     return {};
   };

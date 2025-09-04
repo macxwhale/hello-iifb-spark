@@ -150,7 +150,7 @@ const SideEventsCarousel = () => {
                 className="flex-shrink-0 px-3"
                 style={{ width: `${100 / sideEvents.length}%` }}
               >
-                <Card className="h-full bg-card border-2 border-transparent hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer" style={{ '--hover-border-color': '#741b00' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.borderColor = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
+                <Card className="h-full bg-card border-2 border-transparent hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer" style={{ '--hover-border-color': 'hsl(var(--iifb-orange))' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
                   {/* Featured Image */}
                   <div className="relative h-64 overflow-hidden">
                     <img 
@@ -161,7 +161,7 @@ const SideEventsCarousel = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     
                      {/* Date Badge */}
-                     <div className="absolute top-4 right-4 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg" style={{ backgroundColor: '#741b00', color: 'white' }}>
+                     <div className="absolute top-4 right-4 rounded-full w-16 h-16 flex flex-col items-center justify-center text-center shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))', color: 'white' }}>
                       <span className="text-2xl font-bold leading-none">{event.date}</span>
                       <span className="text-xs font-medium leading-none">{event.month}</span>
                       <span className="text-xs leading-none opacity-90">{event.year}</span>
@@ -175,7 +175,7 @@ const SideEventsCarousel = () => {
                   
                   {/* Content */}
                   <CardContent className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold text-foreground leading-tight transition-colors duration-200 line-clamp-3" style={{ color: 'inherit' }} onMouseEnter={(e) => e.currentTarget.style.color = '#741b00'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
+                    <h3 className="text-xl font-bold text-foreground leading-tight transition-colors duration-200 line-clamp-3" style={{ color: 'inherit' }} onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
                       {event.title}
                     </h3>
                     
@@ -209,7 +209,7 @@ const SideEventsCarousel = () => {
                         rel="noopener noreferrer"
                         className="w-full"
                       >
-                        <Button className="w-full group/btn px-6 py-3 rounded-lg font-medium transition-all duration-200 border text-white hover:shadow-lg hover:scale-105" style={{ backgroundColor: '#741b00', borderColor: '#741b00' }}>
+                        <Button className="w-full group/btn px-6 py-3 rounded-lg font-medium transition-all duration-200 border text-white hover:shadow-lg hover:scale-105" style={{ backgroundColor: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange))' }}>
                           <span>Learn More</span>
                           <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                         </Button>
@@ -233,10 +233,10 @@ const SideEventsCarousel = () => {
                   ? 'bg-primary shadow-md scale-110'
                   : 'bg-muted hover:scale-105'
               }`}
-              style={Math.floor(currentIndex / itemsPerView) !== index ? { '--hover-bg': 'rgba(116, 27, 0, 0.5)' } as React.CSSProperties : {}}
+              style={Math.floor(currentIndex / itemsPerView) !== index ? { '--hover-bg': 'hsl(var(--iifb-orange) / 0.5)' } as React.CSSProperties : {}}
               onMouseEnter={(e) => {
                 if (Math.floor(currentIndex / itemsPerView) !== index) {
-                  e.currentTarget.style.backgroundColor = 'rgba(116, 27, 0, 0.5)';
+                  e.currentTarget.style.backgroundColor = 'hsl(var(--iifb-orange) / 0.5)';
                 }
               }}
               onMouseLeave={(e) => {
