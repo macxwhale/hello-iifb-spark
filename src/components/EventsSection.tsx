@@ -107,7 +107,7 @@ const EventsSection = () => {
               
               <div className="absolute top-6 left-6">
                 <span className="bg-secondary/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20">
-                  Indigenous Rights
+                  Traditional Territories
                 </span>
               </div>
               <div className="absolute bottom-6 left-6 right-6">
