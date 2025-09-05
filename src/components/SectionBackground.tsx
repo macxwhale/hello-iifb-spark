@@ -3,7 +3,7 @@ import React from 'react';
 
 interface SectionBackgroundProps {
   children: React.ReactNode;
-  variant: 'hero' | 'introduction' | 'events' | 'statements' | 'news' | 'side-events' | 'resources';
+  variant: 'hero' | 'introduction' | 'meetings' | 'events' | 'statements' | 'news' | 'side-events' | 'resources';
   className?: string;
 }
 
@@ -20,6 +20,13 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
         return {
           bgClass: 'bg-[#F2F1D5]',
           contentClass: ''
+        };
+      
+      case 'meetings':
+        return {
+          bgClass: 'bg-white relative',
+          contentClass: '',
+          hasTexture: true
         };
       
       case 'events':
@@ -78,7 +85,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
         />
       )}
       {/* Geometric pattern for white background sections */}
-      {(variant === 'news' || variant === 'resources') && (
+      {(variant === 'meetings' || variant === 'news' || variant === 'resources') && (
         <div 
           className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none"
           style={{
