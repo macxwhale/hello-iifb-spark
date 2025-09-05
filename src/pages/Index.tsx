@@ -1,7 +1,6 @@
 
 import HeroBanner from '@/components/HeroBanner';
 import IntroductionSection from '@/components/IntroductionSection';
-import MeetingsSection from '@/components/MeetingsSection';
 import EventsSection from '@/components/EventsSection';
 import NewsCarousel from '@/components/NewsCarousel';
 import SideEventsCarousel from '@/components/SideEventsCarousel';
@@ -20,11 +19,6 @@ const Index = () => {
       {/* Introduction Section */}
       <SectionBackground variant="introduction">
         <IntroductionSection />
-      </SectionBackground>
-      
-      {/* Meetings Section */}
-      <SectionBackground variant="meetings">
-        <MeetingsSection />
       </SectionBackground>
       
       {/* Events Section */}
