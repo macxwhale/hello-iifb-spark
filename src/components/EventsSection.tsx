@@ -146,7 +146,7 @@ const EventsSection = () => {
                   Traditional Knowledge
                 </span>
                 <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
-                  Indigenous Rights
+                  Traditional Territories
                 </span>
                 <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
                   Cultural Diversity
