@@ -1,6 +1,5 @@
 
 import HeroBanner from '@/components/HeroBanner';
-import IntroductionSection from '@/components/IntroductionSection';
 import MeetingsSection from '@/components/MeetingsSection';
 import EventsSection from '@/components/EventsSection';
 import NewsCarousel from '@/components/NewsCarousel';
@@ -15,11 +14,6 @@ const Index = () => {
       {/* Hero Section - Gradient background */}
       <SectionBackground variant="hero">
         <HeroBanner />
-      </SectionBackground>
-      
-      {/* Introduction Section */}
-      <SectionBackground variant="introduction">
-        <IntroductionSection />
       </SectionBackground>
       
       {/* Meetings Section */}
