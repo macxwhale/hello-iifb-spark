@@ -20,7 +20,7 @@ const EventsSection = () => {
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ background: `linear-gradient(to right, hsl(var(--iifb-rust)), hsl(var(--iifb-orange)))` }}></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Join global experts and Indigenous leaders in shaping the future of biodiversity conservation
+              Join the global conversation with experts exploring traditional knowledge, innovation and the practices of Indigenous Peoples and local communities
             </p>
           </div>
         </div>
