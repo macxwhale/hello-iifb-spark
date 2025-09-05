@@ -68,9 +68,8 @@ const EventsSection = () => {
             
             <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
-                Critical milestone providing science-based recommendations to guide implementation of the Global Biodiversity Framework. 
-                Focuses on monitoring progress, ecosystem-based approaches, and cross-sectoral mainstreaming of biodiversity considerations. 
-                Outcomes will shape global biodiversity policy and inform COP16 decisions with the best available science.
+                The 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27) under the Convention on Biological Diversity (CBD) will be held in Panama City, Panama, from 20–24 October 2025. This meeting is a critical milestone in the lead-up to CBD COP16, as it will provide science-based recommendations to guide the effective implementation of the Kunming–Montreal Global Biodiversity Framework (KMGBF).
+                SBSTTA is the CBD's main advisory body, mandated to provide the Conference of the Parties (COP) with scientific, technical and technological input on issues relating to biodiversity. SBSTTA-27 will bring together government representatives, scientific experts, Indigenous Peoples and local communities, and other stakeholders to examine pressing issues that influence the global biodiversity agenda.
               </p>
               
               <div className="flex flex-wrap gap-2">
@@ -139,9 +138,7 @@ const EventsSection = () => {
             
             <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
               <p className="text-foreground leading-relaxed text-lg">
-                Historic establishment of permanent body dedicated to Indigenous Peoples and local communities following COP16 landmark decision. 
-                Addresses territorial guidelines, traditional knowledge integration in planning, and terminology review for cultural relevance. 
-                Sets foundation for elevating IPLC leadership and enhancing biodiversity governance.
+                The First Meeting of the Subsidiary Body on Article 8(j) and Related Provisions (SB8J-1) will be held from 27 to 30 October 2025 in Panama City, Panama. This historic gathering follows a landmark decision adopted at COP 16, where Parties to the Convention on Biological Diversity (CBD) agreed to establish a new permanent Subsidiary Body dedicated specifically to Article 8(j) and related provisions concerning Indigenous Peoples and local communities. The creation of this body marks an important step in elevating Indigenous Peoples and local communities issues within CBD processes and ensuring stronger participation and contributions of Indigenous Peoples and local communities toward the achievement of global biodiversity goals.
               </p>
               
               <div className="flex flex-wrap gap-2">
