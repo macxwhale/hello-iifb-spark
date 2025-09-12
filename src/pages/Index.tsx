@@ -5,6 +5,7 @@ import EventsSection from '@/components/EventsSection';
 import NewsCarousel from '@/components/NewsCarousel';
 import SideEventsCarousel from '@/components/SideEventsCarousel';
 import StatementsCarousel from '@/components/StatementsCarousel';
+import VideoSection from '@/components/VideoSection';
 import IndigenousArtStrip from '@/components/IndigenousArtStrip';
 
 import SectionBackground from '@/components/SectionBackground';
@@ -40,6 +41,11 @@ const Index = () => {
       {/* News Section */}
       <SectionBackground variant="news">
         <NewsCarousel />
+      </SectionBackground>
+      
+      {/* Video Section */}
+      <SectionBackground variant="introduction">
+        <VideoSection />
       </SectionBackground>
       
       {/* Side Events Section */}

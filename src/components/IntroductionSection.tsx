@@ -88,7 +88,7 @@ const IntroductionSection = () => {
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-1 bg-secondary rounded-full"></div>
-                  <span className="text-secondary font-medium uppercase tracking-wide text-sm">Historic Gathering</span>
+                  <span className="text-secondary font-medium uppercase tracking-wide text-sm">Global Meetings</span>
                 </div>
                 
                 <p className="text-base md:text-lg text-foreground leading-relaxed">
