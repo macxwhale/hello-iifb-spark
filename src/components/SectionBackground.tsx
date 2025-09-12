@@ -18,10 +18,8 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       
       case 'introduction':
         return {
-          bgClass: 'bg-[#F2F1D5] relative',
-          contentClass: '',
-          hasTexture: true,
-          indigenousArt: true
+          bgClass: 'bg-[#F2F1D5]',
+          contentClass: ''
         };
       
       case 'meetings':
@@ -40,9 +38,8 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       
       case 'statements':
         return {
-          bgClass: 'bg-[#F2F1D5] relative',
-          contentClass: '',
-          indigenousArt: true
+          bgClass: 'bg-[#F2F1D5]',
+          contentClass: ''
         };
       
       case 'news':
@@ -73,7 +70,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
     }
   };
 
-  const { bgClass, contentClass, hasTexture, indigenousArt } = getBackgroundConfig();
+  const { bgClass, contentClass, hasTexture } = getBackgroundConfig();
 
   return (
     <div className={`relative ${bgClass} ${className} overflow-hidden`}>
@@ -97,29 +94,6 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
             backgroundSize: 'contain'
           }}
         />
-      )}
-      {/* Indigenous art decorative elements */}
-      {indigenousArt && (
-        <>
-          <div 
-            className="absolute top-0 right-0 w-32 h-32 opacity-20 pointer-events-none"
-            style={{
-              backgroundImage: "url('/src/assets/indigenous-art-1.jpg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              borderRadius: '50%'
-            }}
-          />
-          <div 
-            className="absolute bottom-0 left-0 w-24 h-24 opacity-15 pointer-events-none"
-            style={{
-              backgroundImage: "url('/src/assets/indigenous-art-2.jpg')",
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              borderRadius: '50%'
-            }}
-          />
-        </>
       )}
       <div className={`relative z-10 ${contentClass}`}>
         {children}
