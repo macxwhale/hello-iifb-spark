@@ -18,11 +18,6 @@ const Index = () => {
         <HeroBanner />
       </SectionBackground>
       
-      {/* Indigenous Art Strip */}
-      <SectionBackground variant="art-strip">
-        <IndigenousArtStrip />
-      </SectionBackground>
-      
       {/* Introduction Section */}
       <SectionBackground variant="introduction">
         <IntroductionSection />
