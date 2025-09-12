@@ -9,14 +9,14 @@ const IndigenousArtStrip = () => {
             <img 
               src="/lovable-uploads/813a08a2-2c3b-4cf3-b6a6-df3107731953.png"
               alt="Indigenous traditional art pattern with vibrant geometric designs"
-              className="w-full h-16 md:h-24 object-cover"
+              className="w-full h-16 md:h-24 object-cover blur-sm"
             />
           </div>
           <div className="flex-1">
             <img 
               src="/lovable-uploads/3d0d4606-04da-4e0b-bb7c-508ece4f97c2.png"
               alt="Indigenous cultural artwork with traditional motifs"
-              className="w-full h-16 md:h-24 object-cover"
+              className="w-full h-16 md:h-24 object-cover blur-sm"
             />
           </div>
         </div>
