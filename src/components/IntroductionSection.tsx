@@ -83,31 +83,54 @@ const IntroductionSection = () => {
               </div>
             </div>
 
-            {/* Video Content - Right Side */}
-            <div className="space-y-8 lg:col-span-1">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-1 bg-secondary rounded-full"></div>
-                  <span className="text-secondary font-medium uppercase tracking-wide text-sm">Featured Content</span>
+            {/* YouTube Video Section - Right Side */}
+            <div className="relative lg:col-span-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
+                <div className="w-full h-full bg-gradient-to-br from-muted to-muted/80 flex items-center justify-center">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
+                    <Play className="h-16 w-16 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
+                  </div>
                 </div>
                 
-                {/* Second Video Section */}
-                <div className="relative overflow-hidden rounded-2xl shadow-medium bg-muted aspect-video border-2 border-white/30">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
-                      <Play className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
+                {/* Enhanced overlay */}
+                <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
+                  <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
+                </div>
+              </div>
+
+              {/* Feature Cards - Below Video */}
+              <div className="grid grid-cols-1 gap-8 mt-8">
+                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Users className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        Leadership
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        First-ever subsidiary body for Indigenous Peoples and local communities
+                      </p>
                     </div>
                   </div>
-                  
-                  {/* Video overlay */}
-                  <div className="absolute bottom-4 left-4 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
-                    <span className="text-white text-xs font-semibold">Indigenous Voices</span>
+                </div>
+
+                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Globe className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">
+                        Global Impact
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Advancing the Global Biodiversity Framework for nature-positive outcomes
+                      </p>
+                    </div>
                   </div>
                 </div>
-                
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                  Hear directly from Indigenous leaders and community members about their traditional knowledge systems and conservation practices.
-                </p>
               </div>
             </div>
           </div>
