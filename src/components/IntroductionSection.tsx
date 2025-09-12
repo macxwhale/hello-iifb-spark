@@ -83,20 +83,30 @@ const IntroductionSection = () => {
               </div>
             </div>
 
-            {/* Text Content - Right Side */}
+            {/* Video Content - Right Side */}
             <div className="space-y-8 lg:col-span-1">
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-1 bg-secondary rounded-full"></div>
-                  <span className="text-secondary font-medium uppercase tracking-wide text-sm">Historic Gathering</span>
+                  <span className="text-secondary font-medium uppercase tracking-wide text-sm">Featured Content</span>
                 </div>
                 
-                <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  In October 2025, the Convention on Biological Diversity (CBD) will host two key meetings in Panama City, the Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), from 20–24 October, to provide scientific guidance for implementing the Global Biodiversity Framework, and the inaugural meeting of the Subsidiary Body on Article 8(j) and Other Provisions (SB8J-1), from 27–30 October, focusing on safeguarding and promoting the knowledge, innovations, and practices of Indigenous Peoples and local communities.
-                </p>
+                {/* Second Video Section */}
+                <div className="relative overflow-hidden rounded-2xl shadow-medium bg-muted aspect-video border-2 border-white/30">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-4 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
+                      <Play className="h-12 w-12 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
+                    </div>
+                  </div>
+                  
+                  {/* Video overlay */}
+                  <div className="absolute bottom-4 left-4 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/20">
+                    <span className="text-white text-xs font-semibold">Indigenous Voices</span>
+                  </div>
+                </div>
                 
-                <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  Together, these bodies will play a critical role in advancing the objectives of the CBD at a time when urgent action is needed to address global biodiversity challenges.
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                  Hear directly from Indigenous leaders and community members about their traditional knowledge systems and conservation practices.
                 </p>
               </div>
             </div>
