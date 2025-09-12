@@ -6,6 +6,7 @@ import NewsCarousel from '@/components/NewsCarousel';
 import SideEventsCarousel from '@/components/SideEventsCarousel';
 import StatementsCarousel from '@/components/StatementsCarousel';
 import IndigenousArtStrip from '@/components/IndigenousArtStrip';
+import CalendarSection from '@/components/CalendarSection';
 
 import SectionBackground from '@/components/SectionBackground';
 
@@ -45,6 +46,11 @@ const Index = () => {
       {/* Side Events Section */}
       <SectionBackground variant="side-events">
         <SideEventsCarousel />
+      </SectionBackground>
+      
+      {/* Calendar Section */}
+      <SectionBackground variant="calendar">
+        <CalendarSection />
       </SectionBackground>
       
     </div>
