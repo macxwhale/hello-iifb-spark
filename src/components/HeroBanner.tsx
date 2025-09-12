@@ -11,7 +11,7 @@ const HeroBanner = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-        style={{ backgroundImage: `url(/lovable-uploads/95f294c7-ff76-4789-9634-1fb9f29dff86.png)` }}
+        style={{ backgroundImage: `url(/lovable-uploads/87033bce-65e7-486c-9dd7-0c4f73cc4677.png)` }}
       >
       </div>
 
