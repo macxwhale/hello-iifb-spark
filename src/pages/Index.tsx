@@ -7,6 +7,7 @@ import SideEventsCarousel from '@/components/SideEventsCarousel';
 import StatementsCarousel from '@/components/StatementsCarousel';
 
 import SectionBackground from '@/components/SectionBackground';
+import IndigenousArtDivider from '@/components/IndigenousArtDivider';
 
 const Index = () => {
   return (
@@ -21,6 +22,9 @@ const Index = () => {
         <IntroductionSection />
       </SectionBackground>
       
+      {/* Decorative Divider */}
+      <IndigenousArtDivider />
+      
       {/* Events Section */}
       <SectionBackground variant="events">
         <EventsSection />
@@ -30,6 +34,9 @@ const Index = () => {
       <SectionBackground variant="statements">
         <StatementsCarousel />
       </SectionBackground>
+      
+      {/* Decorative Divider */}
+      <IndigenousArtDivider />
       
       {/* News Section */}
       <SectionBackground variant="news">
