@@ -28,12 +28,11 @@ const IntroductionSection = () => {
         </div>
       </section>
       
-      {/* Main Content Section */}
       <section className="py-12 lg:py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
-            {/* YouTube Video Section - Left Side - Larger */}
-            <div className="relative lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* YouTube Video Section - Left Side */}
+            <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
                 <div className="w-full h-full bg-gradient-to-br from-muted to-muted/80 flex items-center justify-center">
                   <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
@@ -44,47 +43,12 @@ const IntroductionSection = () => {
                 {/* Enhanced overlay */}
                 <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
                   <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
-                </div>
-              </div>
-
-              {/* Feature Cards - Below Video */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Users className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        Leadership
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        First-ever subsidiary body for Indigenous Peoples and local communities
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Globe className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        Global Impact
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Advancing the Global Biodiversity Framework for nature-positive outcomes
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
 
             {/* YouTube Video Section - Right Side */}
-            <div className="relative lg:col-span-1">
+            <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
                 <div className="w-full h-full bg-gradient-to-br from-muted to-muted/80 flex items-center justify-center">
                   <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
@@ -97,39 +61,39 @@ const IntroductionSection = () => {
                   <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Feature Cards - Below Video */}
-              <div className="grid grid-cols-1 gap-8 mt-8">
-                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Users className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        Leadership
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        First-ever subsidiary body for Indigenous Peoples and local communities
-                      </p>
-                    </div>
-                  </div>
+          {/* Feature Cards Strip - Below Both Videos */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
+              <div className="flex items-center space-x-4">
+                <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                  <Users className="h-6 w-6 text-secondary" />
                 </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Leadership
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    First-ever subsidiary body for Indigenous Peoples and local communities
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Globe className="h-6 w-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        Global Impact
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Advancing the Global Biodiversity Framework for nature-positive outcomes
-                      </p>
-                    </div>
-                  </div>
+            <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
+              <div className="flex items-center space-x-4">
+                <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="h-6 w-6 text-secondary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Global Impact
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Advancing the Global Biodiversity Framework for nature-positive outcomes
+                  </p>
                 </div>
               </div>
             </div>
