@@ -5,7 +5,6 @@ import EventsSection from '@/components/EventsSection';
 import NewsCarousel from '@/components/NewsCarousel';
 import SideEventsCarousel from '@/components/SideEventsCarousel';
 import StatementsCarousel from '@/components/StatementsCarousel';
-import IndigenousArtGallery from '@/components/IndigenousArtGallery';
 
 import SectionBackground from '@/components/SectionBackground';
 
@@ -40,11 +39,6 @@ const Index = () => {
       {/* Side Events Section */}
       <SectionBackground variant="side-events">
         <SideEventsCarousel />
-      </SectionBackground>
-      
-      {/* Indigenous Art Gallery Section */}
-      <SectionBackground variant="art-gallery">
-        <IndigenousArtGallery />
       </SectionBackground>
       
     </div>

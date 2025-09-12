@@ -3,7 +3,7 @@ import React from 'react';
 
 interface SectionBackgroundProps {
   children: React.ReactNode;
-  variant: 'hero' | 'introduction' | 'meetings' | 'events' | 'statements' | 'news' | 'side-events' | 'resources' | 'art-gallery';
+  variant: 'hero' | 'introduction' | 'meetings' | 'events' | 'statements' | 'news' | 'side-events' | 'resources';
   className?: string;
 }
 
@@ -60,12 +60,6 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           bgClass: 'bg-white relative',
           contentClass: '',
           hasTexture: true
-        };
-      
-      case 'art-gallery':
-        return {
-          bgClass: 'bg-gradient-to-br from-iifb-cream via-background to-muted/30',
-          contentClass: ''
         };
       
       default:
