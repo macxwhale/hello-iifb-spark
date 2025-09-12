@@ -112,7 +112,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       <div 
         className="absolute top-0 left-0 w-8 h-full opacity-60 pointer-events-none"
         style={{
-          backgroundImage: "url('/lovable-uploads/8d28fb8f-5581-4b60-9bcf-e86cc3b228cb.png')",
+          backgroundImage: "url('/lovable-uploads/05aa6119-36f4-41ec-be4b-8fecba8fd361.png')",
           backgroundRepeat: 'repeat-y',
           backgroundSize: '32px auto'
         }}
@@ -120,7 +120,7 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
       <div 
         className="absolute top-0 right-0 w-8 h-full opacity-60 pointer-events-none"
         style={{
-          backgroundImage: "url('/lovable-uploads/8d28fb8f-5581-4b60-9bcf-e86cc3b228cb.png')",
+          backgroundImage: "url('/lovable-uploads/05aa6119-36f4-41ec-be4b-8fecba8fd361.png')",
           backgroundRepeat: 'repeat-y',
           backgroundSize: '32px auto'
         }}
