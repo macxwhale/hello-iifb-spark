@@ -15,7 +15,7 @@ const IntroductionSection = () => {
             <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'hsl(var(--iifb-orange))' }}>About the Meetings</span>
             <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             WELCOME TO
             <span className="block mt-2 relative" style={{ color: 'hsl(var(--iifb-orange))' }}>
               SBSTTA 27 AND SB8J-1, PANAMA 2025

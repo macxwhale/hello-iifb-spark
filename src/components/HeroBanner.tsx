@@ -21,9 +21,9 @@ const HeroBanner = () => {
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 md:gap-8 w-full">
             {/* Left Container - Main Content */}
             <div className="text-white text-left">
-              <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 CBD Panama
-                <span className="block text-4xl md:text-5xl font-normal mt-2 opacity-90">
+                <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
                   Meetings 2025
                 </span>
               </h1>

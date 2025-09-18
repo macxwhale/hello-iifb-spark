@@ -16,7 +16,7 @@ const EventsSection = () => {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full blur-xl" style={{ background: `linear-gradient(to bottom right, hsl(var(--iifb-rust) / 0.2), hsl(var(--iifb-orange) / 0.2))` }}></div>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Meetings
+              Upcoming Events & Meetings
             </h2>
             <div className="w-24 h-1 mx-auto mb-6" style={{ background: `linear-gradient(to right, hsl(var(--iifb-rust)), hsl(var(--iifb-orange)))` }}></div>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -66,22 +66,24 @@ const EventsSection = () => {
               </div>
             </CardHeader>
             
-            <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
-              <p className="text-foreground leading-relaxed text-lg">
-                The 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27) under the Convention on Biological Diversity (CBD) will be held in Panama City, Panama, from 20–24 October 2025. This meeting is a critical milestone in the lead-up to CBD COP16, as it will provide science-based recommendations to guide the effective implementation of the Kunming–Montreal Global Biodiversity Framework (KMGBF).
-                SBSTTA is the CBD's main advisory body, mandated to provide the Conference of the Parties (COP) with scientific, technical and technological input on issues relating to biodiversity. SBSTTA-27 will bring together government representatives, scientific experts, Indigenous Peoples and local communities, and other stakeholders to examine pressing issues that influence the global biodiversity agenda.
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
-                  Biodiversity Monitoring
-                </span>
-                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
-                  Scientific Research
-                </span>
-                <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
-                  Policy Framework
-                </span>
+            <CardContent className="space-y-6 pb-8 flex-grow flex flex-col">
+              <div className="flex-grow">
+                <p className="text-foreground leading-relaxed text-lg mb-6">
+                  The 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27) under the Convention on Biological Diversity (CBD) will be held in Panama City, Panama, from 20–24 October 2025. This meeting is a critical milestone in the lead-up to CBD COP16, as it will provide science-based recommendations to guide the effective implementation of the Kunming–Montreal Global Biodiversity Framework (KMGBF).
+                  SBSTTA is the CBD's main advisory body, mandated to provide the Conference of the Parties (COP) with scientific, technical and technological input on issues relating to biodiversity. SBSTTA-27 will bring together government representatives, scientific experts, Indigenous Peoples and local communities, and other stakeholders to examine pressing issues that influence the global biodiversity agenda.
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
+                    Biodiversity Monitoring
+                  </span>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
+                    Scientific Research
+                  </span>
+                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
+                    Policy Framework
+                  </span>
+                </div>
               </div>
               
               <div className="pt-4 mt-auto">
@@ -136,21 +138,23 @@ const EventsSection = () => {
               </div>
             </CardHeader>
             
-            <CardContent className="space-y-8 pb-8 flex-grow flex flex-col">
-              <p className="text-foreground leading-relaxed text-lg">
-                The First Meeting of the Subsidiary Body on Article 8(j) and Related Provisions (SB8J-1) will be held from 27 to 30 October 2025 in Panama City, Panama. This historic gathering follows a landmark decision adopted at COP 16, where Parties to the Convention on Biological Diversity (CBD) agreed to establish a new permanent Subsidiary Body dedicated specifically to Article 8(j) and related provisions concerning Indigenous Peoples and local communities. The creation of this body marks an important step in elevating Indigenous Peoples and local communities issues within CBD processes and ensuring stronger participation and contributions of Indigenous Peoples and local communities toward the achievement of global biodiversity goals.
-              </p>
-              
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
-                  Traditional Knowledge
-                </span>
-                <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
-                  Traditional Territories
-                </span>
-                <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
-                  Cultural Diversity
-                </span>
+            <CardContent className="space-y-6 pb-8 flex-grow flex flex-col">
+              <div className="flex-grow">
+                <p className="text-foreground leading-relaxed text-lg mb-6">
+                  The First Meeting of the Subsidiary Body on Article 8(j) and Related Provisions (SB8J-1) will be held from 27 to 30 October 2025 in Panama City, Panama. This historic gathering follows a landmark decision adopted at COP 16, where Parties to the Convention on Biological Diversity (CBD) agreed to establish a new permanent Subsidiary Body dedicated specifically to Article 8(j) and related provisions concerning Indigenous Peoples and local communities. The creation of this body marks an important step in elevating Indigenous Peoples and local communities issues within CBD processes and ensuring stronger participation and contributions of Indigenous Peoples and local communities toward the achievement of global biodiversity goals.
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
+                    Traditional Knowledge
+                  </span>
+                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
+                    Traditional Territories
+                  </span>
+                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
+                    Cultural Diversity
+                  </span>
+                </div>
               </div>
               
               <div className="pt-4 mt-auto">

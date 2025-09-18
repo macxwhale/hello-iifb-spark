@@ -23,9 +23,14 @@ const SB8J1About = () => {
             <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-iifb-cream to-iifb-sage bg-clip-text text-transparent">
               SB8J-1
             </h1>
-
-            <SB8J1Navigation currentPage="about" />
           </div>
+        </div>
+      </section>
+
+      {/* Navigation Section */}
+      <section className="bg-white border-b border-border/50">
+        <div className="container mx-auto px-4">
+          <SB8J1Navigation currentPage="about" />
         </div>
       </section>
 

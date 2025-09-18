@@ -108,23 +108,6 @@ const SectionBackground: React.FC<SectionBackgroundProps> = ({ children, variant
           }}
         />
       )}
-      {/* Indigenous pattern edge decoration */}
-      <div 
-        className="absolute top-0 left-0 w-8 h-full opacity-60 pointer-events-none z-5"
-        style={{
-          backgroundImage: "url('/lovable-uploads/05aa6119-36f4-41ec-be4b-8fecba8fd361.png')",
-          backgroundRepeat: 'repeat-y',
-          backgroundSize: '32px auto'
-        }}
-      />
-      <div 
-        className="absolute top-0 right-0 w-8 h-full opacity-60 pointer-events-none z-5"
-        style={{
-          backgroundImage: "url('/lovable-uploads/05aa6119-36f4-41ec-be4b-8fecba8fd361.png')",
-          backgroundRepeat: 'repeat-y',
-          backgroundSize: '32px auto'
-        }}
-      />
       <div className={`relative z-10 ${contentClass}`}>
         {children}
       </div>
