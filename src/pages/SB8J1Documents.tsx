@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import SB8J1Navigation from '@/components/SB8J1Navigation';
+import SB8J1Hero from '@/components/SB8J1Hero';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
 
 const SB8J1Documents = () => {
@@ -159,27 +160,11 @@ const SB8J1Documents = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative min-h-[60vh] h-auto overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-          style={{ 
-            backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-
-        <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-          <div className="text-white text-center w-full">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-              SB8J-1 Documents
-            </h1>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <SB8J1Hero title="SB8J-1 Documents" />
 
       {/* Navigation Section */}
-      <section className="bg-white border-b">
+      <section className="bg-white border-b border-border/50">
         <div className="container mx-auto px-4 py-4">
           <SB8J1Navigation currentPage="documents" />
         </div>

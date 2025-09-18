@@ -1,4 +1,5 @@
 import SB8J1Navigation from '@/components/SB8J1Navigation';
+import SB8J1Hero from '@/components/SB8J1Hero';
 import { Calendar, MapPin, Users, Target, Globe, Leaf } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -6,30 +7,11 @@ const SB8J1About = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] h-auto overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-          style={{ 
-            backgroundImage: `url(/lovable-uploads/7685290b-0f07-4df8-8472-c5deb1b68778.png)`
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center min-h-[70vh] max-w-7xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-          <div className="text-white text-center w-full">
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight bg-gradient-to-r from-white via-iifb-cream to-iifb-sage bg-clip-text text-transparent">
-              SB8J-1
-            </h1>
-          </div>
-        </div>
-      </section>
+      <SB8J1Hero title="SB8J-1" />
 
       {/* Navigation Section */}
       <section className="bg-white border-b border-border/50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 py-4">
           <SB8J1Navigation currentPage="about" />
         </div>
       </section>
