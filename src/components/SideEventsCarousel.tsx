@@ -146,7 +146,7 @@ const SideEventsCarousel = () => {
                 className="flex-shrink-0 px-3"
                 style={{ width: `${100 / sideEvents.length}%` }}
               >
-                <Card className="h-full bg-card border-2 border-transparent hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer" style={{ '--hover-border-color': 'hsl(var(--iifb-orange))' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
+                <Card className="h-full bg-card border-2 border-transparent hover:shadow-xl hover:scale-105 transition-all duration-300 group overflow-hidden cursor-pointer flex flex-col" style={{ '--hover-border-color': 'hsl(var(--iifb-orange))' } as React.CSSProperties} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
                   {/* Featured Image */}
                   <div className="relative h-64 overflow-hidden">
                     <img 
@@ -166,7 +166,7 @@ const SideEventsCarousel = () => {
                   </div>
                   
                   {/* Content */}
-                  <CardContent className="p-6 space-y-4">
+                  <CardContent className="p-6 space-y-4 flex-grow flex flex-col">
                     <h3 className="text-xl font-bold text-foreground leading-tight transition-colors duration-200 line-clamp-3" style={{ color: 'inherit' }} onMouseEnter={(e) => e.currentTarget.style.color = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.color = 'inherit'}>
                       {event.title}
                     </h3>
@@ -176,7 +176,7 @@ const SideEventsCarousel = () => {
                     </p>
                     
                     {/* Event Details */}
-                    <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="space-y-2 text-sm text-muted-foreground flex-grow">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4" />
                         <span>{event.time}</span>
@@ -194,7 +194,7 @@ const SideEventsCarousel = () => {
                     </div>
                     
                     {/* Learn More Button */}
-                    <div className="pt-4 border-t border-border/50">
+                    <div className="pt-4 border-t border-border/50 mt-auto">
                       <a 
                         href={event.link}
                         target="_blank"
