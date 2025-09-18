@@ -99,7 +99,7 @@ const CalendarSection = () => {
     for (let day = 1; day <= daysInMonth; day++) {
       const meeting = getMeetingForDate(day);
       days.push(
-        <div key={day} className="h-24 border border-border p-1 relative bg-background hover:bg-muted/50 transition-colors">
+        <div key={day} className="h-24 border border-border p-1 relative bg-background">
           <div className="text-sm font-medium text-foreground mb-1">{day}</div>
           {meeting && (
             <div className="text-xs p-1 rounded" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))' }}>
