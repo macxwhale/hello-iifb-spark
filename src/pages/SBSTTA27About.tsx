@@ -1,39 +1,12 @@
 
-import SBSTTA27Navigation from '@/components/SBSTTA27Navigation';
+import SBSTTA27Hero from '@/components/SBSTTA27Hero';
 import { Calendar, MapPin, Users, Target, Globe, Leaf } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const SBSTTA27About = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] h-auto overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-          style={{ 
-            backgroundImage: `url(/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png)`
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center min-h-[70vh] max-w-7xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-          <div className="text-white text-center w-full">
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-              SBSTTA-27
-            </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* Navigation Section */}
-      <section className="bg-white border-b border-border/50">
-        <div className="container mx-auto px-4">
-          <SBSTTA27Navigation currentPage="about" />
-        </div>
-      </section>
+      <SBSTTA27Hero title="SBSTTA-27" currentPage="about" />
 
       {/* Quick Stats Section */}
       <section className="py-16 bg-gradient-to-r from-primary/5 to-secondary/5">
