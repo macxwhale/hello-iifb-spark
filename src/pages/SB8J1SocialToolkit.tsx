@@ -21,9 +21,14 @@ const SB8J1SocialToolkit = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               Social Toolkit
             </h1>
-
-            <SB8J1Navigation currentPage="home" />
           </div>
+        </div>
+      </section>
+
+      {/* Navigation Section */}
+      <section className="bg-white border-b">
+        <div className="container mx-auto px-4 py-4">
+          <SB8J1Navigation currentPage="social-toolkit" />
         </div>
       </section>
 

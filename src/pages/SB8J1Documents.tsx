@@ -174,9 +174,14 @@ const SB8J1Documents = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               SB8J-1 Documents
             </h1>
-
-            <SB8J1Navigation currentPage="documents" />
           </div>
+        </div>
+      </section>
+
+      {/* Navigation Section */}
+      <section className="bg-white border-b">
+        <div className="container mx-auto px-4 py-4">
+          <SB8J1Navigation currentPage="documents" />
         </div>
       </section>
 

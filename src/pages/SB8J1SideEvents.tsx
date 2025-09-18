@@ -23,9 +23,14 @@ const SB8J1SideEvents = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
               Side Events
             </h1>
-
-            <SB8J1Navigation currentPage="side-events" />
           </div>
+        </div>
+      </section>
+
+      {/* Navigation Section */}
+      <section className="bg-white border-b">
+        <div className="container mx-auto px-4 py-4">
+          <SB8J1Navigation currentPage="side-events" />
         </div>
       </section>
 
