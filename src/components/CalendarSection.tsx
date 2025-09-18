@@ -134,7 +134,7 @@ const CalendarSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Calendar */}
           <div className="lg:col-span-2">
-            <Card className="shadow-strong">
+            <Card>
               <CardContent className="p-6">
                 {/* Calendar Header */}
                 <div className="flex items-center justify-between mb-6">
