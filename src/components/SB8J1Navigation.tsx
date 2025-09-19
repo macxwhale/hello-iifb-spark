@@ -23,7 +23,7 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
     <div className="pt-8">
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <div className="flex items-center justify-center space-x-1 bg-iifb-orange/90 backdrop-blur-md rounded-full px-6 py-3 border border-white/20 shadow-xl">
+        <div className="flex items-center justify-center divide-x divide-white/30 bg-iifb-orange/90 backdrop-blur-md rounded-full px-3 py-3 border border-white/20 shadow-xl">
           <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
           <Link 
             to="/sb8j-1/about" 

@@ -8,12 +8,12 @@ const SB8J1Hero = ({ title, subtitle }: SB8J1HeroProps) => {
     <section className="relative min-h-[60vh] h-auto overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
+        className="absolute inset-0 mx-8 bg-cover bg-center bg-no-repeat h-full rounded-lg"
         style={{ 
           backgroundImage: `url(/lovable-uploads/081c59be-4485-4784-bbad-20d932375bbd.png)`
         }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
       </div>
 
       {/* Content */}

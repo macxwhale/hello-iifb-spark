@@ -11,12 +11,12 @@ const SBSTTA27Hero = ({ title, currentPage }: SBSTTA27HeroProps) => {
       {/* Hero Section */}
       <section className="relative min-h-[60vh] h-auto overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
+          className="absolute inset-0 mx-8 bg-cover bg-center bg-no-repeat h-full rounded-lg"
           style={{ 
             backgroundImage: `url(/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png)`
           }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
         </div>
 
         <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
