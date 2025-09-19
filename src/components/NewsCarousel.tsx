@@ -56,11 +56,11 @@ const NewsCarousel = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {newsItems.map((item, index) => (
             <Card key={item.id} className="overflow-hidden bg-card border-2 border-transparent shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer" onMouseEnter={(e) => e.currentTarget.style.borderColor = 'hsl(var(--iifb-orange))'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'transparent'}>
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden bg-muted">
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute top-4 left-4">

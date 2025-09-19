@@ -13,6 +13,7 @@ const HeroBanner = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
         style={{ backgroundImage: `url(/lovable-uploads/87033bce-65e7-486c-9dd7-0c4f73cc4677.png)` }}
       >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
       </div>
 
       {/* Content */}
