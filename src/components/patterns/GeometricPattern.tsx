@@ -12,7 +12,7 @@ interface GeometricPatternProps {
 const GeometricPattern: React.FC<GeometricPatternProps> = ({ 
   variant, 
   color = 'currentColor', 
-  opacity = 0.1,
+  opacity = 0.25,
   size = 60,
   className = 'absolute inset-0'
 }) => {
