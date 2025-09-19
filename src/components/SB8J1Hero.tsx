@@ -1,3 +1,5 @@
+import panamaArtwork from '@/assets/sb8j-panama-artwork.png';
+
 interface SB8J1HeroProps {
   title: string;
   subtitle?: string;
@@ -16,9 +18,19 @@ const SB8J1Hero = ({ title, subtitle }: SB8J1HeroProps) => {
         <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
       </div>
 
+      
+      {/* Panama Artwork Overlay */}
+      <div className="absolute top-4 right-8 z-20 hidden lg:block">
+        <img 
+          src={panamaArtwork} 
+          alt="Indigenous artwork featuring CBD Panama" 
+          className="w-64 h-auto opacity-90 drop-shadow-lg"
+        />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-center min-h-[60vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
-        <div className="text-white text-center w-full">
+        <div className="text-white text-center w-full lg:text-left lg:max-w-2xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             {title}
           </h1>
