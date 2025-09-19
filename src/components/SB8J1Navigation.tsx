@@ -23,34 +23,34 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
     <div className="pt-8">
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <div className="flex items-center justify-center divide-x divide-white/30 bg-iifb-orange/90 backdrop-blur-md rounded-full px-3 py-3 border border-white/20 shadow-xl">
-          <Link to="/" className="px-4 py-2 text-white/90 hover:text-white hover:bg-white/20 rounded-full transition-all duration-300 text-xl font-medium">Home</Link>
+        <div className="flex items-center justify-center gap-2 bg-primary/10 backdrop-blur-md rounded-full px-4 py-2 border border-primary/20 shadow-xl">
+          <Link to="/" className="px-6 py-3 text-primary hover:text-white hover:bg-primary rounded-full transition-all duration-300 text-lg font-medium border border-transparent hover:border-primary/30">Home</Link>
           <Link 
             to="/sb8j-1/about" 
-            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+            className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'about' 
-                ? 'text-white bg-white/30' 
-                : 'text-white/90 hover:text-white hover:bg-white/20'
+                ? 'text-white bg-primary border-primary/30' 
+                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
             }`}
           >
             About
           </Link>
           <Link 
             to="/sb8j-1/statements" 
-            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+            className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'statements' 
-                ? 'text-white bg-white/30' 
-                : 'text-white/90 hover:text-white hover:bg-white/20'
+                ? 'text-white bg-primary border-primary/30' 
+                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
             }`}
           >
             Statements
           </Link>
           <Link 
             to="/sb8j-1/documents" 
-            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+            className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'documents' 
-                ? 'text-white bg-white/30' 
-                : 'text-white/90 hover:text-white hover:bg-white/20'
+                ? 'text-white bg-primary border-primary/30' 
+                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
             }`}
           >
             Documents
@@ -59,10 +59,10 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
           {/* News & Media Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+              <button className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
                 ['news', 'media-coverage', 'social-toolkit', 'press-conferences', 'articles', 'videos', 'gallery'].includes(currentPage || '')
-                  ? 'text-white bg-white/30'
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
+                  ? 'text-white bg-primary border-primary/30'
+                  : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
               }`}>
                 News & Media
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -144,10 +144,10 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
 
           <Link 
             to="/sb8j-1/side-events" 
-            className={`px-4 py-2 rounded-full transition-all duration-300 text-xl font-medium ${
+            className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'side-events' 
-                ? 'text-white bg-white/30' 
-                : 'text-white/90 hover:text-white hover:bg-white/20'
+                ? 'text-white bg-primary border-primary/30' 
+                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
             }`}
           >
             Side Events
@@ -160,7 +160,7 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-white/20 bg-iifb-orange/90 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+          className="text-white hover:bg-primary/80 bg-primary backdrop-blur-md rounded-full border border-primary/30 shadow-lg"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -169,7 +169,7 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-iifb-orange/90 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+        <nav className="md:hidden mt-4 bg-primary/10 backdrop-blur-md rounded-2xl border border-primary/20 shadow-xl overflow-hidden">
           <div className="flex flex-col">
             <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
             <Link 
