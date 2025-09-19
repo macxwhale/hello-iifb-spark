@@ -23,14 +23,14 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
     <div className="pt-8">
       {/* Desktop Navigation */}
       <nav className="hidden md:block">
-        <div className="flex items-center justify-center gap-2 bg-primary/10 backdrop-blur-md rounded-full px-4 py-2 border border-primary/20 shadow-xl">
-          <Link to="/" className="px-6 py-3 text-primary hover:text-white hover:bg-primary rounded-full transition-all duration-300 text-lg font-medium border border-transparent hover:border-primary/30">Home</Link>
+        <div className="flex items-center justify-center gap-2 bg-iifb-forest/10 backdrop-blur-md rounded-full px-4 py-2 border border-iifb-forest/20 shadow-xl">
+          <Link to="/" className="px-6 py-3 text-iifb-forest hover:text-white hover:bg-iifb-forest rounded-full transition-all duration-300 text-lg font-medium border border-transparent hover:border-iifb-forest/30">Home</Link>
           <Link 
             to="/sbstta-27/about" 
             className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'about' 
-                ? 'text-white bg-primary border-primary/30' 
-                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
+                ? 'text-white bg-iifb-forest border-iifb-forest/30' 
+                : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
             About
@@ -39,8 +39,8 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
             to="/sbstta-27/statements" 
             className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'statements' 
-                ? 'text-white bg-primary border-primary/30' 
-                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
+                ? 'text-white bg-iifb-forest border-iifb-forest/30' 
+                : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
             Statements
@@ -49,8 +49,8 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
             to="/sbstta-27/documents" 
             className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'documents' 
-                ? 'text-white bg-primary border-primary/30' 
-                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
+                ? 'text-white bg-iifb-forest border-iifb-forest/30' 
+                : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
             Documents
@@ -61,8 +61,8 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
             <DropdownMenuTrigger asChild>
               <button className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
                 ['articles', 'videos', 'gallery'].includes(currentPage || '')
-                  ? 'text-white bg-primary border-primary/30'
-                  : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
+                  ? 'text-white bg-iifb-forest border-iifb-forest/30'
+                  : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
               }`}>
                 Media
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -106,8 +106,8 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
             to="/sbstta-27/side-events" 
             className={`px-6 py-3 rounded-full transition-all duration-300 text-lg font-medium border ${
               currentPage === 'side-events' 
-                ? 'text-white bg-primary border-primary/30' 
-                : 'text-primary hover:text-white hover:bg-primary border-transparent hover:border-primary/30'
+                ? 'text-white bg-iifb-forest border-iifb-forest/30' 
+                : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
             Side Events
@@ -120,7 +120,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-primary/80 bg-primary backdrop-blur-md rounded-full border border-primary/30 shadow-lg"
+          className="text-white hover:bg-iifb-forest/80 bg-iifb-forest backdrop-blur-md rounded-full border border-iifb-forest/30 shadow-lg"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -129,7 +129,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-primary/10 backdrop-blur-md rounded-2xl border border-primary/20 shadow-xl overflow-hidden">
+        <nav className="md:hidden mt-4 bg-iifb-forest/10 backdrop-blur-md rounded-2xl border border-iifb-forest/20 shadow-xl overflow-hidden">
           <div className="flex flex-col">
             <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
             <Link 
