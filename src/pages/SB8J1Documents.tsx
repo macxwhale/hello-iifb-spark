@@ -161,7 +161,7 @@ const SB8J1Documents = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <SB8J1Hero title="IIFB Documents" />
+      <SB8J1Hero title="Documents" />
 
       {/* Navigation Section */}
       <section className="bg-white border-b border-border/50">
@@ -177,7 +177,7 @@ const SB8J1Documents = () => {
           <div className="mb-16">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">IIFB Documents</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Documents</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Official IIFB documents, reports, and resources related to the first meeting of the Subsidiary Body on Article 8(j).
                 </p>
@@ -198,45 +198,44 @@ const SB8J1Documents = () => {
             </div>
 
             <div className="space-y-4">
-              {[
-                "Decision adopted on the Programme of work on Article 8(j)",
-                "Decision adopted on Resource Mobilization", 
-                "Decision adopted on Cooperation with other International Organizations",
-                "Decision adopted on Financial Mechanism",
-                "Decision adopted on the Subsidiary Body on Article 8(j)",
-                "Decision adopted on Financial Mechanism"
-              ].map((title, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-white rounded-lg border border-border/50 hover:shadow-md transition-shadow">
-                  <div className="flex-1">
-                    <span className="inline-block bg-iifb-forest text-white px-4 py-2 rounded-full text-sm font-medium">
-                      {title}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-6 ml-8">
-                    <a 
-                      href="#" 
-                      className="flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
-                    >
-                      <FileText className="h-4 w-4" />
-                      <span className="text-sm font-medium">English</span>
-                    </a>
-                    <a 
-                      href="#" 
-                      className="flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
-                    >
-                      <FileText className="h-4 w-4" />
-                      <span className="text-sm font-medium">Spanish</span>
-                    </a>
-                    <a 
-                      href="#" 
-                      className="flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
-                    >
-                      <FileText className="h-4 w-4" />
-                      <span className="text-sm font-medium">French</span>
-                    </a>
-                  </div>
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-border/50 hover:shadow-md transition-shadow">
+                <div className="flex-1">
+                  <span className="inline-block bg-iifb-forest text-white px-4 py-2 rounded-full text-sm font-medium">
+                    CBD meetings SB8J-01
+                  </span>
+                  <p className="text-muted-foreground mt-2">Meeting documents - First Meeting of the Subsidiary Body on Article 8(j) and Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities</p>
+                  <p className="text-sm text-muted-foreground mt-1">27–30 October 2025 - Panama City, Panama</p>
                 </div>
-              ))}
+                <div className="flex items-center gap-6 ml-8">
+                  <a 
+                    href="https://www.cbd.int/meetings/SB8J-01" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
+                  >
+                    <FileText className="h-4 w-4" />
+                    <span className="text-sm font-medium">English</span>
+                  </a>
+                  <a 
+                    href="https://www.cbd.int/meetings/SB8J-01" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
+                  >
+                    <FileText className="h-4 w-4" />
+                    <span className="text-sm font-medium">Spanish</span>
+                  </a>
+                  <a 
+                    href="https://www.cbd.int/meetings/SB8J-01" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-red-600 hover:text-red-700 transition-colors"
+                  >
+                    <FileText className="h-4 w-4" />
+                    <span className="text-sm font-medium">French</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

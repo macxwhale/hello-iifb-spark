@@ -10,7 +10,7 @@ const SB8J1Hero = ({ title, subtitle }: SB8J1HeroProps) => {
     <section className="relative min-h-[60vh] h-auto overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 mx-8 bg-contain bg-center bg-no-repeat h-full rounded-lg"
+        className="absolute inset-0 mx-8 bg-cover bg-center bg-no-repeat h-full rounded-lg"
         style={{ 
           backgroundImage: `url(${meetingsImage})`,
           backgroundColor: '#8B4513'

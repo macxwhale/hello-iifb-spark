@@ -43,7 +43,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                 : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
-            Statements
+             IIFB Statements
           </Link>
           <Link 
             to="/sbstta-27/documents" 
@@ -53,7 +53,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                 : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
-            Documents
+             IIFB Documents
           </Link>
           
           {/* News & Media Dropdown */}
@@ -64,7 +64,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                   ? 'text-white bg-iifb-forest border-iifb-forest/30'
                   : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
               }`}>
-                Media
+                 IIFB Media
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </DropdownMenuTrigger>
@@ -150,7 +150,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                   : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
-              Statements
+               IIFB Statements
             </Link>
             <Link 
               to="/sbstta-27/documents" 
@@ -160,12 +160,12 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                   : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
-              Documents
+               IIFB Documents
             </Link>
             
             {/* Mobile Media submenu */}
             <div className="border-b border-white/10">
-              <div className="px-6 py-3 text-white/70 text-lg font-medium">Media</div>
+              <div className="px-6 py-3 text-white/70 text-lg font-medium">IIFB Media</div>
               <Link 
                 to="/sbstta-27/articles" 
                 className={`px-8 py-3 transition-all duration-300 text-base block ${

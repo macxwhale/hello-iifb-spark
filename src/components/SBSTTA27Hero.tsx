@@ -13,7 +13,7 @@ const SBSTTA27Hero = ({ title, currentPage }: SBSTTA27HeroProps) => {
         <div 
           className="absolute inset-0 mx-8 bg-cover bg-center bg-no-repeat h-full rounded-lg"
           style={{ 
-            backgroundImage: `url(/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png)`
+            backgroundImage: `url(/lovable-uploads/meetings-celebration.jpg)`
           }}
         >
           <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
