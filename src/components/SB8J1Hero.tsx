@@ -1,4 +1,4 @@
-import panamaArtwork from '@/assets/sb8j-panama-artwork.png';
+const meetingsImage = '/lovable-uploads/meetings-celebration.jpg';
 
 interface SB8J1HeroProps {
   title: string;
@@ -12,7 +12,7 @@ const SB8J1Hero = ({ title, subtitle }: SB8J1HeroProps) => {
       <div 
         className="absolute inset-0 mx-8 bg-contain bg-center bg-no-repeat h-full rounded-lg"
         style={{ 
-          backgroundImage: `url(${panamaArtwork})`,
+          backgroundImage: `url(${meetingsImage})`,
           backgroundColor: '#8B4513'
         }}
       >
