@@ -53,7 +53,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                 : 'text-iifb-forest hover:text-white hover:bg-iifb-forest border-transparent hover:border-iifb-forest/30'
             }`}
           >
-             IIFB Documents
+              Documents
           </Link>
           
           {/* News & Media Dropdown */}
@@ -160,7 +160,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                   : 'text-white/90 hover:text-white hover:bg-white/20'
               }`}
             >
-               IIFB Documents
+               Documents
             </Link>
             
             {/* Mobile Media submenu */}
