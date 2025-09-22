@@ -36,12 +36,11 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <div className="iifb-app">
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <HashRouter>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Index />} />
@@ -78,7 +77,6 @@ const App = () => (
       </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
-  </div>
 );
 
 export default App;
