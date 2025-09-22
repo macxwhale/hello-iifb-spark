@@ -6,44 +6,45 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
+Namespaced to prevent WordPress conflicts.
 */
 
 @layer base {
-  :root {
+  .iifb-app {
     /* IIFB Brand Design System - Indigenous & Earth Inspired */
-    --background: 28 25% 96%;
-    --foreground: 20 15% 15%;
+    --iifb-background: 28 25% 96%;
+    --iifb-foreground: 20 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 20 15% 15%;
+    --iifb-card: 0 0% 100%;
+    --iifb-card-foreground: 20 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 15% 15%;
+    --iifb-popover: 0 0% 100%;
+    --iifb-popover-foreground: 20 15% 15%;
 
     /* IIFB Rust Primary */
-    --primary: 15 75% 45%;
-    --primary-foreground: 0 0% 98%;
+    --iifb-primary: 15 75% 45%;
+    --iifb-primary-foreground: 0 0% 98%;
 
     /* Deep Forest Secondary - #3A6435 */
-    --secondary: 114 31% 30%;
-    --secondary-foreground: 0 0% 98%;
+    --iifb-secondary: 114 31% 30%;
+    --iifb-secondary-foreground: 0 0% 98%;
 
     /* Warm Orange Accent - Updated to #741b00 */
-    --accent: 14 100% 23%;
-    --accent-foreground: 0 0% 98%;
+    --iifb-accent: 14 100% 23%;
+    --iifb-accent-foreground: 0 0% 98%;
 
     /* Earth Muted Tones */
-    --muted: 28 20% 94%;
-    --muted-foreground: 20 10% 45%;
+    --iifb-muted: 28 20% 94%;
+    --iifb-muted-foreground: 20 10% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --iifb-destructive: 0 84.2% 60.2%;
+    --iifb-destructive-foreground: 210 40% 98%;
 
-    --border: 28 15% 88%;
-    --input: 28 15% 94%;
-    --ring: 15 75% 45%;
+    --iifb-border: 28 15% 88%;
+    --iifb-input: 28 15% 94%;
+    --iifb-ring: 15 75% 45%;
 
-    --radius: 0.75rem;
+    --iifb-radius: 0.75rem;
 
     /* IIFB Brand Colors - Updated colors to #3A6435 */
     --iifb-rust: 15 75% 45%;
@@ -55,71 +56,130 @@ All colors MUST be HSL.
     --iifb-dark-earth: 20 20% 20%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--iifb-rust)), hsl(var(--iifb-orange)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--iifb-forest)), hsl(var(--iifb-sage)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--iifb-rust)) 0%, hsl(var(--iifb-earth)) 50%, hsl(var(--iifb-forest)) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--iifb-cream)));
+    --iifb-gradient-primary: linear-gradient(135deg, hsl(var(--iifb-rust)), hsl(var(--iifb-orange)));
+    --iifb-gradient-secondary: linear-gradient(135deg, hsl(var(--iifb-forest)), hsl(var(--iifb-sage)));
+    --iifb-gradient-hero: linear-gradient(135deg, hsl(var(--iifb-rust)) 0%, hsl(var(--iifb-earth)) 50%, hsl(var(--iifb-forest)) 100%);
+    --iifb-gradient-subtle: linear-gradient(180deg, hsl(var(--iifb-background)), hsl(var(--iifb-cream)));
 
     /* Shadows */
-    --shadow-soft: 0 2px 20px hsl(var(--iifb-rust) / 0.1);
-    --shadow-medium: 0 8px 30px hsl(var(--iifb-rust) / 0.15);
-    --shadow-strong: 0 20px 60px hsl(var(--iifb-rust) / 0.2);
+    --iifb-shadow-soft: 0 2px 20px hsl(var(--iifb-rust) / 0.1);
+    --iifb-shadow-medium: 0 8px 30px hsl(var(--iifb-rust) / 0.15);
+    --iifb-shadow-strong: 0 20px 60px hsl(var(--iifb-rust) / 0.2);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --iifb-sidebar-background: 0 0% 98%;
+    --iifb-sidebar-foreground: 240 5.3% 26.1%;
+    --iifb-sidebar-primary: 240 5.9% 10%;
+    --iifb-sidebar-primary-foreground: 0 0% 98%;
+    --iifb-sidebar-accent: 240 4.8% 95.9%;
+    --iifb-sidebar-accent-foreground: 240 5.9% 10%;
+    --iifb-sidebar-border: 220 13% 91%;
+    --iifb-sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Map namespaced variables to standard names for compatibility */
+    --background: var(--iifb-background);
+    --foreground: var(--iifb-foreground);
+    --card: var(--iifb-card);
+    --card-foreground: var(--iifb-card-foreground);
+    --popover: var(--iifb-popover);
+    --popover-foreground: var(--iifb-popover-foreground);
+    --primary: var(--iifb-primary);
+    --primary-foreground: var(--iifb-primary-foreground);
+    --secondary: var(--iifb-secondary);
+    --secondary-foreground: var(--iifb-secondary-foreground);
+    --accent: var(--iifb-accent);
+    --accent-foreground: var(--iifb-accent-foreground);
+    --muted: var(--iifb-muted);
+    --muted-foreground: var(--iifb-muted-foreground);
+    --destructive: var(--iifb-destructive);
+    --destructive-foreground: var(--iifb-destructive-foreground);
+    --border: var(--iifb-border);
+    --input: var(--iifb-input);
+    --ring: var(--iifb-ring);
+    --radius: var(--iifb-radius);
+    --sidebar-background: var(--iifb-sidebar-background);
+    --sidebar-foreground: var(--iifb-sidebar-foreground);
+    --sidebar-primary: var(--iifb-sidebar-primary);
+    --sidebar-primary-foreground: var(--iifb-sidebar-primary-foreground);
+    --sidebar-accent: var(--iifb-sidebar-accent);
+    --sidebar-accent-foreground: var(--iifb-sidebar-accent-foreground);
+    --sidebar-border: var(--iifb-sidebar-border);
+    --sidebar-ring: var(--iifb-sidebar-ring);
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  .iifb-app.dark {
+    --iifb-background: 222.2 84% 4.9%;
+    --iifb-foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --iifb-card: 222.2 84% 4.9%;
+    --iifb-card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --iifb-popover: 222.2 84% 4.9%;
+    --iifb-popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --iifb-primary: 210 40% 98%;
+    --iifb-primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --iifb-secondary: 217.2 32.6% 17.5%;
+    --iifb-secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --iifb-muted: 217.2 32.6% 17.5%;
+    --iifb-muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --iifb-accent: 217.2 32.6% 17.5%;
+    --iifb-accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --iifb-destructive: 0 62.8% 30.6%;
+    --iifb-destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --iifb-border: 217.2 32.6% 17.5%;
+    --iifb-input: 217.2 32.6% 17.5%;
+    --iifb-ring: 212.7 26.8% 83.9%;
+    --iifb-sidebar-background: 240 5.9% 10%;
+    --iifb-sidebar-foreground: 240 4.8% 95.9%;
+    --iifb-sidebar-primary: 224.3 76.3% 48%;
+    --iifb-sidebar-primary-foreground: 0 0% 100%;
+    --iifb-sidebar-accent: 240 3.7% 15.9%;
+    --iifb-sidebar-accent-foreground: 240 4.8% 95.9%;
+    --iifb-sidebar-border: 240 3.7% 15.9%;
+    --iifb-sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Map namespaced variables to standard names for dark mode compatibility */
+    --background: var(--iifb-background);
+    --foreground: var(--iifb-foreground);
+    --card: var(--iifb-card);
+    --card-foreground: var(--iifb-card-foreground);
+    --popover: var(--iifb-popover);
+    --popover-foreground: var(--iifb-popover-foreground);
+    --primary: var(--iifb-primary);
+    --primary-foreground: var(--iifb-primary-foreground);
+    --secondary: var(--iifb-secondary);
+    --secondary-foreground: var(--iifb-secondary-foreground);
+    --accent: var(--iifb-accent);
+    --accent-foreground: var(--iifb-accent-foreground);
+    --muted: var(--iifb-muted);
+    --muted-foreground: var(--iifb-muted-foreground);
+    --destructive: var(--iifb-destructive);
+    --destructive-foreground: var(--iifb-destructive-foreground);
+    --border: var(--iifb-border);
+    --input: var(--iifb-input);
+    --ring: var(--iifb-ring);
+    --sidebar-background: var(--iifb-sidebar-background);
+    --sidebar-foreground: var(--iifb-sidebar-foreground);
+    --sidebar-primary: var(--iifb-sidebar-primary);
+    --sidebar-primary-foreground: var(--iifb-sidebar-primary-foreground);
+    --sidebar-accent: var(--iifb-sidebar-accent);
+    --sidebar-accent-foreground: var(--iifb-sidebar-accent-foreground);
+    --sidebar-border: var(--iifb-sidebar-border);
+    --sidebar-ring: var(--iifb-sidebar-ring);
   }
 }
 
 @layer base {
-  * {
+  .iifb-app * {
     @apply border-border;
   }
 
-  body {
+  .iifb-app {
     @apply bg-background text-foreground;
   }
 }
