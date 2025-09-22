@@ -7,6 +7,18 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./index.html",
+		"./dist/**/*.{html,js,css}",
+	],
+	safelist: [
+		'iifb-app',
+		'dark',
+		{
+			pattern: /^(text|bg|border|shadow|gradient)-.*/,
+		},
+		{
+			pattern: /^(hsl|var)-.*/,
+		}
 	],
 	prefix: "",
 	theme: {
