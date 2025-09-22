@@ -16,7 +16,7 @@ const sideEvents = [
     location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
     organizer: "IIFB | SCBD | IWBN | CBD | IIN | RMIB-LAC",
     interpretation: "Eng/Sp",
-    image: '/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
+    image: '/iifb-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
     link: "https://www.cbd.int/side-events/6762"
   },
   {
@@ -30,7 +30,7 @@ const sideEvents = [
     location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
     organizer: "IIFB | IWBN | IIN | RMIB-LAC | IUCN | BMZ | HAC N&P",
     interpretation: "Eng/Sp",
-    image: '/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png',
+    image: '/iifb-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png',
     link: "https://www.cbd.int/side-events/6756"
   },
   {
@@ -44,7 +44,7 @@ const sideEvents = [
     location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
     organizer: "IIFB | IWBN | RMIB-LAC | IIN | Oregon State University",
     interpretation: "Eng/Sp",
-    image: '/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png',
+    image: '/iifb-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png',
     link: "https://www.cbd.int/side-events/6758"
   },
   {
@@ -58,7 +58,7 @@ const sideEvents = [
     location: "Africa Regional Group Room - 1st floor (Capacity: 84 people)",
     organizer: "IUCN | IIFB | GAC",
     interpretation: "Eng/Sp/Fr",
-    image: '/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png',
+    image: '/iifb-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png',
     link: "https://www.cbd.int/side-events/6763"
   }
 ];

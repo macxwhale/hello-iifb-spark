@@ -26,7 +26,7 @@ const SB8J1News = () => {
       description: "Comprehensive framework for recognizing Indigenous Peoples' vital role in biodiversity conservation, sustainable use, and restoration within their territories. Promotes respect for traditional knowledge, governance systems, and culturally appropriate practices.",
       date: "July 15, 2025",
       category: "Guidelines",
-      image: '/lovable-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png',
+      image: '/iifb-uploads/20e4bbb2-4b15-46ec-8792-889a784d8cb6.png',
       link: "https://iifb-indigenous.org/iifb-guidelines-on-indigenous-and-traditional-territories-itts/",
       readTime: "8 min read"
     },
@@ -36,7 +36,7 @@ const SB8J1News = () => {
       description: "IIFB concludes series of working meetings presenting collective in-depth analysis and contributions from seven socio-cultural regions. Includes endorsed guidelines on territorial rights and spatial planning for biodiversity conservation.",
       date: "June 2, 2025",
       category: "Regional Views",
-      image: '/lovable-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png',
+      image: '/iifb-uploads/b7281f13-2171-4001-9f67-c994f5c9fb35.png',
       link: "https://iifb-indigenous.org/views-of-indigenous-peoples-and-local-communities-in-preparation-sb8j1/",
       readTime: "6 min read"
     }

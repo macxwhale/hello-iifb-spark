@@ -1,4 +1,4 @@
-const meetingsImage = '/lovable-uploads/meetings-celebration.jpg';
+const meetingsImage = '/iifb-uploads/meetings-celebration.jpg';
 
 interface SB8J1HeroProps {
   title: string;

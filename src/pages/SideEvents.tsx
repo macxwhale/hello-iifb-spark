@@ -9,8 +9,8 @@ import { usePexelsImage } from '@/hooks/usePexelsImage';
 import ViewToggle, { ViewType } from '@/components/ViewToggle';
 
 // Using uploaded Indigenous community photos
-const sb8jEventImage = '/lovable-uploads/92063f54-04a6-4747-9804-6d8f59490788.png';
-const sbsttaEventImage = '/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
+const sb8jEventImage = '/iifb-uploads/92063f54-04a6-4747-9804-6d8f59490788.png';
+const sbsttaEventImage = '/iifb-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
 
 const SideEvents = () => {
   const [currentView, setCurrentView] = useState<ViewType>(() => {
@@ -35,7 +35,7 @@ const SideEvents = () => {
       organizer: "IIFB & CBD Secretariat",
       category: "Conservation",
       tags: ["Traditional Knowledge", "Biodiversity", "Policy"],
-      image: "/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png"
+      image: "/iifb-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png"
     },
     {
       id: 2,
@@ -47,7 +47,7 @@ const SideEvents = () => {
       organizer: "Scientific Partners Consortium",
       category: "Technology",
       tags: ["DSI", "Rights", "Benefit-Sharing"],
-      image: "/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png"
+      image: "/iifb-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png"
     },
     {
       id: 3,
@@ -59,7 +59,7 @@ const SideEvents = () => {
       organizer: "Indigenous Youth Network",
       category: "Youth",
       tags: ["Youth", "Governance", "Conservation"],
-      image: "/lovable-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png"
+      image: "/iifb-uploads/b5f1ddc9-2378-4be9-ac3f-0d14e3249153.png"
     },
     {
       id: 4,
@@ -71,7 +71,7 @@ const SideEvents = () => {
       organizer: "Community Monitoring Alliance",
       category: "Monitoring",
       tags: ["Community", "Technology", "Biodiversity"],
-      image: "/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png"
+      image: "/iifb-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png"
     },
     {
       id: 5,
@@ -83,7 +83,7 @@ const SideEvents = () => {
       organizer: "Conservation Finance Network",
       category: "Finance",
       tags: ["Finance", "Conservation", "Partnerships"],
-      image: "/lovable-uploads/e7288d9d-1175-4f7d-8c6a-098b2ba82056.png"
+      image: "/iifb-uploads/e7288d9d-1175-4f7d-8c6a-098b2ba82056.png"
     }
   ];
 

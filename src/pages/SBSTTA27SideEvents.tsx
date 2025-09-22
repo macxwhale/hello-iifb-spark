@@ -30,7 +30,7 @@ const SBSTTA27SideEvents = () => {
       location: "Indigenous Peoples and Local Communities Group meeting room - Ground floor (Capacity 176 People)",
       organizer: "IIFB | IWBN | IUCN | IIN | RMIB-LAC",
       interpretation: "Eng/Sp",
-      image: '/lovable-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
+      image: '/iifb-uploads/ec6e375b-657d-445c-9c03-e67802b1955d.png',
       link: "https://www.cbd.int/side-events/6754"
     }
   ];

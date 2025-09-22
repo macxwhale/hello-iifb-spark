@@ -24,7 +24,7 @@ const SBSTTA27Videos = () => {
       date: "October 20, 2025",
       duration: "45:30",
       category: "Ceremony",
-      thumbnail: "/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png"
+      thumbnail: "/iifb-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png"
     },
     {
       title: "Global Biodiversity Framework Progress Review",
@@ -32,7 +32,7 @@ const SBSTTA27Videos = () => {
       date: "October 21, 2025",
       duration: "38:15",
       category: "Assessment",
-      thumbnail: "/lovable-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png"
+      thumbnail: "/iifb-uploads/4ce61eb0-9a7e-42be-874b-4ef64ec8d003.png"
     },
     {
       title: "Invasive Alien Species: Scientific Perspectives",
@@ -40,7 +40,7 @@ const SBSTTA27Videos = () => {
       date: "October 22, 2025",
       duration: "52:20",
       category: "Panel",
-      thumbnail: "/lovable-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png"
+      thumbnail: "/iifb-uploads/52900254-5d2a-47fb-b939-34f5734c2fa1.png"
     }
   ];
 

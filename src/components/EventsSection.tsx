@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Calendar, Users, ArrowRight, MapPin, Clock, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 // Using uploaded Indigenous community photos
-const sbsttaImage = '/lovable-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
-const sb8jImage = '/lovable-uploads/491c8948-0c3c-454d-a003-f3b7a5662af5.png';
+const sbsttaImage = '/iifb-uploads/4ea8ab4f-ef39-4cdb-88c2-63ba632be4d3.png';
+const sb8jImage = '/iifb-uploads/491c8948-0c3c-454d-a003-f3b7a5662af5.png';
 
 const EventsSection = () => {
   return (

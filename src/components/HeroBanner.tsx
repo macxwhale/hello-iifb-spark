@@ -11,7 +11,7 @@ const HeroBanner = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
-        style={{ backgroundImage: `url(/lovable-uploads/indigenous-gathering-hero.jpg)` }}
+        style={{ backgroundImage: `url(/iifb-uploads/indigenous-gathering-hero.jpg)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
       </div>
