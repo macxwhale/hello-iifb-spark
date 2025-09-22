@@ -1,7 +1,6 @@
 
 import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Footer from './Footer';
 import { useHeightCommunication } from '@/hooks/useHeightCommunication';
 
 const Layout = () => {
@@ -25,7 +24,6 @@ const Layout = () => {
   return (
     <>
       <Outlet />
-      <Footer />
     </>
   );
 };
