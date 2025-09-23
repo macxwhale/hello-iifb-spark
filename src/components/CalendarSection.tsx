@@ -99,14 +99,10 @@ const CalendarSection = () => {
     for (let day = 1; day <= daysInMonth; day++) {
       const meeting = getMeetingForDate(day);
       days.push(
-        <div key={day} className="h-24 border border-border p-1 relative bg-background calendar-day" style={{ backgroundColor: 'hsl(var(--background))', color: 'hsl(var(--foreground))', borderColor: 'hsl(var(--border))' }}>
+        <div key={day} className="h-24 border border-border p-1 relative bg-background">
           <div className="text-sm font-medium text-foreground mb-1">{day}</div>
           {meeting && (
-            <div 
-              className="text-xs p-1 rounded calendar-meeting-highlight" 
-              data-meeting-highlight
-              style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))' }}
-            >
+            <div className="text-xs p-1 rounded" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))' }}>
               {meeting.mainMeeting}
             </div>
           )}
@@ -124,11 +120,11 @@ const CalendarSection = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
-            <span className="text-sm font-semibold uppercase tracking-widest calendar-section-header" style={{ color: 'hsl(var(--iifb-orange))' }}>Event Calendar</span>
+            <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: 'hsl(var(--iifb-orange))' }}>Event Calendar</span>
             <div className="w-3 h-3 rounded-full animate-pulse" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Upcoming <span className="calendar-section-header" style={{ color: 'hsl(var(--iifb-orange))' }}>Events & Meetings</span>
+            Upcoming <span style={{ color: 'hsl(var(--iifb-orange))' }}>Events & Meetings</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Stay informed about important meetings, workshops, and events related to biodiversity conservation and Indigenous knowledge systems.

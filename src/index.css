@@ -188,28 +188,5 @@ All colors MUST be HSL.
     z-index: var(--wp-z-high) !important;
     position: relative !important;
   }
-
-  /* Calendar meeting highlights */
-  .wp-react-app .calendar-meeting-highlight,
-  .wp-react-app [data-meeting-highlight] {
-    background-color: hsl(var(--iifb-orange) / 0.1) !important;
-    color: hsl(var(--iifb-orange)) !important;
-    border-radius: 0.25rem !important;
-    padding: 0.25rem !important;
-    font-size: 0.75rem !important;
-    line-height: 1rem !important;
-  }
-
-  /* Calendar day cells */
-  .wp-react-app .calendar-day {
-    background-color: hsl(var(--background)) !important;
-    color: hsl(var(--foreground)) !important;
-    border-color: hsl(var(--border)) !important;
-  }
-
-  /* Calendar section headers */
-  .wp-react-app .calendar-section-header {
-    color: hsl(var(--iifb-orange)) !important;
-  }
 }
 
