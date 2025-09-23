@@ -24,14 +24,14 @@ const IntroductionSection = () => {
           </h2>
            <div className="space-y-8 max-w-7xl mx-auto">
              {/* Main Content - Single Column Layout */}
-             <div className="bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-xl p-8">
-               <div className="text-center mb-6">
-                 <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
-                   <Triangle className="h-4 w-4 text-primary" />
-                   <span className="text-sm font-semibold text-primary uppercase tracking-wide">IIFB Welcome</span>
-                 </div>
-               </div>
-               <div className="space-y-6 text-base text-foreground leading-relaxed">
+              <div className="bg-gradient-to-r from-primary/5 to-accent/5 border border-primary/20 rounded-xl p-8">
+                <div className="text-left mb-6">
+                  <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
+                    <Triangle className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-semibold text-primary uppercase tracking-wide">IIFB Welcome</span>
+                  </div>
+                </div>
+                <div className="space-y-6 text-base text-foreground leading-relaxed text-left">
                  <p>
                    The International Indigenous Forum on Biodiversity (IIFB) welcomes Indigenous Peoples and local communities to the First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1) and related CBD meetings.
                  </p>
