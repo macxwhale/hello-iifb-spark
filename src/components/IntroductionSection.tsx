@@ -22,9 +22,31 @@ const IntroductionSection = () => {
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent to-transparent" style={{ background: `linear-gradient(to right, transparent, hsl(var(--iifb-orange)), transparent)` }}></div>
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            CBD Panama 2025 marks a historic moment in global biodiversity governance, as Indigenous Peoples and local communities will, for the first time, have their own dedicated subsidiary body within the Convention on Biological Diversity (CBD).
-          </p>
+           <div className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto space-y-6">
+             <p>
+               The International Indigenous Forum on Biodiversity (IIFB) welcomes Indigenous Peoples and local communities to the First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1) and related CBD meetings.
+             </p>
+             <p>
+               The Co-chairs of the International Indigenous Forum on Biodiversity (IIFB), Lucy Mulenkei and Ramiro Batzin, welcome Indigenous Peoples and local communities' brothers and sisters attending the following CBD meetings:
+             </p>
+             <ul className="text-left space-y-3 max-w-3xl mx-auto">
+               <li className="flex items-start gap-3">
+                 <div className="w-2 h-2 rounded-full mt-3 flex-shrink-0" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
+                 <span>First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1), 27–30 October 2025, Panama City, Panama</span>
+               </li>
+               <li className="flex items-start gap-3">
+                 <div className="w-2 h-2 rounded-full mt-3 flex-shrink-0" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
+                 <span>Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), 20–24 October 2025, Panama City, Panama</span>
+               </li>
+               <li className="flex items-start gap-3">
+                 <div className="w-2 h-2 rounded-full mt-3 flex-shrink-0" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}></div>
+                 <span>Workshop on the assessments adopted by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services in 2024 and forthcoming assessments (SA-WS-2025-01), 18 October 2025, Panama City, Panama</span>
+               </li>
+             </ul>
+             <p>
+               The IIFB will provide support to Indigenous Peoples and local communities in preparation for the meeting, providing documents, practical logistics information, and organizing virtual preparatory meetings as well as in-person sessions. The IIFB invites you to explore the materials, stay informed, and participate actively in this process.
+             </p>
+           </div>
         </div>
       </section>
       
@@ -96,6 +118,15 @@ const IntroductionSection = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Inspirational Quote */}
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 max-w-2xl mx-auto">
+              <blockquote className="text-xl md:text-2xl font-bold text-foreground italic">
+                "Let's work together with one voice to make a historical SB8J for Mother Earth!"
+              </blockquote>
             </div>
           </div>
         </div>
