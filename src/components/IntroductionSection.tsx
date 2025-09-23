@@ -36,22 +36,17 @@ const IntroductionSection = () => {
                    The International Indigenous Forum on Biodiversity (IIFB) welcomes Indigenous Peoples and local communities to the First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1) and related CBD meetings.
                  </p>
                  <p>
-                   The Co-chairs of the International Indigenous Forum on Biodiversity (IIFB), <span className="font-semibold text-primary">Lucy Mulenkei</span> and <span className="font-semibold text-primary">Ramiro Batzin</span>, welcome Indigenous Peoples and local communities' brothers and sisters attending the following CBD meetings:
+                   The Co-chairs of the International Indigenous Forum on Biodiversity (IIFB), Lucy Mulenkei and Ramiro Batzin, welcome Indigenous Peoples and local communities' brothers and sisters attending the following CBD meetings:
                  </p>
-                 <ul className="space-y-3 ml-6">
-                   <li className="flex items-start gap-3">
-                     <span className="text-accent font-bold text-lg mt-1">•</span>
-                     <span>First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1), 27–30 October 2025, Panama City, Panama</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                     <span className="text-accent font-bold text-lg mt-1">•</span>
-                     <span>Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), 20–24 October 2025, Panama City, Panama</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                     <span className="text-accent font-bold text-lg mt-1">•</span>
-                     <span>Workshop on the assessments adopted by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services in 2024 and forthcoming assessments (SA-WS-2025-01), 18 October 2025, Panama City, Panama</span>
-                   </li>
-                 </ul>
+                 <p>
+                   • First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1), 27–30 October 2025, Panama City, Panama
+                 </p>
+                 <p>
+                   • Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), 20–24 October 2025, Panama City, Panama
+                 </p>
+                 <p>
+                   • Workshop on the assessments adopted by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services in 2024 and forthcoming assessments (SA-WS-2025-01), 18 October 2025, Panama City, Panama
+                 </p>
                  <p>
                    The IIFB will provide support to Indigenous Peoples and local communities in preparation for the meeting, providing documents, practical logistics information, and organizing virtual preparatory meetings as well as in-person sessions. The IIFB invites you to explore the materials, stay informed, and participate actively in this process.
                  </p>
