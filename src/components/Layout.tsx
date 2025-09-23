@@ -22,9 +22,9 @@ const Layout = () => {
   }, [location.pathname, sendHeightUpdate]);
 
   return (
-    <>
+    <div className="wp-react-app">
       <Outlet />
-    </>
+    </div>
   );
 };
 

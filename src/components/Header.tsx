@@ -9,7 +9,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-card border-b border-border sticky top-0 z-50 shadow-soft">
+    <header className="bg-card border-b border-border sticky top-0 shadow-soft nav-menu" style={{ zIndex: 9999 }}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -41,7 +41,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
+          <nav className="md:hidden py-4 border-t border-border mobile-menu" style={{ zIndex: 9999, position: 'relative' }}>
             <div className="flex flex-col space-y-2">
               <Link to="/" className="px-2 py-2 text-foreground hover:text-primary transition-colors">Home</Link>
               <a href="/#about" className="px-2 py-2 text-foreground hover:text-primary transition-colors">About</a>

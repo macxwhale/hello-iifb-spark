@@ -145,5 +145,48 @@ All colors MUST be HSL.
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
+
+  /* WordPress Integration Overrides */
+  .wp-react-app {
+    --wp-text-white: #ffffff !important;
+    --wp-z-high: 9999 !important;
+    isolation: isolate !important;
+  }
+
+  .wp-react-app * {
+    box-sizing: border-box !important;
+  }
+
+  /* Force white text for hero sections */
+  .wp-react-app .hero-text,
+  .wp-react-app .hero-text *,
+  .wp-react-app .text-white,
+  .wp-react-app .text-white * {
+    color: var(--wp-text-white) !important;
+  }
+
+  /* Ensure navigation visibility */
+  .wp-react-app nav,
+  .wp-react-app .nav-menu,
+  .wp-react-app [role="navigation"] {
+    position: relative !important;
+    z-index: var(--wp-z-high) !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  /* Dropdown menu fixes */
+  .wp-react-app .dropdown-menu,
+  .wp-react-app [data-radix-popper-content-wrapper] {
+    z-index: calc(var(--wp-z-high) + 1) !important;
+    position: fixed !important;
+    background-color: white !important;
+  }
+
+  /* Mobile menu visibility */
+  .wp-react-app .mobile-menu {
+    z-index: var(--wp-z-high) !important;
+    position: relative !important;
+  }
 }
 

@@ -21,20 +21,20 @@ const HeroBanner = () => {
         <div className="flex-1 flex items-center">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 md:gap-8 w-full">
             {/* Left Container - Main Content */}
-            <div className="text-white text-left">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <div className="text-white text-left hero-text">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: '#ffffff !important' }}>
                 CBD Panama
-                <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90">
+                <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90" style={{ color: '#ffffff !important' }}>
                   Meetings 2025
                 </span>
               </h1>
 
               <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="flex items-center space-x-2 text-lg">
+                <div className="flex items-center space-x-2 text-lg" style={{ color: '#ffffff !important' }}>
                   <Calendar className="h-5 w-5" />
                   <span>October 20-30, 2025</span>
                 </div>
-                <div className="flex items-center space-x-2 text-lg">
+                <div className="flex items-center space-x-2 text-lg" style={{ color: '#ffffff !important' }}>
                   <MapPin className="h-5 w-5" />
                   <span>Panama City, Panama</span>
                 </div>

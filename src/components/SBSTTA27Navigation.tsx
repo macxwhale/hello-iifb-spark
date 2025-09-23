@@ -68,7 +68,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[180px] z-50">
+            <DropdownMenuContent className="bg-white border border-gray-200 shadow-lg min-w-[180px] dropdown-menu" style={{ zIndex: 10000, backgroundColor: 'white !important' }}>
               <DropdownMenuItem asChild>
                 <Link 
                   to="/sbstta-27/articles" 
@@ -129,7 +129,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-iifb-forest/10 backdrop-blur-md rounded-2xl border border-iifb-forest/20 shadow-xl overflow-hidden">
+        <nav className="md:hidden mt-4 bg-iifb-forest/10 backdrop-blur-md rounded-2xl border border-iifb-forest/20 shadow-xl overflow-hidden mobile-menu" style={{ zIndex: 9999, position: 'relative' }}>
           <div className="flex flex-col">
             <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
             <Link 
