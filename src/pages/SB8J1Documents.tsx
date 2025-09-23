@@ -177,7 +177,7 @@ const SB8J1Documents = () => {
           <div className="mb-16">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Documents</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">IIFB Documents</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Official documents, reports, and resources related to the first meeting of the Subsidiary Body on Article 8(j).
                 </p>
