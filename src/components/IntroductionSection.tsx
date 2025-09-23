@@ -129,11 +129,13 @@ const IntroductionSection = () => {
             {/* YouTube Video Section - Left Side */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
-                <div className="w-full h-full bg-gradient-to-br from-muted to-muted/80 flex items-center justify-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
-                    <Play className="h-16 w-16 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/OyaaBjq1Gyk"
+                  title="CBD Panama 2025 Video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
                 
                 {/* Enhanced overlay */}
                 <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
@@ -145,11 +147,13 @@ const IntroductionSection = () => {
             {/* YouTube Video Section - Right Side */}
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl shadow-strong bg-muted aspect-video border-4 border-white/50">
-                <div className="w-full h-full bg-gradient-to-br from-muted to-muted/80 flex items-center justify-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 hover:bg-white/30 transition-all duration-300 cursor-pointer group">
-                    <Play className="h-16 w-16 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" />
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/cUvPh1e8E10"
+                  title="CBD Panama 2025 Video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
                 
                 {/* Enhanced overlay */}
                 <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
