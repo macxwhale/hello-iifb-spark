@@ -42,7 +42,7 @@ const IntroductionSection = () => {
                    • First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1), 27–30 October 2025, Panama City, Panama
                  </p>
                  <p className="ml-6 text-lg">
-                   • Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-7), 20–24 October 2025, Panama City, Panama
+                   • Twenty-seventh meeting of the Subsidiary Body on Scientific, Technical and Technological Advice (SBSTTA-27), 20–24 October 2025, Panama City, Panama
                  </p>
                  <p className="ml-6 text-lg">
                    • Workshop on the assessments adopted by the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services in 2024 and forthcoming assessments (SA-WS-2025-01), 18 October 2025, Panama City, Panama
