@@ -18,7 +18,7 @@ const IntroductionSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             WELCOME TO
             <span className="block mt-2 relative" style={{ color: 'hsl(var(--iifb-orange))' }}>
-              SBSTTA 27 AND SB8J-1, PANAMA 2025
+              SBSTTA-27 AND SB8J-1, PANAMA 2025
               <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent to-transparent" style={{ background: `linear-gradient(to right, transparent, hsl(var(--iifb-orange)), transparent)` }}></div>
             </span>
           </h2>
