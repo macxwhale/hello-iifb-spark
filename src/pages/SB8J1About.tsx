@@ -171,36 +171,6 @@ const SB8J1About = () => {
               </div>
             </div>
 
-            {/* IIFB Role & Expected Outcomes */}
-            <div className="space-y-12">
-              <Card className="border-l-4 border-l-iifb-orange bg-gradient-to-r from-iifb-orange/5 to-transparent">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-iifb-orange to-iifb-forest rounded-full flex items-center justify-center">
-                      <Users className="w-5 h-5 text-white" />
-                    </div>
-                    <h4 className="text-xl font-semibold text-foreground">IIFB's Role</h4>
-                  </div>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    At this meeting, the International Indigenous Forum on Biodiversity (IIFB) will play a key role in supporting and ensuring the meaningful participation of Indigenous Peoples in the formal negotiations. IIFB's engagement will focus on safeguarding the rights of Indigenous Peoples and local communities, amplifying their voices in global biodiversity policy, and fostering constructive dialogue with Parties to the Convention. By doing so, IIFB aims to strengthen the recognition of Indigenous knowledge systems, promote equitable partnerships, and advance the full and effective implementation of both Article 8(j) and the Kunming–Montreal Global Biodiversity Framework, with particular emphasis on Target 3.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-l-4 border-l-iifb-sage bg-gradient-to-r from-iifb-sage/5 to-transparent">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-iifb-sage to-iifb-forest rounded-full flex items-center justify-center">
-                      <Leaf className="w-5 h-5 text-white" />
-                    </div>
-                    <h4 className="text-xl font-semibold text-foreground">Expected Outcomes</h4>
-                  </div>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    The outcomes of SB8J-1 are expected to lay a strong foundation for the permanent Subsidiary Body, setting in motion practical mechanisms that elevate Indigenous Peoples and local communities leadership, enhance biodiversity governance and contribute to achieving the ambitious global biodiversity targets.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
