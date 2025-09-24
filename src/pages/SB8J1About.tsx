@@ -94,8 +94,11 @@ const SB8J1About = () => {
               
               <Card className="border-l-4 border-l-iifb-forest bg-gradient-to-r from-iifb-forest/5 to-transparent">
                 <CardContent className="p-8">
-                  <p className="text-xl text-foreground leading-relaxed">
-                    The First Meeting of the Subsidiary Body on Article 8(j) and Related Provisions (SB8J-1) will be held from 27 to 30 October 2025 in Panama City, Panama. This historic gathering follows a landmark decision adopted at COP 16, where Parties to the Convention on Biological Diversity (CBD) agreed to establish a new permanent Subsidiary Body dedicated specifically to Article 8(j) and related provisions concerning Indigenous Peoples and local communities. The creation of this body marks an important step in elevating Indigenous Peoples and local communities issues within CBD processes and ensuring stronger participation and contributions of Indigenous Peoples and local communities toward the achievement of global biodiversity goals.
+                  <p className="text-xl text-foreground leading-relaxed mb-6">
+                    The First Meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1) will be held from 27 to 30 October 2025 in Panama City, Panama. The SB8J-1 will be a historic event for Indigenous Peoples and local communities, as it will consider the contributions of Indigenous and Traditional Territories (ITTs) to the conservation, restoration, and spatial planning of biodiversity.
+                  </p>
+                  <p className="text-lg text-foreground leading-relaxed">
+                    SB8J-1 will address issues directly related to the rights, roles and contributions of Indigenous Peoples and local communities in biodiversity conservation. Key items on the agenda include:
                   </p>
                 </CardContent>
               </Card>
@@ -110,18 +113,13 @@ const SB8J1About = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-foreground">Key Agenda Items</h3>
               </div>
               
-              <p className="text-lg text-foreground leading-relaxed mb-8">
-                SB8J-1 will address several critical issues that directly relate to the rights, roles and contributions of Indigenous Peoples and local communities in biodiversity conservation and sustainable use. Key items on the agenda include:
-              </p>
-              
               <div className="space-y-6">
                 <Card className="hover:shadow-lg transition-all duration-300 border-none bg-white/60 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <div className="flex gap-4">
                       <div className="w-2 h-full bg-gradient-to-b from-iifb-forest to-iifb-sage rounded-full min-h-[60px]"></div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Modus operandi of the Subsidiary Body:</h4>
-                        <p className="text-muted-foreground">Establishing clear working methods, procedures, and structures to guide the functioning of the new body.</p>
+                        <h4 className="font-semibold text-foreground mb-2">Modus operandi of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities</h4>
                       </div>
                     </div>
                   </CardContent>
@@ -132,8 +130,7 @@ const SB8J1About = () => {
                     <div className="flex gap-4">
                       <div className="w-2 h-full bg-gradient-to-b from-iifb-orange to-iifb-forest rounded-full min-h-[60px]"></div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Guidelines on Indigenous and traditional territories:</h4>
-                        <p className="text-muted-foreground">Supporting Indigenous People and local community led protection and restoration efforts in line with Targets 2 and 3 of the Kunming–Montreal Global Biodiversity Framework (KMGBF).</p>
+                        <h4 className="font-semibold text-foreground mb-2">Guidelines to strengthen the legal and policy framework for the recognition of the role of indigenous and traditional territories of indigenous peoples and local communities in spatial planning, restoration and conservation</h4>
                       </div>
                     </div>
                   </CardContent>
@@ -144,8 +141,7 @@ const SB8J1About = () => {
                     <div className="flex gap-4">
                       <div className="w-2 h-full bg-gradient-to-b from-iifb-sage to-iifb-orange rounded-full min-h-[60px]"></div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Integration of traditional knowledge in planning:</h4>
-                        <p className="text-muted-foreground">Developing guidelines for the inclusion of traditional lands and resource use in spatial planning processes and environmental impact assessments, ensuring Indigenous Peoples and local communities perspectives are formally recognized in decision-making.</p>
+                        <h4 className="font-semibold text-foreground mb-2">Provision of advice on traditional knowledge for the global report on collective progress in the implementation of the Kunming-Montreal Global Biodiversity Framework</h4>
                       </div>
                     </div>
                   </CardContent>
@@ -156,8 +152,18 @@ const SB8J1About = () => {
                     <div className="flex gap-4">
                       <div className="w-2 h-full bg-gradient-to-b from-iifb-forest to-iifb-orange rounded-full min-h-[60px]"></div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">Review of terminology:</h4>
-                        <p className="text-muted-foreground">Undertaking a process to review and update the Voluntary Glossary of Key Terms and Concepts related to Article 8(j), to ensure clarity, cultural relevance and inclusivity in CBD processes.</p>
+                        <h4 className="font-semibold text-foreground mb-2">Process to review and update the Voluntary Glossary of Key Terms and Concepts Within the Context of Article 8(j) and Related Provisions of the Convention</h4>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="hover:shadow-lg transition-all duration-300 border-none bg-white/60 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <div className="flex gap-4">
+                      <div className="w-2 h-full bg-gradient-to-b from-iifb-orange to-iifb-sage rounded-full min-h-[60px]"></div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">Recommendations of the Permanent Forum on Indigenous Issues</h4>
                       </div>
                     </div>
                   </CardContent>
