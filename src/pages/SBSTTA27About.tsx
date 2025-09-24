@@ -63,42 +63,47 @@ const SBSTTA27About = () => {
                 
                 <div className="grid md:grid-cols-1 gap-8 my-12">
                   <div className="bg-gradient-to-br from-iifb-orange/5 to-secondary/5 rounded-2xl p-8 border border-iifb-orange/20">
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-iifb-orange to-secondary bg-clip-text text-transparent mb-6">Key Focus Areas</h3>
-                    <div className="space-y-4">
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-iifb-orange to-secondary bg-clip-text text-transparent mb-6">Key Agenda Items</h3>
+                    <div className="space-y-6">
+                      <div>
+                        <h4 className="text-lg font-semibold text-foreground mb-3">Montreal Global Biodiversity Framework:</h4>
+                        <div className="space-y-3 ml-4">
+                          <div className="flex items-start gap-4">
+                            <div className="w-2 h-2 bg-gradient-to-r from-iifb-orange to-secondary rounded-full mt-3 flex-shrink-0"></div>
+                            <span className="text-muted-foreground">Strategic review and analysis of the programmes of work under the Convention in the context of the Framework</span>
+                          </div>
+                          <div className="flex items-start gap-4">
+                            <div className="w-2 h-2 bg-gradient-to-r from-secondary to-iifb-forest rounded-full mt-3 flex-shrink-0"></div>
+                            <span className="text-muted-foreground">Strategic review of and updates to the expanded programme of work on forest biodiversity</span>
+                          </div>
+                          <div className="flex items-start gap-4">
+                            <div className="w-2 h-2 bg-gradient-to-r from-iifb-forest to-iifb-orange rounded-full mt-3 flex-shrink-0"></div>
+                            <span className="text-muted-foreground">Areas of potential further work</span>
+                          </div>
+                        </div>
+                      </div>
+                      
                       <div className="flex items-start gap-4">
                         <div className="w-2 h-2 bg-gradient-to-r from-iifb-orange to-secondary rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <strong className="text-foreground">Monitoring progress:</strong> <span className="text-muted-foreground">Evaluating the effectiveness of actions taken so far towards achieving the KMGBF targets, including mechanisms for global review of collective progress.</span>
-                        </div>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Risk assessment and risk management</strong></span>
                       </div>
+                      
                       <div className="flex items-start gap-4">
                         <div className="w-2 h-2 bg-gradient-to-r from-secondary to-iifb-forest rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <strong className="text-foreground">Ecosystem-based approaches:</strong> <span className="text-muted-foreground">Promoting and integrating nature-based solutions to enhance biodiversity conservation and sustainable use.</span>
-                        </div>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Invasive alien species</strong></span>
                       </div>
+                      
                       <div className="flex items-start gap-4">
                         <div className="w-2 h-2 bg-gradient-to-r from-iifb-forest to-iifb-orange rounded-full mt-3 flex-shrink-0"></div>
-                        <div>
-                          <strong className="text-foreground">Cross-sectoral mainstreaming:</strong> <span className="text-muted-foreground">Strengthening the integration of biodiversity considerations into sectors such as agriculture, forestry, fisheries, and beyond.</span>
-                        </div>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Biodiversity and agriculture</strong></span>
+                      </div>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="w-2 h-2 bg-gradient-to-r from-iifb-orange to-iifb-forest rounded-full mt-3 flex-shrink-0"></div>
+                        <span className="text-muted-foreground"><strong className="text-foreground">Biodiversity and health</strong></span>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <p className="text-lg text-foreground leading-relaxed mb-6">
-                  In addition, the meeting will consider specific matters highly relevant to Indigenous Peoples and local communities, including planning, monitoring, reporting and review processes under the Framework. Other thematic areas on the agenda will include invasive alien species, the interlinkages between biodiversity and health, and the impacts of climate change on biodiversity.
-                </p>
-                
-                <div className="bg-gradient-to-br from-iifb-forest/5 to-secondary/5 rounded-2xl p-8 border border-iifb-forest/20 my-8">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-iifb-forest to-secondary bg-clip-text text-transparent mb-4">Expected Outcomes</h3>
-                  <p className="text-lg text-foreground leading-relaxed mb-4">
-                    The outcomes of SBSTTA-27 will play a central role in shaping global biodiversity policy, ensuring that decisions taken at COP16 are informed by the best available science and inclusive of diverse perspectives. Regional consultations and a dedicated workshop on the latest Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES) assessments will provide additional context to guide deliberations.
-                  </p>
-                  <p className="text-lg text-foreground leading-relaxed">
-                    Through its strategic review and analysis of the Convention's programmes of work within the context of the KMGBF, SBSTTA-27 is expected to provide countries with critical guidance and tools to accelerate action, address emerging challenges, and support the achievement of global biodiversity targets.
-                  </p>
                 </div>
               </div>
             </div>
