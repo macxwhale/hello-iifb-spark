@@ -99,7 +99,7 @@ const IntroductionSection = () => {
 
           {/* Inspirational Quote */}
           <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 rounded-2xl p-8 max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto">
               <blockquote className="text-xl md:text-2xl font-bold italic whitespace-nowrap" style={{ color: '#e44e0a' }}>
                 "Let's work together with one voice to make a historical SB8J for Mother Earth!"
               </blockquote>
