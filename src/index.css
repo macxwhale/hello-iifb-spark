@@ -211,5 +211,27 @@ All colors MUST be HSL.
   .wp-react-app .calendar-section-header {
     color: hsl(var(--iifb-orange)) !important;
   }
+
+  /* IIFB Historical Quote - WordPress Override */
+  .wp-react-app .iifb-historical-quote,
+  .iifb-historical-quote {
+    color: hsl(var(--iifb-orange)) !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    font-style: italic !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    border: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  @media (min-width: 768px) {
+    .wp-react-app .iifb-historical-quote,
+    .iifb-historical-quote {
+      font-size: 1.5rem !important;
+    }
+  }
 }
 

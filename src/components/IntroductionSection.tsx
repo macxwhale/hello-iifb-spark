@@ -100,7 +100,7 @@ const IntroductionSection = () => {
           {/* Inspirational Quote */}
           <div className="mt-16 flex justify-center">
             <div className="w-full flex justify-center">
-              <blockquote className="text-xl md:text-2xl font-bold italic whitespace-nowrap" style={{ color: '#e44e0a' }}>
+              <blockquote className="iifb-historical-quote text-xl md:text-2xl font-bold italic whitespace-nowrap">
                 "Let's work together with one voice to make a historical SB8J-1 for Mother Earth!"
               </blockquote>
             </div>
