@@ -60,7 +60,10 @@ const NewsCarousel = () => {
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-all duration-300 opacity-0"
+                  onLoad={(e) => {
+                    e.currentTarget.style.opacity = '1';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute top-4 left-4">

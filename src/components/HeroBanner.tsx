@@ -6,15 +6,25 @@ import { Link } from 'react-router-dom';
 import CountdownTimer from '@/components/CountdownTimer';
 
 const HeroBanner = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section className="relative min-h-fit h-auto overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full transition-opacity duration-700 ease-out ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ backgroundImage: `url(/iifb-uploads/indigenous-gathering-hero.jpg)` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
       </div>
+      
+      {/* Preload image for smooth transition */}
+      <img 
+        src="/iifb-uploads/indigenous-gathering-hero.jpg"
+        onLoad={() => setImageLoaded(true)}
+        className="hidden"
+        alt=""
+      />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-between min-h-[144vh] sm:min-h-[130vh] md:min-h-[116vh] lg:min-h-[100vh] xl:min-h-[86vh] max-w-6xl mx-auto px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
