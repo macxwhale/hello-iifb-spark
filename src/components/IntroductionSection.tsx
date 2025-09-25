@@ -31,7 +31,7 @@ const IntroductionSection = () => {
                     <span className="text-sm font-semibold text-primary uppercase tracking-wide">IIFB Welcome</span>
                   </div>
                 </div>
-                <div className="space-y-6 text-base text-foreground leading-relaxed text-left">
+                <div className="space-y-6 text-lg text-foreground leading-relaxed text-left">
                  <p>
                    The International Indigenous Forum on Biodiversity (IIFB) welcomes Indigenous Peoples and local communities to the First meeting of the Subsidiary Body on Article 8(j) and Other Provisions of the Convention on Biological Diversity Related to Indigenous Peoples and Local Communities (SB8J-1) and related CBD meetings.
                  </p>
