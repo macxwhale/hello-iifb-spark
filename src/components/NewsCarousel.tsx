@@ -98,9 +98,26 @@ const NewsCarousel = () => {
         {/* View All Button */}
         <div className="text-center">
           <Link to="/sb8j-1/news">
-            <Button variant="outline" size="lg" className="border-2 px-8 py-3 text-white" style={{ borderColor: 'hsl(var(--iifb-orange))', color: 'hsl(var(--iifb-orange))', backgroundColor: 'transparent' }}>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-2 px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg group" 
+              style={{ 
+                borderColor: 'hsl(var(--iifb-orange))', 
+                color: 'hsl(var(--iifb-orange))', 
+                backgroundColor: 'transparent' 
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'hsl(var(--iifb-orange))';
+                e.currentTarget.style.color = 'white';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'hsl(var(--iifb-orange))';
+              }}
+            >
               View All Articles
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </Link>
         </div>
