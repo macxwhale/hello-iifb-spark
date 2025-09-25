@@ -46,7 +46,7 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* IIFB Brand Colors - Updated colors to #3A6435 */
-    --iifb-rust: 15 75% 45%;
+    --iifb-rust: 11 59% 35%; /* Burgundy color matching reference */
     --iifb-forest: 114 31% 30%;
     --iifb-orange: 14 100% 23%;
     --iifb-earth: 35 40% 35%;
