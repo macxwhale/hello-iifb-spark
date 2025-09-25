@@ -70,10 +70,6 @@ const IntroductionSection = () => {
                   className="w-full h-full"
                 ></iframe>
                 
-                {/* Enhanced overlay */}
-                <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
-                  <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
-                </div>
               </div>
             </div>
 
@@ -88,10 +84,6 @@ const IntroductionSection = () => {
                   className="w-full h-full"
                 ></iframe>
                 
-                {/* Enhanced overlay */}
-                <div className="absolute top-6 left-6 bg-gradient-to-r from-black/80 to-black/60 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20">
-                  <span className="text-white text-sm font-semibold">CBD Panama 2025</span>
-                </div>
               </div>
             </div>
           </div>
