@@ -96,40 +96,6 @@ const IntroductionSection = () => {
             </div>
           </div>
 
-          {/* Feature Cards Strip - Below Both Videos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Leadership
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    First-ever subsidiary body for Indigenous Peoples and local communities
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 border-l-4 border-l-secondary rounded-r-xl p-6 hover:shadow-medium transition-all duration-300 group">
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0 p-3 bg-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    Global Impact
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Advancing the Global Biodiversity Framework for nature-positive outcomes
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Inspirational Quote */}
           <div className="mt-16 text-center">
