@@ -213,8 +213,12 @@ All colors MUST be HSL.
   }
 
   /* IIFB Historical Quote - WordPress Override */
+  .wp-react-app blockquote.iifb-historical-quote,
   .wp-react-app .iifb-historical-quote,
-  .iifb-historical-quote {
+  blockquote.iifb-historical-quote,
+  .iifb-historical-quote,
+  .wp-react-app [data-iifb-quote="true"],
+  [data-iifb-quote="true"] {
     color: hsl(var(--iifb-rust)) !important;
     font-size: 1.25rem !important;
     font-weight: 700 !important;
