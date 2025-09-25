@@ -101,7 +101,7 @@ const IntroductionSection = () => {
           <div className="mt-16 flex justify-center">
             <div className="w-full flex justify-center">
               <blockquote className="text-xl md:text-2xl font-bold italic whitespace-nowrap" style={{ color: '#e44e0a' }}>
-                "Let's work together with one voice to make a historical SB8J for Mother Earth!"
+                "Let's work together with one voice to make a historical SB8J-1 for Mother Earth!"
               </blockquote>
             </div>
           </div>
