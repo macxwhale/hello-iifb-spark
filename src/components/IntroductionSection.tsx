@@ -89,34 +89,6 @@ const IntroductionSection = () => {
           </div>
 
 
-          {/* Inspirational Quote */}
-          <div className="mt-16 flex justify-center px-4">
-            <div className="w-full max-w-4xl flex justify-center">
-              <blockquote 
-                className="iifb-historical-quote text-center" 
-                data-iifb-quote="true"
-                style={{
-                  fontSize: 'clamp(1.75rem, 4vw, 3.5rem) !important',
-                  fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important',
-                  fontWeight: '700 !important',
-                  fontStyle: 'italic !important',
-                  lineHeight: '1.2 !important',
-                  whiteSpace: 'normal !important',
-                  wordBreak: 'break-word',
-                  overflowWrap: 'break-word',
-                  textAlign: 'center',
-                  color: 'hsl(var(--foreground)) !important',
-                  maxWidth: '100% !important',
-                  width: '100% !important',
-                  display: 'block !important',
-                  margin: '0 !important',
-                  padding: '0 !important'
-                } as React.CSSProperties}
-              >
-                "Let's work together with one voice to make a historical SB8J-1 for Mother Earth!"
-              </blockquote>
-            </div>
-          </div>
         </div>
       </section>
     </>
