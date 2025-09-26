@@ -219,23 +219,19 @@ All colors MUST be HSL.
   .iifb-historical-quote,
   .wp-react-app [data-iifb-quote="true"],
   [data-iifb-quote="true"] {
-    color: hsl(var(--iifb-rust)) !important;
-    font-size: 1.25rem !important;
+    color: hsl(var(--iifb-orange)) !important;
+    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
     font-weight: 700 !important;
     font-style: italic !important;
-    white-space: nowrap !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
     text-decoration: none !important;
     border: none !important;
     background: transparent !important;
     margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  @media (min-width: 768px) {
-    .wp-react-app .iifb-historical-quote,
-    .iifb-historical-quote {
-      font-size: 1.5rem !important;
-    }
+    padding: 0 1rem !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
   }
 }
 

@@ -92,7 +92,8 @@ const IntroductionSection = () => {
           <div className="mt-12 lg:mt-16 flex justify-center px-4">
             <div className="w-full max-w-4xl">
               <blockquote 
-                className="text-center"
+                className="iifb-historical-quote text-center"
+                data-iifb-quote="true"
                 style={{
                   fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                   fontWeight: '700',
@@ -101,7 +102,9 @@ const IntroductionSection = () => {
                   color: 'hsl(var(--iifb-orange))',
                   textAlign: 'center',
                   margin: '0 auto',
-                  padding: '0 1rem'
+                  padding: '0 1rem',
+                  whiteSpace: 'normal',
+                  wordWrap: 'break-word'
                 } as React.CSSProperties}
               >
                 "Let's work together with one voice to make a historical SB8J-1 for Mother Earth!"
