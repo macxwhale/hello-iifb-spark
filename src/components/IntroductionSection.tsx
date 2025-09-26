@@ -88,6 +88,26 @@ const IntroductionSection = () => {
             </div>
           </div>
 
+          {/* Inspirational Quote Section */}
+          <div className="mt-12 lg:mt-16 flex justify-center px-4">
+            <div className="w-full max-w-4xl">
+              <blockquote 
+                className="text-center"
+                style={{
+                  fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+                  fontWeight: '700',
+                  fontStyle: 'italic',
+                  lineHeight: '1.3',
+                  color: 'hsl(var(--iifb-orange))',
+                  textAlign: 'center',
+                  margin: '0 auto',
+                  padding: '0 1rem'
+                } as React.CSSProperties}
+              >
+                "Let's work together with one voice to make a historical SB8J-1 for Mother Earth!"
+              </blockquote>
+            </div>
+          </div>
 
         </div>
       </section>
