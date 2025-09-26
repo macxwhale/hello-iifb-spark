@@ -92,8 +92,7 @@ const IntroductionSection = () => {
           <div className="mt-12 lg:mt-16 flex justify-center px-4">
             <div className="w-full max-w-4xl">
               <blockquote 
-                className="text-center iifb-historical-quote"
-                data-iifb-quote="true"
+                className="text-center"
                 style={{
                   fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
                   fontWeight: '700',
