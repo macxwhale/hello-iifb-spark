@@ -4,10 +4,8 @@ import BackToTop from '@/components/BackToTop';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
-import { useVersion } from '@/hooks/useVersion';
 
 const Footer = () => {
-  const { displayVersion, tooltipInfo } = useVersion();
   return (
     <footer className="bg-iifb-footer-bg text-white py-20 relative">
       <div className="container mx-auto px-6 lg:px-8">
@@ -119,17 +117,9 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-16 pt-10 border-t border-gray-500 text-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <p className="text-base text-gray-300">
-              FIIB © 2025. All Rights Reserved.
-            </p>
-            <span 
-              className="text-xs text-gray-400 cursor-default select-none"
-              title={tooltipInfo}
-            >
-              {displayVersion}
-            </span>
-          </div>
+          <p className="text-base text-gray-300">
+            FIIB © 2025. All Rights Reserved.
+          </p>
         </div>
       </div>
       
