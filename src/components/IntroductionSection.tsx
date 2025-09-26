@@ -90,12 +90,12 @@ const IntroductionSection = () => {
 
           {/* Inspirational Quote Section */}
           <div className="mt-12 lg:mt-16 flex justify-center px-4">
-            <div className="w-full max-w-4xl">
-              <blockquote className="text-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-0">
-                  <span className="block mt-2 relative" style={{ color: 'hsl(var(--iifb-orange))' }}>
-                    "Let's work together with one voice to make a historical SB8J-1 for Mother Earth!"
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent to-transparent" style={{ background: `linear-gradient(to right, transparent, hsl(var(--iifb-orange)), transparent)` }}></div>
+            <div className="w-full max-w-4xl text-center">
+              <blockquote className="bg-transparent">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-0 leading-tight">
+                  <span className="block relative inline-block" style={{ color: 'hsl(var(--iifb-orange))' }}>
+                    "Let&apos;s work together with one voice to make a historical SB8J-1 for Mother Earth!"
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1" style={{ background: `linear-gradient(to right, transparent, hsl(var(--iifb-orange)), transparent)` }}></div>
                   </span>
                 </h2>
               </blockquote>
