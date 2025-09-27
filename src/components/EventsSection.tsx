@@ -88,7 +88,7 @@ const EventsSection = () => {
               
               <div className="pt-4 mt-auto">
                 <Link to="/sbstta-27">
-                  <Button className="w-full group text-lg py-6 rounded-xl font-semibold text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
+                  <Button className="w-full group bg-secondary hover:bg-secondary-hover text-lg py-6 rounded-xl font-semibold">
                     Learn More About SBSTTA-27
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -159,7 +159,7 @@ const EventsSection = () => {
               
               <div className="pt-4 mt-auto">
                 <Link to="/sb8j-1">
-                  <Button className="w-full group bg-secondary hover:bg-secondary-hover text-lg py-6 rounded-xl font-semibold">
+                  <Button className="w-full group text-lg py-6 rounded-xl font-semibold text-white hover:opacity-90" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
                     Learn More About SB8J-1
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
