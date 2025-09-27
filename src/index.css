@@ -166,13 +166,11 @@ All colors MUST be HSL.
   }
 
   /* Ensure navigation visibility */
-  .wp-react-app nav,
   .wp-react-app .nav-menu,
   .wp-react-app [role="navigation"] {
     position: relative !important;
     z-index: var(--wp-z-high) !important;
     visibility: visible !important;
-    display: block !important;
   }
 
   /* Dropdown menu fixes */
