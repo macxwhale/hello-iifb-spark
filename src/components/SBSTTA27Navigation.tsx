@@ -23,7 +23,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
   return (
     <div className="pt-8">
       {/* Desktop Navigation */}
-      <nav className="hidden md:block">
+      <nav className="hidden lg:block">
         <div className="flex items-center justify-center gap-2">
           <Link to="/" className="px-6 py-3 text-iifb-forest hover:text-white hover:bg-iifb-forest rounded-full transition-all duration-300 text-lg font-medium border border-transparent hover:border-iifb-forest/30">Home</Link>
           <Link 
@@ -117,12 +117,14 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
       </nav>
 
       {/* Mobile Menu Button */}
-      <div className="md:hidden flex justify-center">
+      <div className="lg:hidden flex justify-center">
         <Button
           variant="ghost"
           size="icon"
           className="text-white hover:bg-secondary/80 bg-secondary backdrop-blur-md rounded-full border border-secondary/30 shadow-lg"
           onClick={toggleMenu}
+          aria-label="Open menu"
+          aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
@@ -133,13 +135,13 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
         <>
           {/* Backdrop */}
           <div 
-            className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
             onClick={closeMenu}
             style={{ top: 0, left: 0, right: 0, bottom: 0 }}
           />
           
           {/* Mobile Menu */}
-          <nav className="md:hidden mt-4 bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden mobile-menu relative z-50 max-h-[80vh] overflow-y-auto">
+          <nav className="lg:hidden mt-4 bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden mobile-menu relative z-50 max-h-[80vh] overflow-y-auto">
             <div className="flex flex-col">
               <Link 
                 to="/" 
