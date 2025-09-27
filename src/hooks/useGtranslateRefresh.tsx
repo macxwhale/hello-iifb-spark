@@ -7,6 +7,8 @@ declare global {
       default_language: string;
     };
     doGTranslate?: (language: string) => void;
+    gtranslateReady?: () => void;
+    jQuery?: any;
   }
 }
 
@@ -16,22 +18,49 @@ declare global {
  */
 const useGtranslateRefresh = () => {
   useEffect(() => {
-    // Small delay to ensure DOM is fully rendered
-    const timer = setTimeout(() => {
-      // Trigger gtranslate to rescan the page for new content
-      if (window.gtranslateSettings && window.doGTranslate) {
-        window.doGTranslate(window.gtranslateSettings.default_language + '|' + window.gtranslateSettings.default_language);
-      }
-      
-      // Alternative method - dispatch custom event for gtranslate
-      const event = new CustomEvent('gtranslate-refresh', {
-        detail: { source: 'react-component' }
-      });
-      window.dispatchEvent(event);
-    }, 100);
+    // Multiple attempts with increasing delays for production environments
+    const timers: NodeJS.Timeout[] = [];
+    
+    // Immediate attempt
+    timers.push(setTimeout(() => {
+      triggerGtranslateRefresh();
+    }, 50));
+    
+    // Second attempt with longer delay for production
+    timers.push(setTimeout(() => {
+      triggerGtranslateRefresh();
+    }, 500));
+    
+    // Third attempt for slow-loading production environments
+    timers.push(setTimeout(() => {
+      triggerGtranslateRefresh();
+    }, 2000));
 
-    return () => clearTimeout(timer);
+    return () => timers.forEach(timer => clearTimeout(timer));
   }, []);
+
+  const triggerGtranslateRefresh = () => {
+    // Method 1: Direct gtranslate API call
+    if (window.gtranslateSettings && window.doGTranslate) {
+      window.doGTranslate(window.gtranslateSettings.default_language + '|' + window.gtranslateSettings.default_language);
+    }
+    
+    // Method 2: Custom event dispatch
+    const event = new CustomEvent('gtranslate-refresh', {
+      detail: { source: 'react-component', timestamp: Date.now() }
+    });
+    window.dispatchEvent(event);
+    
+    // Method 3: Force gtranslate to rescan DOM
+    if (typeof window.gtranslateReady === 'function') {
+      window.gtranslateReady();
+    }
+    
+    // Method 4: jQuery trigger (if available)
+    if (window.jQuery && window.jQuery.fn.trigger) {
+      window.jQuery(document).trigger('gtranslate-refresh');
+    }
+  };
 };
 
 export default useGtranslateRefresh;
