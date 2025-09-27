@@ -15,37 +15,47 @@ interface Meeting {
 }
 
 const CalendarSection = () => {
-  const [currentDate, setCurrentDate] = useState(new Date(2025, 8)); // September 2025
+  const [currentDate, setCurrentDate] = useState(new Date(2025, 9)); // October 2025
   
   const sampleMeetings: Meeting[] = [
     {
       id: '1',
-      mainMeeting: 'SB8J-1 (Subsidiary Body on Article 8(j))',
-      subMeeting: 'Indigenous and Traditional Knowledge Systems',
-      date: 'September 2-6, 2025',
-      agenda: 'Traditional Territories and Biodiversity Conservation',
+      mainMeeting: 'IIFB Prep meeting for SBSTTA-27',
+      subMeeting: 'Preparatory Meeting',
+      date: '19 October 2025',
+      agenda: 'SBSTTA-27 Preparation and Strategic Planning',
       location: 'Panama City, Panama',
-      startDate: 2,
-      endDate: 6
+      startDate: 19
     },
     {
       id: '2',
       mainMeeting: 'SBSTTA-27',
       subMeeting: 'Scientific, Technical and Technological Advice',
-      date: 'September 15-19, 2025',
+      date: '20-24 October 2025',
       agenda: 'Global Biodiversity Framework Implementation',
       location: 'Panama City, Panama',
-      startDate: 15,
-      endDate: 19
+      startDate: 20,
+      endDate: 24
     },
     {
       id: '3',
-      mainMeeting: 'SB8J-1 Follow-up',
-      subMeeting: 'Community Consultation Session',
-      date: 'September 25, 2025',
-      agenda: 'Post-meeting Community Feedback',
-      location: 'Virtual & Panama City',
-      startDate: 25
+      mainMeeting: 'IIFB Prep meeting for SB8J-1',
+      subMeeting: 'Preparatory Meeting',
+      date: '25 & 26 October 2025',
+      agenda: 'SB8J-1 Preparation and Strategic Planning',
+      location: 'Panama City, Panama',
+      startDate: 25,
+      endDate: 26
+    },
+    {
+      id: '4',
+      mainMeeting: 'SB8J-1 (Subsidiary Body on Article 8(j))',
+      subMeeting: 'Indigenous and Traditional Knowledge Systems',
+      date: '27-30 October 2025',
+      agenda: 'Traditional Territories and Biodiversity Conservation',
+      location: 'Panama City, Panama',
+      startDate: 27,
+      endDate: 30
     }
   ];
 

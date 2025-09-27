@@ -62,7 +62,7 @@ const EventsSection = () => {
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 <Calendar className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
-                October 20-24, 2025
+                20-24 October 2025
               </div>
             </CardHeader>
             
@@ -134,7 +134,7 @@ const EventsSection = () => {
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
                 <Calendar className="h-6 w-6 text-secondary" />
-                October 27-30, 2025
+                27-30 October 2025
               </div>
             </CardHeader>
             
