@@ -18,6 +18,7 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className="pt-8">
@@ -170,127 +171,154 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-iifb-forest/10 backdrop-blur-md rounded-2xl border border-iifb-forest/20 shadow-xl overflow-hidden">
-          <div className="flex flex-col">
-            <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
-            <Link 
-              to="/sb8j-1/about" 
-              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
-                currentPage === 'about' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-              About
-            </Link>
-            <Link 
-              to="/sb8j-1/statements" 
-              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
-                currentPage === 'statements' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-              IIFB Statements
-            </Link>
-            <Link 
-              to="/sb8j-1/documents" 
-              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
-                currentPage === 'documents' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-              Documents
-            </Link>
-            
-            {/* Mobile News & Media submenu */}
-            <div className="border-b border-white/10">
-              <div className="px-6 py-3 text-white/70 text-lg font-medium">IIFB News & Media</div>
+        <>
+          {/* Backdrop */}
+          <div 
+            className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            onClick={closeMenu}
+            style={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          />
+          
+          {/* Mobile Menu */}
+          <nav className="md:hidden mt-4 bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden relative z-50 max-h-[80vh] overflow-y-auto">
+            <div className="flex flex-col">
               <Link 
-                to="/sb8j-1/news" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'news' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
-                }`}
+                to="/" 
+                className="px-6 py-5 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center"
+                onClick={closeMenu}
               >
-                General News
+                Home
               </Link>
               <Link 
-                to="/sb8j-1/media-coverage" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'media-coverage' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                to="/sb8j-1/about" 
+                className={`px-6 py-5 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'about' 
+                    ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                 }`}
+                onClick={closeMenu}
               >
-                Media Coverage Links
+                About
               </Link>
               <Link 
-                to="/sb8j-1/social-toolkit" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'social-toolkit' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                to="/sb8j-1/statements" 
+                className={`px-6 py-5 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'statements' 
+                    ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                 }`}
+                onClick={closeMenu}
               >
-                IIFB Social Media Toolkit
+                IIFB Statements
               </Link>
               <Link 
-                to="/sb8j-1/press-conferences" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'press-conferences' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                to="/sb8j-1/documents" 
+                className={`px-6 py-5 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'documents' 
+                    ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                 }`}
+                onClick={closeMenu}
               >
-                Press Conferences
+                Documents
               </Link>
+              
+              {/* Mobile News & Media submenu */}
+              <div className="border-b border-gray-100">
+                <div className="px-6 py-4 text-gray-500 text-lg font-semibold">IIFB News & Media</div>
+                <Link 
+                  to="/sb8j-1/news" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'news' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  General News
+                </Link>
+                <Link 
+                  to="/sb8j-1/media-coverage" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'media-coverage' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Media Coverage Links
+                </Link>
+                <Link 
+                  to="/sb8j-1/social-toolkit" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'social-toolkit' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  IIFB Social Media Toolkit
+                </Link>
+                <Link 
+                  to="/sb8j-1/press-conferences" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'press-conferences' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Press Conferences
+                </Link>
+                <Link 
+                  to="/sb8j-1/articles" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'articles' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Articles
+                </Link>
+                <Link 
+                  to="/sb8j-1/videos" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'videos' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Videos
+                </Link>
+                <Link 
+                  to="/sb8j-1/gallery" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'gallery' 
+                      ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Gallery
+                </Link>
+              </div>
+              
               <Link 
-                to="/sb8j-1/articles" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'articles' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                to="/sb8j-1/side-events" 
+                className={`px-6 py-5 transition-all duration-300 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'side-events' 
+                    ? 'text-[hsl(var(--iifb-orange))] bg-[hsl(var(--iifb-orange))]/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                 }`}
+                onClick={closeMenu}
               >
-                Articles
-              </Link>
-              <Link 
-                to="/sb8j-1/videos" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'videos' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
-                }`}
-              >
-                Videos
-              </Link>
-              <Link 
-                to="/sb8j-1/gallery" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'gallery' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
-                }`}
-              >
-                Gallery
+                IIFB Side Events
               </Link>
             </div>
-            
-            <Link 
-              to="/sb8j-1/side-events" 
-              className={`px-6 py-4 transition-all duration-300 text-lg ${
-                currentPage === 'side-events' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-              IIFB Side Events
-            </Link>
-          </div>
-        </nav>
+          </nav>
+        </>
       )}
     </div>
   );

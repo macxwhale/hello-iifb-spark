@@ -18,6 +18,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className="pt-8">
@@ -129,87 +130,110 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden mt-4 bg-iifb-forest/10 backdrop-blur-md rounded-2xl border border-iifb-forest/20 shadow-xl overflow-hidden mobile-menu" style={{ zIndex: 9999, position: 'relative' }}>
-          <div className="flex flex-col">
-            <Link to="/" className="px-6 py-4 text-white/90 hover:text-white hover:bg-white/20 transition-all duration-300 border-b border-white/10 text-lg">Home</Link>
-            <Link 
-              to="/sbstta-27/about" 
-              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
-                currentPage === 'about' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-              About
-            </Link>
-            <Link 
-              to="/sbstta-27/statements" 
-              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
-                currentPage === 'statements' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-               IIFB Statements
-            </Link>
-            <Link 
-              to="/sbstta-27/documents" 
-              className={`px-6 py-4 transition-all duration-300 border-b border-white/10 text-lg ${
-                currentPage === 'documents' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-               Documents
-            </Link>
-            
-            {/* Mobile Media submenu */}
-            <div className="border-b border-white/10">
-              <div className="px-6 py-3 text-white/70 text-lg font-medium">IIFB Media</div>
+        <>
+          {/* Backdrop */}
+          <div 
+            className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            onClick={closeMenu}
+            style={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          />
+          
+          {/* Mobile Menu */}
+          <nav className="md:hidden mt-4 bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden mobile-menu relative z-50 max-h-[80vh] overflow-y-auto">
+            <div className="flex flex-col">
               <Link 
-                to="/sbstta-27/articles" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'articles' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
-                }`}
+                to="/" 
+                className="px-6 py-5 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center"
+                onClick={closeMenu}
               >
-                Articles
+                Home
               </Link>
               <Link 
-                to="/sbstta-27/videos" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'videos' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                to="/sbstta-27/about" 
+                className={`px-6 py-5 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'about' 
+                    ? 'text-secondary bg-secondary/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                 }`}
+                onClick={closeMenu}
               >
-                Videos
+                About
               </Link>
               <Link 
-                to="/sbstta-27/gallery" 
-                className={`px-8 py-3 transition-all duration-300 text-base block ${
-                  currentPage === 'gallery' 
-                    ? 'text-white bg-white/30' 
-                    : 'text-white/90 hover:text-white hover:bg-white/20'
+                to="/sbstta-27/statements" 
+                className={`px-6 py-5 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'statements' 
+                    ? 'text-secondary bg-secondary/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
                 }`}
+                onClick={closeMenu}
               >
-                Gallery
+                IIFB Statements
+              </Link>
+              <Link 
+                to="/sbstta-27/documents" 
+                className={`px-6 py-5 transition-all duration-300 border-b border-gray-100 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'documents' 
+                    ? 'text-secondary bg-secondary/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={closeMenu}
+              >
+                Documents
+              </Link>
+              
+              {/* Mobile Media submenu */}
+              <div className="border-b border-gray-100">
+                <div className="px-6 py-4 text-gray-500 text-lg font-semibold">IIFB Media</div>
+                <Link 
+                  to="/sbstta-27/articles" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'articles' 
+                      ? 'text-secondary bg-secondary/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Articles
+                </Link>
+                <Link 
+                  to="/sbstta-27/videos" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'videos' 
+                      ? 'text-secondary bg-secondary/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Videos
+                </Link>
+                <Link 
+                  to="/sbstta-27/gallery" 
+                  className={`px-8 py-4 transition-all duration-300 text-base block min-h-[48px] flex items-center ${
+                    currentPage === 'gallery' 
+                      ? 'text-secondary bg-secondary/10' 
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Gallery
+                </Link>
+              </div>
+              
+              <Link 
+                to="/sbstta-27/side-events" 
+                className={`px-6 py-5 transition-all duration-300 text-lg font-medium min-h-[56px] flex items-center ${
+                  currentPage === 'side-events' 
+                    ? 'text-secondary bg-secondary/10' 
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+                onClick={closeMenu}
+              >
+                Side Events
               </Link>
             </div>
-            
-            <Link 
-              to="/sbstta-27/side-events" 
-              className={`px-6 py-4 transition-all duration-300 text-lg ${
-                currentPage === 'side-events' 
-                  ? 'text-white bg-white/30' 
-                  : 'text-white/90 hover:text-white hover:bg-white/20'
-              }`}
-            >
-              Side Events
-            </Link>
-          </div>
-        </nav>
+          </nav>
+        </>
       )}
     </div>
   );
