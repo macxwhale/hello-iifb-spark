@@ -61,12 +61,12 @@ const HeroBanner = () => {
                 </div>
                 <div className="flex flex-col space-y-3 w-full">
                   <Link to="/sbstta-27">
-                    <Button size="lg" className="text-white hover:opacity-90 w-full font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }} translate="no">
+                    <Button size="lg" className="bg-secondary text-white hover:bg-secondary-hover w-full font-semibold shadow-lg" translate="no">
                       SBSTTA-27
                     </Button>
                   </Link>
                   <Link to="/sb8j-1">
-                    <Button size="lg" className="bg-secondary text-white hover:bg-secondary-hover w-full font-semibold shadow-lg" translate="no">
+                    <Button size="lg" className="text-white hover:opacity-90 w-full font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }} translate="no">
                       SB8J-1
                     </Button>
                   </Link>
