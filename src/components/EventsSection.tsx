@@ -27,8 +27,8 @@ const EventsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {/* SBSTTA-27 Event Card - Enhanced */}
-          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2" style={{ borderColor: 'hsl(var(--iifb-orange))' }}>
-            <div className="absolute top-0 left-0 w-full h-1" style={{ background: `linear-gradient(to right, hsl(var(--iifb-orange)), hsl(var(--iifb-rust)), hsl(var(--iifb-orange)))` }}></div>
+          <Card className="overflow-hidden bg-gradient-to-br from-card to-card/80 relative flex flex-col border-2 border-secondary">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary via-accent to-secondary"></div>
             <div className="relative h-72 overflow-hidden">
               <img 
                 src={sbsttaImage} 
@@ -36,7 +36,7 @@ const EventsSection = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-6 left-6">
-                <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.9)' }}>
+                <span className="bg-secondary/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20">
                   Scientific Advisory
                 </span>
               </div>
@@ -53,15 +53,15 @@ const EventsSection = () => {
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between mb-3">
                 <CardTitle className="text-2xl lg:text-3xl text-foreground">SBSTTA-27</CardTitle>
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)' }}>
-                  <Users className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
+                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                  <Users className="h-6 w-6 text-secondary" />
                 </div>
               </div>
               <CardDescription className="text-base text-muted-foreground mb-4">
                 27th meeting of the Subsidiary Body on Scientific, Technical and Technological Advice
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                <Calendar className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
+                <Calendar className="h-6 w-6 text-secondary" />
                 20-24 October 2025
               </div>
             </CardHeader>
@@ -74,13 +74,13 @@ const EventsSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
+                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
                     Biodiversity Monitoring
                   </span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
+                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
                     Scientific Research
                   </span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
+                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
                     Policy Framework
                   </span>
                 </div>
@@ -108,7 +108,7 @@ const EventsSection = () => {
               />
               
               <div className="absolute top-6 left-6">
-                <span className="bg-secondary/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20">
+                <span className="backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-white/20" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.9)' }}>
                   Traditional Territories
                 </span>
               </div>
@@ -125,15 +125,15 @@ const EventsSection = () => {
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between mb-3">
                 <CardTitle className="text-2xl lg:text-3xl text-foreground">SB8J-1</CardTitle>
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
-                  <Globe className="h-6 w-6 text-secondary" />
+                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)' }}>
+                  <Globe className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
                 </div>
               </div>
               <CardDescription className="text-base text-muted-foreground mb-4">
                 First Meeting of the Subsidiary Body on Article 8(j) and Related Provisions
               </CardDescription>
               <div className="flex items-center gap-2 text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                <Calendar className="h-6 w-6 text-secondary" />
+                <Calendar className="h-6 w-6" style={{ color: 'hsl(var(--iifb-orange))' }} />
                 27-30 October 2025
               </div>
             </CardHeader>
@@ -145,13 +145,13 @@ const EventsSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
                     Traditional Knowledge
                   </span>
-                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
                     Traditional Territories
                   </span>
-                  <span className="bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium border" style={{ backgroundColor: 'hsl(var(--iifb-orange) / 0.1)', color: 'hsl(var(--iifb-orange))', borderColor: 'hsl(var(--iifb-orange) / 0.2)' }}>
                     Cultural Diversity
                   </span>
                 </div>
