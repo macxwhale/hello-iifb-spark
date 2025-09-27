@@ -4,12 +4,14 @@ import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CountdownTimer from '@/components/CountdownTimer';
+import useGtranslateRefresh from '@/hooks/useGtranslateRefresh';
 
 const HeroBanner = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  useGtranslateRefresh();
 
   return (
-    <section className="relative min-h-fit h-auto overflow-hidden">
+    <section className="relative min-h-fit h-auto overflow-hidden" lang="en" translate="yes">
       {/* Background Image */}
       <div 
         className={`absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full transition-opacity duration-700 ease-out ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
@@ -31,22 +33,22 @@ const HeroBanner = () => {
         <div className="flex-1 flex items-center">
           <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 md:gap-8 w-full">
             {/* Left Container - Main Content */}
-            <div className="text-white text-left hero-text">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: '#ffffff !important' }}>
+            <div className="text-white text-left hero-text" translate="yes">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight" style={{ color: '#ffffff !important' }} translate="yes">
                 CBD Panama
-                <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90" style={{ color: '#ffffff !important' }}>
+                <span className="block text-3xl md:text-4xl font-normal mt-2 opacity-90" style={{ color: '#ffffff !important' }} translate="yes">
                   Meetings 2025
                 </span>
               </h1>
 
-              <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="flex flex-col md:flex-row items-start gap-6" translate="yes">
                 <div className="flex items-center space-x-2 text-lg" style={{ color: '#ffffff !important' }}>
-                  <Calendar className="h-5 w-5" />
-                  <span>October 20-30, 2025</span>
+                  <Calendar className="h-5 w-5" aria-hidden="true" />
+                  <span translate="yes">October 20-30, 2025</span>
                 </div>
                 <div className="flex items-center space-x-2 text-lg" style={{ color: '#ffffff !important' }}>
-                  <MapPin className="h-5 w-5" />
-                  <span>Panama City, Panama</span>
+                  <MapPin className="h-5 w-5" aria-hidden="true" />
+                  <span translate="yes">Panama City, Panama</span>
                 </div>
               </div>
             </div>
@@ -59,12 +61,12 @@ const HeroBanner = () => {
                 </div>
                 <div className="flex flex-col space-y-3 w-full">
                   <Link to="/sbstta-27">
-                    <Button size="lg" className="text-white hover:opacity-90 w-full font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}>
+                    <Button size="lg" className="text-white hover:opacity-90 w-full font-semibold shadow-lg" style={{ backgroundColor: 'hsl(var(--iifb-orange))' }} translate="no">
                       SBSTTA-27
                     </Button>
                   </Link>
                   <Link to="/sb8j-1">
-                    <Button size="lg" className="bg-secondary text-white hover:bg-secondary-hover w-full font-semibold shadow-lg">
+                    <Button size="lg" className="bg-secondary text-white hover:bg-secondary-hover w-full font-semibold shadow-lg" translate="no">
                       SB8J-1
                     </Button>
                   </Link>
