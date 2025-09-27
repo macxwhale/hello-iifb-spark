@@ -160,7 +160,8 @@ const SB8J1Navigation = ({ currentPage }: SB8J1NavigationProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-iifb-forest/80 bg-iifb-forest backdrop-blur-md rounded-full border border-iifb-forest/30 shadow-lg"
+          className="text-white hover:opacity-90 backdrop-blur-md rounded-full border border-[hsl(var(--iifb-orange))]/30 shadow-lg"
+          style={{ backgroundColor: 'hsl(var(--iifb-orange))' }}
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

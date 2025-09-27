@@ -120,7 +120,7 @@ const SBSTTA27Navigation = ({ currentPage }: SBSTTA27NavigationProps) => {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-iifb-forest/80 bg-iifb-forest backdrop-blur-md rounded-full border border-iifb-forest/30 shadow-lg"
+          className="text-white hover:bg-secondary/80 bg-secondary backdrop-blur-md rounded-full border border-secondary/30 shadow-lg"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
