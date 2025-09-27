@@ -40,26 +40,56 @@ const useGtranslateRefresh = () => {
   }, []);
 
   const triggerGtranslateRefresh = () => {
+    console.log('🌐 GTranslate: Triggering refresh attempt...');
+    
+    // Check gtranslate availability
+    const hasSettings = !!window.gtranslateSettings;
+    const hasDoGTranslate = !!window.doGTranslate;
+    const hasGtranslateReady = typeof window.gtranslateReady === 'function';
+    const hasJQuery = !!window.jQuery;
+    
+    console.log('🌐 GTranslate Status:', {
+      hasSettings,
+      hasDoGTranslate,
+      hasGtranslateReady,
+      hasJQuery,
+      defaultLanguage: window.gtranslateSettings?.default_language
+    });
+    
     // Method 1: Direct gtranslate API call
-    if (window.gtranslateSettings && window.doGTranslate) {
+    if (hasSettings && hasDoGTranslate) {
+      console.log('🌐 GTranslate: Using doGTranslate method');
       window.doGTranslate(window.gtranslateSettings.default_language + '|' + window.gtranslateSettings.default_language);
+    } else {
+      console.warn('🌐 GTranslate: doGTranslate method not available');
     }
     
     // Method 2: Custom event dispatch
+    console.log('🌐 GTranslate: Dispatching custom event');
     const event = new CustomEvent('gtranslate-refresh', {
       detail: { source: 'react-component', timestamp: Date.now() }
     });
     window.dispatchEvent(event);
     
     // Method 3: Force gtranslate to rescan DOM
-    if (typeof window.gtranslateReady === 'function') {
+    if (hasGtranslateReady) {
+      console.log('🌐 GTranslate: Calling gtranslateReady()');
       window.gtranslateReady();
+    } else {
+      console.warn('🌐 GTranslate: gtranslateReady function not available');
     }
     
     // Method 4: jQuery trigger (if available)
-    if (window.jQuery && window.jQuery.fn.trigger) {
+    if (hasJQuery && window.jQuery.fn.trigger) {
+      console.log('🌐 GTranslate: Using jQuery trigger');
       window.jQuery(document).trigger('gtranslate-refresh');
+    } else if (hasJQuery) {
+      console.warn('🌐 GTranslate: jQuery available but trigger method missing');
+    } else {
+      console.warn('🌐 GTranslate: jQuery not available');
     }
+    
+    console.log('🌐 GTranslate: Refresh attempt completed');
   };
 };
 
