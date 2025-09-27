@@ -18,25 +18,102 @@ declare global {
  */
 const useGtranslateRefresh = () => {
   useEffect(() => {
-    // Multiple attempts with increasing delays for production environments
-    const timers: NodeJS.Timeout[] = [];
+    console.log('🌐 GTranslate: Hook initialized, checking script availability...');
     
-    // Immediate attempt
-    timers.push(setTimeout(() => {
-      triggerGtranslateRefresh();
-    }, 50));
+    // First, ensure gtranslate script is loaded
+    const ensureGtranslateScript = () => {
+      return new Promise<void>((resolve) => {
+        // Check if script already exists
+        const existingScript = document.querySelector('script[src*="gtranslate"]');
+        
+        if (window.doGTranslate && window.gtranslateReady) {
+          console.log('🌐 GTranslate: Script already loaded and ready');
+          resolve();
+          return;
+        }
+        
+        if (existingScript) {
+          console.log('🌐 GTranslate: Script tag found, waiting for it to load...');
+          // Script exists but functions not ready, wait a bit more
+          const checkReady = () => {
+            if (window.doGTranslate && window.gtranslateReady) {
+              console.log('🌐 GTranslate: Functions now available');
+              resolve();
+            } else {
+              setTimeout(checkReady, 200);
+            }
+          };
+          checkReady();
+          return;
+        }
+        
+        console.log('🌐 GTranslate: No script found, attempting to load...');
+        
+        // Try to find and execute any inline gtranslate scripts
+        const inlineScripts = document.querySelectorAll('script:not([src])');
+        let gtranslateConfigFound = false;
+        
+        inlineScripts.forEach(script => {
+          if (script.textContent?.includes('gtranslateSettings') || 
+              script.textContent?.includes('doGTranslate')) {
+            console.log('🌐 GTranslate: Found inline gtranslate script, re-executing...');
+            gtranslateConfigFound = true;
+            try {
+              // Re-execute the script
+              eval(script.textContent);
+            } catch (e) {
+              console.warn('🌐 GTranslate: Error executing inline script:', e);
+            }
+          }
+        });
+        
+        if (gtranslateConfigFound) {
+          // Wait a bit for the script to initialize
+          setTimeout(() => {
+            if (window.doGTranslate && window.gtranslateReady) {
+              console.log('🌐 GTranslate: Functions available after script re-execution');
+              resolve();
+            } else {
+              console.warn('🌐 GTranslate: Functions still not available after script re-execution');
+              resolve(); // Continue anyway
+            }
+          }, 500);
+        } else {
+          console.warn('🌐 GTranslate: No gtranslate configuration found in page');
+          resolve(); // Continue anyway
+        }
+      });
+    };
     
-    // Second attempt with longer delay for production
-    timers.push(setTimeout(() => {
-      triggerGtranslateRefresh();
-    }, 500));
-    
-    // Third attempt for slow-loading production environments
-    timers.push(setTimeout(() => {
-      triggerGtranslateRefresh();
-    }, 2000));
+    // Load script first, then attempt refreshes
+    ensureGtranslateScript().then(() => {
+      const timers: NodeJS.Timeout[] = [];
+      
+      // Immediate attempt after script is ready
+      timers.push(setTimeout(() => {
+        triggerGtranslateRefresh();
+      }, 100));
+      
+      // Second attempt with longer delay
+      timers.push(setTimeout(() => {
+        triggerGtranslateRefresh();
+      }, 1000));
+      
+      // Third attempt for production environments
+      timers.push(setTimeout(() => {
+        triggerGtranslateRefresh();
+      }, 3000));
+      
+      // Store timers for cleanup
+      (window as any).__gtranslateTimers = timers;
+    });
 
-    return () => timers.forEach(timer => clearTimeout(timer));
+    return () => {
+      // Clean up timers
+      const timers = (window as any).__gtranslateTimers || [];
+      timers.forEach((timer: NodeJS.Timeout) => clearTimeout(timer));
+      delete (window as any).__gtranslateTimers;
+    };
   }, []);
 
   const triggerGtranslateRefresh = () => {
